@@ -1,0 +1,13 @@
+{
+  "name": "ジン在庫カタログ｜Bar Soutsu",
+  "short_name": "ジン在庫",
+  "description": "Bar Soutsuの在庫ジンを検索・絞り込みできるカタログです。",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#15120f",
+  "theme_color": "#15120f",
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

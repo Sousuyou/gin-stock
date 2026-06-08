@@ -1,0 +1,5 @@
+# ここに「ウェブに公開」で得たCSVのURLを1行だけ貼ってください。
+# 手順は 自動更新の設定手順.md を参照。
+# 例: https://docs.google.com/spreadsheets/d/e/2PACX-XXXX/pub?gid=0&single=true&output=csv
+#
+# ↓ この下の行にURLを貼る（#で始まる行は無視されます）

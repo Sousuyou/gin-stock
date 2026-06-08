@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- セキュリティ: 読み込み元を自サイトに限定（CSPの手本）。インライン<script>は使わず外部.jsに置く。 -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'"
+    />
+    <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)" />
+    <title>ジン在庫カタログ｜Bar Soutsu</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bar Soutsu" />
+    <meta property="og:title" content="ジン在庫カタログ｜Bar Soutsu" />
+    <meta property="og:description" content="Bar Soutsuの在庫ジンを検索・絞り込みできるカタログです。" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/icon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- 共通テーマ（色・ダークモード）。ローカルの:rootは保険 -->
+    <link rel="stylesheet" href="https://sousuyou.github.io/top/theme.css" />
+  </head>
+  <body class="has-nav">
+    <!-- 共通ナビ：中身は top/nav.js が自動生成（JS無効/ローカル時はTOPリンクだけ残る） -->
+    <nav class="site-nav" id="site-nav">
+      <a class="site-nav-link" href="https://sousuyou.github.io/top/">TOP</a>
+    </nav>
+    <script src="https://sousuyou.github.io/top/nav.js" defer></script>
+
+    <main class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="brand-mark">Bar Soutsu</p>
+          <p class="eyebrow">Gin Stock / Catalog</p>
+          <h1 id="page-title">ジン在庫カタログ</h1>
+          <p class="lead">店の在庫ジンを名前・産地・ボタニカルで検索し、国や度数で絞り込めます。気になる一本をタップすると詳しい説明が開きます。</p>
+        </div>
+      </header>
+
+      <!-- 検索・絞り込みツールバー -->
+      <section class="card toolbar" aria-label="検索と絞り込み">
+        <div class="field-row">
+          <label class="field-label" for="q">キーワード検索</label>
+          <input id="q" type="search" inputmode="search" autocomplete="off"
+                 placeholder="例：柚子 / ロンドン / ヘンドリックス / ジュニパー" />
+        </div>
+
+        <div class="filters">
+          <div class="filter-cell">
+            <label class="field-label" for="f-country">国</label>
+            <select id="f-country"></select>
+          </div>
+          <div class="filter-cell">
+            <label class="field-label" for="f-abv">度数帯</label>
+            <select id="f-abv">
+              <option value="">すべて</option>
+              <option value="lt40">40%未満</option>
+              <option value="40-44">40〜44%</option>
+              <option value="45-49">45〜49%</option>
+              <option value="ge50">50%以上（ネイビー等）</option>
+            </select>
+          </div>
+          <div class="filter-cell">
+            <label class="field-label" for="f-sort">並び替え</label>
+            <select id="f-sort">
+              <option value="kana">名前順（あいうえお）</option>
+              <option value="abv-desc">度数が高い順</option>
+              <option value="abv-asc">度数が低い順</option>
+              <option value="country">国別</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="toolbar-foot">
+          <span id="result-count" class="result-count">読み込み中…</span>
+          <button id="reset" type="button" class="secondary">条件をクリア</button>
+        </div>
+      </section>
+
+      <!-- 一覧 -->
+      <section id="list" class="gin-list" aria-live="polite"></section>
+
+      <footer class="app-footer">
+        <span>Bar Soutsu｜ジン在庫カタログ</span>
+        <span id="data-meta">社内ツール</span>
+      </footer>
+    </main>
+
+    <script src="boot.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
