@@ -1,7 +1,7 @@
 {
- "version": 7,
- "updated": "2026-06-08",
- "source": "BarSoustu ジンの在庫の管理表（整形版・検証済）",
+ "version": 6,
+ "updated": "auto",
+ "source": "BarSoustu ジンの在庫の管理表（自動取り込み）",
  "count": 983,
  "gins": [
   {
@@ -331,7 +331,7 @@
   {
    "name": "アルケミエ Lavender 4",
    "kana": "アルケミエ",
-   "abv": null,
+   "abv": 45.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
    "note": "岐阜・郡上八幡の辰巳蒸溜所から、6月上旬の花が咲く直前の最も香る瞬間に収穫。2種類のラベンダー(濃紫、オカムラサキ)全草使用し蒸溜、穏やかなフローラル香",
