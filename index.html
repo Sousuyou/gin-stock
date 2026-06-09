@@ -82,6 +82,9 @@
         </div>
       </section>
 
+      <!-- 頭文字ジャンプ -->
+      <nav class="kana-index" id="kana-index" aria-label="頭文字で絞り込み"></nav>
+
       <!-- 一覧 -->
       <section id="list" class="gin-list" aria-live="polite"></section>
 
@@ -90,6 +93,9 @@
         <span id="data-meta">社内ツール</span>
       </footer>
     </main>
+
+    <!-- 詳細モーダル（中身はapp.jsが生成） -->
+    <div class="modal-backdrop" id="gin-modal" hidden></div>
 
     <script src="boot.js" defer></script>
     <script src="app.js" defer></script>

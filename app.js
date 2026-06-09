@@ -1,17 +1,17 @@
 /*
- * ジン在庫カタログ：検索・絞り込み・一覧描画。
+ * ジン在庫カタログ：検索・絞り込み・グリッド表示・頭文字ジャンプ・詳細モーダル。
  * CSP（script-src 'self'）下で動くよう、すべて外部ファイル。インラインJSは使わない。
  */
 (function () {
   "use strict";
 
-  var GINS = [];          // 全データ
-  var els = {};           // DOM参照
+  var GINS = [];
+  var els = {};
+  var currentInitial = ""; // 頭文字フィルタ（""=すべて）
 
-  // ---- ユーティリティ ----
   function $(id) { return document.getElementById(id); }
 
-  // XSS対策：外部由来テキストは必ずエスケープして描画
+  // XSS対策：外部由来テキストは必ずエスケープ
   function esc(s) {
     return String(s == null ? "" : s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
@@ -22,7 +22,6 @@
     return g.abv == null ? "—" : (String(g.abv).replace(/\.0$/, "") + "%");
   }
 
-  // 度数帯フィルタの判定
   function inAbvBand(abv, band) {
     if (!band) return true;
     if (abv == null) return false;
@@ -33,25 +32,58 @@
     return true;
   }
 
-  // ---- フィルタ用セレクトの中身を作る ----
-  function buildOptions() {
-    // 国（大分類）を件数つきで
+  // ---- 頭文字の行（あ/か/さ…/A-Z/#）を求める ----
+  var KANA_ROWS = {
+    "あ": "あいうえおぁぃぅぇぉ",
+    "か": "かきくけこがぎぐげご",
+    "さ": "さしすせそざじずぜぞ",
+    "た": "たちつてとだぢづでどっ",
+    "な": "なにぬねの",
+    "は": "はひふへほばびぶべぼぱぴぷぺぽ",
+    "ま": "まみむめも",
+    "や": "やゆよゃゅょ",
+    "ら": "らりるれろ",
+    "わ": "わをんゎ",
+  };
+  var ROW_ORDER = ["あ", "か", "さ", "た", "な", "は", "ま", "や", "ら", "わ", "A-Z", "#"];
+
+  function initialOf(g) {
+    var s = (g.kana || g.name || "").trim();
+    if (!s) return "#";
+    var ch = s.charAt(0);
+    var code = ch.charCodeAt(0);
+    if (code >= 0x30a1 && code <= 0x30f6) ch = String.fromCharCode(code - 0x60); // カタカナ→ひらがな
+    for (var k in KANA_ROWS) {
+      if (KANA_ROWS[k].indexOf(ch) >= 0) return k;
+    }
+    if (/[A-Za-z]/.test(ch)) return "A-Z";
+    return "#";
+  }
+
+  // ---- フィルタ用セレクト＋頭文字インデックスを作る ----
+  function buildControls() {
     var byCountry = {};
     GINS.forEach(function (g) {
       byCountry[g.country_main] = (byCountry[g.country_main] || 0) + 1;
     });
-
-    var countries = Object.keys(byCountry).sort(function (a, b) {
-      return byCountry[b] - byCountry[a]; // 多い順
-    });
+    var countries = Object.keys(byCountry).sort(function (a, b) { return byCountry[b] - byCountry[a]; });
     var optsC = ['<option value="">すべての国（' + GINS.length + "）</option>"];
     countries.forEach(function (c) {
       optsC.push('<option value="' + esc(c) + '">' + esc(c) + "（" + byCountry[c] + "）</option>");
     });
     els.country.innerHTML = optsC.join("");
+
+    // 頭文字インデックス（存在する行だけ）
+    var have = {};
+    GINS.forEach(function (g) { have[initialOf(g)] = true; });
+    var html = '<button type="button" class="kana-btn active" data-g="">全</button>';
+    ROW_ORDER.forEach(function (r) {
+      if (have[r]) html += '<button type="button" class="kana-btn" data-g="' + esc(r) + '">' + esc(r) + "</button>";
+    });
+    els.kana.innerHTML = html;
   }
 
-  // ---- 現在の条件で絞り込み＋並び替え ----
+  // ---- 絞り込み＋並び替え ----
   function currentList() {
     var q = els.q.value.trim().toLowerCase();
     var fc = els.country.value;
@@ -61,9 +93,9 @@
     var out = GINS.filter(function (g) {
       if (fc && g.country_main !== fc) return false;
       if (!inAbvBand(g.abv, fa)) return false;
+      if (currentInitial && initialOf(g) !== currentInitial) return false;
       if (q) {
-        var hay = (g.name + " " + g.kana + " " + g.country + " " +
-                   g.botanicals + " " + g.note).toLowerCase();
+        var hay = (g.name + " " + g.kana + " " + g.country + " " + g.botanicals + " " + g.note).toLowerCase();
         if (hay.indexOf(q) === -1) return false;
       }
       return true;
@@ -71,51 +103,41 @@
 
     out.sort(function (a, b) {
       if (sort === "abv-desc") return (b.abv || -1) - (a.abv || -1);
-      if (sort === "abv-asc")  return (a.abv == null ? 999 : a.abv) - (b.abv == null ? 999 : b.abv);
+      if (sort === "abv-asc") return (a.abv == null ? 999 : a.abv) - (b.abv == null ? 999 : b.abv);
       if (sort === "country") {
-        var c = (a.country_main).localeCompare(b.country_main, "ja");
+        var c = a.country_main.localeCompare(b.country_main, "ja");
         return c !== 0 ? c : (a.kana || a.name).localeCompare(b.kana || b.name, "ja");
       }
-      return (a.kana || a.name).localeCompare(b.kana || b.name, "ja"); // kana
+      return (a.kana || a.name).localeCompare(b.kana || b.name, "ja");
     });
     return out;
   }
 
-  // ---- 1件のカードHTML ----
+  // ---- カード（グリッド用・ボタニカルのさわりを表示）----
   function cardHTML(g, idx) {
     var badges =
       '<span class="badge badge-country">' + esc(g.country_main) + "</span>" +
       '<span class="badge badge-abv">' + abvLabel(g) + "</span>";
 
-    var sub = g.country && g.country !== g.country_main
-      ? '<p class="gin-sub">' + esc(g.country) + "</p>" : "";
-
     var bot = g.botanicals
-      ? '<div class="detail-block"><span class="detail-label">ボタニカル</span><p>' + esc(g.botanicals) + "</p></div>"
-      : "";
-    var note = g.note
-      ? '<div class="detail-block"><span class="detail-label">メモ</span><p>' + esc(g.note) + "</p></div>"
-      : '<div class="detail-block"><p class="muted-text">（説明メモは未登録）</p></div>';
+      ? '<p class="gin-bot"><b>Botanical</b>' + esc(g.botanicals) + "</p>"
+      : '<p class="gin-bot is-empty"><b>Botanical</b>（未登録）</p>';
 
     return (
-      '<article class="gin-card" data-idx="' + idx + '">' +
-        '<button type="button" class="gin-head" aria-expanded="false">' +
-          '<div class="gin-title">' +
-            "<h2>" + esc(g.name) + "</h2>" +
-            (g.kana ? '<p class="gin-kana">' + esc(g.kana) + "</p>" : "") +
-            sub +
-          "</div>" +
-          '<div class="gin-badges">' + badges + "</div>" +
-        "</button>" +
-        '<div class="gin-detail" hidden>' + bot + note + "</div>" +
-      "</article>"
+      '<button type="button" class="gin-card" data-idx="' + idx + '">' +
+        '<h2 class="gin-name">' + esc(g.name) + "</h2>" +
+        (g.kana ? '<p class="gin-kana">' + esc(g.kana) + "</p>" : "") +
+        '<div class="gin-badges">' + badges + "</div>" +
+        bot +
+      "</button>"
     );
   }
 
-  // ---- 一覧を描画 ----
+  var lastList = [];
   function render() {
     var list = currentList();
-    els.count.textContent = "全" + GINS.length + "銘柄中　" + list.length + "件を表示";
+    lastList = list;
+    els.count.innerHTML = "全" + GINS.length + "銘柄中　<b>" + list.length + "</b>件を表示";
 
     if (!list.length) {
       els.list.innerHTML = '<div class="empty">該当する銘柄がありません。条件を変えるか「条件をクリア」を押してください。</div>';
@@ -126,16 +148,35 @@
     els.list.innerHTML = html;
   }
 
-  // ---- カード開閉（イベント委譲）----
-  function onListClick(e) {
-    var head = e.target.closest(".gin-head");
-    if (!head) return;
-    var card = head.closest(".gin-card");
-    var detail = card.querySelector(".gin-detail");
-    var open = head.getAttribute("aria-expanded") === "true";
-    head.setAttribute("aria-expanded", open ? "false" : "true");
-    detail.hidden = open;
-    card.classList.toggle("open", !open);
+  // ---- 詳細モーダル ----
+  function openModal(g) {
+    var sub = g.country && g.country !== g.country_main ? "（" + esc(g.country) + "）" : "";
+    var bot = g.botanicals
+      ? '<div class="detail-block"><span class="detail-label">ボタニカル</span><p>' + esc(g.botanicals) + "</p></div>"
+      : '<div class="detail-block"><span class="detail-label">ボタニカル</span><p class="muted-text">（未登録）</p></div>';
+    var note = g.note
+      ? '<div class="detail-block"><span class="detail-label">メモ</span><p>' + esc(g.note) + "</p></div>"
+      : '<div class="detail-block"><span class="detail-label">メモ</span><p class="muted-text">（説明メモは未登録）</p></div>';
+
+    els.modal.innerHTML =
+      '<div class="modal" role="dialog" aria-modal="true" aria-label="' + esc(g.name) + '">' +
+        '<button type="button" class="modal-close" aria-label="閉じる">×</button>' +
+        "<h2>" + esc(g.name) + "</h2>" +
+        (g.kana ? '<p class="modal-kana">' + esc(g.kana) + "</p>" : "") +
+        '<div class="modal-badges">' +
+          '<span class="badge badge-country">' + esc(g.country_main) + "</span>" +
+          '<span class="badge badge-abv">' + abvLabel(g) + "</span>" +
+        "</div>" +
+        (sub ? '<p class="modal-kana">産地：' + esc(g.country) + "</p>" : "") +
+        bot + note +
+      "</div>";
+    els.modal.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+  function closeModal() {
+    els.modal.hidden = true;
+    els.modal.innerHTML = "";
+    document.body.style.overflow = "";
   }
 
   function resetAll() {
@@ -143,44 +184,66 @@
     els.country.value = "";
     els.abv.value = "";
     els.sort.value = "kana";
+    currentInitial = "";
+    [].forEach.call(els.kana.querySelectorAll(".kana-btn"), function (b) {
+      b.classList.toggle("active", b.getAttribute("data-g") === "");
+    });
     render();
   }
 
-  // ---- 起動 ----
   function init() {
     els = {
-      q: $("q"), country: $("f-country"),
-      abv: $("f-abv"), sort: $("f-sort"), count: $("result-count"),
-      list: $("list"), reset: $("reset"), meta: $("data-meta"),
+      q: $("q"), country: $("f-country"), abv: $("f-abv"), sort: $("f-sort"),
+      count: $("result-count"), list: $("list"), reset: $("reset"),
+      meta: $("data-meta"), kana: $("kana-index"), modal: $("gin-modal"),
     };
 
     fetch("gins.json", { cache: "no-store" })
-      .then(function (r) {
-        if (!r.ok) throw new Error("HTTP " + r.status);
-        return r.json();
-      })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (data) {
         GINS = (data && data.gins) || [];
         if (els.meta && data.updated) {
-          els.meta.textContent = "在庫 " + GINS.length + "銘柄／更新 " + data.updated;
+          els.meta.textContent = "在庫 " + GINS.length + "銘柄";
         }
-        buildOptions();
+        buildControls();
         render();
 
-        ["input", "change"].forEach(function (ev) {
-          els.q.addEventListener(ev, render);
-        });
-        [els.country, els.abv, els.sort].forEach(function (s) {
-          s.addEventListener("change", render);
-        });
+        els.q.addEventListener("input", render);
+        [els.country, els.abv, els.sort].forEach(function (s) { s.addEventListener("change", render); });
         els.reset.addEventListener("click", resetAll);
-        els.list.addEventListener("click", onListClick);
+
+        // 頭文字インデックス
+        els.kana.addEventListener("click", function (e) {
+          var btn = e.target.closest(".kana-btn");
+          if (!btn) return;
+          currentInitial = btn.getAttribute("data-g");
+          [].forEach.call(els.kana.querySelectorAll(".kana-btn"), function (b) { b.classList.remove("active"); });
+          btn.classList.add("active");
+          render();
+          window.scrollTo({ top: els.list.offsetTop - 70, behavior: "smooth" });
+        });
+
+        // カードタップ → 詳細モーダル
+        els.list.addEventListener("click", function (e) {
+          var card = e.target.closest(".gin-card");
+          if (!card) return;
+          var idx = parseInt(card.getAttribute("data-idx"), 10);
+          if (lastList[idx]) openModal(lastList[idx]);
+        });
+
+        // モーダルを閉じる（×・背景クリック・Esc）
+        els.modal.addEventListener("click", function (e) {
+          if (e.target === els.modal || e.target.closest(".modal-close")) closeModal();
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && !els.modal.hidden) closeModal();
+        });
       })
       .catch(function (err) {
         els.count.textContent = "";
         els.list.innerHTML =
           '<div class="empty">データの読み込みに失敗しました（' + esc(err.message) +
-          "）。<br />ファイルを直接開いた場合は、ローカルサーバー経由で開いてください。</div>";
+          "）。<br />ローカルで開いた場合は、サーバー経由で開いてください。</div>";
       });
   }
 
