@@ -80,6 +80,9 @@
       p = p.replace(/(など|等|ほか|他)$/, "").trim();
       if (!p) continue;
       var canon = BOT_REV[p] || p;
+      // 「ジュニパーベリーをはじめとした9種…」のように文章中に埋もれた表記も拾う
+      // （ジュニパーは語頭一致でも誤判定がないので安全）
+      if (p.indexOf("ジュニパー") >= 0) canon = "ジュニパー";
       if (BOT_JUNK[canon]) continue;
       if (!set[canon]) { set[canon] = 1; out.push(canon); }
     }
