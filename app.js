@@ -196,11 +196,14 @@
       ? '<p class="gin-bot"><b>Botanical</b>' + esc(g.botanicals) + "</p>"
       : '<p class="gin-bot is-empty"><b>Botanical</b>（未登録）</p>';
 
+    var warn = g.not_gin ? '<p class="not-gin-note">※当店にありますが、ジンではありません</p>' : "";
+
     return (
       '<button type="button" class="gin-card" data-idx="' + idx + '">' +
         '<h2 class="gin-name">' + esc(g.name) + "</h2>" +
         (g.kana ? '<p class="gin-kana">' + esc(g.kana) + "</p>" : "") +
         '<div class="gin-badges">' + badges + "</div>" +
+        warn +
         bot +
       "</button>"
     );
@@ -231,6 +234,8 @@
       ? '<div class="detail-block"><span class="detail-label">メモ</span><p>' + esc(g.note) + "</p></div>"
       : '<div class="detail-block"><span class="detail-label">メモ</span><p class="muted-text">（説明メモは未登録）</p></div>';
 
+    var warn = g.not_gin ? '<div class="not-gin-banner">※当店にありますが、ジンではありません</div>' : "";
+
     els.modal.innerHTML =
       '<div class="modal" role="dialog" aria-modal="true" aria-label="' + esc(g.name) + '">' +
         '<button type="button" class="modal-close" aria-label="閉じる">×</button>' +
@@ -241,6 +246,7 @@
           '<span class="badge badge-abv">' + abvLabel(g) + "</span>" +
         "</div>" +
         (sub ? '<p class="modal-kana">産地：' + esc(g.country) + "</p>" : "") +
+        warn +
         bot + note +
       "</div>";
     els.modal.hidden = false;

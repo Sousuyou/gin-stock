@@ -245,6 +245,20 @@ select {
 }
 .gin-bot.is-empty { opacity: 0.5; }
 
+/* 「ジンではない」注記（カード用） */
+.not-gin-note {
+  margin: 2px 0 0; padding: 3px 7px;
+  font-size: 0.62rem; font-weight: 700; line-height: 1.4;
+  color: var(--red); border: 1px solid var(--red);
+  background: transparent;
+}
+/* 「ジンではない」注記（モーダル用の帯） */
+.not-gin-banner {
+  margin: 14px 0 2px; padding: 9px 12px;
+  font-size: 0.82rem; font-weight: 700; line-height: 1.5;
+  color: var(--red); border: 1px solid var(--red);
+}
+
 .empty {
   grid-column: 1 / -1; padding: 28px 16px; text-align: center;
   font-size: 0.82rem; color: var(--muted); border: 1px dashed var(--line);
