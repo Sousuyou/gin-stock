@@ -1,12 +1,12 @@
 {
- "version": 13,
+ "version": 14,
  "updated": "auto",
  "source": "Bar Soutsu ジン在庫カタログ（このリポジトリのgins.jsonがマスター）",
  "count": 983,
  "gins": [
   {
    "name": "40° 48'N HARBOR GIN",
-   "kana": "40° 48'N ハーバー",
+   "kana": "40° 48'N ハーバー ジン",
    "abv": 40.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -15,7 +15,7 @@
   },
   {
    "name": "No.1 ORIGINAL BLUE GIN",
-   "kana": "No.1 オリジナルブルー",
+   "kana": "No.1 オリジナルブルー ジン",
    "abv": 47.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -23,17 +23,8 @@
    "botanicals": "ジュニパー、アンジェリカルート、セイボリー、コリアンダー、カシアバーク、リコリス、シナモン、アーモンド、レモンピール、オレンジピール、リリールート、ベルガモット"
   },
   {
-   "name": "No.3 LONDON DRY GIN",
-   "kana": "No.3",
-   "abv": 46.0,
-   "country": "イギリス",
-   "country_main": "イギリス",
-   "note": "王室御用達を受ける老舗ワイン卸商「BBR」によるプレミアムジン。清々しいジュニパーの香り、柑橘の味わい、コリアンダーのスパイシーな風味",
-   "botanicals": "ジュニパー、アンジェリカルート、オレンジピール、カルダモン、グレープフルーツピール、コリアンダーシード"
-  },
-  {
    "name": "No.3 LONDON DRY GIN KINGSMAN EDITION",
-   "kana": "No.3 キングスマンエディション",
+   "kana": "No.3 キングスマンエディション ジン",
    "abv": 49.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -41,13 +32,13 @@
    "botanicals": "ジュニパー、アンジェリカルート、オレンジピール、カルダモン、グレープフルーツピール、コリアンダーシード"
   },
   {
-   "name": "TLPEARCE GIN",
-   "kana": "TLピアス",
-   "abv": 43.0,
-   "country": "日本（千葉：野田）",
-   "country_main": "日本",
-   "note": "日本の伝統に憧れた2人の蒸留家に作らた。ヨーロッパでの蒸留技術を活かし、コンセプトはジンの伝統と日本の伝統。キーボタニカルは「ミカンの皮」",
-   "botanicals": "ジュニパー、温州みかん、瀬戸内レモン、ローズマリー、コリアンダー、アンジェリカルート、カルダモン、グレインズオブパラダイス（ほか1種非公開・計9種）"
+   "name": "No.3 LONDON DRY GIN",
+   "kana": "No.3 ジン",
+   "abv": 46.0,
+   "country": "イギリス",
+   "country_main": "イギリス",
+   "note": "王室御用達を受ける老舗ワイン卸商「BBR」によるプレミアムジン。清々しいジュニパーの香り、柑橘の味わい、コリアンダーのスパイシーな風味",
+   "botanicals": "ジュニパー、アンジェリカルート、オレンジピール、カルダモン、グレープフルーツピール、コリアンダーシード"
   },
   {
    "name": "TL PEARCE CACAO EDITION",
@@ -59,8 +50,17 @@
    "botanicals": "ジュニパー、マンダリンピール、瀬戸内レモン、ローズマリー、コリアンダー、アンジェリカルート、カルダモン、グレインズオブパラダイス、ハワイ産カカオニブ"
   },
   {
+   "name": "TLPEARCE GIN",
+   "kana": "TLピアス ジン",
+   "abv": 43.0,
+   "country": "日本（千葉：野田）",
+   "country_main": "日本",
+   "note": "日本の伝統に憧れた2人の蒸留家に作らた。ヨーロッパでの蒸留技術を活かし、コンセプトはジンの伝統と日本の伝統。キーボタニカルは「ミカンの皮」",
+   "botanicals": "ジュニパー、温州みかん、瀬戸内レモン、ローズマリー、コリアンダー、アンジェリカルート、カルダモン、グレインズオブパラダイス（ほか1種非公開・計9種）"
+  },
+  {
    "name": "Iron Balls Gin",
-   "kana": "アイアンボールズ",
+   "kana": "アイアンボールズ ジン",
    "abv": 40.0,
    "country": "タイ",
    "country_main": "タイ",
@@ -69,7 +69,7 @@
   },
   {
    "name": "AICHI Craft gin kiyosu",
-   "kana": "アイチ キヨス",
+   "kana": "アイチ キヨス ジン",
    "abv": 40.0,
    "country": "日本（愛知）",
    "country_main": "日本",
@@ -78,7 +78,7 @@
   },
   {
    "name": "ISLE OF SKYE TOMMY'S GIN",
-   "kana": "アイル オブ スカイ トミーズ",
+   "kana": "アイル オブ スカイ トミーズ ジン",
    "abv": 45.0,
    "country": "イギリス（スコットランド：スカイ島）",
    "country_main": "イギリス",
@@ -87,7 +87,7 @@
   },
   {
    "name": "ISLE OF HARRIS GIN",
-   "kana": "アイル オブ ハリス",
+   "kana": "アイル オブ ハリス ジン",
    "abv": 45.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -96,7 +96,7 @@
   },
   {
    "name": "Isle of Raasay Gin",
-   "kana": "アイル オブ ラッセイ",
+   "kana": "アイル オブ ラッセイ ジン",
    "abv": 46.0,
    "country": "イギリス（スコットランド：ラッセイ島）",
    "country_main": "イギリス",
@@ -123,7 +123,7 @@
   },
   {
    "name": "AKAYANE CRAFT GIN HEART 秋",
-   "kana": "アカヤネ ハート アキ",
+   "kana": "アカヤネ ハート アキ ジン",
    "abv": 46.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -132,7 +132,7 @@
   },
   {
    "name": "AKAYANE CRAFT GIN HEART 冬",
-   "kana": "アカヤネ ハート フユ",
+   "kana": "アカヤネ ハート フユ ジン",
    "abv": 46.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -141,7 +141,7 @@
   },
   {
    "name": "AKAYANE CRAFT GIN 美風",
-   "kana": "アカヤネ ビフウ",
+   "kana": "アカヤネ ビフウ ジン",
    "abv": 46.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -168,7 +168,7 @@
   },
   {
    "name": "L’AGULHAS GIN",
-   "kana": "アガラス",
+   "kana": "アガラス ジン",
    "abv": 43.0,
    "country": "南アフリカ",
    "country_main": "南アフリカ",
@@ -186,7 +186,7 @@
   },
   {
    "name": "ACQUEVERDI GIN DELLE ALPI",
-   "kana": "アクアヴェルディ デッレ アルピ",
+   "kana": "アクアヴェルディ デッレ アルピ ジン",
    "abv": 43.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -213,7 +213,7 @@
   },
   {
    "name": "Asta Morris The Soul Gin",
-   "kana": "アスタモリス ソウル",
+   "kana": "アスタモリス ソウル ジン",
    "abv": 46.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -222,7 +222,7 @@
   },
   {
    "name": "Astobiza Dry Gin Premium",
-   "kana": "アストビサ プレミアム",
+   "kana": "アストビサ プレミアム ジン",
    "abv": 40.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -231,7 +231,7 @@
   },
   {
    "name": "UPPERCUT DRY GIN",
-   "kana": "アッパーカット",
+   "kana": "アッパーカット ジン",
    "abv": 49.6,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -240,7 +240,7 @@
   },
   {
    "name": "APPLEWOOD GIN",
-   "kana": "アップルウッド",
+   "kana": "アップルウッド ジン",
    "abv": 43.0,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -258,7 +258,7 @@
   },
   {
    "name": "ANOHKA'S TEMPEST DRY GIN",
-   "kana": "アノーカ テンペスト",
+   "kana": "アノーカ テンペスト ジン",
    "abv": 47.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -267,7 +267,7 @@
   },
   {
    "name": "ABOUT GIN",
-   "kana": "アバウト",
+   "kana": "アバウト ジン",
    "abv": 46.0,
    "country": "台湾",
    "country_main": "台湾",
@@ -276,7 +276,7 @@
   },
   {
    "name": "ABER FALLS Copper Distilled Welsh Dry Gin",
-   "kana": "アバーフォールズ",
+   "kana": "アバーフォールズ ジン",
    "abv": 41.3,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -285,7 +285,7 @@
   },
   {
    "name": "AVIATION GIN",
-   "kana": "アビエイション",
+   "kana": "アビエイション ジン",
    "abv": 42.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -294,7 +294,7 @@
   },
   {
    "name": "AMAZONIAN GIN COMPANY",
-   "kana": "アマゾニアン",
+   "kana": "アマゾニアン ジン",
    "abv": 41.0,
    "country": "ペルー",
    "country_main": "ペルー",
@@ -312,7 +312,7 @@
   },
   {
    "name": "AMRTA GIN 秋 柿紅葉",
-   "kana": "アムリタ アキ カキモミジ",
+   "kana": "アムリタ アキ カキモミジ ジン",
    "abv": 40.0,
    "country": "日本（山梨）",
    "country_main": "日本",
@@ -321,7 +321,7 @@
   },
   {
    "name": "AMRTA GIN 夏 蝉時雨",
-   "kana": "アムリタ ナツ セミシグレ",
+   "kana": "アムリタ ナツ セミシグレ ジン",
    "abv": 40.0,
    "country": "日本（山梨）",
    "country_main": "日本",
@@ -330,7 +330,7 @@
   },
   {
    "name": "AMRTA GIN 春 朧月夜",
-   "kana": "アムリタ ハル オボロヅキヨ",
+   "kana": "アムリタ ハル オボロヅキヨ ジン",
    "abv": 40.0,
    "country": "日本（山梨）",
    "country_main": "日本",
@@ -348,7 +348,7 @@
   },
   {
    "name": "AMRUT NILGIRIS INDIAN DRY GIN",
-   "kana": "アムルット ニルギリ",
+   "kana": "アムルット ニルギリ ジン",
    "abv": 42.8,
    "country": "インド",
    "country_main": "インド",
@@ -357,7 +357,7 @@
   },
   {
    "name": "ARIA PORTLAND DRY GIN",
-   "kana": "アリア ポートランド",
+   "kana": "アリア ポートランド ジン",
    "abv": 45.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -366,7 +366,7 @@
   },
   {
    "name": "ALIENOR MOON HARBOUR LONDON DRY GIN",
-   "kana": "アリエノール ムーンハーバー",
+   "kana": "アリエノール ムーンハーバー ジン",
    "abv": 45.8,
    "country": "フランス",
    "country_main": "フランス",
@@ -456,7 +456,7 @@
   },
   {
    "name": "アルケミエ CHOCOLATE GIN 2020",
-   "kana": "アルケミエ チョコレート 2020",
+   "kana": "アルケミエ チョコレート 2020 ジン",
    "abv": 45.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -527,17 +527,8 @@
    "botanicals": "ジュニパー、燻製鹿肉"
   },
   {
-   "name": "ALKKEMIST GIN",
-   "kana": "アルケミスト",
-   "abv": 40.0,
-   "country": "スペイン",
-   "country_main": "スペイン",
-   "note": "スペインの満月の日のみ蒸溜されるプレミアムジン。3回の蒸溜とセージや2種のカモミール、コリアンダー、マスカットなど21種ボタニカルによる香味付け、フルーティ＆フローラル",
-   "botanicals": "ジュニパー、オレンジピール、カモミール（2種）、コリアンダー、セージ、マスカット（ムスカット）、レモンピール、アンジェリカ、カルダモン、フェンネル、ミント、タイム、ベルベナ、ローズペタル、サンファイア、レモンバーム、他（計21種のボタニカル）"
-  },
-  {
    "name": "THE ALCHEMIST'S GIN COPPER HEAD",
-   "kana": "アルケミスト カッパーヘッド",
+   "kana": "アルケミスト カッパーヘッド ジン",
    "abv": 40.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -545,17 +536,17 @@
    "botanicals": "ジュニパー、アンジェリカ、オレンジピール、カルダモン、コリアンダーシード、"
   },
   {
-   "name": "AWA GIN",
-   "kana": "アワ",
-   "abv": 45.0,
-   "country": "日本（徳島）",
-   "country_main": "日本",
-   "note": "徳島の素材を中心に100％国産原料のみを使用して作りあげました。大麦などを使わずに徳島県産山田錦の等級米を全量使用して丁寧に醸したもろみとポットスティル（単式蒸留器）とパテントスティル（連続式蒸留器）の異なるタイプの蒸留器を用いて複雑味のある個性豊かな香味に仕上がりました。その他にすだちと木頭ゆずの果皮（ピール）や阿波晩茶、山椒なども使用。阿波晩茶は、徳島県那賀町と上勝町で作られた乳酸発酵の珍しいお茶で有名です。",
-   "botanicals": "ジュニパー、阿波晩茶、すだち、木頭ゆず、山椒、米"
+   "name": "ALKKEMIST GIN",
+   "kana": "アルケミスト ジン",
+   "abv": 40.0,
+   "country": "スペイン",
+   "country_main": "スペイン",
+   "note": "スペインの満月の日のみ蒸溜されるプレミアムジン。3回の蒸溜とセージや2種のカモミール、コリアンダー、マスカットなど21種ボタニカルによる香味付け、フルーティ＆フローラル",
+   "botanicals": "ジュニパー、オレンジピール、カモミール（2種）、コリアンダー、セージ、マスカット（ムスカット）、レモンピール、アンジェリカ、カルダモン、フェンネル、ミント、タイム、ベルベナ、ローズペタル、サンファイア、レモンバーム、他（計21種のボタニカル）"
   },
   {
    "name": "AWA GIN classic",
-   "kana": "アワ クラシック",
+   "kana": "アワ クラシック ジン",
    "abv": 45.0,
    "country": "日本（徳島）",
    "country_main": "日本",
@@ -563,8 +554,17 @@
    "botanicals": "ジュニパー"
   },
   {
+   "name": "AWA GIN",
+   "kana": "アワ ジン",
+   "abv": 45.0,
+   "country": "日本（徳島）",
+   "country_main": "日本",
+   "note": "徳島の素材を中心に100％国産原料のみを使用して作りあげました。大麦などを使わずに徳島県産山田錦の等級米を全量使用して丁寧に醸したもろみとポットスティル（単式蒸留器）とパテントスティル（連続式蒸留器）の異なるタイプの蒸留器を用いて複雑味のある個性豊かな香味に仕上がりました。その他にすだちと木頭ゆずの果皮（ピール）や阿波晩茶、山椒なども使用。阿波晩茶は、徳島県那賀町と上勝町で作られた乳酸発酵の珍しいお茶で有名です。",
+   "botanicals": "ジュニパー、阿波晩茶、すだち、木頭ゆず、山椒、米"
+  },
+  {
    "name": "UNGAVA CANADIAN PREMIUM GIN",
-   "kana": "アンガヴァ プレミアム",
+   "kana": "アンガヴァ プレミアム ジン",
    "abv": 43.1,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -573,7 +573,7 @@
   },
   {
    "name": "UNCLE VAL'S PEPPERED GIN",
-   "kana": "アンクルヴァルズ ペッパード",
+   "kana": "アンクルヴァルズ ペッパード ジン",
    "abv": 45.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -582,7 +582,7 @@
   },
   {
    "name": "UNCLE VAL'S BOTANICAL GIN",
-   "kana": "アンクルヴァルズ ボタニカル",
+   "kana": "アンクルヴァルズ ボタニカル ジン",
    "abv": 45.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -591,7 +591,7 @@
   },
   {
    "name": "UNCLE VAL'S RESTORATIVE GIN",
-   "kana": "アンクルヴァルズ レストラティブ",
+   "kana": "アンクルヴァルズ レストラティブ ジン",
    "abv": 45.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -600,7 +600,7 @@
   },
   {
    "name": "ANTHER DISTILLED AUSTRALIAN GIN",
-   "kana": "アンサー",
+   "kana": "アンサー ジン",
    "abv": 44.0,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -609,7 +609,7 @@
   },
   {
    "name": "ANTHER CHERRY GIN 2018 HARVEST",
-   "kana": "アンサー チェリー 2018 ハーベスト",
+   "kana": "アンサー チェリー 2018 ハーベスト ジン",
    "abv": 27.0,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -618,7 +618,7 @@
   },
   {
    "name": "ANGE GIARD GIN DOZ",
-   "kana": "アンジュ ジアール ドーズ",
+   "kana": "アンジュ ジアール ドーズ ジン",
    "abv": 42.0,
    "country": "フランス（ノルマンディー）",
    "country_main": "フランス",
@@ -627,7 +627,7 @@
   },
   {
    "name": "Unbirthday Edition仁丹 Original Gin",
-   "kana": "アンバースデイ 仁丹 オリジナル",
+   "kana": "アンバースデイ 仁丹 オリジナル ジン",
    "abv": 40.0,
    "country": "日本（鹿児島：指宿）",
    "country_main": "日本",
@@ -636,7 +636,7 @@
   },
   {
    "name": "Unbirthday 指宿 DRY GIN",
-   "kana": "アンバースデイ 指宿",
+   "kana": "アンバースデイ 指宿 ジン",
    "abv": 40.0,
    "country": "日本（鹿児島：指宿）",
    "country_main": "日本",
@@ -645,7 +645,7 @@
   },
   {
    "name": "AMPERSAND LONDON DRY GIN",
-   "kana": "アンパサンド",
+   "kana": "アンパサンド ジン",
    "abv": 40.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -654,7 +654,7 @@
   },
   {
    "name": "UNRULY GIN",
-   "kana": "アンルリー",
+   "kana": "アンルリー ジン",
    "abv": 43.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -663,7 +663,7 @@
   },
   {
    "name": "Arctic Blue Gin",
-   "kana": "アークティックブルー",
+   "kana": "アークティックブルー ジン",
    "abv": 58.5,
    "country": "フィンランド",
    "country_main": "フィンランド",
@@ -672,7 +672,7 @@
   },
   {
    "name": "Arctic Blue Gin Rose",
-   "kana": "アークティックブルー ローズ",
+   "kana": "アークティックブルー ローズ ジン",
    "abv": 58.5,
    "country": "フィンランド",
    "country_main": "フィンランド",
@@ -681,7 +681,7 @@
   },
   {
    "name": "ARCHIE ROSE Distiller's Strength Gin",
-   "kana": "アーチーローズ ディスティラーズストレングス",
+   "kana": "アーチーローズ ディスティラーズストレングス ジン",
    "abv": 52.4,
    "country": "オーストラリア（シドニー）",
    "country_main": "オーストラリア",
@@ -690,7 +690,7 @@
   },
   {
    "name": "GIN - ARTISANAL",
-   "kana": "アーティザナル",
+   "kana": "アーティザナル ジン",
    "abv": 40.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -699,7 +699,7 @@
   },
   {
    "name": "ARBIKIE KIRSTY'S GIN",
-   "kana": "アービキー カースティ",
+   "kana": "アービキー カースティ ジン",
    "abv": 43.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -726,7 +726,7 @@
   },
   {
    "name": "ISH LONDON DRY GIN",
-   "kana": "イッシュ",
+   "kana": "イッシュ ジン",
    "abv": 41.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -735,7 +735,7 @@
   },
   {
    "name": "IBUKI GIN",
-   "kana": "イブキ",
+   "kana": "イブキ ジン",
    "abv": 47.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -744,7 +744,7 @@
   },
   {
    "name": "IMAGINATION REIKORANGI TRIPLE DISTILLED DRY GIN",
-   "kana": "イマジネーション レイコランギ",
+   "kana": "イマジネーション レイコランギ ジン",
    "abv": 42.0,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -753,7 +753,7 @@
   },
   {
    "name": "IMEA Gin",
-   "kana": "イメア",
+   "kana": "イメア ジン",
    "abv": 47.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -762,7 +762,7 @@
   },
   {
    "name": "THE ILLUSIONIST Dry Gin",
-   "kana": "イリュージョニスト",
+   "kana": "イリュージョニスト ジン",
    "abv": 45.0,
    "country": "ドイツ（ミュンヘン）",
    "country_main": "ドイツ",
@@ -780,7 +780,7 @@
   },
   {
    "name": "INK GIN",
-   "kana": "インク",
+   "kana": "インク ジン",
    "abv": 43.0,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -789,7 +789,7 @@
   },
   {
    "name": "INDIAN SUMMER GIN",
-   "kana": "インディアン サマー",
+   "kana": "インディアン サマー ジン",
    "abv": 46.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -798,7 +798,7 @@
   },
   {
    "name": "INDLOVU GIN",
-   "kana": "インドラブ",
+   "kana": "インドラブ ジン",
    "abv": 43.0,
    "country": "南アフリカ",
    "country_main": "南アフリカ",
@@ -816,7 +816,7 @@
   },
   {
    "name": "INFINITY 8 GIN BLACK EDITION",
-   "kana": "インフィニティ エイト ブラック エディション",
+   "kana": "インフィニティ エイト ブラック エディション ジン",
    "abv": 41.0,
    "country": "イタリア（ヴェネト）",
    "country_main": "イタリア",
@@ -825,7 +825,7 @@
   },
   {
    "name": "Gin Ivana Ciabatti Elisir Ginepro",
-   "kana": "イヴァナ チャバッティ エリシル ジネプロ",
+   "kana": "イヴァナ チャバッティ エリシル ジネプロ ジン",
    "abv": 42.5,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -843,7 +843,7 @@
   },
   {
    "name": "EAST LONDON DRY GIN",
-   "kana": "イーストロンドン",
+   "kana": "イーストロンドン ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -897,7 +897,7 @@
   },
   {
    "name": "WILLIAMS ELEGANT 48 GIN",
-   "kana": "ウィリアムズ エレガント 48",
+   "kana": "ウィリアムズ エレガント 48 ジン",
    "abv": 48.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -906,7 +906,7 @@
   },
   {
    "name": "WELLNESS GIN",
-   "kana": "ウェルネス",
+   "kana": "ウェルネス ジン",
    "abv": 45.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -924,7 +924,7 @@
   },
   {
    "name": "CRAFT GIN UTAGAWA",
-   "kana": "ウタガワ",
+   "kana": "ウタガワ ジン",
    "abv": 40.0,
    "country": "日本（群馬）",
    "country_main": "日本",
@@ -933,7 +933,7 @@
   },
   {
    "name": "CRAFT GIN UTAGAWA 柚子",
-   "kana": "ウタガワ 柚子",
+   "kana": "ウタガワ 柚子 ジン",
    "abv": 40.0,
    "country": "日本（群馬）",
    "country_main": "日本",
@@ -942,7 +942,7 @@
   },
   {
    "name": "CRAFT GIN UTAGAWA 生姜",
-   "kana": "ウタガワ 生姜",
+   "kana": "ウタガワ 生姜 ジン",
    "abv": 40.0,
    "country": "日本（群馬）",
    "country_main": "日本",
@@ -951,7 +951,7 @@
   },
   {
    "name": "WOODLAND SAUERLAND DRY GIN",
-   "kana": "ウッドランド ザウアーラント",
+   "kana": "ウッドランド ザウアーラント ジン",
    "abv": 57.2,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -960,7 +960,7 @@
   },
   {
    "name": "WOODLAND SAUERLAND DRY GIN",
-   "kana": "ウッドランド ザウアーラント",
+   "kana": "ウッドランド ザウアーラント ジン",
    "abv": 45.5,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -969,7 +969,7 @@
   },
   {
    "name": "浦和の涙 No.3 URAWA GIN",
-   "kana": "ウラワノナミダ No.3 ウラワ",
+   "kana": "ウラワノナミダ No.3 ウラワ ジン",
    "abv": 47.0,
    "country": "日本（埼玉）",
    "country_main": "日本",
@@ -977,17 +977,8 @@
    "botanicals": "ジュニパー、シナモン、ジンジャー、ビーツ、柚子ピール、河越茶、山椒"
   },
   {
-   "name": "WOLFREST Italian Dry Gin",
-   "kana": "ウルフレスト",
-   "abv": 43.0,
-   "country": "イタリア",
-   "country_main": "イタリア",
-   "note": "ウルフレストジンは、イタリアからのみ栽培され、選択された7つの植物から作られています。リグーリア州のウンブリアのジュニパーとペルナンブッコのスイートオレンジから始まります。他の5つの植物は、ジンが蒸留されているピエモンテ州のものです。森の中で野生に育てられた長老の花びらが集められます。その後、残りの成分はランゲからローストヘーゼルナッツとベイリーフ、タイム、野生のローズマリーはすべてモンテルポアルベースに集められています。- エーテルワイン",
-   "botanicals": "ジュニパー、スイートオレンジ、エルダーフラワー、ベイリーフ、タイム、ワイルドローズマリー、ヘーゼルナッツ"
-  },
-  {
    "name": "WOLFREST ALBA Distilled Dry Gin",
-   "kana": "ウルフレスト アルバ",
+   "kana": "ウルフレスト アルバ ジン",
    "abv": 45.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -995,8 +986,17 @@
    "botanicals": "アルバ産白トリュフ、ピエモンテ産野生ジュニパー、ランゲ産ローストヘーゼルナッツ"
   },
   {
+   "name": "WOLFREST Italian Dry Gin",
+   "kana": "ウルフレスト ジン",
+   "abv": 43.0,
+   "country": "イタリア",
+   "country_main": "イタリア",
+   "note": "ウルフレストジンは、イタリアからのみ栽培され、選択された7つの植物から作られています。リグーリア州のウンブリアのジュニパーとペルナンブッコのスイートオレンジから始まります。他の5つの植物は、ジンが蒸留されているピエモンテ州のものです。森の中で野生に育てられた長老の花びらが集められます。その後、残りの成分はランゲからローストヘーゼルナッツとベイリーフ、タイム、野生のローズマリーはすべてモンテルポアルベースに集められています。- エーテルワイン",
+   "botanicals": "ジュニパー、スイートオレンジ、エルダーフラワー、ベイリーフ、タイム、ワイルドローズマリー、ヘーゼルナッツ"
+  },
+  {
    "name": "EIGHT LANDS Organic Speyside Gin",
-   "kana": "エイトランズ オーガニック",
+   "kana": "エイトランズ オーガニック ジン",
    "abv": 46.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -1014,7 +1014,7 @@
   },
   {
    "name": "Eyguebell GIN",
-   "kana": "エギュベル",
+   "kana": "エギュベル ジン",
    "abv": 40.0,
    "country": "フランス（プロヴァンス地方）",
    "country_main": "フランス",
@@ -1023,7 +1023,7 @@
   },
   {
    "name": "Echlinville Irish Pot Still Gin",
-   "kana": "エクリンヴィル ポットスティル",
+   "kana": "エクリンヴィル ポットスティル ジン",
    "abv": 46.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -1032,7 +1032,7 @@
   },
   {
    "name": "THE EXILES IRISH GIN",
-   "kana": "エグザイルズ",
+   "kana": "エグザイルズ ジン",
    "abv": 41.3,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -1050,7 +1050,7 @@
   },
   {
    "name": "ETHICAL GIN LITTLE JOY SPIRITS",
-   "kana": "エシカル リトルジョイ スピリッツ",
+   "kana": "エシカル リトルジョイ スピリッツ ジン",
    "abv": 45.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1059,7 +1059,7 @@
   },
   {
    "name": "ETHICAL GIN LOSS IS MORE",
-   "kana": "エシカル ロスイズモア",
+   "kana": "エシカル ロスイズモア ジン",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1068,7 +1068,7 @@
   },
   {
    "name": "EDGERTON ORIGINAL PINK GIN",
-   "kana": "エジャートン オリジナル ピンク",
+   "kana": "エジャートン オリジナル ピンク ジン",
    "abv": 43.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -1076,17 +1076,8 @@
    "botanicals": "ジュニパー、アンジェリカ、グレインズオブパラダイス、コリアンダー、スイートオレンジピール、ダミアナ、柑橘類"
   },
   {
-   "name": "EDINBURGH GIN",
-   "kana": "エディンバラ",
-   "abv": 43.0,
-   "country": "イギリス（スコットランド）",
-   "country_main": "イギリス",
-   "note": "魅惑的な空の下、新鮮な花と雨に濡れた石畳のような味わい。エディンバラ ジン クラシックは伝説の街を蒸留したもので、一口ごとにエディンバラの雰囲気が漂います。緑豊かな公園に生える松の芽やラベンダーの芳醇な香り、街のゴシックな雰囲気を反映する桑の実の黒み、かつては街の賑やかな港を通じて温暖な気候から輸出されていた柑橘類の泡立ち。トニックとオレンジのひねり、そしてたっぷりの氷と一緒にお召し上がりください。",
-   "botanicals": "ジュニパー、オレンジピール、マルベリー、ラベンダー、レモングラス、松の芽"
-  },
-  {
    "name": "EDINBURGH CANNONBALL Navy Strength Gin",
-   "kana": "エディンバラ キャノンボール ネイビーストレングス",
+   "kana": "エディンバラ キャノンボール ネイビーストレングス ジン",
    "abv": 57.2,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -1095,7 +1086,7 @@
   },
   {
    "name": "EDINBURGH Seaside Gin",
-   "kana": "エディンバラ シーサイド",
+   "kana": "エディンバラ シーサイド ジン",
    "abv": 43.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -1103,17 +1094,17 @@
    "botanicals": "ジュニパー、カキドオシ、トモシリソウ、ブラダーラック"
   },
   {
-   "name": "EDEN.MILL ST ANDREWS GIN",
-   "kana": "エデンミル セントアンドリュース",
-   "abv": 42.0,
+   "name": "EDINBURGH GIN",
+   "kana": "エディンバラ ジン",
+   "abv": 43.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
-   "note": "ベーススピリッツ自体は蒸留してないとのこと。",
-   "botanicals": "ジュニパー、シーバックソーン、レモンピール、レモンバーム、アンジェリカルート"
+   "note": "魅惑的な空の下、新鮮な花と雨に濡れた石畳のような味わい。エディンバラ ジン クラシックは伝説の街を蒸留したもので、一口ごとにエディンバラの雰囲気が漂います。緑豊かな公園に生える松の芽やラベンダーの芳醇な香り、街のゴシックな雰囲気を反映する桑の実の黒み、かつては街の賑やかな港を通じて温暖な気候から輸出されていた柑橘類の泡立ち。トニックとオレンジのひねり、そしてたっぷりの氷と一緒にお召し上がりください。",
+   "botanicals": "ジュニパー、オレンジピール、マルベリー、ラベンダー、レモングラス、松の芽"
   },
   {
    "name": "EDEB.MILL ST Andrews Golf Gin",
-   "kana": "エデンミル セントアンドリュース ゴルフ",
+   "kana": "エデンミル セントアンドリュース ゴルフ ジン",
    "abv": 42.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -1122,7 +1113,7 @@
   },
   {
    "name": "EDEN.MILL ST ANDREWS Golf GIN",
-   "kana": "エデンミル セントアンドリュース ゴルフ",
+   "kana": "エデンミル セントアンドリュース ゴルフ ジン",
    "abv": 42.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -1130,8 +1121,17 @@
    "botanicals": "ジュニパー、コリアンダー、ハリエニシダ（ゴーズ）、ヘザー、ラベンダー、海藻（昆布）、パイン"
   },
   {
+   "name": "EDEN.MILL ST ANDREWS GIN",
+   "kana": "エデンミル セントアンドリュース ジン",
+   "abv": 42.0,
+   "country": "イギリス（スコットランド）",
+   "country_main": "イギリス",
+   "note": "ベーススピリッツ自体は蒸留してないとのこと。",
+   "botanicals": "ジュニパー、シーバックソーン、レモンピール、レモンバーム、アンジェリカルート"
+  },
+  {
    "name": "EDEN.MILL ST Andrews Hop Gin",
-   "kana": "エデンミル セントアンドリュース ホップ",
+   "kana": "エデンミル セントアンドリュース ホップ ジン",
    "abv": 46.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -1140,7 +1140,7 @@
   },
   {
    "name": "EDEB.MILL ST Andrews Scotch Rugby Milk histle Gin",
-   "kana": "エデンミル セントアンドリュース ラグビー ミルクシスル",
+   "kana": "エデンミル セントアンドリュース ラグビー ミルクシスル ジン",
    "abv": 42.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -1149,7 +1149,7 @@
   },
   {
    "name": "M* Non-Alcoholic Gin Saturday 3pm",
-   "kana": "エムスター サタデー3pm",
+   "kana": "エムスター サタデー3pm ジン",
    "abv": 0.0,
    "country": "日本（和歌山）",
    "country_main": "日本",
@@ -1167,7 +1167,7 @@
   },
   {
    "name": "ELEPHANT GIN",
-   "kana": "エレファント",
+   "kana": "エレファント ジン",
    "abv": 45.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -1185,7 +1185,7 @@
   },
   {
    "name": "EMPIRE GIN",
-   "kana": "エンパイア",
+   "kana": "エンパイア ジン",
    "abv": 40.0,
    "country": "南アフリカ",
    "country_main": "南アフリカ",
@@ -1194,7 +1194,7 @@
   },
   {
    "name": "EMPIRE DROUGHT GIN",
-   "kana": "エンパイア ドラウト",
+   "kana": "エンパイア ドラウト ジン",
    "abv": 80.0,
    "country": "南アフリカ",
    "country_main": "南アフリカ",
@@ -1202,22 +1202,22 @@
    "botanicals": "ジュニパー、アンジェリカ、キュウリ、グレープフルーツ、レモン、コブミカンの葉（既知のボタニカル）"
   },
   {
-   "name": "EMPRESS 1908 GIN",
-   "kana": "エンプレス 1908",
-   "abv": 42.5,
-   "country": "カナダ",
-   "country_main": "カナダ",
-   "note": "特徴的なボタニカルにバタフライピーを使った別名:マジックジンとも呼ばれる、レモン果汁やトニックなどの酸味に反応して深い青色から淡いピンク色に変化するジン。",
-   "botanicals": "ジュニパー、グレープフルーツピール、コリアンダー、エンプレス・ブラックティーブレンド、ローズペタル、シナモン、ジンジャー、バタフライピー"
-  },
-  {
    "name": "EMPRESS 1908 ELDERFLOWER ROSE GIN",
-   "kana": "エンプレス 1908 エルダーフラワー ローズ",
+   "kana": "エンプレス 1908 エルダーフラワー ローズ ジン",
    "abv": 42.5,
    "country": "カナダ",
    "country_main": "カナダ",
    "note": "当社の有名なエンプレス 1908 インディゴ ジンに続き、エンプレス 1908 のエルダーフラワー ローズは、当社の故郷であるブリティッシュ コロンビア州ビクトリアに敬意を表しています。愛情を込めて「庭園の街」と呼ばれるビクトリアの花は、ほぼ 1 年中咲き誇っており、当社の蒸留所に多くのインスピレーションを与えています。エンプレス エルダーフラワー ローズ ジンは銅製のポットスチルで手作りされており、9 種類のユニークな高級植物の鮮やかな花のブーケが特徴です。驚くほど控えめな花の味わいに柑橘類とスパイスの香り、ほのかな甘さが加わったエンプレス エルダーフラワー ローズ ジンは、次のカクテル作りに故郷の味をもたらします。鮮やかな赤いバラの花びらと黒いニンジンが、エンプレス エルダーフラワー ローズ ジンに宝石のような色合いを与えています",
    "botanicals": "ジュニパー、エルダーフラワー、オレンジピール、ブラックキャロット、ラベンダー、レッドローズフラワー"
+  },
+  {
+   "name": "EMPRESS 1908 GIN",
+   "kana": "エンプレス 1908 ジン",
+   "abv": 42.5,
+   "country": "カナダ",
+   "country_main": "カナダ",
+   "note": "特徴的なボタニカルにバタフライピーを使った別名:マジックジンとも呼ばれる、レモン果汁やトニックなどの酸味に反応して深い青色から淡いピンク色に変化するジン。",
+   "botanicals": "ジュニパー、グレープフルーツピール、コリアンダー、エンプレス・ブラックティーブレンド、ローズペタル、シナモン、ジンジャー、バタフライピー"
   },
   {
    "name": "OSAKA GIN ORIJIN",
@@ -1239,7 +1239,7 @@
   },
   {
    "name": "OXLEY GIN",
-   "kana": "オクスレイ",
+   "kana": "オクスレイ ジン",
    "abv": 47.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -1248,7 +1248,7 @@
   },
   {
    "name": "OSUZU GIN",
-   "kana": "オスズ",
+   "kana": "オスズ ジン",
    "abv": 45.0,
    "country": "日本（宮崎）",
    "country_main": "日本",
@@ -1257,7 +1257,7 @@
   },
   {
    "name": "OSUZU GIN DistiRally NEXT 2022",
-   "kana": "オスズ ディスティラリー ネクスト 2022",
+   "kana": "オスズ ディスティラリー ネクスト 2022 ジン",
    "abv": 45.0,
    "country": "日本（宮崎）",
    "country_main": "日本",
@@ -1293,7 +1293,7 @@
   },
   {
    "name": "OFF TRAIL – Azeotrope #1 【New Pot】Beer Distilled Gin",
-   "kana": "オフトレイル アゼオトロープ #1 ニューポット ビア",
+   "kana": "オフトレイル アゼオトロープ #1 ニューポット ビア ジン",
    "abv": 47.0,
    "country": "日本（山梨）",
    "country_main": "日本",
@@ -1302,7 +1302,7 @@
   },
   {
    "name": "OFF TRAIL – Azeotrope #2 【New Pot Blended】Malt Gin",
-   "kana": "オフトレイル アゼオトロープ #2 ニューポットブレンデッド モルト",
+   "kana": "オフトレイル アゼオトロープ #2 ニューポットブレンデッド モルト ジン",
    "abv": 47.0,
    "country": "日本（山梨）",
    "country_main": "日本",
@@ -1320,7 +1320,7 @@
   },
   {
    "name": "ohoro GIN Limited Edition LAVENDER",
-   "kana": "オホロ リミテッドエディション ラベンダー",
+   "kana": "オホロ リミテッドエディション ラベンダー ジン",
    "abv": 47.0,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -1329,7 +1329,7 @@
   },
   {
    "name": "OMABRAK Single Malt Gin",
-   "kana": "オマブラック シングルモルト",
+   "kana": "オマブラック シングルモルト ジン",
    "abv": 43.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -1338,7 +1338,7 @@
   },
   {
    "name": "OMOYA GIN",
-   "kana": "オモヤ",
+   "kana": "オモヤ ジン",
    "abv": 47.0,
    "country": "日本（長崎）",
    "country_main": "日本",
@@ -1347,7 +1347,7 @@
   },
   {
    "name": "AURANTIA HANDCRAFTED GIN",
-   "kana": "オランチア",
+   "kana": "オランチア ジン",
    "abv": 44.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -1356,7 +1356,7 @@
   },
   {
    "name": "ORIENT GIN",
-   "kana": "オリエント",
+   "kana": "オリエント ジン",
    "abv": 43.0,
    "country": "南アフリカ",
    "country_main": "南アフリカ",
@@ -1383,7 +1383,7 @@
   },
   {
    "name": "O'LIVE GIN",
-   "kana": "オリーブ",
+   "kana": "オリーブ ジン",
    "abv": 40.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -1392,7 +1392,7 @@
   },
   {
    "name": "ON SPRING Special Craft Gin",
-   "kana": "オンスプリング スペシャル",
+   "kana": "オンスプリング スペシャル ジン",
    "abv": 45.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -1401,7 +1401,7 @@
   },
   {
    "name": "ORGANIC BLACK CHAI GIN",
-   "kana": "オーガニック ブラックチャイ",
+   "kana": "オーガニック ブラックチャイ ジン",
    "abv": 43.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -1410,7 +1410,7 @@
   },
   {
    "name": "AUDEMUS UMAMI GIN",
-   "kana": "オーデマス ウマミ",
+   "kana": "オーデマス ウマミ ジン",
    "abv": 42.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -1419,7 +1419,7 @@
   },
   {
    "name": "AUDEMUS PINK PEPPER GIN",
-   "kana": "オーデマス ピンクペッパー",
+   "kana": "オーデマス ピンクペッパー ジン",
    "abv": 44.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -1428,7 +1428,7 @@
   },
   {
    "name": "O de V Super Premium 100% ITALIAN GIN Black",
-   "kana": "オードヴィー スーパープレミアム ブラック",
+   "kana": "オードヴィー スーパープレミアム ブラック ジン",
    "abv": 47.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -1437,7 +1437,7 @@
   },
   {
    "name": "O de V Super Premium 100% ITALIAN GIN White",
-   "kana": "オードヴィー スーパープレミアム ホワイト",
+   "kana": "オードヴィー スーパープレミアム ホワイト ジン",
    "abv": 47.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -1446,7 +1446,7 @@
   },
   {
    "name": "Old english GIN",
-   "kana": "オールドイングリッシュ",
+   "kana": "オールドイングリッシュ ジン",
    "abv": 44.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -1455,7 +1455,7 @@
   },
   {
    "name": "OLD CURIOSITY LAVENDER & ECHINACEA GIN",
-   "kana": "オールドキュリオシティ ラベンダー&エキナセア",
+   "kana": "オールドキュリオシティ ラベンダー&エキナセア ジン",
    "abv": 39.0,
    "country": "イギリス（スコットランド：エディンバラ）",
    "country_main": "イギリス",
@@ -1464,7 +1464,7 @@
   },
   {
    "name": "OLD CURIOSITY LAVENDER & ECHINACEA GIN",
-   "kana": "オールドキュリオシティ ラベンダー&エキナセア",
+   "kana": "オールドキュリオシティ ラベンダー&エキナセア ジン",
    "abv": 39.0,
    "country": "イギリス（スコットランド：エディンバラ）",
    "country_main": "イギリス",
@@ -1509,7 +1509,7 @@
   },
   {
    "name": "KAGUA GIN",
-   "kana": "カグア",
+   "kana": "カグア ジン",
    "abv": 45.0,
    "country": "日本（福岡）",
    "country_main": "日本",
@@ -1518,7 +1518,7 @@
   },
   {
    "name": "KASTORI GTEIST GIN",
-   "kana": "カストリ ガイスト",
+   "kana": "カストリ ガイスト ジン",
    "abv": 40.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1536,7 +1536,7 @@
   },
   {
    "name": "CANNABIS SATIVA GIN",
-   "kana": "カナビス サティバ",
+   "kana": "カナビス サティバ ジン",
    "abv": 40.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -1545,7 +1545,7 @@
   },
   {
    "name": "CANNING'S Gin",
-   "kana": "カニングス",
+   "kana": "カニングス ジン",
    "abv": 40.0,
    "country": "ポルトガル",
    "country_main": "ポルトガル",
@@ -1572,7 +1572,7 @@
   },
   {
    "name": "KAVALAN GIN",
-   "kana": "カバラン",
+   "kana": "カバラン ジン",
    "abv": 40.0,
    "country": "台湾",
    "country_main": "台湾",
@@ -1581,7 +1581,7 @@
   },
   {
    "name": "KAPRIOL DRY GIN",
-   "kana": "カプリオール",
+   "kana": "カプリオール ジン",
    "abv": 41.7,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -1590,7 +1590,7 @@
   },
   {
    "name": "CAORUNN Small Batch Scottish GIN",
-   "kana": "カルーン スモールバッチ",
+   "kana": "カルーン スモールバッチ ジン",
    "abv": 41.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -1598,17 +1598,8 @@
    "botanicals": "ジュニパー、ローワンベリー、ヘザー、クールブラッシュアップル、タンポポ、ボグマートル、レモンピール、コリアンダーシード、カッシアバーク、オレンジピール、アンジェリカルート"
   },
   {
-   "name": "KIRKJUVAGR ORKNEY GIN",
-   "kana": "カーキュヴァー",
-   "abv": 43.0,
-   "country": "イギリス（スコットランド：オークニー）",
-   "country_main": "イギリス",
-   "note": "オークニー島で製造されるクラフトジン。原料は全て地元産。カーキュバーとは古ノルド語で教会のある湾の意。",
-   "botanicals": "ジュニパー、アンジェリカ、ボリジ、ハマナス、バーネットローズ、ベア大麦"
-  },
-  {
    "name": "KIRKJUVAGR ARKH-ANGELL ORKNEY GIN",
-   "kana": "カーキュヴァー アークエンジェル",
+   "kana": "カーキュヴァー アークエンジェル ジン",
    "abv": 57.0,
    "country": "イギリス（スコットランド：オークニー）",
    "country_main": "イギリス",
@@ -1616,8 +1607,17 @@
    "botanicals": "ジュニパー、アンジェリカ、ハマナス（ラマナスローズ）、バーネットローズ、ボリジ、ベア大麦"
   },
   {
+   "name": "KIRKJUVAGR ORKNEY GIN",
+   "kana": "カーキュヴァー ジン",
+   "abv": 43.0,
+   "country": "イギリス（スコットランド：オークニー）",
+   "country_main": "イギリス",
+   "note": "オークニー島で製造されるクラフトジン。原料は全て地元産。カーキュバーとは古ノルド語で教会のある湾の意。",
+   "botanicals": "ジュニパー、アンジェリカ、ボリジ、ハマナス、バーネットローズ、ベア大麦"
+  },
+  {
    "name": "GABRIEL BOUDIER SAFFRON GIN",
-   "kana": "ガブリエル ブーディエ サフラン",
+   "kana": "ガブリエル ブーディエ サフラン ジン",
    "abv": 40.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -1626,7 +1626,7 @@
   },
   {
    "name": "GARAPPA ~#1 CRAFT GIN~ 河童",
-   "kana": "ガラッパ 河童",
+   "kana": "ガラッパ 河童 ジン",
    "abv": 47.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -1635,7 +1635,7 @@
   },
   {
    "name": "GARDEN SHED BRAMBLE PEACH GIN",
-   "kana": "ガーデンシェッド ブランブルピーチ",
+   "kana": "ガーデンシェッド ブランブルピーチ ジン",
    "abv": 40.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -1644,7 +1644,7 @@
   },
   {
    "name": "GARNISH ISLAMD GIN",
-   "kana": "ガーニッシュアイランド",
+   "kana": "ガーニッシュアイランド ジン",
    "abv": 46.0,
    "country": "アイルランド（ガーニッシュ島）",
    "country_main": "アイルランド",
@@ -1653,7 +1653,7 @@
   },
   {
    "name": "GARNISH ISLAMD PINK GIN",
-   "kana": "ガーニッシュアイランド ピンク",
+   "kana": "ガーニッシュアイランド ピンク ジン",
    "abv": 46.0,
    "country": "アイルランド（ガーニッシュ島）",
    "country_main": "アイルランド",
@@ -1671,7 +1671,7 @@
   },
   {
    "name": "KIS O GIN",
-   "kana": "キス オー",
+   "kana": "キス オー ジン",
    "abv": 43.5,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -1680,7 +1680,7 @@
   },
   {
    "name": "KIS WILD GIN",
-   "kana": "キス ワイルド",
+   "kana": "キス ワイルド ジン",
    "abv": 43.0,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -1698,7 +1698,7 @@
   },
   {
    "name": "GIN KHIAO WAN",
-   "kana": "キャオワーン",
+   "kana": "キャオワーン ジン",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1707,7 +1707,7 @@
   },
   {
    "name": "CAMP Gin",
-   "kana": "キャンプ",
+   "kana": "キャンプ ジン",
    "abv": 44.0,
    "country": "日本（愛媛）",
    "country_main": "日本",
@@ -1716,7 +1716,7 @@
   },
   {
    "name": "KÜBLER HANDCRAFTED LUXURY SWISS DRY GIN",
-   "kana": "キュブラー",
+   "kana": "キュブラー ジン",
    "abv": 46.0,
    "country": "スイス",
    "country_main": "スイス",
@@ -1725,7 +1725,7 @@
   },
   {
    "name": "CURIOUS GIN",
-   "kana": "キュリオス",
+   "kana": "キュリオス ジン",
    "abv": 42.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -1733,17 +1733,8 @@
    "botanicals": "ジュニパー、オレンジ、キュウリ、スパニッシュアーモンド、カッシア、シナモン、コリアンダー、アニス"
   },
   {
-   "name": "KYRO Gin",
-   "kana": "キュロ",
-   "abv": 46.3,
-   "country": "フィンランド",
-   "country_main": "フィンランド",
-   "note": "シモツケソウ、白樺の葉、シーバックソーン、クランベリーなど地元フィンランド産のボタニカルを使用。ハーブの甘く芳醇な香り、舌にライの軽い刺激が残る後味。旧ナプエ。",
-   "botanicals": "ジュニパー、レモンピール、アンジェリカ、カルダモン、メドウスイート、クランベリー、白樺の葉、シーバックソーン"
-  },
-  {
    "name": "KYRO × KINOBI Gin",
-   "kana": "キュロ × 季の美",
+   "kana": "キュロ × 季の美 ジン",
    "abv": 43.7,
    "country": "フィンランド",
    "country_main": "フィンランド",
@@ -1760,8 +1751,17 @@
    "botanicals": "ライ麦、ミドウスイート、クランベリー、オレンジ・ピール、ブラック・ペッパー、ディル、アンジェリカ、シナモン・バーク、レモン・ピール、コリアンダー、カルダモン、リコリス・ルート、ハイビスカス、オリス・ルート、ジュニパーベリー、エルダーフラワー、キャラウェイ"
   },
   {
+   "name": "KYRO Gin",
+   "kana": "キュロ ジン",
+   "abv": 46.3,
+   "country": "フィンランド",
+   "country_main": "フィンランド",
+   "note": "シモツケソウ、白樺の葉、シーバックソーン、クランベリーなど地元フィンランド産のボタニカルを使用。ハーブの甘く芳醇な香り、舌にライの軽い刺激が残る後味。旧ナプエ。",
+   "botanicals": "ジュニパー、レモンピール、アンジェリカ、カルダモン、メドウスイート、クランベリー、白樺の葉、シーバックソーン"
+  },
+  {
    "name": "KYRO Dark Gin",
-   "kana": "キュロ ダーク",
+   "kana": "キュロ ダーク ジン",
    "abv": 42.6,
    "country": "フィンランド",
    "country_main": "フィンランド",
@@ -1770,7 +1770,7 @@
   },
   {
    "name": "KYRO Pink Gin",
-   "kana": "キュロ ピンク",
+   "kana": "キュロ ピンク ジン",
    "abv": 38.2,
    "country": "フィンランド",
    "country_main": "フィンランド",
@@ -1779,7 +1779,7 @@
   },
   {
    "name": "CUBICAL PREMIUM LONDON DRY GIN",
-   "kana": "キュービカル プレミアム",
+   "kana": "キュービカル プレミアム ジン",
    "abv": 40.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -1788,7 +1788,7 @@
   },
   {
    "name": "CUBICAL MANGO GIN",
-   "kana": "キュービカル マンゴー",
+   "kana": "キュービカル マンゴー ジン",
    "abv": 37.5,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -1806,7 +1806,7 @@
   },
   {
    "name": "KING OF SOHO LONDON DRY GIN",
-   "kana": "キングオブソーホー",
+   "kana": "キングオブソーホー ジン",
    "abv": 42.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -1815,7 +1815,7 @@
   },
   {
    "name": "KING OF SOHO Variorum Gin",
-   "kana": "キングオブソーホー ヴァリオラム",
+   "kana": "キングオブソーホー ヴァリオラム ジン",
    "abv": 37.5,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -1824,7 +1824,7 @@
   },
   {
    "name": "Kingsbury Victorian Vat Gin Single Cask",
-   "kana": "キングスバリー ヴィクトリアンヴァット シングルカスク",
+   "kana": "キングスバリー ヴィクトリアンヴァット シングルカスク ジン",
    "abv": 59.3,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -1833,7 +1833,7 @@
   },
   {
    "name": "Kingsbury Victorian Vat Gin Double Juniper",
-   "kana": "キングスバリー ヴィクトリアンヴァット ダブルジュニパー",
+   "kana": "キングスバリー ヴィクトリアンヴァット ダブルジュニパー ジン",
    "abv": 47.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -1842,7 +1842,7 @@
   },
   {
    "name": "Kingsbury Victorian Vat Gin BESPOKE BATCH No.159",
-   "kana": "キングスバリー ヴィクトリアンヴァット ビスポークバッチ No.159",
+   "kana": "キングスバリー ヴィクトリアンヴァット ビスポークバッチ No.159 ジン",
    "abv": 52.5,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -1851,7 +1851,7 @@
   },
   {
    "name": "GION GIN",
-   "kana": "ギオン",
+   "kana": "ギオン ジン",
    "abv": 48.0,
    "country": "日本（愛媛）",
    "country_main": "日本",
@@ -1869,7 +1869,7 @@
   },
   {
    "name": "GILLIAM’S GIN",
-   "kana": "ギリアムス",
+   "kana": "ギリアムス ジン",
    "abv": 41.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -1887,7 +1887,7 @@
   },
   {
    "name": "GILT Single malt GIN",
-   "kana": "ギルト シングルモルト",
+   "kana": "ギルト シングルモルト ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -1896,7 +1896,7 @@
   },
   {
    "name": "Queensborough Gin",
-   "kana": "クイーンズボロー",
+   "kana": "クイーンズボロー ジン",
    "abv": 43.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -1914,7 +1914,7 @@
   },
   {
    "name": "Question GIN",
-   "kana": "クエスチョン",
+   "kana": "クエスチョン ジン",
    "abv": 45.0,
    "country": "日本（福岡）",
    "country_main": "日本",
@@ -1932,7 +1932,7 @@
   },
   {
    "name": "KNUT HANSEN Dry Gin",
-   "kana": "クヌートハンセン",
+   "kana": "クヌートハンセン ジン",
    "abv": 42.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -1950,7 +1950,7 @@
   },
   {
    "name": "KWV CRUXLAND GIN",
-   "kana": "クラックスランド",
+   "kana": "クラックスランド ジン",
    "abv": 43.0,
    "country": "南アフリカ",
    "country_main": "南アフリカ",
@@ -1959,7 +1959,7 @@
   },
   {
    "name": "KWV CRUXLAND GIN Infused With BLACK WINTER TRUFFLES",
-   "kana": "クラックスランド ブラックウィンタートリュフ",
+   "kana": "クラックスランド ブラックウィンタートリュフ ジン",
    "abv": 43.0,
    "country": "南アフリカ",
    "country_main": "南アフリカ",
@@ -1967,17 +1967,8 @@
    "botanicals": "ジュニパー、コリアンダー、アニス、カルダモン、ルイボス、ハニーブッシュ、ブラックウィンタートリュフ"
   },
   {
-   "name": "CRAFTER'S London Dry Gin",
-   "kana": "クラフターズ",
-   "abv": 43.0,
-   "country": "エストニア",
-   "country_main": "エストニア",
-   "note": "バルト海のほとりの小さな国、エストニアのジン。新鮮な空気、森林、大地、海の恵を受け育まれたクブヤ・ハーブ園の厳選された穀物とハーブを使用",
-   "botanicals": "ジュニパー、ベロニカ、フェンネルシード、ライムピール、グレープフルーツピール、クミン、アニス、ヤロウ、オレガノ、ミント"
-  },
-  {
    "name": "CRAFTER'S AROMATIC FLOWER GIN",
-   "kana": "クラフターズ アロマティックフラワー",
+   "kana": "クラフターズ アロマティックフラワー ジン",
    "abv": 44.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -1985,8 +1976,17 @@
    "botanicals": "ジュニパー、オレンジ、エルダーフラワー、カモミール、コリアンダー、フェンネル、メドウスウィート、ラベンダー、レモン、ローズ、ローズヒップ、柚子"
   },
   {
+   "name": "CRAFTER'S London Dry Gin",
+   "kana": "クラフターズ ジン",
+   "abv": 43.0,
+   "country": "エストニア",
+   "country_main": "エストニア",
+   "note": "バルト海のほとりの小さな国、エストニアのジン。新鮮な空気、森林、大地、海の恵を受け育まれたクブヤ・ハーブ園の厳選された穀物とハーブを使用",
+   "botanicals": "ジュニパー、ベロニカ、フェンネルシード、ライムピール、グレープフルーツピール、クミン、アニス、ヤロウ、オレガノ、ミント"
+  },
+  {
    "name": "CRAFTERS WILD FOREST GIN",
-   "kana": "クラフターズ ワイルドフォレスト",
+   "kana": "クラフターズ ワイルドフォレスト ジン",
    "abv": 47.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -1995,7 +1995,7 @@
   },
   {
    "name": "Crazy Monday GIN",
-   "kana": "クレイジーマンデー",
+   "kana": "クレイジーマンデー ジン",
    "abv": 48.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -2022,7 +2022,7 @@
   },
   {
    "name": "Clover Gin",
-   "kana": "クローバー",
+   "kana": "クローバー ジン",
    "abv": 40.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -2031,7 +2031,7 @@
   },
   {
    "name": "Clover Gin passion",
-   "kana": "クローバー パッション",
+   "kana": "クローバー パッション ジン",
    "abv": 40.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -2040,7 +2040,7 @@
   },
   {
    "name": "Clover Gin Lucky4",
-   "kana": "クローバー ラッキー4",
+   "kana": "クローバー ラッキー4 ジン",
    "abv": 44.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -2049,7 +2049,7 @@
   },
   {
    "name": "GLAS WE gin",
-   "kana": "グラスウィ",
+   "kana": "グラスウィ ジン",
    "abv": 41.1,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -2076,7 +2076,7 @@
   },
   {
    "name": "GREENALLS Original London Dry Gin",
-   "kana": "グリノールズ オリジナル",
+   "kana": "グリノールズ オリジナル ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -2085,7 +2085,7 @@
   },
   {
    "name": "GREENALL'S Wild Berry Gin",
-   "kana": "グリノールズ ワイルドベリー",
+   "kana": "グリノールズ ワイルドベリー ジン",
    "abv": 37.5,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -2094,7 +2094,7 @@
   },
   {
    "name": "Green Ant GIN",
-   "kana": "グリーンアント",
+   "kana": "グリーンアント ジン",
    "abv": 42.0,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -2130,7 +2130,7 @@
   },
   {
    "name": "GLENDALOUGH BEECH LEAF GIN",
-   "kana": "グレンダロッホ ビーチリーフ",
+   "kana": "グレンダロッホ ビーチリーフ ジン",
    "abv": 43.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -2139,7 +2139,7 @@
   },
   {
    "name": "GLENDALOUGH ROSE GIN",
-   "kana": "グレンダロッホ ローズ",
+   "kana": "グレンダロッホ ローズ ジン",
    "abv": 37.5,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -2148,7 +2148,7 @@
   },
   {
    "name": "GLENDALOUGH Wild Winter Gin",
-   "kana": "グレンダロッホ ワイルドウィンター",
+   "kana": "グレンダロッホ ワイルドウィンター ジン",
    "abv": 41.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -2157,7 +2157,7 @@
   },
   {
    "name": "GLENDALOUGH Wild Autumn Gin",
-   "kana": "グレンダロッホ ワイルドオータム",
+   "kana": "グレンダロッホ ワイルドオータム ジン",
    "abv": 41.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -2166,7 +2166,7 @@
   },
   {
    "name": "GLENDALOUGH Wild Summer Gin",
-   "kana": "グレンダロッホ ワイルドサマー",
+   "kana": "グレンダロッホ ワイルドサマー ジン",
    "abv": 41.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -2175,7 +2175,7 @@
   },
   {
    "name": "GLENDALOUGH Wild Spring Gin",
-   "kana": "グレンダロッホ ワイルドスプリング",
+   "kana": "グレンダロッホ ワイルドスプリング ジン",
    "abv": 41.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -2184,7 +2184,7 @@
   },
   {
    "name": "GLENDALOUGH Wild Botanical Gin",
-   "kana": "グレンダロッホ ワイルドボタニカル",
+   "kana": "グレンダロッホ ワイルドボタニカル ジン",
    "abv": 41.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -2193,7 +2193,7 @@
   },
   {
    "name": "GLIRIUS Gin",
-   "kana": "グロリアス",
+   "kana": "グロリアス ジン",
    "abv": 45.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -2202,7 +2202,7 @@
   },
   {
    "name": "CADENHEAD'S CLASSIC GIN",
-   "kana": "ケイデンヘッズ クラシック",
+   "kana": "ケイデンヘッズ クラシック ジン",
    "abv": 50.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -2293,7 +2293,7 @@
   },
   {
    "name": "KOZUE GIN",
-   "kana": "コズエ",
+   "kana": "コズエ ジン",
    "abv": 47.0,
    "country": "日本（和歌山）",
    "country_main": "日本",
@@ -2301,17 +2301,8 @@
    "botanicals": "ジュニパー、レモンピール、コウヤマキの葉、温州みかんピール、山椒"
   },
   {
-   "name": "COTSWOLDS DRY GIN",
-   "kana": "コッツウォルズ",
-   "abv": 46.0,
-   "country": "イギリス",
-   "country_main": "イギリス",
-   "note": "ウィート（小麦）スピリッツにコッツウォルズ地方名産のラベンダー含む9種ボタニカルを使用。爽やかなジュニパー、シトラスと続き、アフターにラベンダーの香り",
-   "botanicals": "ジュニパー、アンジェリカ、カルダモン、グレープフルーツ、コリアンダー、ライム、コッツウォルズ・ラベンダー、ブラックペッパー、ベイリーフ"
-  },
-  {
    "name": "COTSWOLDS NO.1 WILDFLOWER GIN",
-   "kana": "コッツウォルズ No.1 ワイルドフラワー",
+   "kana": "コッツウォルズ No.1 ワイルドフラワー ジン",
    "abv": 41.7,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -2320,7 +2311,7 @@
   },
   {
    "name": "COTSWOLDS Old Tom Gin",
-   "kana": "コッツウォルズ オールドトム",
+   "kana": "コッツウォルズ オールドトム ジン",
    "abv": 42.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -2329,12 +2320,21 @@
   },
   {
    "name": "COTSWOLDS CLOUDY CHRISTMAS GIN",
-   "kana": "コッツウォルズ クラウディ クリスマス",
+   "kana": "コッツウォルズ クラウディ クリスマス ジン",
    "abv": 46.0,
    "country": "イギリス",
    "country_main": "イギリス",
    "note": "コッツウォルズドライジンにアレンジを加えたクリスマスならではの限定版。白濁する。クレメンタイン：マンダリンオレンジの1種",
    "botanicals": "ジュニパー、アンジェリカ、カルダモン、グレープフルーツ、クレメンタイン、コリアンダー、ブラックペッパー、ラベンダー、ローリエリーフ"
+  },
+  {
+   "name": "COTSWOLDS DRY GIN",
+   "kana": "コッツウォルズ ジン",
+   "abv": 46.0,
+   "country": "イギリス",
+   "country_main": "イギリス",
+   "note": "ウィート（小麦）スピリッツにコッツウォルズ地方名産のラベンダー含む9種ボタニカルを使用。爽やかなジュニパー、シトラスと続き、アフターにラベンダーの香り",
+   "botanicals": "ジュニパー、アンジェリカ、カルダモン、グレープフルーツ、コリアンダー、ライム、コッツウォルズ・ラベンダー、ブラックペッパー、ベイリーフ"
   },
   {
    "name": "COTSWOLDS GINGER GIN",
@@ -2347,7 +2347,7 @@
   },
   {
    "name": "Copenhagen Orange Gin",
-   "kana": "コペンハーゲン オレンジ",
+   "kana": "コペンハーゲン オレンジ ジン",
    "abv": 41.0,
    "country": "デンマーク（コペンハーゲン）",
    "country_main": "デンマーク",
@@ -2356,7 +2356,7 @@
   },
   {
    "name": "KOMASA Gin ほうじ茶",
-   "kana": "コマサ ほうじ茶",
+   "kana": "コマサ ほうじ茶 ジン",
    "abv": 45.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -2365,7 +2365,7 @@
   },
   {
    "name": "KOMASA Gin 桜島小みかん",
-   "kana": "コマサ 桜島小みかん",
+   "kana": "コマサ 桜島小みかん ジン",
    "abv": 45.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -2374,7 +2374,7 @@
   },
   {
    "name": "KOMASA Gin 苺",
-   "kana": "コマサ 苺",
+   "kana": "コマサ 苺 ジン",
    "abv": 45.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -2383,7 +2383,7 @@
   },
   {
    "name": "CORSAIR Barrel Aged Gin",
-   "kana": "コルセア バレルエイジド",
+   "kana": "コルセア バレルエイジド ジン",
    "abv": 46.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -2391,17 +2391,8 @@
    "botanicals": "ジュニパー、使用済みのスパイスラム樽に入れて、バニラ、秋のスパイスノート、木材を完成品に付与します。"
   },
   {
-   "name": "GIN COLLESI",
-   "kana": "コレッシ",
-   "abv": 42.8,
-   "country": "イタリア",
-   "country_main": "イタリア",
-   "note": "イタリアで最も緑の多い州の1つ、マルケ州アペッキオ市一帯の自然豊かな大地で作られている大麦に、野性のジュニパーベリー、レモンピール、オレンジピール、野性の胡桃、野性の薔薇、ホップ等を蒸気を使って加熱して単式蒸留方式を用いて丁寧に作られている。",
-   "botanicals": "ジュニパー、ヴィショーレ（サワーチェリー）、ホップ、クルミの殻、ワイルドローズ、オレンジピール、レモンピール"
-  },
-  {
    "name": "GIN COLLESI Amarillo HOP",
-   "kana": "コレッシ アマリロホップ",
+   "kana": "コレッシ アマリロホップ ジン",
    "abv": 42.8,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -2409,8 +2400,17 @@
    "botanicals": "ジュニパー、アマリロ、オレンジピール、グレープフルーツピール、ホップ"
   },
   {
+   "name": "GIN COLLESI",
+   "kana": "コレッシ ジン",
+   "abv": 42.8,
+   "country": "イタリア",
+   "country_main": "イタリア",
+   "note": "イタリアで最も緑の多い州の1つ、マルケ州アペッキオ市一帯の自然豊かな大地で作られている大麦に、野性のジュニパーベリー、レモンピール、オレンジピール、野性の胡桃、野性の薔薇、ホップ等を蒸気を使って加熱して単式蒸留方式を用いて丁寧に作られている。",
+   "botanicals": "ジュニパー、ヴィショーレ（サワーチェリー）、ホップ、クルミの殻、ワイルドローズ、オレンジピール、レモンピール"
+  },
+  {
    "name": "Gin Colombo N.º 7",
-   "kana": "コロンボ No.7",
+   "kana": "コロンボ No.7 ジン",
    "abv": 43.1,
    "country": "スリランカ",
    "country_main": "スリランカ",
@@ -2437,7 +2437,7 @@
   },
   {
    "name": "KOVAL Dry Gin",
-   "kana": "コーヴァル",
+   "kana": "コーヴァル ジン",
    "abv": 47.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -2446,7 +2446,7 @@
   },
   {
    "name": "KOVAL Barreled Gin",
-   "kana": "コーヴァル バレルド",
+   "kana": "コーヴァル バレルド ジン",
    "abv": 47.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -2572,30 +2572,12 @@
   },
   {
    "name": "Distillerie du Gorvello gin Oriant 1672",
-   "kana": "ゴルヴェロ オリアン 1672",
+   "kana": "ゴルヴェロ オリアン 1672 ジン",
    "abv": 42.0,
    "country": "フランス",
    "country_main": "フランス",
    "note": "由来は、東インド会社から1672年に初めて作られた大型船の名前。",
    "botanicals": "ジュニパー、コリアンダー、カルダモン、キュベブペッパー、セイロンシナモン、ナツメグ、リコリス、アンジェリカ、エルダーフラワー、レモンピール、ビターオレンジピール、ジンジャー"
-  },
-  {
-   "name": "GORDON'S Dry London Gin",
-   "kana": "ゴードン",
-   "abv": 40.0,
-   "country": "イギリス（ロンドン）",
-   "country_main": "イギリス",
-   "note": "200mlと少ない容量。あまり見かけない珍しいボトル",
-   "botanicals": "ジュニパー、不明"
-  },
-  {
-   "name": "GORDON'S Dry London Gin",
-   "kana": "ゴードン",
-   "abv": 37.5,
-   "country": "イギリス（ロンドン）",
-   "country_main": "イギリス",
-   "note": "年間販売量はロンドン・ドライ・ジンとして世界No.1の492万ケースを誇る 1769年にアレキサンダー・ゴードンが造ったときから レシピは230年以上変わっていません。高品質のジュニパーベリーなどの ボタニカルを柱とした力強くドライな味は 230年以上もの間変わることなく受け継がれています。世界中から愛されているジン。",
-   "botanicals": "ジュニパー、コリアンダーシード、アンジェリカ根、リコリス、オリス根、オレンジピール、レモンピール"
   },
   {
    "name": "GORDON'S Old Bottle 1980年代",
@@ -2634,6 +2616,24 @@
    "botanicals": "ジュニパー、コリアンダー、アンジェリカ、リコリス、シチリアレモン"
   },
   {
+   "name": "GORDON'S Dry London Gin",
+   "kana": "ゴードン ジン",
+   "abv": 40.0,
+   "country": "イギリス（ロンドン）",
+   "country_main": "イギリス",
+   "note": "200mlと少ない容量。あまり見かけない珍しいボトル",
+   "botanicals": "ジュニパー、不明"
+  },
+  {
+   "name": "GORDON'S Dry London Gin",
+   "kana": "ゴードン ジン",
+   "abv": 37.5,
+   "country": "イギリス（ロンドン）",
+   "country_main": "イギリス",
+   "note": "年間販売量はロンドン・ドライ・ジンとして世界No.1の492万ケースを誇る 1769年にアレキサンダー・ゴードンが造ったときから レシピは230年以上変わっていません。高品質のジュニパーベリーなどの ボタニカルを柱とした力強くドライな味は 230年以上もの間変わることなく受け継がれています。世界中から愛されているジン。",
+   "botanicals": "ジュニパー、コリアンダーシード、アンジェリカ根、リコリス、オリス根、オレンジピール、レモンピール"
+  },
+  {
    "name": "GORDON'S Spot of Elderflower",
    "kana": "ゴードン スポットオブエルダーフラワー",
    "abv": 37.5,
@@ -2644,7 +2644,7 @@
   },
   {
    "name": "GORDON'S Sloe Gin",
-   "kana": "ゴードン スロー",
+   "kana": "ゴードン スロー ジン",
    "abv": 26.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -2653,7 +2653,7 @@
   },
   {
    "name": "GORDON'S Sloe Gin 旧ボトル",
-   "kana": "ゴードン スロー 旧ボトル",
+   "kana": "ゴードン スロー 旧ボトル ジン",
    "abv": 26.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -2662,7 +2662,7 @@
   },
   {
    "name": "GOLD 999.9 GIN",
-   "kana": "ゴールド 999.9",
+   "kana": "ゴールド 999.9 ジン",
    "abv": 40.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -2671,7 +2671,7 @@
   },
   {
    "name": "Gold Cock London Dry Gin",
-   "kana": "ゴールドコック",
+   "kana": "ゴールドコック ジン",
    "abv": 40.0,
    "country": "チェコ",
    "country_main": "チェコ",
@@ -2680,7 +2680,7 @@
   },
   {
    "name": "SAIGON BAIGUR PUEMIUM DRY GIN",
-   "kana": "サイゴン バイガー プレミアム",
+   "kana": "サイゴン バイガー プレミアム ジン",
    "abv": 43.0,
    "country": "ベトナム（ホーチミン）",
    "country_main": "ベトナム",
@@ -2688,17 +2688,8 @@
    "botanicals": "ジュニパー、アンジェリカルート、グリーンカルダモン、コリアンダーシード、シナモン、スターアニス、ドラゴンフルーツ、バーズアイチリ、フェンネルシード、プークォックペッパー、ブラックカルダモン、ライムピール、リコリス、レモングラス、ロータスブロッサム、仏手柑"
   },
   {
-   "name": "SILENT POOL Gin",
-   "kana": "サイレントプール",
-   "abv": 43.0,
-   "country": "イギリス（イングランド）",
-   "country_main": "イギリス",
-   "note": "小麦由来のベーススピリッツ、24種類のボタニカル、そして石灰層で濾過され青く澄んだ湧き水を満々と湛えるサイレントプール湖の水を使用したロンドンドライジン。",
-   "botanicals": "ジュニパー、エルダーフラワー、ラベンダー、ライム、ローズペタル、洋梨"
-  },
-  {
    "name": "Silent Pool 10th Anniversary Edition Gin",
-   "kana": "サイレントプール 10周年",
+   "kana": "サイレントプール 10周年 ジン",
    "abv": 43.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -2707,7 +2698,7 @@
   },
   {
    "name": "SILENT POOL Gin Japan Edition",
-   "kana": "サイレントプール ジャパンエディション",
+   "kana": "サイレントプール ジャパンエディション ジン",
    "abv": 43.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -2715,8 +2706,17 @@
    "botanicals": "ジュニパー、桃、和梨、金柑、柚子ピール、烏龍茶"
   },
   {
+   "name": "SILENT POOL Gin",
+   "kana": "サイレントプール ジン",
+   "abv": 43.0,
+   "country": "イギリス（イングランド）",
+   "country_main": "イギリス",
+   "note": "小麦由来のベーススピリッツ、24種類のボタニカル、そして石灰層で濾過され青く澄んだ湧き水を満々と湛えるサイレントプール湖の水を使用したロンドンドライジン。",
+   "botanicals": "ジュニパー、エルダーフラワー、ラベンダー、ライム、ローズペタル、洋梨"
+  },
+  {
    "name": "SILENT POOL PLATINUM celebratiqn GIN",
-   "kana": "サイレントプール プラチナ セレブレーション",
+   "kana": "サイレントプール プラチナ セレブレーション ジン",
    "abv": 43.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -2725,7 +2725,7 @@
   },
   {
    "name": "SILENT POOL Rare Citrus Gin",
-   "kana": "サイレントプール レアシトラス",
+   "kana": "サイレントプール レアシトラス ジン",
    "abv": 43.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -2743,7 +2743,7 @@
   },
   {
    "name": "SOUTH BANK DRY GIN",
-   "kana": "サウスバンク",
+   "kana": "サウスバンク ジン",
    "abv": 37.5,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -2761,7 +2761,7 @@
   },
   {
    "name": "SOUTHERN CROSS GIN",
-   "kana": "サザンクロス",
+   "kana": "サザンクロス ジン",
    "abv": 43.0,
    "country": "南アフリカ",
    "country_main": "南アフリカ",
@@ -2770,7 +2770,7 @@
   },
   {
    "name": "SUTLER'S GIN",
-   "kana": "サトラーズ",
+   "kana": "サトラーズ ジン",
    "abv": 47.0,
    "country": "アメリカ（ノースカロライナ州）",
    "country_main": "アメリカ",
@@ -2779,7 +2779,7 @@
   },
   {
    "name": "早苗饗蒸留所 SANABURI GIN prototype02",
-   "kana": "サナブリ プロトタイプ02",
+   "kana": "サナブリ プロトタイプ02 ジン",
    "abv": 47.0,
    "country": "日本（秋田）",
    "country_main": "日本",
@@ -2788,7 +2788,7 @@
   },
   {
    "name": "SABATINI GIN",
-   "kana": "サバティーニ",
+   "kana": "サバティーニ ジン",
    "abv": 41.3,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -2815,7 +2815,7 @@
   },
   {
    "name": "Salcombe Gin Start Point",
-   "kana": "サルコム スタートポイント",
+   "kana": "サルコム スタートポイント ジン",
    "abv": 44.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -2824,7 +2824,7 @@
   },
   {
    "name": "Salcombe Gin Daring",
-   "kana": "サルコム デアリング",
+   "kana": "サルコム デアリング ジン",
    "abv": 46.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -2833,7 +2833,7 @@
   },
   {
    "name": "Salcombe Gin Rose Sainte Marie",
-   "kana": "サルコム ローズ サント・マリー",
+   "kana": "サルコム ローズ サント・マリー ジン",
    "abv": 41.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -2842,7 +2842,7 @@
   },
   {
    "name": "SALCOMBE GIN VOYAGER SERIES 'PHANTOM'",
-   "kana": "サルコム ヴォイジャー ファントム",
+   "kana": "サルコム ヴォイジャー ファントム ジン",
    "abv": 46.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -2851,7 +2851,7 @@
   },
   {
    "name": "SUNSET HILLS SMALL BATCH GIN",
-   "kana": "サンセットヒルズ スモールバッチ",
+   "kana": "サンセットヒルズ スモールバッチ ジン",
    "abv": 40.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -2860,7 +2860,7 @@
   },
   {
    "name": "SANTAMANIA London Dry Gin",
-   "kana": "サンタマニア",
+   "kana": "サンタマニア ジン",
    "abv": 41.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -2869,7 +2869,7 @@
   },
   {
    "name": "SIR EDMOND GIN",
-   "kana": "サー エドモンド",
+   "kana": "サー エドモンド ジン",
    "abv": 40.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -2887,7 +2887,7 @@
   },
   {
    "name": "ZUIDAM DUTCH COURAGE DRY GIN",
-   "kana": "ザイダム ダッチカレッジ",
+   "kana": "ザイダム ダッチカレッジ ジン",
    "abv": 44.5,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -2904,17 +2904,8 @@
    "botanicals": "ジュニパー、椎茸の軸の部分のみ使用"
   },
   {
-   "name": "SHETLAND REEL GIN",
-   "kana": "シェットランドリール",
-   "abv": 43.0,
-   "country": "イギリス（スコットランド）",
-   "country_main": "イギリス",
-   "note": "イギリス最北端にある蒸留所。キーボタニカルにアップルミントを使用、シトラス香る夏らしいジン。",
-   "botanicals": "ジュニパー、コリアンダーシード、オリスルート、カッシア、シナモン、柑橘ピール、アップルミント"
-  },
-  {
    "name": "SHETLAND REEL OCEAN SENT GIN",
-   "kana": "シェットランドリール オーシャンセント",
+   "kana": "シェットランドリール オーシャンセント ジン",
    "abv": 49.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -2923,7 +2914,7 @@
   },
   {
    "name": "SHETLAND REEL SIMMER GIN",
-   "kana": "シェットランドリール シマー",
+   "kana": "シェットランドリール シマー ジン",
    "abv": 49.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -2931,17 +2922,17 @@
    "botanicals": "ジュニパー、コリアンダーシード、オレンジピール、リコリス、クミン（キャラウェイシード）、オリスルート"
   },
   {
-   "name": "Sheringham London Dry Gin",
-   "kana": "シェリンガム",
+   "name": "SHETLAND REEL GIN",
+   "kana": "シェットランドリール ジン",
    "abv": 43.0,
-   "country": "カナダ",
-   "country_main": "カナダ",
-   "note": "シェリンガム蒸留所は、カナダ・バンクーバー島の美しい海岸線に位置し、自然豊かな環境を活かしたクラフトスピリッツを製造する蒸留所です。創業者のジェイソン・マクアイザック氏は、23年間のシェフ経験を活かし、料理と同じように厳選したボタニカルを組み合わせ、独自のフレーバーを生み出しています。その品質の高さは、2019年の「WORLD GIN AWARDS」での最高賞「ワールズ・ベスト」をはじめ、数々の国際的な賞で証明されています。シェリンガム蒸留所は、環境への配慮と持続可能な製造を重視し、地元の素材を活かしたアップサイクルやカーボンニュートラルの取り組みを実践。カナダを代表するクラフトスピリッツブランドとして、世界中にその魅力を広げています。",
-   "botanicals": "ジュニパー、アンジェリカルート、オリスルート、オレンジピール、カルダモン、グレインズオブパラダイス、グレープフルーツピール、コリアンダーシード、レモンピール"
+   "country": "イギリス（スコットランド）",
+   "country_main": "イギリス",
+   "note": "イギリス最北端にある蒸留所。キーボタニカルにアップルミントを使用、シトラス香る夏らしいジン。",
+   "botanicals": "ジュニパー、コリアンダーシード、オリスルート、カッシア、シナモン、柑橘ピール、アップルミント"
   },
   {
    "name": "Sheringham Seaside Gin",
-   "kana": "シェリンガム シーサイド",
+   "kana": "シェリンガム シーサイド ジン",
    "abv": 43.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -2949,8 +2940,17 @@
    "botanicals": "ジュニパー、ウィングケルプ、カルダモン、シトラス、ラベンダー、ローズ"
   },
   {
+   "name": "Sheringham London Dry Gin",
+   "kana": "シェリンガム ジン",
+   "abv": 43.0,
+   "country": "カナダ",
+   "country_main": "カナダ",
+   "note": "シェリンガム蒸留所は、カナダ・バンクーバー島の美しい海岸線に位置し、自然豊かな環境を活かしたクラフトスピリッツを製造する蒸留所です。創業者のジェイソン・マクアイザック氏は、23年間のシェフ経験を活かし、料理と同じように厳選したボタニカルを組み合わせ、独自のフレーバーを生み出しています。その品質の高さは、2019年の「WORLD GIN AWARDS」での最高賞「ワールズ・ベスト」をはじめ、数々の国際的な賞で証明されています。シェリンガム蒸留所は、環境への配慮と持続可能な製造を重視し、地元の素材を活かしたアップサイクルやカーボンニュートラルの取り組みを実践。カナダを代表するクラフトスピリッツブランドとして、世界中にその魅力を広げています。",
+   "botanicals": "ジュニパー、アンジェリカルート、オリスルート、オレンジピール、カルダモン、グレインズオブパラダイス、グレープフルーツピール、コリアンダーシード、レモンピール"
+  },
+  {
    "name": "Sheringham Beacon Gin",
-   "kana": "シェリンガム ビーコン",
+   "kana": "シェリンガム ビーコン ジン",
    "abv": 43.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -2959,7 +2959,7 @@
   },
   {
    "name": "Sheringham Raincoast Gin",
-   "kana": "シェリンガム レインコースト",
+   "kana": "シェリンガム レインコースト ジン",
    "abv": 43.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -2968,7 +2968,7 @@
   },
   {
    "name": "CITADELLE GIN",
-   "kana": "シタデル",
+   "kana": "シタデル ジン",
    "abv": 44.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -2977,7 +2977,7 @@
   },
   {
    "name": "SICX KYOTO SPICE MAGIC GIN",
-   "kana": "シックス 京都 スパイスマジック",
+   "kana": "シックス 京都 スパイスマジック ジン",
    "abv": 45.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -2986,7 +2986,7 @@
   },
   {
    "name": "SiCX KYOTO TROPICAL MANGO GIN",
-   "kana": "シックス 京都 トロピカルマンゴー",
+   "kana": "シックス 京都 トロピカルマンゴー ジン",
    "abv": 45.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -2995,7 +2995,7 @@
   },
   {
    "name": "SiCX KYOTO LEMON CITRIC ACID GIN",
-   "kana": "シックス 京都 レモン シトリックアシッド",
+   "kana": "シックス 京都 レモン シトリックアシッド ジン",
    "abv": 45.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -3004,21 +3004,12 @@
   },
   {
    "name": "SIX DOGS BLUE GIN",
-   "kana": "シックスドッグス ブルー",
+   "kana": "シックスドッグス ブルー ジン",
    "abv": 43.0,
    "country": "南アフリカ",
    "country_main": "南アフリカ",
    "note": "バタフライピーやクレメンゴールド（オレンジ）、ローズゼラニウムなど世界各国から手積みされたボタニカルを、7種類使用。",
    "botanicals": "ジュニパー、バタフライピー（ブルーピーフラワー）、ローズゼラニウム、アンゼリカ、コリアンダー、ナールチェ"
-  },
-  {
-   "name": "SIPSMITH London Dry Gin",
-   "kana": "シップスミス",
-   "abv": 41.0,
-   "country": "イギリス（ロンドン）",
-   "country_main": "イギリス",
-   "note": "ロンドン市内では1820年以来となる超小型銅製ポットスティルを稼働させ2009年に創業、世界各国から厳選したボタニカルを使用、非常にドライで洗練した味わい",
-   "botanicals": "ジュニパー、アーモンド、アンジェリカ、オリス、オレンジピール、コリアンダー、シナモン、リコリス、レモンピール、桂皮"
   },
   {
    "name": "SIPSMITH V.J.O.P BLACK",
@@ -3030,8 +3021,17 @@
    "botanicals": "ジュニパー、アンジェリカルート、オリスルート、オレンジピール、カッシアバーク、グラウンドアーモンド、コリアンダーシード、シナモンバーク、リコリスルート、レモンピール"
   },
   {
+   "name": "SIPSMITH London Dry Gin",
+   "kana": "シップスミス ジン",
+   "abv": 41.0,
+   "country": "イギリス（ロンドン）",
+   "country_main": "イギリス",
+   "note": "ロンドン市内では1820年以来となる超小型銅製ポットスティルを稼働させ2009年に創業、世界各国から厳選したボタニカルを使用、非常にドライで洗練した味わい",
+   "botanicals": "ジュニパー、アーモンド、アンジェリカ、オリス、オレンジピール、コリアンダー、シナモン、リコリス、レモンピール、桂皮"
+  },
+  {
    "name": "Sipsmith Lemon Drizzle Gin",
-   "kana": "シップスミス レモンドリズル",
+   "kana": "シップスミス レモンドリズル ジン",
    "abv": 40.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -3040,7 +3040,7 @@
   },
   {
    "name": "CITRUM GIN",
-   "kana": "シトラム",
+   "kana": "シトラム ジン",
    "abv": 40.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -3085,7 +3085,7 @@
   },
   {
    "name": "XORIGUER MAHON GIN",
-   "kana": "ショリゲル マオン",
+   "kana": "ショリゲル マオン ジン",
    "abv": 38.0,
    "country": "スペイン（メノルカ島）",
    "country_main": "スペイン",
@@ -3094,7 +3094,7 @@
   },
   {
    "name": "SHORT CROSS GIN",
-   "kana": "ショートクロス",
+   "kana": "ショートクロス ジン",
    "abv": 46.0,
    "country": "北アイルランド",
    "country_main": "北アイルランド",
@@ -3147,17 +3147,8 @@
    "botanicals": "ジュニパー、レモンマートル、アニスマートル、ワトルシード、タスマニアペッパーリーフ"
   },
   {
-   "name": "GENEROUS GIN",
-   "kana": "ジェネラス",
-   "abv": 44.0,
-   "country": "フランス",
-   "country_main": "フランス",
-   "note": "「エデンの園にある生命の樹のような蒸留酒を作りたい」をテーマに作られた、香水のような香りが特徴。",
-   "botanicals": "ジュニパー、シトラス、マンダリン、赤ペッパー、ジャスミン、ニワトコ"
-  },
-  {
    "name": "GENEROUS GIN Azur",
-   "kana": "ジェネラス アジュール",
+   "kana": "ジェネラス アジュール ジン",
    "abv": 40.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -3166,7 +3157,7 @@
   },
   {
    "name": "GENEROUS GIN Organic",
-   "kana": "ジェネラス オーガニック",
+   "kana": "ジェネラス オーガニック ジン",
    "abv": 44.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -3174,8 +3165,17 @@
    "botanicals": "ジュニパー、マンダリン、コリアンダー、唐辛子、コブミカン"
   },
   {
+   "name": "GENEROUS GIN",
+   "kana": "ジェネラス ジン",
+   "abv": 44.0,
+   "country": "フランス",
+   "country_main": "フランス",
+   "note": "「エデンの園にある生命の樹のような蒸留酒を作りたい」をテーマに作られた、香水のような香りが特徴。",
+   "botanicals": "ジュニパー、シトラス、マンダリン、赤ペッパー、ジャスミン、ニワトコ"
+  },
+  {
    "name": "GENEROUS GIN Purple",
-   "kana": "ジェネラス パープル",
+   "kana": "ジェネラス パープル ジン",
    "abv": 44.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -3184,7 +3184,7 @@
   },
   {
    "name": "GIN GELAS",
-   "kana": "ジェラス",
+   "kana": "ジェラス ジン",
    "abv": 38.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -3193,7 +3193,7 @@
   },
   {
    "name": "GERANHUM Premium London Dry GIN",
-   "kana": "ジェラニウム プレミアム",
+   "kana": "ジェラニウム プレミアム ジン",
    "abv": 55.0,
    "country": "デンマーク（コペンハーゲン）",
    "country_main": "デンマーク",
@@ -3202,7 +3202,7 @@
   },
   {
    "name": "GERANIUM Premium London Dry GIN",
-   "kana": "ジェラニウム プレミアム",
+   "kana": "ジェラニウム プレミアム ジン",
    "abv": 44.0,
    "country": "デンマーク（コペンハーゲン）",
    "country_main": "デンマーク",
@@ -3211,7 +3211,7 @@
   },
   {
    "name": "Gin Geronimo",
-   "kana": "ジェロニモ",
+   "kana": "ジェロニモ ジン",
    "abv": 43.0,
    "country": "リトアニア",
    "country_main": "リトアニア",
@@ -3229,7 +3229,7 @@
   },
   {
    "name": "NGINIOUS!! Swiss Blended Gin",
-   "kana": "ジニアス ブレンデッド",
+   "kana": "ジニアス ブレンデッド ジン",
    "abv": 45.0,
    "country": "スイス",
    "country_main": "スイス",
@@ -3238,7 +3238,7 @@
   },
   {
    "name": "GINIUS GIN",
-   "kana": "ジニウス",
+   "kana": "ジニウス ジン",
    "abv": 50.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -3247,7 +3247,7 @@
   },
   {
    "name": "GINUENSIS GIN",
-   "kana": "ジヌエンシス",
+   "kana": "ジヌエンシス ジン",
    "abv": 41.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -3256,7 +3256,7 @@
   },
   {
    "name": "GINEPRAIO ORGANCIC TUSCAN DRY GIN",
-   "kana": "ジネプライオ オーガニック",
+   "kana": "ジネプライオ オーガニック ジン",
    "abv": 45.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -3284,7 +3284,7 @@
   },
   {
    "name": "樹々 JAPANESE CRAFT GIN RUGBY LABEL",
-   "kana": "ジュジュ ラグビーラベル",
+   "kana": "ジュジュ ラグビーラベル ジン",
    "abv": 43.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -3302,7 +3302,7 @@
   },
   {
    "name": "THE.JUNIPER.TREE POFEIDIO GIN",
-   "kana": "ジュニパーツリー ポセイディオ",
+   "kana": "ジュニパーツリー ポセイディオ ジン",
    "abv": 47.0,
    "country": "メキシコ",
    "country_main": "メキシコ",
@@ -3311,7 +3311,7 @@
   },
   {
    "name": "JUNIPERO GIN",
-   "kana": "ジュニペロ",
+   "kana": "ジュニペロ ジン",
    "abv": 49.5,
    "country": "アメリカ（サンフランシスコ）",
    "country_main": "アメリカ",
@@ -3319,17 +3319,8 @@
    "botanicals": "ジュニパー、コリアンダー、アンジェリカルート、オリスルート、レモンピール、スイートオレンジピール、セビルオレンジピール、クベバ、カッシア、カルダモン、アニスシード、グレインズ・オブ・パラダイス"
   },
   {
-   "name": "JUNIMPERIUM ESTONIAN ARTISAN GIN",
-   "kana": "ジュニンペリウム",
-   "abv": 45.0,
-   "country": "エストニア",
-   "country_main": "エストニア",
-   "note": "世界最高のジュニパー 3 種とエストニア産の最高級ベリー、コリアンダー、アンジェリカ、クベブペッパー、タイム、地元で発見された 2 つの秘密の植物を組み合わせることによって実現されます。すべての原料は別々に蒸留され、その後ブレンドされて、ジュニパーの強いフレーバーを備えた、豊かで柑橘系の香りとわずかにペッパーのようなジンが生まれます。",
-   "botanicals": "アンジェリカ、コリアンダー、クバブペッパー、ジュニパーベリー（エストニア産含む3種類）、タイム"
-  },
-  {
    "name": "JUNIMPERIUM ESTONIAN ARTISAN GIN WINTER EDITION",
-   "kana": "ジュニンペリウム ウィンターエディション",
+   "kana": "ジュニンペリウム ウィンターエディション ジン",
    "abv": 43.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -3337,8 +3328,17 @@
    "botanicals": "ジュニパー、アンジェリカルート、カッシアバーク、カルダモン、バニラ、ビターオレンジ、リンゴンベリー"
   },
   {
+   "name": "JUNIMPERIUM ESTONIAN ARTISAN GIN",
+   "kana": "ジュニンペリウム ジン",
+   "abv": 45.0,
+   "country": "エストニア",
+   "country_main": "エストニア",
+   "note": "世界最高のジュニパー 3 種とエストニア産の最高級ベリー、コリアンダー、アンジェリカ、クベブペッパー、タイム、地元で発見された 2 つの秘密の植物を組み合わせることによって実現されます。すべての原料は別々に蒸留され、その後ブレンドされて、ジュニパーの強いフレーバーを備えた、豊かで柑橘系の香りとわずかにペッパーのようなジンが生まれます。",
+   "botanicals": "アンジェリカ、コリアンダー、クバブペッパー、ジュニパーベリー（エストニア産含む3種類）、タイム"
+  },
+  {
    "name": "JUNIMPERIUM ESTONIAN ARTISAN GIN SLOE GIN",
-   "kana": "ジュニンペリウム スロー",
+   "kana": "ジュニンペリウム スロー ジン",
    "abv": 30.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -3347,7 +3347,7 @@
   },
   {
    "name": "JUNIMPERIUM ESTONIAN ARTISAN GIN CHERRY INFUSED",
-   "kana": "ジュニンペリウム チェリー インフューズド",
+   "kana": "ジュニンペリウム チェリー インフューズド ジン",
    "abv": 40.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -3356,7 +3356,7 @@
   },
   {
    "name": "JUNIMPERIUM ESTONIAN ARTISAN GIN Navy Strength",
-   "kana": "ジュニンペリウム ネイビー ストレングス",
+   "kana": "ジュニンペリウム ネイビー ストレングス ジン",
    "abv": 59.26,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -3365,7 +3365,7 @@
   },
   {
    "name": "JUNIMPERIUM ESTONIAN ARTISAN GIN Blended Dry Gin",
-   "kana": "ジュニンペリウム ブレンデッド",
+   "kana": "ジュニンペリウム ブレンデッド ジン",
    "abv": 45.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -3374,7 +3374,7 @@
   },
   {
    "name": "JUNIMPERIUM ESTONIAN ARTISAN GIN Limited Cherry",
-   "kana": "ジュニンペリウム リミテッド チェリー",
+   "kana": "ジュニンペリウム リミテッド チェリー ジン",
    "abv": 40.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -3383,7 +3383,7 @@
   },
   {
    "name": "JUNIMPERIUM ESTONIAN ARTISAN GIN RHUBARB INFUSED",
-   "kana": "ジュニンペリウム ルバーブインフューズド",
+   "kana": "ジュニンペリウム ルバーブインフューズド ジン",
    "abv": 40.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -3401,7 +3401,7 @@
   },
   {
    "name": "JUNG ONE GIN",
-   "kana": "ジョンウォン",
+   "kana": "ジョンウォン ジン",
    "abv": 47.0,
    "country": "韓国（ソウル）",
    "country_main": "韓国",
@@ -3410,7 +3410,7 @@
   },
   {
    "name": "JODHPUR RESERVE LONDON DRY GIN",
-   "kana": "ジョードプル リザーブ",
+   "kana": "ジョードプル リザーブ ジン",
    "abv": 43.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -3599,7 +3599,7 @@
   },
   {
    "name": "SIEGFRIED RHEINLAND DRY GIN",
-   "kana": "ジークフリート ラインラント",
+   "kana": "ジークフリート ラインラント ジン",
    "abv": 41.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -3635,7 +3635,7 @@
   },
   {
    "name": "g’Vine Gin Floraison",
-   "kana": "ジーヴァイン フロレゾン",
+   "kana": "ジーヴァイン フロレゾン ジン",
    "abv": 40.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -3644,21 +3644,12 @@
   },
   {
    "name": "翠靄~sui-ai~ wet Gin",
-   "kana": "スイアイ ウェット",
+   "kana": "スイアイ ウェット ジン",
    "abv": 40.0,
    "country": "日本（東京：八王子）",
    "country_main": "日本",
    "note": "〚翠靄~sui-ai~ wet Gin 40%〛は、国産ピートを使い、低温でじっくり燻製にしたマケドニア産ジュニパーベリーを、贅沢に使用しスティーピングしました。そこに自社で精製した、12種のボタニカルから得られる、芳香性の高い蒸留水を加えた\"逆転の製法\"により、ジュニパーベリーの骨太な味わいに、蒸留から得られるエレガントな香りをマッチングさせました。ジュニパーベリーの力強くスパイシーな味わい、少しの薫香と、トップノートにはボタニカル蒸留水の高い芳香性、僅かな精油成分の乳化による靄に包まれたような丸みを帯びた余韻禁酒法時代に生まれたバスタブジンと、逆転の発想による、ボタニカル蒸留水に着目した製法を融合する事で、他のクラフトジンには無い、深く優しい味わいにお仕立て致しました。八王子八景の一つ「高尾の翠靄」からインスパイアされ誕生した\"wet Gin\"の製造工程は、新世代クラフトジンのロールモデルとなる、東京都八王子市のマイクロミニマム製造所独自の製法です。",
    "botanicals": "ジュニパーベリー"
-  },
-  {
-   "name": "SCAPEGRACE CLASSIC GIN",
-   "kana": "スケープグレース クラシック",
-   "abv": 42.2,
-   "country": "ニュージーランド",
-   "country_main": "ニュージーランド",
-   "note": "ニュージーランド・南島の天然水を使用、19世紀製の単式スチルにより力強いボタニカルの香りをアフターまでしっかりと感じられる逸品。",
-   "botanicals": "ジュニパー、アンジェリカルート、オレンジピール、オリスルート、カッシアバーク、カルダモン、クローブ、コリアンダーシード、シナモン、ナツメグ、リコリスルート、レモンピール"
   },
   {
    "name": "SCAPEGRACE Classic",
@@ -3670,8 +3661,17 @@
    "botanicals": "ジュニパー、レモンピール、オレンジピール、コリアンダーシード、カルダモン、ナツメグ、クローブ、アンゲリカルート、リコリスルート、オリスルート、シナモン、カッシア"
   },
   {
+   "name": "SCAPEGRACE CLASSIC GIN",
+   "kana": "スケープグレース クラシック ジン",
+   "abv": 42.2,
+   "country": "ニュージーランド",
+   "country_main": "ニュージーランド",
+   "note": "ニュージーランド・南島の天然水を使用、19世紀製の単式スチルにより力強いボタニカルの香りをアフターまでしっかりと感じられる逸品。",
+   "botanicals": "ジュニパー、アンジェリカルート、オレンジピール、オリスルート、カッシアバーク、カルダモン、クローブ、コリアンダーシード、シナモン、ナツメグ、リコリスルート、レモンピール"
+  },
+  {
    "name": "STANDARD SPIRIT WORMWOOD GIN",
-   "kana": "スタンダードスピリット ワームウッド",
+   "kana": "スタンダードスピリット ワームウッド ジン",
    "abv": 45.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -3689,7 +3689,7 @@
   },
   {
    "name": "STIRLING GIN",
-   "kana": "スターリング",
+   "kana": "スターリング ジン",
    "abv": 43.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -3698,7 +3698,7 @@
   },
   {
    "name": "STEAM PUNK GIN",
-   "kana": "スチームパンク",
+   "kana": "スチームパンク ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -3707,7 +3707,7 @@
   },
   {
    "name": "STILLDAM GIN 1st Anniversary Lemongrass & Bergomot",
-   "kana": "スティルダム 1stアニバーサリー レモングラス＆ベルガモット",
+   "kana": "スティルダム 1stアニバーサリー レモングラス＆ベルガモット ジン",
    "abv": 45.0,
    "country": "日本（佐賀）",
    "country_main": "日本",
@@ -3716,7 +3716,7 @@
   },
   {
    "name": "STILLDAM GIN ING 2nd dot",
-   "kana": "スティルダム イング 2nd ドット",
+   "kana": "スティルダム イング 2nd ドット ジン",
    "abv": 45.0,
    "country": "日本（佐賀）",
    "country_main": "日本",
@@ -3734,7 +3734,7 @@
   },
   {
    "name": "STILLDAM GIN Standard",
-   "kana": "スティルダム スタンダード",
+   "kana": "スティルダム スタンダード ジン",
    "abv": 45.0,
    "country": "日本（佐賀）",
    "country_main": "日本",
@@ -3743,7 +3743,7 @@
   },
   {
    "name": "STILL DAM GIN STOOM SHIPS",
-   "kana": "スティルダム ストゥームシップス",
+   "kana": "スティルダム ストゥームシップス ジン",
    "abv": 45.0,
    "country": "日本（佐賀）",
    "country_main": "日本",
@@ -3752,7 +3752,7 @@
   },
   {
    "name": "STILLDAM GIN Roast & Smoke",
-   "kana": "スティルダム ロースト＆スモーク",
+   "kana": "スティルダム ロースト＆スモーク ジン",
    "abv": 45.0,
    "country": "日本（佐賀）",
    "country_main": "日本",
@@ -3761,7 +3761,7 @@
   },
   {
    "name": "STILLDAM GIN Saga mikan",
-   "kana": "スティルダム 佐賀みかん",
+   "kana": "スティルダム 佐賀みかん ジン",
    "abv": 45.0,
    "country": "日本（佐賀）",
    "country_main": "日本",
@@ -3770,7 +3770,7 @@
   },
   {
    "name": "STILL DAM GIN NANKOU UME-スティルダムジン 南高梅-",
-   "kana": "スティルダム 南高梅",
+   "kana": "スティルダム 南高梅 ジン",
    "abv": 45.0,
    "country": "日本（佐賀）",
    "country_main": "日本",
@@ -3779,7 +3779,7 @@
   },
   {
    "name": "STILLDAM GIN NANKOU UME",
-   "kana": "スティルダム 南高梅",
+   "kana": "スティルダム 南高梅 ジン",
    "abv": 45.0,
    "country": "日本（佐賀）",
    "country_main": "日本",
@@ -3788,7 +3788,7 @@
   },
   {
    "name": "STIN GIN Over Proof",
-   "kana": "スティン オーバープルーフ",
+   "kana": "スティン オーバープルーフ ジン",
    "abv": 57.0,
    "country": "オーストリア（スティリア）",
    "country_main": "オーストリア",
@@ -3797,7 +3797,7 @@
   },
   {
    "name": "STIN GIN Classic Proof",
-   "kana": "スティン クラシックプルーフ",
+   "kana": "スティン クラシックプルーフ ジン",
    "abv": 47.0,
    "country": "オーストリア（スティリア）",
    "country_main": "オーストリア",
@@ -3806,7 +3806,7 @@
   },
   {
    "name": "THE STING SMALL BATCH LONDON DRY GIN",
-   "kana": "スティング スモールバッチ",
+   "kana": "スティング スモールバッチ ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -3815,7 +3815,7 @@
   },
   {
    "name": "Stage GIN 2nd Anniversary",
-   "kana": "ステージ 2ndアニバーサリー",
+   "kana": "ステージ 2ndアニバーサリー ジン",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -3824,7 +3824,7 @@
   },
   {
    "name": "Stage GIN 3rd Anniversary",
-   "kana": "ステージ 3rdアニバーサリー",
+   "kana": "ステージ 3rdアニバーサリー ジン",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -3832,17 +3832,8 @@
    "botanicals": "ジュニパー、アンジェリカルート、オールスパイス、カカオハスク、カルダモンパウダー、コリアンダーシード、ジンジャーパウダー、せとかピール、ピーチフラワー、ブラッドオレンジ、みかんフラワー、自家製コーラの残滓（オールスパイス、オレンジシロップ、カカオハスク、カフィアライムリーフ、カルダモンホール、クローブ、シナモンパウダー、ジンジャーパウダー、ドライジンジャー、ピンクペッパー、ほうじ茶、ライム、ラベンダー、レモンピール、花椒）"
   },
   {
-   "name": "STOCKHOLMS BRANNERI DRY GIN",
-   "kana": "ストックホルムス ブレネリ",
-   "abv": 40.0,
-   "country": "スウェーデン",
-   "country_main": "スウェーデン",
-   "note": "オーガニック小麦のベースにヘザーやローズマリー、エルダーフラワーなど7種オーガニックボタニカルを使用。",
-   "botanicals": "ジュニパー、アンジェリカルート、エルダーフラワー、コリアンダーシード、ヘザー、レモンピール、ローズマリー"
-  },
-  {
    "name": "STOCKHOLMS BRANNERI OAK GIN",
-   "kana": "ストックホルムス ブレネリ オーク",
+   "kana": "ストックホルムス ブレネリ オーク ジン",
    "abv": 45.0,
    "country": "スウェーデン",
    "country_main": "スウェーデン",
@@ -3850,8 +3841,17 @@
    "botanicals": "ジュニパー、アンジェリカ、エルダーフラワー、オレンジピール、コリアンダー、ヘザー、レモンピール、ロングペッパー"
   },
   {
+   "name": "STOCKHOLMS BRANNERI DRY GIN",
+   "kana": "ストックホルムス ブレネリ ジン",
+   "abv": 40.0,
+   "country": "スウェーデン",
+   "country_main": "スウェーデン",
+   "note": "オーガニック小麦のベースにヘザーやローズマリー、エルダーフラワーなど7種オーガニックボタニカルを使用。",
+   "botanicals": "ジュニパー、アンジェリカルート、エルダーフラワー、コリアンダーシード、ヘザー、レモンピール、ローズマリー"
+  },
+  {
    "name": "STRATHEARN JUNIPER GIN",
-   "kana": "ストラスアーン ジュニパー",
+   "kana": "ストラスアーン ジュニパー ジン",
    "abv": 47.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -3860,7 +3860,7 @@
   },
   {
    "name": "Strathcona Badlands Seaberry Gin",
-   "kana": "ストラスコナ バッドランズ シーベリー",
+   "kana": "ストラスコナ バッドランズ シーベリー ジン",
    "abv": 44.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -3869,7 +3869,7 @@
   },
   {
    "name": "STRATHCONA BARREL AGED GIN",
-   "kana": "ストラスコナ バレルエイジド",
+   "kana": "ストラスコナ バレルエイジド ジン",
    "abv": 44.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -3878,7 +3878,7 @@
   },
   {
    "name": "STRANGE NATURE GIN",
-   "kana": "ストレンジネイチャー",
+   "kana": "ストレンジネイチャー ジン",
    "abv": 44.0,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -3887,7 +3887,7 @@
   },
   {
    "name": "SLOANE'S PREMIUM DRY GIN",
-   "kana": "スローンズ プレミアム",
+   "kana": "スローンズ プレミアム ジン",
    "abv": 40.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -3896,7 +3896,7 @@
   },
   {
    "name": "GIN SUL",
-   "kana": "スール",
+   "kana": "スール ジン",
    "abv": 43.0,
    "country": "ドイツ（ハンブルク）",
    "country_main": "ドイツ",
@@ -3905,7 +3905,7 @@
   },
   {
    "name": "ZUBROWKA GIN",
-   "kana": "ズブロッカ",
+   "kana": "ズブロッカ ジン",
    "abv": 37.5,
    "country": "ポーランド",
    "country_main": "ポーランド",
@@ -3913,31 +3913,22 @@
    "botanicals": "ジュニパー、オウショウヨモギ、キバナアザミ、クルマバソウ、シナガワハギ、スギナ、セイタカアワダチソウ、セイヨウイラクサ、セイヨウタンポポ、セイヨウノコギリソウ、パイソングラス"
   },
   {
-   "name": "SACRED GIN",
-   "kana": "セイクレッド",
-   "abv": 48.0,
-   "country": "イギリス",
-   "country_main": "イギリス",
-   "note": "蒸溜前に12種のボタニカルを小麦原料のスピリッツに浸透、別々に「自宅」で蒸溜した後ブレンド、フレッシュなフレーバー、情熱と遊び心溢れるホームメイドジン",
-   "botanicals": "ジュニパー、アンジェリカ、オレンジピール、レモンピール、ライムピール、カルダモン、フランキンセンス（乳香）"
-  },
-  {
-   "name": "SACRED Organic Gin",
-   "kana": "セイクレッド オーガニック",
-   "abv": 48.0,
-   "country": "イギリス（ロンドン）",
-   "country_main": "イギリス",
-   "note": "通常のセイクレッドジンよりもジュニパーベリーの量を10倍使用し11種のボタニカルもすべてオーガニック。",
-   "botanicals": "ジュニパー、アンジェリカ、オレンジピール、レモンピール、ライムピール、カルダモン、フランキンセンス（乳香）"
-  },
-  {
    "name": "SACRED Organic Gin 10×Juniper",
-   "kana": "セイクレッド オーガニック 10×ジュニパー",
+   "kana": "セイクレッド オーガニック 10×ジュニパー ジン",
    "abv": 48.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
    "note": "通常のセイクレッドジンよりもジュニパーベリーの量を10倍使用し11種のボタニカルもすべてオーガニック。",
    "botanicals": "ジュニパー（ブルガリア産ジュニパーベリーの単一ボタニカル蒸留物）"
+  },
+  {
+   "name": "SACRED Organic Gin",
+   "kana": "セイクレッド オーガニック ジン",
+   "abv": 48.0,
+   "country": "イギリス（ロンドン）",
+   "country_main": "イギリス",
+   "note": "通常のセイクレッドジンよりもジュニパーベリーの量を10倍使用し11種のボタニカルもすべてオーガニック。",
+   "botanicals": "ジュニパー、アンジェリカ、オレンジピール、レモンピール、ライムピール、カルダモン、フランキンセンス（乳香）"
   },
   {
    "name": "SACRED Cassia",
@@ -3950,7 +3941,7 @@
   },
   {
    "name": "SACRED GIN Coriander",
-   "kana": "セイクレッド コリアンダー",
+   "kana": "セイクレッド コリアンダー ジン",
    "abv": 43.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -3959,12 +3950,21 @@
   },
   {
    "name": "SACRED GIN JUNIPER",
-   "kana": "セイクレッド ジュニパー",
+   "kana": "セイクレッド ジュニパー ジン",
    "abv": 43.8,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
    "note": "通常のセイクレッドジンよりもジュニパーベリーの量を10倍使用し11種のボタニカルもすべてオーガニック。",
    "botanicals": "ジュニパー（ブルガリア産ジュニパーベリーの単一ボタニカル蒸留物）"
+  },
+  {
+   "name": "SACRED GIN",
+   "kana": "セイクレッド ジン",
+   "abv": 48.0,
+   "country": "イギリス",
+   "country_main": "イギリス",
+   "note": "蒸溜前に12種のボタニカルを小麦原料のスピリッツに浸透、別々に「自宅」で蒸溜した後ブレンド、フレッシュなフレーバー、情熱と遊び心溢れるホームメイドジン",
+   "botanicals": "ジュニパー、アンジェリカ、オレンジピール、レモンピール、ライムピール、カルダモン、フランキンセンス（乳香）"
   },
   {
    "name": "SACRED Licorice",
@@ -3995,7 +3995,7 @@
   },
   {
    "name": "7D ESSENTIAL LONDON DRY GIN",
-   "kana": "セブンディ エッセンシャル",
+   "kana": "セブンディ エッセンシャル ジン",
    "abv": 41.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -4013,7 +4013,7 @@
   },
   {
    "name": "SAVE BEER SPIRITS 2020 CRAFT GIN",
-   "kana": "セーブ ビア スピリッツ 2020",
+   "kana": "セーブ ビア スピリッツ 2020 ジン",
    "abv": 40.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -4022,7 +4022,7 @@
   },
   {
    "name": "ZEIVER GIN",
-   "kana": "ゼイバー",
+   "kana": "ゼイバー ジン",
    "abv": 47.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -4031,7 +4031,7 @@
   },
   {
    "name": "ZELOT'S HEART GIN",
-   "kana": "ゼロッツハート",
+   "kana": "ゼロッツハート ジン",
    "abv": 44.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -4040,7 +4040,7 @@
   },
   {
    "name": "SOTHIS GIN BATCH1 M.CHAPOUTIER",
-   "kana": "ソティス バッチ1 M.シャプティエ",
+   "kana": "ソティス バッチ1 M.シャプティエ ジン",
    "abv": 42.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -4121,7 +4121,7 @@
   },
   {
    "name": "TANQUERAY Malacca Gin",
-   "kana": "タンカレー マラッカ",
+   "kana": "タンカレー マラッカ ジン",
    "abv": 41.3,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -4130,7 +4130,7 @@
   },
   {
    "name": "TANQUERAY Lovage Gin",
-   "kana": "タンカレー ラバージュ",
+   "kana": "タンカレー ラバージュ ジン",
    "abv": 47.3,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -4139,7 +4139,7 @@
   },
   {
    "name": "TANQUERAY Rangpur Gin",
-   "kana": "タンカレー ランプール",
+   "kana": "タンカレー ランプール ジン",
    "abv": 41.3,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -4157,7 +4157,7 @@
   },
   {
    "name": "TANN'S GIN",
-   "kana": "タンズ",
+   "kana": "タンズ ジン",
    "abv": 40.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -4166,7 +4166,7 @@
   },
   {
    "name": "TAN TAKA TAN GIN",
-   "kana": "タンタカタン",
+   "kana": "タンタカタン ジン",
    "abv": 37.0,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -4175,7 +4175,7 @@
   },
   {
    "name": "丹波山俱楽部 UNICUS Maitake Gin by Distiller M",
-   "kana": "タンバヤマクラブ ウニクス マイタケ",
+   "kana": "タンバヤマクラブ ウニクス マイタケ ジン",
    "abv": 47.0,
    "country": "日本（東京：渋谷）",
    "country_main": "日本",
@@ -4184,7 +4184,7 @@
   },
   {
    "name": "TARQUINS DRY GIN",
-   "kana": "タークィンズ",
+   "kana": "タークィンズ ジン",
    "abv": 42.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -4193,7 +4193,7 @@
   },
   {
    "name": "TARSIER Southeast Asian Dry Gin",
-   "kana": "ターサー",
+   "kana": "ターサー ジン",
    "abv": 45.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -4211,7 +4211,7 @@
   },
   {
    "name": "DAVID ITALIAN PREMIUM GIN",
-   "kana": "ダビデ プレミアム",
+   "kana": "ダビデ プレミアム ジン",
    "abv": 40.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -4220,7 +4220,7 @@
   },
   {
    "name": "DAFFY’S GIN",
-   "kana": "ダフィーズ",
+   "kana": "ダフィーズ ジン",
    "abv": 43.4,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -4229,7 +4229,7 @@
   },
   {
    "name": "DANCING SANDS Sauvignon Blanc Gin",
-   "kana": "ダンシングサンズ ソーヴィニヨンブラン",
+   "kana": "ダンシングサンズ ソーヴィニヨンブラン ジン",
    "abv": 37.5,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -4238,7 +4238,7 @@
   },
   {
    "name": "DANCING SANDS Chocolate Gin",
-   "kana": "ダンシングサンズ チョコレート",
+   "kana": "ダンシングサンズ チョコレート ジン",
    "abv": 44.0,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -4247,7 +4247,7 @@
   },
   {
    "name": "DANCING SANDS Wasabi Gin",
-   "kana": "ダンシングサンズ ワサビ",
+   "kana": "ダンシングサンズ ワサビ ジン",
    "abv": 58.0,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -4256,7 +4256,7 @@
   },
   {
    "name": "DARNLEY'S ORIGINAL GIN",
-   "kana": "ダーンレイズ オリジナル",
+   "kana": "ダーンレイズ オリジナル ジン",
    "abv": 40.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -4265,7 +4265,7 @@
   },
   {
    "name": "DARNLEY'S SPICED GIN",
-   "kana": "ダーンレイズ スパイスド",
+   "kana": "ダーンレイズ スパイスド ジン",
    "abv": 42.7,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -4274,7 +4274,7 @@
   },
   {
    "name": "DARNLEY'S SPICED GIN Navy Strength",
-   "kana": "ダーンレイズ スパイスド ネイビーストレングス",
+   "kana": "ダーンレイズ スパイスド ネイビーストレングス ジン",
    "abv": 57.1,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -4283,7 +4283,7 @@
   },
   {
    "name": "DARNLEY’S VIEW LONDON DRY GIN",
-   "kana": "ダーンレイズ ビュー",
+   "kana": "ダーンレイズ ビュー ジン",
    "abv": 40.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -4301,7 +4301,7 @@
   },
   {
    "name": "CHIBANICAL GIN",
-   "kana": "チバニカル",
+   "kana": "チバニカル ジン",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -4319,7 +4319,7 @@
   },
   {
    "name": "TS' SPIRITS 5th anniversary Gin",
-   "kana": "ティーズスピリッツ 5周年",
+   "kana": "ティーズスピリッツ 5周年 ジン",
    "abv": 43.0,
    "country": "日本（熊本）",
    "country_main": "日本",
@@ -4337,7 +4337,7 @@
   },
   {
    "name": "TENU GIN LE BON TIKKA",
-   "kana": "テヌ ル・ボン・ティッカ",
+   "kana": "テヌ ル・ボン・ティッカ ジン",
    "abv": 47.0,
    "country": "フィンランド",
    "country_main": "フィンランド",
@@ -4355,7 +4355,7 @@
   },
   {
    "name": "DICTADOR PREMIUM COLOMBIAN ORTODOXY GIN",
-   "kana": "ディクタドール プレミアム オルトドクシー",
+   "kana": "ディクタドール プレミアム オルトドクシー ジン",
    "abv": 43.0,
    "country": "コロンビア",
    "country_main": "コロンビア",
@@ -4364,7 +4364,7 @@
   },
   {
    "name": "Dictador Premium Colombian Aged Gin Treasure",
-   "kana": "ディクタドール プレミアム トレジャー",
+   "kana": "ディクタドール プレミアム トレジャー ジン",
    "abv": 43.0,
    "country": "コロンビア",
    "country_main": "コロンビア",
@@ -4373,7 +4373,7 @@
   },
   {
    "name": "DISONESTO London Dry Gin",
-   "kana": "ディスオネスト",
+   "kana": "ディスオネスト ジン",
    "abv": 45.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -4391,7 +4391,7 @@
   },
   {
    "name": "DISTILLERIE DE PARIS gin tonic",
-   "kana": "ディスティレリ ド パリ トニック",
+   "kana": "ディスティレリ ド パリ トニック ジン",
    "abv": 43.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -4409,7 +4409,7 @@
   },
   {
    "name": "Diplome DRY GIN",
-   "kana": "ディプロム",
+   "kana": "ディプロム ジン",
    "abv": 44.0,
    "country": "フランス（ブルゴーニュ地方）",
    "country_main": "フランス",
@@ -4418,7 +4418,7 @@
   },
   {
    "name": "DINGLE GIN",
-   "kana": "ディングル",
+   "kana": "ディングル ジン",
    "abv": 42.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -4427,7 +4427,7 @@
   },
   {
    "name": "D1 LONDON GIN",
-   "kana": "ディーワン ロンドン",
+   "kana": "ディーワン ロンドン ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -4436,7 +4436,7 @@
   },
   {
    "name": "DEATH'S DOOR GIN",
-   "kana": "デスドア",
+   "kana": "デスドア ジン",
    "abv": 47.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -4445,7 +4445,7 @@
   },
   {
    "name": "THE DUKE Munich Dry GIN",
-   "kana": "デューク",
+   "kana": "デューク ジン",
    "abv": 45.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -4463,7 +4463,7 @@
   },
   {
    "name": "Gin XII",
-   "kana": "トゥエルブ",
+   "kana": "トゥエルブ ジン",
    "abv": 42.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -4472,7 +4472,7 @@
   },
   {
    "name": "2~3 TWENTY THIRD ST. DISTILLERY SIGNATURE GIN",
-   "kana": "トゥエンティーサード ストリート シグネチャー",
+   "kana": "トゥエンティーサード ストリート シグネチャー ジン",
    "abv": 40.0,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -4481,7 +4481,7 @@
   },
   {
    "name": "Two Trees DRY GIN",
-   "kana": "トゥーツリーズ",
+   "kana": "トゥーツリーズ ジン",
    "abv": 37.5,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -4490,7 +4490,7 @@
   },
   {
    "name": "TOKYO SPICE GIN",
-   "kana": "トウキョウ スパイス",
+   "kana": "トウキョウ スパイス ジン",
    "abv": 41.0,
    "country": "日本（東京：八王子）",
    "country_main": "日本",
@@ -4499,7 +4499,7 @@
   },
   {
    "name": "TOKYO HACHIO GIN ORIENTAL",
-   "kana": "トウキョウ ハチオウ オリエンタル",
+   "kana": "トウキョウ ハチオウ オリエンタル ジン",
    "abv": 45.0,
    "country": "日本（東京：八王子）",
    "country_main": "日本",
@@ -4508,7 +4508,7 @@
   },
   {
    "name": "東京リバーサイド BORDERLESS GIN",
-   "kana": "トウキョウリバーサイド ボーダーレス",
+   "kana": "トウキョウリバーサイド ボーダーレス ジン",
    "abv": 47.0,
    "country": "日本",
    "country_main": "日本",
@@ -4526,7 +4526,7 @@
   },
   {
    "name": "tokelu GIN",
-   "kana": "トケル",
+   "kana": "トケル ジン",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -4553,7 +4553,7 @@
   },
   {
    "name": "TOKKI SONBI GIN",
-   "kana": "トッキ ソンビ",
+   "kana": "トッキ ソンビ ジン",
    "abv": 48.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -4562,7 +4562,7 @@
   },
   {
    "name": "TOBERMORY Hebridean Gin",
-   "kana": "トバモリー ヘブリディアン",
+   "kana": "トバモリー ヘブリディアン ジン",
    "abv": 43.3,
    "country": "アイランズ（マル島）",
    "country_main": "アイランズ",
@@ -4571,7 +4571,7 @@
   },
   {
    "name": "TOPO Organic Piedmont Gin",
-   "kana": "トポ オーガニック ピードモント",
+   "kana": "トポ オーガニック ピードモント ジン",
    "abv": 46.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -4580,7 +4580,7 @@
   },
   {
    "name": "富井蒸留所 CRAZY POTION GIN",
-   "kana": "トミイ クレイジーポーション",
+   "kana": "トミイ クレイジーポーション ジン",
    "abv": 45.0,
    "country": "日本（長野）",
    "country_main": "日本",
@@ -4589,7 +4589,7 @@
   },
   {
    "name": "TOMMY'S GIN",
-   "kana": "トミーズ",
+   "kana": "トミーズ ジン",
    "abv": 45.0,
    "country": "イギリス（スカイ島）",
    "country_main": "イギリス",
@@ -4661,7 +4661,7 @@
   },
   {
    "name": "虎ノ門蒸留所 BORDERLESS GIN",
-   "kana": "トラノモン ボーダーレス",
+   "kana": "トラノモン ボーダーレス ジン",
    "abv": 47.0,
    "country": "日本",
    "country_main": "日本",
@@ -4688,7 +4688,7 @@
   },
   {
    "name": "DOCKYARD DRY GIN",
-   "kana": "ドックヤード",
+   "kana": "ドックヤード ジン",
    "abv": 41.2,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -4697,7 +4697,7 @@
   },
   {
    "name": "DOCKYARD DAMSON GIN",
-   "kana": "ドックヤード ダムソン",
+   "kana": "ドックヤード ダムソン ジン",
    "abv": 28.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -4706,7 +4706,7 @@
   },
   {
    "name": "DREYBERG RED BERRY GIN",
-   "kana": "ドライバーグ レッドベリー",
+   "kana": "ドライバーグ レッドベリー ジン",
    "abv": 40.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -4715,7 +4715,7 @@
   },
   {
    "name": "DRUMSHANBO GUNPOWDER IRISH GIN",
-   "kana": "ドラムシャンボ ガンパウダー",
+   "kana": "ドラムシャンボ ガンパウダー ジン",
    "abv": 43.0,
    "country": "アイルランド（ドラムシャンボ）",
    "country_main": "アイルランド",
@@ -4733,7 +4733,7 @@
   },
   {
    "name": "Driftwood Parabola Floral GIN",
-   "kana": "ドリフトウッド パラボラ フローラル",
+   "kana": "ドリフトウッド パラボラ フローラル ジン",
    "abv": 45.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -4769,7 +4769,7 @@
   },
   {
    "name": "NINTH WAVE IRISH GIN",
-   "kana": "ナインス ウェーブ",
+   "kana": "ナインス ウェーブ ジン",
    "abv": 43.0,
    "country": "北アイルランド",
    "country_main": "北アイルランド",
@@ -4778,7 +4778,7 @@
   },
   {
    "name": "NAKATSU GIN CHITA BANANA",
-   "kana": "ナカツ チタ バナナ",
+   "kana": "ナカツ チタ バナナ ジン",
    "abv": 50.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -4787,7 +4787,7 @@
   },
   {
    "name": "NAKATSU GIN ベルガモット 1st Batch",
-   "kana": "ナカツ ベルガモット 1stバッチ",
+   "kana": "ナカツ ベルガモット 1stバッチ ジン",
    "abv": 50.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -4796,7 +4796,7 @@
   },
   {
    "name": "NAKATSU GIN RUBYGRAPEFRUIT",
-   "kana": "ナカツ ルビーグレープフルーツ",
+   "kana": "ナカツ ルビーグレープフルーツ ジン",
    "abv": 50.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -4805,7 +4805,7 @@
   },
   {
    "name": "NAKATSU GIN（ 知多バナナ 3rd Batch ）",
-   "kana": "ナカツ 知多バナナ 3rdバッチ",
+   "kana": "ナカツ 知多バナナ 3rdバッチ ジン",
    "abv": 50.0,
    "country": "日本（兵庫）",
    "country_main": "日本",
@@ -4823,7 +4823,7 @@
   },
   {
    "name": "naturadistill 柚子加加阿蒸溜酒 Yuzu Cacao Gin",
-   "kana": "ナチュラディスティル 柚子カカオ",
+   "kana": "ナチュラディスティル 柚子カカオ ジン",
    "abv": 47.0,
    "country": "日本（福島）",
    "country_main": "日本",
@@ -4832,7 +4832,7 @@
   },
   {
    "name": "Natural GIN Liqueur Rp.2",
-   "kana": "ナチュラル リキュール Rp.2",
+   "kana": "ナチュラル リキュール Rp.2 ジン",
    "abv": 26.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -4841,7 +4841,7 @@
   },
   {
    "name": "GIN NATURE THE FIRST RELEASE",
-   "kana": "ナチュール ザ ファーストリリース",
+   "kana": "ナチュール ザ ファーストリリース ジン",
    "abv": 45.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -4850,21 +4850,12 @@
   },
   {
    "name": "No 8 Distillery HOROPITO Gin",
-   "kana": "ナンバー8 ホロピト",
+   "kana": "ナンバー8 ホロピト ジン",
    "abv": 42.0,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
    "note": "カルダモンとシナモンの香りが特徴的。オレンジピール、グレープフルーツピールを使用しているためアフターテイストは爽やかな柑橘系。製品名のHOROPITO (ホロピト)はマオリハーブでコショウのようなピリッとした辛さが特徴です。ブランド名のNo 8 の由来はニュージーランドならではのことわざのようなワードより “You can fix everything with a no 8 wire “創意工夫すればなんでもできる！というような意味のようです。",
    "botanicals": "ジュニパー、コリアンダーシード、アンジェリカルート、オリスルート、オレンジ、カルダモン、シナモン、ホロピト"
-  },
-  {
-   "name": "NUMBER EIGHT GIN",
-   "kana": "ナンバーエイト",
-   "abv": 46.0,
-   "country": "日本（神奈川）",
-   "country_main": "日本",
-   "note": "蒸留所の名前にちなんで8種類のボタニカルが使用されているジン。ベーススピリッツは吟醸の酒粕焼酎。",
-   "botanicals": "ジュニパー、イエルバブエナ、レモンバーベナ、コーヒー豆、神奈川産みかん、無農薬レモン、フレッシュホップ、アボカドの種"
   },
   {
    "name": "NUMBER EIGHT 1st Anniversary",
@@ -4885,8 +4876,17 @@
    "botanicals": "ジュニパー、アボカドシード、イエルバブエナ、コーヒー豆、バジル、フレッシュホップ、レモン、湘南ゴールド"
   },
   {
+   "name": "NUMBER EIGHT GIN",
+   "kana": "ナンバーエイト ジン",
+   "abv": 46.0,
+   "country": "日本（神奈川）",
+   "country_main": "日本",
+   "note": "蒸留所の名前にちなんで8種類のボタニカルが使用されているジン。ベーススピリッツは吟醸の酒粕焼酎。",
+   "botanicals": "ジュニパー、イエルバブエナ、レモンバーベナ、コーヒー豆、神奈川産みかん、無農薬レモン、フレッシュホップ、アボカドの種"
+  },
+  {
    "name": "No.8 DISTILLERY BORDERLESS GIN",
-   "kana": "ナンバーエイト ボーダーレス",
+   "kana": "ナンバーエイト ボーダーレス ジン",
    "abv": 46.0,
    "country": "日本",
    "country_main": "日本",
@@ -4895,7 +4895,7 @@
   },
   {
    "name": "NUMBER EIGHT GIN MOLE EDITION",
-   "kana": "ナンバーエイト モレエディション",
+   "kana": "ナンバーエイト モレエディション ジン",
    "abv": 46.0,
    "country": "日本（神奈川）",
    "country_main": "日本",
@@ -4913,7 +4913,7 @@
   },
   {
    "name": "NIKKA COFFEY GIN",
-   "kana": "ニッカ カフェ",
+   "kana": "ニッカ カフェ ジン",
    "abv": 47.0,
    "country": "日本（宮城：仙台）",
    "country_main": "日本",
@@ -4931,7 +4931,7 @@
   },
   {
    "name": "NEW ANGOULEME FRENCH GIN",
-   "kana": "ニュー アングレーム",
+   "kana": "ニュー アングレーム ジン",
    "abv": 43.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -4940,7 +4940,7 @@
   },
   {
    "name": "GIN nez -銀鼠-",
-   "kana": "ネ 銀鼠",
+   "kana": "ネ 銀鼠 ジン",
    "abv": 44.0,
    "country": "日本（宮崎）",
    "country_main": "日本",
@@ -4958,7 +4958,7 @@
   },
   {
    "name": "NEVERSINK SPIRITS GIN",
-   "kana": "ネバーシンク",
+   "kana": "ネバーシンク ジン",
    "abv": 43.0,
    "country": "アメリカ（ニューヨーク）",
    "country_main": "アメリカ",
@@ -4967,7 +4967,7 @@
   },
   {
    "name": "NEVERSINK RESERVE SPIRITS GIN",
-   "kana": "ネバーシンク リザーブ",
+   "kana": "ネバーシンク リザーブ ジン",
    "abv": 45.0,
    "country": "アメリカ（ニューヨーク）",
    "country_main": "アメリカ",
@@ -4976,7 +4976,7 @@
   },
   {
    "name": "NEVER NEVER SOUTHERN STRENGTH GIN",
-   "kana": "ネバーネバー サザン ストレングス",
+   "kana": "ネバーネバー サザン ストレングス ジン",
    "abv": 52.0,
    "country": "オーストラリア（南オーストラリア：マクラーレンヴェイル）",
    "country_main": "オーストラリア",
@@ -4985,7 +4985,7 @@
   },
   {
    "name": "NEVER NEVER JUNIPER FREAK GIN",
-   "kana": "ネバーネバー ジュニパー フリーク",
+   "kana": "ネバーネバー ジュニパー フリーク ジン",
    "abv": 58.0,
    "country": "オーストラリア（南オーストラリア：マクラーレンヴェイル）",
    "country_main": "オーストラリア",
@@ -4994,7 +4994,7 @@
   },
   {
    "name": "NEVER NEVER TRIPLE JUNIPER GIN",
-   "kana": "ネバーネバー トリプル ジュニパー",
+   "kana": "ネバーネバー トリプル ジュニパー ジン",
    "abv": 43.0,
    "country": "オーストラリア（南オーストラリア：マクラーレンヴェイル）",
    "country_main": "オーストラリア",
@@ -5003,7 +5003,7 @@
   },
   {
    "name": "Non-Alcoholic Gin NEMA 0.00%",
-   "kana": "ネマ 0.00%",
+   "kana": "ネマ 0.00% ジン",
    "abv": 0.0,
    "country": "日本（長野）",
    "country_main": "日本",
@@ -5012,7 +5012,7 @@
   },
   {
    "name": "GIN NEVE Dolomites",
-   "kana": "ネーベ ドロミテ",
+   "kana": "ネーベ ドロミテ ジン",
    "abv": 43.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -5021,7 +5021,7 @@
   },
   {
    "name": "NOUAISON GIN BY G'VINE",
-   "kana": "ノエゾン バイ ジーヴァイン",
+   "kana": "ノエゾン バイ ジーヴァイン ジン",
    "abv": 45.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -5030,7 +5030,7 @@
   },
   {
    "name": "NOUAISON GIN RESRRVE",
-   "kana": "ノエゾン リザーブ",
+   "kana": "ノエゾン リザーブ ジン",
    "abv": 42.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -5039,7 +5039,7 @@
   },
   {
    "name": "NOZAWA GIN",
-   "kana": "ノザワ",
+   "kana": "ノザワ ジン",
    "abv": 45.0,
    "country": "日本（長野：野沢）",
    "country_main": "日本",
@@ -5048,7 +5048,7 @@
   },
   {
    "name": "KNOCKEEN HILLS ELDERFLOWER GIN",
-   "kana": "ノッキーンヒルズ エルダーフラワー",
+   "kana": "ノッキーンヒルズ エルダーフラワー ジン",
    "abv": 43.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5057,7 +5057,7 @@
   },
   {
    "name": "KNOCKEEN HILLS HEATHER GIN",
-   "kana": "ノッキーンヒルズ ヘザー",
+   "kana": "ノッキーンヒルズ ヘザー ジン",
    "abv": 47.3,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5066,7 +5066,7 @@
   },
   {
    "name": "NOTO GIN",
-   "kana": "ノト",
+   "kana": "ノト ジン",
    "abv": 43.0,
    "country": "日本（石川）",
    "country_main": "日本",
@@ -5074,17 +5074,8 @@
    "botanicals": "柚子の皮、月桂樹の葉、榧の実、黒文字、ジュニパー、コリアンダー、カルダモン、メドウスウィート"
   },
   {
-   "name": "NORDES GIN",
-   "kana": "ノルデス",
-   "abv": 40.0,
-   "country": "スペイン",
-   "country_main": "スペイン",
-   "note": "スペイン・ガリシア地方のジン。アルバリーニョ種ブドウのスピリッツをベースに、ガリシアの森由来の在来ボタニカルを含む11種を個別に浸漬。フレッシュでフローラル、ほのかな塩味が特徴。",
-   "botanicals": "ジュニパー、ローリエ（月桂樹）、レモンバーベナ、サリコルニア（海藻草）、ミント、ユーカリ、セージ、カルダモン、ハイビスカス、ジンジャー、紅茶"
-  },
-  {
    "name": "NORDES Atlantic Galician Gin",
-   "kana": "ノルデス アトランティック",
+   "kana": "ノルデス アトランティック ジン",
    "abv": 40.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -5092,8 +5083,17 @@
    "botanicals": "ジュニパー、アッケシソウ、カルダモン、ジンジャー、セージ、ハイビスカス、ペパーミント、レモンバーベナ、ローリエリーフ、ユーカリ、紅茶"
   },
   {
+   "name": "NORDES GIN",
+   "kana": "ノルデス ジン",
+   "abv": 40.0,
+   "country": "スペイン",
+   "country_main": "スペイン",
+   "note": "スペイン・ガリシア地方のジン。アルバリーニョ種ブドウのスピリッツをベースに、ガリシアの森由来の在来ボタニカルを含む11種を個別に浸漬。フレッシュでフローラル、ほのかな塩味が特徴。",
+   "botanicals": "ジュニパー、ローリエ（月桂樹）、レモンバーベナ、サリコルニア（海藻草）、ミント、ユーカリ、セージ、カルダモン、ハイビスカス、ジンジャー、紅茶"
+  },
+  {
    "name": "NORMINDIA DISTILLED GIN",
-   "kana": "ノルマンディア",
+   "kana": "ノルマンディア ジン",
    "abv": 41.4,
    "country": "フランス",
    "country_main": "フランス",
@@ -5102,7 +5102,7 @@
   },
   {
    "name": "NORTH COAST 500 GIN",
-   "kana": "ノースコースト 500",
+   "kana": "ノースコースト 500 ジン",
    "abv": 41.5,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -5111,7 +5111,7 @@
   },
   {
    "name": "NORDEN DRY GIN",
-   "kana": "ノーデン",
+   "kana": "ノーデン ジン",
    "abv": 44.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -5120,7 +5120,7 @@
   },
   {
    "name": "HIGHWOOD Old Tom Gin",
-   "kana": "ハイウッド オールドトム",
+   "kana": "ハイウッド オールドトム ジン",
    "abv": 40.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -5129,7 +5129,7 @@
   },
   {
    "name": "Height of Arrows GIN",
-   "kana": "ハイトオブアローズ",
+   "kana": "ハイトオブアローズ ジン",
    "abv": 43.0,
    "country": "イギリス（スコットランド：エディンバラ）",
    "country_main": "イギリス",
@@ -5138,7 +5138,7 @@
   },
   {
    "name": "HEIGHT OF ARROWS BRIGHT GIN",
-   "kana": "ハイトオブアローズ ブライト",
+   "kana": "ハイトオブアローズ ブライト ジン",
    "abv": 48.0,
    "country": "イギリス（スコットランド：エディンバラ）",
    "country_main": "イギリス",
@@ -5147,7 +5147,7 @@
   },
   {
    "name": "HEIMAT GIN",
-   "kana": "ハイマット",
+   "kana": "ハイマット ジン",
    "abv": 43.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -5174,7 +5174,7 @@
   },
   {
    "name": "HANAMI DRY GIN",
-   "kana": "ハナミ",
+   "kana": "ハナミ ジン",
    "abv": 43.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -5183,7 +5183,7 @@
   },
   {
    "name": "HANEMOMO GIN Batch.2",
-   "kana": "ハネモモ バッチ2",
+   "kana": "ハネモモ バッチ2 ジン",
    "abv": 43.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -5192,7 +5192,7 @@
   },
   {
    "name": "HANEMOMO GIN Batsh.3",
-   "kana": "ハネモモ バッチ3",
+   "kana": "ハネモモ バッチ3 ジン",
    "abv": 43.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -5201,7 +5201,7 @@
   },
   {
    "name": "HAPUSA DRY GIN",
-   "kana": "ハプサ",
+   "kana": "ハプサ ジン",
    "abv": 43.0,
    "country": "インド",
    "country_main": "インド",
@@ -5210,7 +5210,7 @@
   },
   {
    "name": "HAPENNY DUBLIN DRY GIN",
-   "kana": "ハペニー ダブリン",
+   "kana": "ハペニー ダブリン ジン",
    "abv": 41.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -5219,7 +5219,7 @@
   },
   {
    "name": "Humming Bird Organic Gin",
-   "kana": "ハミングバード",
+   "kana": "ハミングバード ジン",
    "abv": 40.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -5228,7 +5228,7 @@
   },
   {
    "name": "HARAHORN NORWEGIAN GIN",
-   "kana": "ハラホーン",
+   "kana": "ハラホーン ジン",
    "abv": 46.0,
    "country": "ノルウェー",
    "country_main": "ノルウェー",
@@ -5237,7 +5237,7 @@
   },
   {
    "name": "HARRISAN GIN SHINJUKU CRAFT GIN",
-   "kana": "ハリサン 新宿",
+   "kana": "ハリサン 新宿 ジン",
    "abv": 47.0,
    "country": "日本（東京：新宿）",
    "country_main": "日本",
@@ -5246,7 +5246,7 @@
   },
   {
    "name": "HANSEN TROUBLE GIN",
-   "kana": "ハンセン トラブル",
+   "kana": "ハンセン トラブル ジン",
    "abv": 40.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -5255,7 +5255,7 @@
   },
   {
    "name": "HANSEN BARRELED TROUBLE GIN",
-   "kana": "ハンセン バレルド トラブル",
+   "kana": "ハンセン バレルド トラブル ジン",
    "abv": 42.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -5273,7 +5273,7 @@
   },
   {
    "name": "THE HERBALIST YASO GIN Limited Edition 03 Not Equal",
-   "kana": "ハーバリスト 八蘇 リミテッドエディション 03 ノットイコール",
+   "kana": "ハーバリスト 八蘇 リミテッドエディション 03 ノットイコール ジン",
    "abv": 45.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -5282,7 +5282,7 @@
   },
   {
    "name": "HERMIT GIN",
-   "kana": "ハーミット",
+   "kana": "ハーミット ジン",
    "abv": 43.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -5290,17 +5290,8 @@
    "botanicals": "ジュニパー、アンジェリカ、カルダモン、シナモン、コリアンダー、ナツメグ、柑橘ピール"
   },
   {
-   "name": "BATHTUB GIN",
-   "kana": "バスタブ",
-   "abv": 43.3,
-   "country": "イギリス（イングランド）",
-   "country_main": "イギリス",
-   "note": "エイブルフォースは、イングランド屈指のオンラインリテーラーとして知られるマスター オブ モルトの関連会社が所有するブランドで、コンパウンド・ジンをリリースしています。フラッグシップのバスタブジンは、2014年に「ワールド・ジン・アワード」のコンパウンド・ジン部門で世界一に輝き、2015年には「インターナショナル・ワイン&スピリッツ・コンペティション（IWSC）」のジン・コンテンポラリースタイル部門にて最高金賞を受賞しています。また、ひと際目を引く特徴あるボトルパッケージは紙と撚り紐、ワックスを用いて 1 本 1 本 ハンドメイドで仕上げられており、イギリス本国では高級デパート でも取り扱われている人気のジンです。",
-   "botanicals": "ジュニパー、コリアンダー、オレンジピール、シナモン、クローブ、カルダモン"
-  },
-  {
    "name": "BATHTUB GIN Explorers' Edition #1",
-   "kana": "バスタブ エクスプローラーズエディション No.1",
+   "kana": "バスタブ エクスプローラーズエディション No.1 ジン",
    "abv": 50.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -5309,7 +5300,7 @@
   },
   {
    "name": "BATHTUB OldTom GIN",
-   "kana": "バスタブ オールドトム",
+   "kana": "バスタブ オールドトム ジン",
    "abv": 42.4,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -5317,17 +5308,17 @@
    "botanicals": "ジュニパー、オレンジピール、カルダモン、コリアンダー、シナモン"
   },
   {
-   "name": "BUCKINGHAM PALACE DRY GIN",
-   "kana": "バッキンガムパレス",
-   "abv": 42.0,
-   "country": "イギリス",
+   "name": "BATHTUB GIN",
+   "kana": "バスタブ ジン",
+   "abv": 43.3,
+   "country": "イギリス（イングランド）",
    "country_main": "イギリス",
-   "note": "250種以上の草花が生い茂る16ヘクタールに及ぶバッキンガム宮殿の庭園で手摘みされたレモンバーベナ、サンザシの実、ベイリーフ、マルベリーリーフなどを含む12種類のボタニカルを使用し、スモールバッチでつくられる英国王室公認のドライジンです。イギリス王室のエリザベス女王(エリザベスⅡ世)もこのジンをリリースするにあたり、実際にテイスティングされたそうです。",
-   "botanicals": "ジュニパー、レモンバーベナ、サンザシの実、ベイリーフ、桑の葉"
+   "note": "エイブルフォースは、イングランド屈指のオンラインリテーラーとして知られるマスター オブ モルトの関連会社が所有するブランドで、コンパウンド・ジンをリリースしています。フラッグシップのバスタブジンは、2014年に「ワールド・ジン・アワード」のコンパウンド・ジン部門で世界一に輝き、2015年には「インターナショナル・ワイン&スピリッツ・コンペティション（IWSC）」のジン・コンテンポラリースタイル部門にて最高金賞を受賞しています。また、ひと際目を引く特徴あるボトルパッケージは紙と撚り紐、ワックスを用いて 1 本 1 本 ハンドメイドで仕上げられており、イギリス本国では高級デパート でも取り扱われている人気のジンです。",
+   "botanicals": "ジュニパー、コリアンダー、オレンジピール、シナモン、クローブ、カルダモン"
   },
   {
    "name": "BUCKINGHAM PALACE CORONATION DRY GIN",
-   "kana": "バッキンガムパレス コロネーション",
+   "kana": "バッキンガムパレス コロネーション ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5335,8 +5326,17 @@
    "botanicals": "ジュニパー、レモンバーベナ、サンザシの実、ベイリーフ、桑の葉"
   },
   {
+   "name": "BUCKINGHAM PALACE DRY GIN",
+   "kana": "バッキンガムパレス ジン",
+   "abv": 42.0,
+   "country": "イギリス",
+   "country_main": "イギリス",
+   "note": "250種以上の草花が生い茂る16ヘクタールに及ぶバッキンガム宮殿の庭園で手摘みされたレモンバーベナ、サンザシの実、ベイリーフ、マルベリーリーフなどを含む12種類のボタニカルを使用し、スモールバッチでつくられる英国王室公認のドライジンです。イギリス王室のエリザベス女王(エリザベスⅡ世)もこのジンをリリースするにあたり、実際にテイスティングされたそうです。",
+   "botanicals": "ジュニパー、レモンバーベナ、サンザシの実、ベイリーフ、桑の葉"
+  },
+  {
    "name": "BUCKINGHAM PALACE small‐batch DRY GIN",
-   "kana": "バッキンガムパレス スモールバッチ",
+   "kana": "バッキンガムパレス スモールバッチ ジン",
    "abv": 42.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5354,7 +5354,7 @@
   },
   {
    "name": "BAREKSTEN DOUBLE GIN",
-   "kana": "バレクステン ダブル",
+   "kana": "バレクステン ダブル ジン",
    "abv": 43.0,
    "country": "ノルウェー",
    "country_main": "ノルウェー",
@@ -5363,7 +5363,7 @@
   },
   {
    "name": "BAREKSTEN BOTANICAL GIN",
-   "kana": "バレクステン ボタニカル",
+   "kana": "バレクステン ボタニカル ジン",
    "abv": 46.0,
    "country": "ノルウェー",
    "country_main": "ノルウェー",
@@ -5372,7 +5372,7 @@
   },
   {
    "name": "Valley of Mother of God - Maplewood Smoked Gin",
-   "kana": "バレー オブ マザー オブ ゴッド メープルウッド スモークド",
+   "kana": "バレー オブ マザー オブ ゴッド メープルウッド スモークド ジン",
    "abv": 43.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -5381,7 +5381,7 @@
   },
   {
    "name": "Valley of Mother of God - Canadian Wild Juniper Gin",
-   "kana": "バレー オブ マザー オブ ゴッド ワイルドジュニパー",
+   "kana": "バレー オブ マザー オブ ゴッド ワイルドジュニパー ジン",
    "abv": 43.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -5390,7 +5390,7 @@
   },
   {
    "name": "Baron's Gin BIRD CHERRY",
-   "kana": "バロンズ バードチェリー",
+   "kana": "バロンズ バードチェリー ジン",
    "abv": 43.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -5399,7 +5399,7 @@
   },
   {
    "name": "Baron's Gin MELANCHOLY THISTLE",
-   "kana": "バロンズ メランコリーシスル",
+   "kana": "バロンズ メランコリーシスル ジン",
    "abv": 43.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -5408,7 +5408,7 @@
   },
   {
    "name": "BERTHA'S REVENGE IRISH MILK GIN",
-   "kana": "バーサズ リベンジ アイリッシュミルク",
+   "kana": "バーサズ リベンジ アイリッシュミルク ジン",
    "abv": 42.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -5417,7 +5417,7 @@
   },
   {
    "name": "BIRDS Dry Gin",
-   "kana": "バーズ",
+   "kana": "バーズ ジン",
    "abv": 42.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -5426,7 +5426,7 @@
   },
   {
    "name": "BARBER’S LONDON DRY GIN",
-   "kana": "バーバーズ",
+   "kana": "バーバーズ ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5435,7 +5435,7 @@
   },
   {
    "name": "BARR HILL GIN",
-   "kana": "バーヒル",
+   "kana": "バーヒル ジン",
    "abv": 45.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -5444,7 +5444,7 @@
   },
   {
    "name": "Burleighs LONDON DRY GIN EXPORT STRENGTH",
-   "kana": "バーレイズ エクスポートストレングス",
+   "kana": "バーレイズ エクスポートストレングス ジン",
    "abv": 47.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5462,7 +5462,7 @@
   },
   {
    "name": "CRAFT GIN PACHI PACHI",
-   "kana": "パチパチ",
+   "kana": "パチパチ ジン",
    "abv": 48.0,
    "country": "日本（愛媛）",
    "country_main": "日本",
@@ -5471,7 +5471,7 @@
   },
   {
    "name": "PANAREA ISLAND GIN",
-   "kana": "パナレア アイランド",
+   "kana": "パナレア アイランド ジン",
    "abv": 44.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -5480,7 +5480,7 @@
   },
   {
    "name": "PANAREA SUNSET GIN",
-   "kana": "パナレア サンセット",
+   "kana": "パナレア サンセット ジン",
    "abv": 44.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -5489,7 +5489,7 @@
   },
   {
    "name": "PERFUME GIN LEMONGRASS -BARTENDER’S EDITION-",
-   "kana": "パヒューム レモングラス バーテンダーズエディション",
+   "kana": "パヒューム レモングラス バーテンダーズエディション ジン",
    "abv": 47.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -5498,7 +5498,7 @@
   },
   {
    "name": "PERFUME GIN CHIRAN TEA -BARTENDER’S EDITION-",
-   "kana": "パヒューム 知覧ティー バーテンダーズエディション",
+   "kana": "パヒューム 知覧ティー バーテンダーズエディション ジン",
    "abv": 47.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -5507,7 +5507,7 @@
   },
   {
    "name": "PERFUME GIN HOSHO -BARTENDER’S BLEND-",
-   "kana": "パヒューム 芳樟 バーテンダーズブレンド",
+   "kana": "パヒューム 芳樟 バーテンダーズブレンド ジン",
    "abv": 47.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -5525,7 +5525,7 @@
   },
   {
    "name": "HIDDEN WORLD GIN",
-   "kana": "ヒドゥンワールド",
+   "kana": "ヒドゥンワールド ジン",
    "abv": 60.0,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -5552,7 +5552,7 @@
   },
   {
    "name": "日の丸ジン 蔵風土 HINOMARU GIN CRAFT",
-   "kana": "ヒノマル クラフウド",
+   "kana": "ヒノマル クラフウド ジン",
    "abv": 40.0,
    "country": "日本（茨城）",
    "country_main": "日本",
@@ -5561,7 +5561,7 @@
   },
   {
    "name": "HIBA GIN",
-   "kana": "ヒバ",
+   "kana": "ヒバ ジン",
    "abv": 40.0,
    "country": "日本（）",
    "country_main": "日本",
@@ -5570,7 +5570,7 @@
   },
   {
    "name": "HILBING DRY GIN",
-   "kana": "ヒルビング",
+   "kana": "ヒルビング ジン",
    "abv": 40.0,
    "country": "アルゼンチン",
    "country_main": "アルゼンチン",
@@ -5579,7 +5579,7 @@
   },
   {
    "name": "HILBING MALBEC GIN",
-   "kana": "ヒルビング マルベック",
+   "kana": "ヒルビング マルベック ジン",
    "abv": 40.0,
    "country": "アルゼンチン",
    "country_main": "アルゼンチン",
@@ -5588,7 +5588,7 @@
   },
   {
    "name": "BIERCEE GIN BELGIUM LESS IS MORE",
-   "kana": "ビエルセ レスイズモア",
+   "kana": "ビエルセ レスイズモア ジン",
    "abv": 44.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -5624,7 +5624,7 @@
   },
   {
    "name": "BIMBER KUMQUAT GIN",
-   "kana": "ビンバー キンカン",
+   "kana": "ビンバー キンカン ジン",
    "abv": 47.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -5633,7 +5633,7 @@
   },
   {
    "name": "BIMBER DA HONG PAO TEA GIN",
-   "kana": "ビンバー ダーホンパオティー",
+   "kana": "ビンバー ダーホンパオティー ジン",
    "abv": 51.8,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -5642,7 +5642,7 @@
   },
   {
    "name": "BCN GIN",
-   "kana": "ビーシーエヌ",
+   "kana": "ビーシーエヌ ジン",
    "abv": 40.0,
    "country": "スペイン（バルセロナ）",
    "country_main": "スペイン",
@@ -5723,7 +5723,7 @@
   },
   {
    "name": "PICKERING'S GIN",
-   "kana": "ピッカリングス",
+   "kana": "ピッカリングス ジン",
    "abv": 42.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -5732,7 +5732,7 @@
   },
   {
    "name": "PIG SKIN GIN",
-   "kana": "ピッグスキン",
+   "kana": "ピッグスキン ジン",
    "abv": 40.0,
    "country": "イタリア（サルディニア島）",
    "country_main": "イタリア",
@@ -5741,7 +5741,7 @@
   },
   {
    "name": "PIMLICO London Dry GIN",
-   "kana": "ピムリコ",
+   "kana": "ピムリコ ジン",
    "abv": 57.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5750,7 +5750,7 @@
   },
   {
    "name": "Pure Bread Gin ＃1",
-   "kana": "ピュアブレッド ＃1",
+   "kana": "ピュアブレッド ＃1 ジン",
    "abv": 41.0,
    "country": "日本（石川県：金沢）",
    "country_main": "日本",
@@ -5759,7 +5759,7 @@
   },
   {
    "name": "PYT GIN",
-   "kana": "ピュット",
+   "kana": "ピュット ジン",
    "abv": null,
    "country": "日本",
    "country_main": "日本",
@@ -5768,7 +5768,7 @@
   },
   {
    "name": "PILLONI GIN GRIFU",
-   "kana": "ピローニ グリフ",
+   "kana": "ピローニ グリフ ジン",
    "abv": 43.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -5777,7 +5777,7 @@
   },
   {
    "name": "PINK 47 London Dry Gin",
-   "kana": "ピンク47",
+   "kana": "ピンク47 ジン",
    "abv": 47.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5786,7 +5786,7 @@
   },
   {
    "name": "PINKSTER AGREEABLY BRITISH GIN",
-   "kana": "ピンクスター",
+   "kana": "ピンクスター ジン",
    "abv": 37.5,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -5804,7 +5804,7 @@
   },
   {
    "name": "Firestarter GIN",
-   "kana": "ファイヤースターター",
+   "kana": "ファイヤースターター ジン",
    "abv": 40.0,
    "country": "モルドバ共和国",
    "country_main": "モルドバ共和国",
@@ -5822,7 +5822,7 @@
   },
   {
    "name": "1st Cut Fresh Hop Riwaka Gin",
-   "kana": "ファーストカット フレッシュホップ リワカ",
+   "kana": "ファーストカット フレッシュホップ リワカ ジン",
    "abv": 42.0,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -5831,7 +5831,7 @@
   },
   {
    "name": "Fifty Pounds GIN",
-   "kana": "フィフティポンド",
+   "kana": "フィフティポンド ジン",
    "abv": 43.5,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5840,7 +5840,7 @@
   },
   {
    "name": "Filliers Dry Gin 28",
-   "kana": "フィリエルス 28",
+   "kana": "フィリエルス 28 ジン",
    "abv": 46.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -5858,7 +5858,7 @@
   },
   {
    "name": "FAIR. Juniper gin organic",
-   "kana": "フェア ジュニパー オーガニック",
+   "kana": "フェア ジュニパー オーガニック ジン",
    "abv": 42.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -5867,7 +5867,7 @@
   },
   {
    "name": "FAIR. Barrel Aged Gin",
-   "kana": "フェア バレルエイジド",
+   "kana": "フェア バレルエイジド ジン",
    "abv": 42.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -5876,7 +5876,7 @@
   },
   {
    "name": "Feckin Irish Gin",
-   "kana": "フェッキン",
+   "kana": "フェッキン ジン",
    "abv": 40.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -5894,7 +5894,7 @@
   },
   {
    "name": "FERDINAND'S Eau de vie Style Gin",
-   "kana": "フェルディナンズ オードヴィー スタイル",
+   "kana": "フェルディナンズ オードヴィー スタイル ジン",
    "abv": 46.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -5903,7 +5903,7 @@
   },
   {
    "name": "FERDINAND'S SAAR DRY GIN",
-   "kana": "フェルディナンズ ザール",
+   "kana": "フェルディナンズ ザール ジン",
    "abv": 44.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -5912,7 +5912,7 @@
   },
   {
    "name": "VOR GIN",
-   "kana": "フォア",
+   "kana": "フォア ジン",
    "abv": 47.0,
    "country": "アイスランド",
    "country_main": "アイスランド",
@@ -5921,7 +5921,7 @@
   },
   {
    "name": "VOR GIN Barrel Aged",
-   "kana": "フォア バレルエイジド",
+   "kana": "フォア バレルエイジド ジン",
    "abv": 47.0,
    "country": "アイスランド",
    "country_main": "アイスランド",
@@ -5930,7 +5930,7 @@
   },
   {
    "name": "FOREST GIN",
-   "kana": "フォレスト",
+   "kana": "フォレスト ジン",
    "abv": 42.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5939,7 +5939,7 @@
   },
   {
    "name": "VON HALLERS GIN",
-   "kana": "フォンハラーズ",
+   "kana": "フォンハラーズ ジン",
    "abv": 44.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -5948,7 +5948,7 @@
   },
   {
    "name": "Forthave Blue Gin Review",
-   "kana": "フォーセイヴ ブルー",
+   "kana": "フォーセイヴ ブルー ジン",
    "abv": 43.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -5966,7 +5966,7 @@
   },
   {
    "name": "FOUR PILLARS Christmas Gin",
-   "kana": "フォーピラーズ クリスマス",
+   "kana": "フォーピラーズ クリスマス ジン",
    "abv": 43.8,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -5975,7 +5975,7 @@
   },
   {
    "name": "FOUR PILLARS Spiced Negroni Gin",
-   "kana": "フォーピラーズ スパイスドネグローニ",
+   "kana": "フォーピラーズ スパイスドネグローニ ジン",
    "abv": 43.8,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -5993,7 +5993,7 @@
   },
   {
    "name": "FOUR PILLARS Navy Strength Gin",
-   "kana": "フォーピラーズ ネイビーストレングス",
+   "kana": "フォーピラーズ ネイビーストレングス ジン",
    "abv": 58.8,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -6002,7 +6002,7 @@
   },
   {
    "name": "FOUR PILLARS BLOODY SHIRAZ GIN",
-   "kana": "フォーピラーズ ブラッディシラーズ",
+   "kana": "フォーピラーズ ブラッディシラーズ ジン",
    "abv": 37.8,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -6011,7 +6011,7 @@
   },
   {
    "name": "FOUR PILLARS Rare Dry Gin",
-   "kana": "フォーピラーズ レア",
+   "kana": "フォーピラーズ レア ジン",
    "abv": 41.8,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -6065,7 +6065,7 @@
   },
   {
    "name": "FEW BREAKFAST GIN",
-   "kana": "フュー ブレックファースト",
+   "kana": "フュー ブレックファースト ジン",
    "abv": 42.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -6083,7 +6083,7 @@
   },
   {
    "name": "VL92 GIN",
-   "kana": "ブイエル92",
+   "kana": "ブイエル92 ジン",
    "abv": 41.7,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -6092,7 +6092,7 @@
   },
   {
    "name": "Blackwoods vintage dry gin",
-   "kana": "ブラックウッズ ヴィンテージ",
+   "kana": "ブラックウッズ ヴィンテージ ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6101,7 +6101,7 @@
   },
   {
    "name": "BLACK DEATH LONDON DRY GIN",
-   "kana": "ブラックデス",
+   "kana": "ブラックデス ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6110,7 +6110,7 @@
   },
   {
    "name": "BLACK TOMATO GIN",
-   "kana": "ブラックトマト",
+   "kana": "ブラックトマト ジン",
    "abv": 42.3,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -6128,7 +6128,7 @@
   },
   {
    "name": "BRICK GIN",
-   "kana": "ブリック",
+   "kana": "ブリック ジン",
    "abv": 40.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -6137,7 +6137,7 @@
   },
   {
    "name": "BROOKLYN GIN",
-   "kana": "ブルックリン",
+   "kana": "ブルックリン ジン",
    "abv": 40.0,
    "country": "アメリカ（ニューヨーク）",
    "country_main": "アメリカ",
@@ -6155,7 +6155,7 @@
   },
   {
    "name": "Burdon HIERBABUENA GIN",
-   "kana": "ブルドン イエルバブエナ",
+   "kana": "ブルドン イエルバブエナ ジン",
    "abv": 37.5,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -6164,7 +6164,7 @@
   },
   {
    "name": "Burdon HIERBABUENA GIN CEREZAS",
-   "kana": "ブルドン イエルバブエナ セレサス",
+   "kana": "ブルドン イエルバブエナ セレサス ジン",
    "abv": 37.5,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -6173,7 +6173,7 @@
   },
   {
    "name": "BLUECOAT AMERICAN DRY GIN",
-   "kana": "ブルーコート",
+   "kana": "ブルーコート ジン",
    "abv": 47.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -6182,7 +6182,7 @@
   },
   {
    "name": "BLUE BOTTLE DRY GIN",
-   "kana": "ブルーボトル",
+   "kana": "ブルーボトル ジン",
    "abv": 47.0,
    "country": "イギリス（チャンネル諸島）",
    "country_main": "イギリス",
@@ -6191,7 +6191,7 @@
   },
   {
    "name": "BLOOM LONDON GIN",
-   "kana": "ブルーム",
+   "kana": "ブルーム ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6218,7 +6218,7 @@
   },
   {
    "name": "BLUE RABBIT GIN",
-   "kana": "ブルーラビット",
+   "kana": "ブルーラビット ジン",
    "abv": 43.0,
    "country": "日本（東京：田園調布）",
    "country_main": "日本",
@@ -6227,7 +6227,7 @@
   },
   {
    "name": "BLUE RABBIT PREMIUM GIN",
-   "kana": "ブルーラビット プレミアム",
+   "kana": "ブルーラビット プレミアム ジン",
    "abv": 43.0,
    "country": "日本（東京：田園調布）",
    "country_main": "日本",
@@ -6236,7 +6236,7 @@
   },
   {
    "name": "BRAVEHEART LONDON DRY GIN",
-   "kana": "ブレイブハート",
+   "kana": "ブレイブハート ジン",
    "abv": 40.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -6245,7 +6245,7 @@
   },
   {
    "name": "Gin Brecon Special Reserve",
-   "kana": "ブレコン スペシャルリザーブ",
+   "kana": "ブレコン スペシャルリザーブ ジン",
    "abv": 40.0,
    "country": "イギリス（ウェールズ）",
    "country_main": "イギリス",
@@ -6254,7 +6254,7 @@
   },
   {
    "name": "BROCKMANS PREMIUM GIN",
-   "kana": "ブロックマンズ プレミアム",
+   "kana": "ブロックマンズ プレミアム ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6272,7 +6272,7 @@
   },
   {
    "name": "BRONCO 20 YOKOHAMA DRY GIN",
-   "kana": "ブロンコ 20 ヨコハマ",
+   "kana": "ブロンコ 20 ヨコハマ ジン",
    "abv": 47.0,
    "country": "日本（神奈川：横浜）",
    "country_main": "日本",
@@ -6281,7 +6281,7 @@
   },
   {
    "name": "BROKER'S LONDON DRY GIN",
-   "kana": "ブローカーズ",
+   "kana": "ブローカーズ ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6290,7 +6290,7 @@
   },
   {
    "name": "BROKEN BONES LONDON DRY GIN",
-   "kana": "ブロークンボーンズ",
+   "kana": "ブロークンボーンズ ジン",
    "abv": 45.0,
    "country": "スロベニア",
    "country_main": "スロベニア",
@@ -6299,7 +6299,7 @@
   },
   {
    "name": "BROKEN BONES NAVY STRENGTH GIN",
-   "kana": "ブロークンボーンズ ネイビーストレングス",
+   "kana": "ブロークンボーンズ ネイビーストレングス ジン",
    "abv": 57.0,
    "country": "スロベニア",
    "country_main": "スロベニア",
@@ -6308,7 +6308,7 @@
   },
   {
    "name": "BROKEN BONES LJUBLJANA DRAGON GIN",
-   "kana": "ブロークンボーンズ リュブリャナ ドラゴン",
+   "kana": "ブロークンボーンズ リュブリャナ ドラゴン ジン",
    "abv": 45.0,
    "country": "スロベニア",
    "country_main": "スロベニア",
@@ -6326,7 +6326,7 @@
   },
   {
    "name": "BUSS N°509 PREMIUM GIN MASTER CUT",
-   "kana": "ブース No.509 マスターカット",
+   "kana": "ブース No.509 マスターカット ジン",
    "abv": 45.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -6334,17 +6334,8 @@
    "botanicals": "ジュニパー、コリアンダー、ライム、グレープフルーツ、オレンジ、レモン、リコリス、アンジェリカ、バニラ、カルダモン、オリスルート"
   },
   {
-   "name": "BOODLES British London Dry Gin",
-   "kana": "ブードルズ",
-   "abv": 40.0,
-   "country": "イギリス",
-   "country_main": "イギリス",
-   "note": "ベースは、英国産小麦スピリッツ。その後、液体はカーターヘッド銅蒸留器で再蒸留され、植物成分が徐々にスピリッツに加えられる。蒸留所によって行われた実際的なレシピが元になっているため、レモンやライムのスライスがガーニッシュとして使われることを前提とされていたため、ブードルズ ジンには柑橘類が含まれていない。",
-   "botanicals": "ジュニパー、コリアンダーシード、アンジェリカルート、アンジェリカシード、カッシアバーク、キャラウェイシード、ナツメグ、ローズマリー、セージ"
-  },
-  {
    "name": "BOODLES British London Dry Gin Old Bottle",
-   "kana": "ブードルズ オールドボトル",
+   "kana": "ブードルズ オールドボトル ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6352,8 +6343,17 @@
    "botanicals": "ジュニパー、コリアンダー、アンジェリカルート、アンジェリカシード、カッシア、キャラウェイ、ナツメグ、ローズマリー、セージ"
   },
   {
+   "name": "BOODLES British London Dry Gin",
+   "kana": "ブードルズ ジン",
+   "abv": 40.0,
+   "country": "イギリス",
+   "country_main": "イギリス",
+   "note": "ベースは、英国産小麦スピリッツ。その後、液体はカーターヘッド銅蒸留器で再蒸留され、植物成分が徐々にスピリッツに加えられる。蒸留所によって行われた実際的なレシピが元になっているため、レモンやライムのスライスがガーニッシュとして使われることを前提とされていたため、ブードルズ ジンには柑橘類が含まれていない。",
+   "botanicals": "ジュニパー、コリアンダーシード、アンジェリカルート、アンジェリカシード、カッシアバーク、キャラウェイシード、ナツメグ、ローズマリー、セージ"
+  },
+  {
    "name": "POOR TOMS SYDNEY DRY GIN",
-   "kana": "プアートムズ シドニー",
+   "kana": "プアートムズ シドニー ジン",
    "abv": 41.3,
    "country": "オーストリア",
    "country_main": "オーストリア",
@@ -6361,17 +6361,8 @@
    "botanicals": "ジュニパー、グラニースミス（青りんご）、ストロベリーガムリーフ、カモミール、レモンマートル、コリアンダーシード、アンジェリカルート、シナモン、カルダモン、クベバペッパー"
   },
   {
-   "name": "Puerto De Irdias SEVILLIAN GIN PREMIUM",
-   "kana": "プエルトデインディアス プレミアム",
-   "abv": 40.0,
-   "country": "スペイン",
-   "country_main": "スペイン",
-   "note": "スペインのセビリア州のカルモナの町にあるアンダルシアで最も古い蒸留所の1つで生産されたプレミアムジン。これは全く新しいカテゴリーにインスピレーションを与えたストロベリージンです。蒸留した新鮮なイチゴで作られた唯一のピンクジンです。",
-   "botanicals": "ジュニパー、コリアンダー、レモンピール、オレンジピール、ライムピール、グレープフルーツピール、リコリス"
-  },
-  {
    "name": "Puerto De Irdias SEVILLIAN GIN PREMIUM CLASSIC",
-   "kana": "プエルトデインディアス プレミアム クラシック",
+   "kana": "プエルトデインディアス プレミアム クラシック ジン",
    "abv": 40.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -6379,8 +6370,17 @@
    "botanicals": "ジュニパー、コリアンダー、レモンピール、オレンジピール、ライムピール、グレープフルーツピール、リコリス"
   },
   {
+   "name": "Puerto De Irdias SEVILLIAN GIN PREMIUM",
+   "kana": "プエルトデインディアス プレミアム ジン",
+   "abv": 40.0,
+   "country": "スペイン",
+   "country_main": "スペイン",
+   "note": "スペインのセビリア州のカルモナの町にあるアンダルシアで最も古い蒸留所の1つで生産されたプレミアムジン。これは全く新しいカテゴリーにインスピレーションを与えたストロベリージンです。蒸留した新鮮なイチゴで作られた唯一のピンクジンです。",
+   "botanicals": "ジュニパー、コリアンダー、レモンピール、オレンジピール、ライムピール、グレープフルーツピール、リコリス"
+  },
+  {
    "name": "Puerto de Indias - Sevillian Gin Premium Strawberry",
-   "kana": "プエルトデインディアス プレミアム ストロベリー",
+   "kana": "プエルトデインディアス プレミアム ストロベリー ジン",
    "abv": 37.5,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -6389,7 +6389,7 @@
   },
   {
    "name": "PLOW 004 Chamomile Gin 2024",
-   "kana": "プラウ 004 カモミール 2024",
+   "kana": "プラウ 004 カモミール 2024 ジン",
    "abv": 40.0,
    "country": "日本（山梨）",
    "country_main": "日本",
@@ -6398,7 +6398,7 @@
   },
   {
    "name": "PLOW 005 Sauna Gin",
-   "kana": "プラウ 005 サウナ",
+   "kana": "プラウ 005 サウナ ジン",
    "abv": 40.0,
    "country": "日本（山梨）",
    "country_main": "日本",
@@ -6416,7 +6416,7 @@
   },
   {
    "name": "PLATINVM London Dry Gin GOLD 24K",
-   "kana": "プラチナム ゴールド 24K",
+   "kana": "プラチナム ゴールド 24K ジン",
    "abv": 43.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -6425,7 +6425,7 @@
   },
   {
    "name": "Plymouth Gin",
-   "kana": "プリマス",
+   "kana": "プリマス ジン",
    "abv": 41.2,
    "country": "イギリス（イングランド：プリマス）",
    "country_main": "イギリス",
@@ -6434,7 +6434,7 @@
   },
   {
    "name": "Gin Primo",
-   "kana": "プリモ",
+   "kana": "プリモ ジン",
    "abv": 43.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -6443,7 +6443,7 @@
   },
   {
    "name": "PRAIRIE GIN",
-   "kana": "プレイリー",
+   "kana": "プレイリー ジン",
    "abv": 40.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -6452,7 +6452,7 @@
   },
   {
    "name": "PROFESSORE Crocodile Gin",
-   "kana": "プロフェッサー クロコダイル",
+   "kana": "プロフェッサー クロコダイル ジン",
    "abv": 45.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -6461,7 +6461,7 @@
   },
   {
    "name": "PROFESSORE Madam Gin",
-   "kana": "プロフェッサー マダム",
+   "kana": "プロフェッサー マダム ジン",
    "abv": 42.9,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -6470,7 +6470,7 @@
   },
   {
    "name": "PROFESSORE Monsieur Gin",
-   "kana": "プロフェッサー ムッシュ",
+   "kana": "プロフェッサー ムッシュ ジン",
    "abv": 43.7,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -6497,7 +6497,7 @@
   },
   {
    "name": "HAYMAN'S FAMILY RESERVE GIN",
-   "kana": "ヘイマンズ ファミリーリザーブ",
+   "kana": "ヘイマンズ ファミリーリザーブ ジン",
    "abv": 41.3,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6506,7 +6506,7 @@
   },
   {
    "name": "HENNERS GIN",
-   "kana": "ヘナーズ",
+   "kana": "ヘナーズ ジン",
    "abv": 45.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6515,7 +6515,7 @@
   },
   {
    "name": "HELSINKI DRY GIN",
-   "kana": "ヘルシンキ",
+   "kana": "ヘルシンキ ジン",
    "abv": 47.0,
    "country": "フィンランド",
    "country_main": "フィンランド",
@@ -6524,7 +6524,7 @@
   },
   {
    "name": "HELSINKI SAILOR'S GIN",
-   "kana": "ヘルシンキ セーラーズ",
+   "kana": "ヘルシンキ セーラーズ ジン",
    "abv": 57.2,
    "country": "フィンランド",
    "country_main": "フィンランド",
@@ -6532,17 +6532,8 @@
    "botanicals": "ジュニパー、リンゴンベリー、レモンピール、セビルオレンジピール、フェンネル、コリアンダー、オリス、アンジェリカルート、ローズペタル"
   },
   {
-   "name": "HERNO Dry Gin",
-   "kana": "ヘルノ",
-   "abv": 40.5,
-   "country": "スウェーデン",
-   "country_main": "スウェーデン",
-   "note": "スウェーデン初のジン専門蒸溜所「HERNÖ DISTILLERY」、小麦ベースにハンガリー産ジュニパーベリーやマダガスカル産ヴァニラなどオーガニックボタニカルを８種使用、非常に丸く柔らかい口当たり",
-   "botanicals": "ジュニパー、レモンピール、コリアンダー、ブラックペッパー、カッシアバーク、バニラ、リンゴンベリー、メドウスウィート"
-  },
-  {
    "name": "HERNO Islay Cask Gin",
-   "kana": "ヘルノ アイラカスク",
+   "kana": "ヘルノ アイラカスク ジン",
    "abv": 45.0,
    "country": "スウェーデン",
    "country_main": "スウェーデン",
@@ -6551,7 +6542,7 @@
   },
   {
    "name": "HERNO Old Tom Gin",
-   "kana": "ヘルノ オールドトム",
+   "kana": "ヘルノ オールドトム ジン",
    "abv": 43.0,
    "country": "スウェーデン",
    "country_main": "スウェーデン",
@@ -6568,8 +6559,17 @@
    "botanicals": "ジュニパー、カッシアバーク、コリアンダーバニラ、ブラックペッパー、メドウスイート、リンゴンベリー、レモンピール"
   },
   {
+   "name": "HERNO Dry Gin",
+   "kana": "ヘルノ ジン",
+   "abv": 40.5,
+   "country": "スウェーデン",
+   "country_main": "スウェーデン",
+   "note": "スウェーデン初のジン専門蒸溜所「HERNÖ DISTILLERY」、小麦ベースにハンガリー産ジュニパーベリーやマダガスカル産ヴァニラなどオーガニックボタニカルを８種使用、非常に丸く柔らかい口当たり",
+   "botanicals": "ジュニパー、レモンピール、コリアンダー、ブラックペッパー、カッシアバーク、バニラ、リンゴンベリー、メドウスウィート"
+  },
+  {
    "name": "HERNO Navy Strengts Gin",
-   "kana": "ヘルノ ネイビーストレングス",
+   "kana": "ヘルノ ネイビーストレングス ジン",
    "abv": 57.0,
    "country": "スウェーデン",
    "country_main": "スウェーデン",
@@ -6578,21 +6578,12 @@
   },
   {
    "name": "HERNO Pink BTL Gin",
-   "kana": "ヘルノ ピンクボトル",
+   "kana": "ヘルノ ピンクボトル ジン",
    "abv": 42.0,
    "country": "スウェーデン",
    "country_main": "スウェーデン",
    "note": "スウェーデンのヘルノー蒸留所が造るオーガニックのロンドンドライジン。着色料・香料・砂糖を使わず、ストロベリーやバラの花びらでフルーティかつフローラルに仕上げているが、液体自体は無色透明。「色は味を表さない」という遊び心が込められている。",
    "botanicals": "ジュニパー、ブラックペッパー、カッシア、コリアンダー、レモンピール、バラの花びら、ストロベリー、バニラ"
-  },
-  {
-   "name": "HENDRICK'S Gin",
-   "kana": "ヘンドリックス",
-   "abv": 44.0,
-   "country": "イギリス",
-   "country_main": "イギリス",
-   "note": "スコットランドの小さな海辺の村ガーバンで蒸溜されたプレミアムジン。カーターヘッドスチルとコッパーポットベネットスチルという２つの単式蒸留器を用い、11種類のボタニカルを浸漬、蒸留、ブレンドするという、一般的なジンとは異なる独自の製法で作られている。キュウリと薔薇の花びらのエキスを使用。",
-   "botanicals": "ジュニパー、コリアンダー、アンジェリカ、オリスルート、レモンピール、オレンジピール、キャラウェイ、クベバベリー、カモミール、エルダーフラワー、ヤロウ"
   },
   {
    "name": "HENDRICK'S Amazonia",
@@ -6605,7 +6596,7 @@
   },
   {
    "name": "Hendrick's Oasium Gin",
-   "kana": "ヘンドリックス オアシウム",
+   "kana": "ヘンドリックス オアシウム ジン",
    "abv": 43.4,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -6623,7 +6614,7 @@
   },
   {
    "name": "Hendrick's Grand Cabaret Gin",
-   "kana": "ヘンドリックス グランカバレ",
+   "kana": "ヘンドリックス グランカバレ ジン",
    "abv": 43.4,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6632,12 +6623,21 @@
   },
   {
    "name": "Hendrick's Sunspell Gin",
-   "kana": "ヘンドリックス サンスペル",
+   "kana": "ヘンドリックス サンスペル ジン",
    "abv": 43.4,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
    "note": "限定エディション〈ヘンドリックス ジン サンスペル〉は、“サンセットの魔法”から着想を得た限定エディションです。マスターディスティラー、レズリー・グレイシーが愛するスコットランド南岸・エイルサ・クレイグ島の夕暮れにインスピレーションを受け、その光景が目に浮かぶようなジンを創り上げました。温かみのあるシトラスと穏やかなスパイスの香り。口に含むと、ジュニパーのクラシックな骨格に、夕陽のように柔らい柑橘の甘みとスパイスが重なり、まるで一日の終わりをやさしく包み込むような、穏やかで幸福感に満ちた味わいが感じられます。おすすめは、トニックウォーターにスライスしたキュウリを添えたジントニック。 シトラスの明るさとスパイスの温もりが際立つ “サンセットを味わう一杯”。オレンジと金色が溶け合うような黄昏時の空模様が心に浮かぶことでしょう。",
    "botanicals": "ジュニパー、キュウリ、バラ"
+  },
+  {
+   "name": "HENDRICK'S Gin",
+   "kana": "ヘンドリックス ジン",
+   "abv": 44.0,
+   "country": "イギリス",
+   "country_main": "イギリス",
+   "note": "スコットランドの小さな海辺の村ガーバンで蒸溜されたプレミアムジン。カーターヘッドスチルとコッパーポットベネットスチルという２つの単式蒸留器を用い、11種類のボタニカルを浸漬、蒸留、ブレンドするという、一般的なジンとは異なる独自の製法で作られている。キュウリと薔薇の花びらのエキスを使用。",
+   "botanicals": "ジュニパー、コリアンダー、アンジェリカ、オリスルート、レモンピール、オレンジピール、キャラウェイ、クベバベリー、カモミール、エルダーフラワー、ヤロウ"
   },
   {
    "name": "HENDRICK'S NEPTUNIA",
@@ -6668,7 +6668,7 @@
   },
   {
    "name": "BER DRY GIN",
-   "kana": "ベア",
+   "kana": "ベア ジン",
    "abv": 43.0,
    "country": "ドイツ（ベルリン）",
    "country_main": "ドイツ",
@@ -6677,7 +6677,7 @@
   },
   {
    "name": "BEAR'S BOOK GIN",
-   "kana": "ベアーズブック",
+   "kana": "ベアーズブック ジン",
    "abv": 45.0,
    "country": "日本（熊本）",
    "country_main": "日本",
@@ -6686,7 +6686,7 @@
   },
   {
    "name": "BEAR'S BOOK MAGIC GIN",
-   "kana": "ベアーズブック マジック",
+   "kana": "ベアーズブック マジック ジン",
    "abv": 45.0,
    "country": "日本（熊本）",
    "country_main": "日本",
@@ -6812,7 +6812,7 @@
   },
   {
    "name": "VERY BERRY GIN",
-   "kana": "ベリーベリー",
+   "kana": "ベリーベリー ジン",
    "abv": 41.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -6821,7 +6821,7 @@
   },
   {
    "name": "Gin. Belet No.7",
-   "kana": "ベレ No.7",
+   "kana": "ベレ No.7 ジン",
    "abv": 40.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -6830,7 +6830,7 @@
   },
   {
    "name": "BEN LOMOND GIN",
-   "kana": "ベンローモンド",
+   "kana": "ベンローモンド ジン",
    "abv": 43.0,
    "country": "スコットランド",
    "country_main": "スコットランド",
@@ -6839,7 +6839,7 @@
   },
   {
    "name": "PATIENT WOLF MELBOURNE DRY GIN",
-   "kana": "ペイシェントウルフ メルボルン",
+   "kana": "ペイシェントウルフ メルボルン ジン",
    "abv": 41.5,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -6848,7 +6848,7 @@
   },
   {
    "name": "HOXTON GIN",
-   "kana": "ホクストン",
+   "kana": "ホクストン ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6901,17 +6901,8 @@
    "botanicals": "ジュニパーベリー、コリアンダーシード、アンジェリカルート、リコリスルート、カシアバーク、オレンジピール、レモンピール、ローズガリカ、ローゼル（ハイビスカス）、ハマナス、ローズヒップ、ラベンダー、サクラ、レモンバーム、ローマンカモミール、イエルバブエナ、イエローヤロウ、コモンヤロウ、シーベリー、エゾノカワラマツバ、オオバクロモジ、ブドウ果皮"
   },
   {
-   "name": "HOLON GIN",
-   "kana": "ホロン",
-   "abv": 35.0,
-   "country": "日本（東京）",
-   "country_main": "日本",
-   "note": "東洋のハーブやスパイスを使い、ととのえる時間に寄り添う、HOLONのシグネチャーボトル。シナモンの異国情緒な香りがのったあと、東洋のバニラとも呼ばれるパンダンリーフや、バラのようなハマナスの香りが舌の上に広がり、ラストはローズマリーと山椒のような風味のマーガオの爽やかな余韻が残ります。しっかりと素材の香りを閉じ込めながらも、口あたりのよさを引き出すため、ジンとしては低い度数で仕上げました。自分と向き合う静かな時間、親しい友人とのくつろいだ時間に、ぴったりのお酒です。",
-   "botanicals": "ジュニパー、アンジェリカルート、シナモン、ハマナス、パンダンリーフ、マーガオ、リンデン、ローズペタル、ローズマリー"
-  },
-  {
    "name": "HOLON GIN AME",
-   "kana": "ホロン アメ",
+   "kana": "ホロン アメ ジン",
    "abv": 40.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -6920,7 +6911,7 @@
   },
   {
    "name": "HOLON GIN SEASONAL 桜",
-   "kana": "ホロン シーズナル 桜",
+   "kana": "ホロン シーズナル 桜 ジン",
    "abv": 39.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -6929,7 +6920,7 @@
   },
   {
    "name": "HOLON GIN SEASONAL 梅紫蘇",
-   "kana": "ホロン シーズナル 梅紫蘇",
+   "kana": "ホロン シーズナル 梅紫蘇 ジン",
    "abv": 39.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -6938,7 +6929,7 @@
   },
   {
    "name": "HOLON GIN SEASONAL 蜜柑",
-   "kana": "ホロン シーズナル 蜜柑",
+   "kana": "ホロン シーズナル 蜜柑 ジン",
    "abv": 39.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -6947,7 +6938,7 @@
   },
   {
    "name": "HOLON GIN SEASONAL 金木犀",
-   "kana": "ホロン シーズナル 金木犀",
+   "kana": "ホロン シーズナル 金木犀 ジン",
    "abv": 39.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -6955,8 +6946,17 @@
    "botanicals": "ジュニパー、アンジェリカルート、アプリコット、カルダモン、シナモン、シナモンリーフ、パンダンリーフ、ラベンダー、リンデン、マーガオ、ローズペタル、金木犀"
   },
   {
+   "name": "HOLON GIN",
+   "kana": "ホロン ジン",
+   "abv": 35.0,
+   "country": "日本（東京）",
+   "country_main": "日本",
+   "note": "東洋のハーブやスパイスを使い、ととのえる時間に寄り添う、HOLONのシグネチャーボトル。シナモンの異国情緒な香りがのったあと、東洋のバニラとも呼ばれるパンダンリーフや、バラのようなハマナスの香りが舌の上に広がり、ラストはローズマリーと山椒のような風味のマーガオの爽やかな余韻が残ります。しっかりと素材の香りを閉じ込めながらも、口あたりのよさを引き出すため、ジンとしては低い度数で仕上げました。自分と向き合う静かな時間、親しい友人とのくつろいだ時間に、ぴったりのお酒です。",
+   "botanicals": "ジュニパー、アンジェリカルート、シナモン、ハマナス、パンダンリーフ、マーガオ、リンデン、ローズペタル、ローズマリー"
+  },
+  {
    "name": "HOLON GIN 晴",
-   "kana": "ホロン 晴",
+   "kana": "ホロン 晴 ジン",
    "abv": 40.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -6974,7 +6974,7 @@
   },
   {
    "name": "BOGART’S REAL ENGLISH GIN",
-   "kana": "ボガーツ リアルイングリッシュ",
+   "kana": "ボガーツ リアルイングリッシュ ジン",
    "abv": 45.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6983,7 +6983,7 @@
   },
   {
    "name": "BOXER GIN",
-   "kana": "ボクサー",
+   "kana": "ボクサー ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -7001,7 +7001,7 @@
   },
   {
    "name": "BOSQUE NATIVO GIN",
-   "kana": "ボスケ ナティーボ",
+   "kana": "ボスケ ナティーボ ジン",
    "abv": 42.0,
    "country": "アルゼンチン",
    "country_main": "アルゼンチン",
@@ -7010,7 +7010,7 @@
   },
   {
    "name": "THE BOTANICAL'S PREMIUM LONDON DRY GIN",
-   "kana": "ボタニカルズ プレミアム",
+   "kana": "ボタニカルズ プレミアム ジン",
    "abv": 42.5,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -7037,7 +7037,7 @@
   },
   {
    "name": "BOTTEGA BACUR DISTILLED DRY GIN",
-   "kana": "ボッテガ バクール",
+   "kana": "ボッテガ バクール ジン",
    "abv": 40.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -7054,15 +7054,6 @@
    "botanicals": "ジュニパー、レモングラス、クローブ、シナモン、キュベブペッパー、ローズヒップ、フェンネル、コリアンダー"
   },
   {
-   "name": "BOBBY’S SCHIEDAM DRY GIN",
-   "kana": "ボビーズ スキーダム",
-   "abv": 42.0,
-   "country": "オランダ",
-   "country_main": "オランダ",
-   "note": "ジュネヴァ発祥の地、オランダ／スキーダム産のジン。ボタニカルはライ麦100％のスピリッツと共にそれぞれ別々に蒸溜後、ブレンド。スムースな口当たり、シトラシー",
-   "botanicals": "ジュニパー、コリアンダー、レモングラス、クローブ、シナモン、キュベブペッパー、フェンネル、ローズヒップ"
-  },
-  {
    "name": "BOBBY’S SCHIEDAM Jenever",
    "kana": "ボビーズ スキーダム ジュネヴァ",
    "abv": 38.0,
@@ -7072,8 +7063,17 @@
    "botanicals": "ジュニパー、カルダモン、キュベブペッパー、ジンジャー、レモングラス"
   },
   {
+   "name": "BOBBY’S SCHIEDAM DRY GIN",
+   "kana": "ボビーズ スキーダム ジン",
+   "abv": 42.0,
+   "country": "オランダ",
+   "country_main": "オランダ",
+   "note": "ジュネヴァ発祥の地、オランダ／スキーダム産のジン。ボタニカルはライ麦100％のスピリッツと共にそれぞれ別々に蒸溜後、ブレンド。スムースな口当たり、シトラシー",
+   "botanicals": "ジュニパー、コリアンダー、レモングラス、クローブ、シナモン、キュベブペッパー、フェンネル、ローズヒップ"
+  },
+  {
    "name": "BOBBY’S GIN PINANG RACI SPICE BLEND NO.1",
-   "kana": "ボビーズ ピナンラチ スパイスブレンド No.1",
+   "kana": "ボビーズ ピナンラチ スパイスブレンド No.1 ジン",
    "abv": 42.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -7091,7 +7091,7 @@
   },
   {
    "name": "DE BORGEN BEFORE GIN JENEVER",
-   "kana": "ボルゲン ビフォア イェネーフェル",
+   "kana": "ボルゲン ビフォア イェネーフェル ジン",
    "abv": 38.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -7100,7 +7100,7 @@
   },
   {
    "name": "DE BORGEN HOLLAND GIN",
-   "kana": "ボルゲン ホランド",
+   "kana": "ボルゲン ホランド ジン",
    "abv": 40.8,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -7154,7 +7154,7 @@
   },
   {
    "name": "BOE SUPERIOR GIN",
-   "kana": "ボーエ スーペリア",
+   "kana": "ボーエ スーペリア ジン",
    "abv": 47.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -7163,7 +7163,7 @@
   },
   {
    "name": "Boord's Old Tom London Gin",
-   "kana": "ボーズ オールドトム",
+   "kana": "ボーズ オールドトム ジン",
    "abv": 47.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -7172,7 +7172,7 @@
   },
   {
    "name": "TWC BORDERLESS GIN blended Edition",
-   "kana": "ボーダーレス ブレンデッド",
+   "kana": "ボーダーレス ブレンデッド ジン",
    "abv": 46.0,
    "country": "日本",
    "country_main": "日本",
@@ -7181,7 +7181,7 @@
   },
   {
    "name": "POPPIES GIN",
-   "kana": "ポピーズ",
+   "kana": "ポピーズ ジン",
    "abv": 40.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -7189,17 +7189,8 @@
    "botanicals": "ジュニパー、コリアンダー、リコリス、スターアニス"
   },
   {
-   "name": "PORTER'S GIN",
-   "kana": "ポーターズ",
-   "abv": 42.0,
-   "country": "イギリス（スコットランド：アバディーン）",
-   "country_main": "イギリス",
-   "note": "「伝統を尊重しつつも革新を行う」というコンセプトの下、スコットランド:アバティーンにあるBarの地下室で生まれた小麦がベースのジン。2つの異なる蒸留製法を用いた軽く爽やかなフレーバーが特徴。",
-   "botanicals": "ジュニパー、アンジェリカ、アーモンド、コリアンダー、リコリス、レモン、オレンジ、仏手柑（ブッダズハンド）、ピンクペッパー、オリス、カッシア、シナモン"
-  },
-  {
    "name": "PORTERS ORCHARD GIN",
-   "kana": "ポーターズ オーチャード",
+   "kana": "ポーターズ オーチャード ジン",
    "abv": 40.0,
    "country": "イギリス（スコットランド：アバディーン）",
    "country_main": "イギリス",
@@ -7207,8 +7198,17 @@
    "botanicals": "ジュニパー、りんご、洋梨、黒大豆、コリアンダー、アンジェリカ、オレンジ、レモン、オリス、カッシア、シナモン、リコリス、アーモンド"
   },
   {
+   "name": "PORTER'S GIN",
+   "kana": "ポーターズ ジン",
+   "abv": 42.0,
+   "country": "イギリス（スコットランド：アバディーン）",
+   "country_main": "イギリス",
+   "note": "「伝統を尊重しつつも革新を行う」というコンセプトの下、スコットランド:アバティーンにあるBarの地下室で生まれた小麦がベースのジン。2つの異なる蒸留製法を用いた軽く爽やかなフレーバーが特徴。",
+   "botanicals": "ジュニパー、アンジェリカ、アーモンド、コリアンダー、リコリス、レモン、オレンジ、仏手柑（ブッダズハンド）、ピンクペッパー、オリス、カッシア、シナモン"
+  },
+  {
    "name": "PORTERS TROPICAL OLDTOM GIN",
-   "kana": "ポーターズ トロピカル オールドトム",
+   "kana": "ポーターズ トロピカル オールドトム ジン",
    "abv": 40.0,
    "country": "イギリス（スコットランド：アバディーン）",
    "country_main": "イギリス",
@@ -7226,7 +7226,7 @@
   },
   {
    "name": "POLI ITALIAN GIN MARCONI 42",
-   "kana": "ポーリ マルコーニ 42",
+   "kana": "ポーリ マルコーニ 42 ジン",
    "abv": 42.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -7235,7 +7235,7 @@
   },
   {
    "name": "POLI ITALIAN GIN MARCONI 44",
-   "kana": "ポーリ マルコーニ 44",
+   "kana": "ポーリ マルコーニ 44 ジン",
    "abv": 44.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -7244,7 +7244,7 @@
   },
   {
    "name": "POLI ITALIAN GIN MARCONI 46",
-   "kana": "ポーリ マルコーニ 46",
+   "kana": "ポーリ マルコーニ 46 ジン",
    "abv": 46.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -7262,7 +7262,7 @@
   },
   {
    "name": "舞輪源 Fresh Craft Gin",
-   "kana": "マイリンゲン",
+   "kana": "マイリンゲン ジン",
    "abv": 47.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -7271,7 +7271,7 @@
   },
   {
    "name": "MAWSIM GIN SPICES & HERBS",
-   "kana": "マウシム スパイス＆ハーブ",
+   "kana": "マウシム スパイス＆ハーブ ジン",
    "abv": 43.0,
    "country": "カンボジア",
    "country_main": "カンボジア",
@@ -7280,7 +7280,7 @@
   },
   {
    "name": "MAWSIM GIN TROPICAL CITRUS",
-   "kana": "マウシム トロピカルシトラス",
+   "kana": "マウシム トロピカルシトラス ジン",
    "abv": 43.0,
    "country": "カンボジア",
    "country_main": "カンボジア",
@@ -7289,7 +7289,7 @@
   },
   {
    "name": "MACARONESIAN WHITE GIN",
-   "kana": "マカロネシアン ホワイト",
+   "kana": "マカロネシアン ホワイト ジン",
    "abv": 40.0,
    "country": "スペイン（カナリア諸島：テネリフェ）",
    "country_main": "スペイン",
@@ -7298,7 +7298,7 @@
   },
   {
    "name": "MAKAR ORIGINAL DRY GIN",
-   "kana": "マカール オリジナル",
+   "kana": "マカール オリジナル ジン",
    "abv": 43.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -7307,7 +7307,7 @@
   },
   {
    "name": "MAKAR OAK AGED GIN",
-   "kana": "マカール オークエイジド",
+   "kana": "マカール オークエイジド ジン",
    "abv": 43.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -7316,7 +7316,7 @@
   },
   {
    "name": "MAKAR MULBERRY AGED GIN",
-   "kana": "マカール マルベリーエイジド",
+   "kana": "マカール マルベリーエイジド ジン",
    "abv": 43.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -7325,7 +7325,7 @@
   },
   {
    "name": "MCHENRY CLASSIC DRY GIN",
-   "kana": "マクヘンリー クラシック",
+   "kana": "マクヘンリー クラシック ジン",
    "abv": 40.0,
    "country": "オーストラリア（タスマニア）",
    "country_main": "オーストラリア",
@@ -7343,7 +7343,7 @@
   },
   {
    "name": "Gin Mascaro 9",
-   "kana": "マスカロ 9",
+   "kana": "マスカロ 9 ジン",
    "abv": 40.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -7352,7 +7352,7 @@
   },
   {
    "name": "MASTER'S LONDON DRY GIN",
-   "kana": "マスターズ",
+   "kana": "マスターズ ジン",
    "abv": 40.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -7361,7 +7361,7 @@
   },
   {
    "name": "MAGELLAN GIN",
-   "kana": "マゼラン",
+   "kana": "マゼラン ジン",
    "abv": 41.3,
    "country": "フランス",
    "country_main": "フランス",
@@ -7370,7 +7370,7 @@
   },
   {
    "name": "Mcqueen And The Violet Fog Gin",
-   "kana": "マックイーン アンドザヴァイオレットフォグ",
+   "kana": "マックイーン アンドザヴァイオレットフォグ ジン",
    "abv": 40.0,
    "country": "ブラジル",
    "country_main": "ブラジル",
@@ -7379,7 +7379,7 @@
   },
   {
    "name": "MATSUI GIN THE HAKUTO PREMIUM",
-   "kana": "マツイ 白兎 プレミアム",
+   "kana": "マツイ 白兎 プレミアム ジン",
    "abv": 47.0,
    "country": "日本（鳥取）",
    "country_main": "日本",
@@ -7388,7 +7388,7 @@
   },
   {
    "name": "MUFF IRISH POTATO GIN",
-   "kana": "マフ ポテト",
+   "kana": "マフ ポテト ジン",
    "abv": 40.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -7406,7 +7406,7 @@
   },
   {
    "name": "MALFY GIN Con Arancia",
-   "kana": "マルフィ コン アランチャ",
+   "kana": "マルフィ コン アランチャ ジン",
    "abv": 41.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -7415,7 +7415,7 @@
   },
   {
    "name": "MALFY GIN Con Limone",
-   "kana": "マルフィ コン リモーネ",
+   "kana": "マルフィ コン リモーネ ジン",
    "abv": 41.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -7433,7 +7433,7 @@
   },
   {
    "name": "MAREDSOUS VALEO BOTANICAL DRY GIN",
-   "kana": "マレッツ ヴァレオ ボタニカル",
+   "kana": "マレッツ ヴァレオ ボタニカル ジン",
    "abv": 40.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -7441,17 +7441,8 @@
    "botanicals": "ジュニパー、ポピー（ケシ）、クルマバソウ、ウスベニアオイ、セイヨウオトギリソウ、プリムローズ"
   },
   {
-   "name": "MALEFICIO DRY GIN",
-   "kana": "マレフィシオ",
-   "abv": 40.0,
-   "country": "アルゼンチン",
-   "country_main": "アルゼンチン",
-   "note": "感覚を呼び覚まし隠された風味を発見に誘うクラフトジン「マレフィシオ」。ジンの伝統的なボタニカルの他、オールスパイスやクローブなど使用、バランスのとれたシンプルな味わい。",
-   "botanicals": "ジュニパー、オールスパイス、オレンジピール、カルダモン、クローブ、コリアンダー、シナモン、レモンピール"
-  },
-  {
    "name": "MALEFICIO SUNSET ORANGE GIN",
-   "kana": "マレフィシオ サンセットオレンジ",
+   "kana": "マレフィシオ サンセットオレンジ ジン",
    "abv": 40.0,
    "country": "アルゼンチン",
    "country_main": "アルゼンチン",
@@ -7459,8 +7450,17 @@
    "botanicals": "ジュニパー、カルダモン、クローブ、コリアンダー、シナモン、ドライオレンジピール、ドライレモンピール、ハイビスカスペッパー"
   },
   {
+   "name": "MALEFICIO DRY GIN",
+   "kana": "マレフィシオ ジン",
+   "abv": 40.0,
+   "country": "アルゼンチン",
+   "country_main": "アルゼンチン",
+   "note": "感覚を呼び覚まし隠された風味を発見に誘うクラフトジン「マレフィシオ」。ジンの伝統的なボタニカルの他、オールスパイスやクローブなど使用、バランスのとれたシンプルな味わい。",
+   "botanicals": "ジュニパー、オールスパイス、オレンジピール、カルダモン、クローブ、コリアンダー、シナモン、レモンピール"
+  },
+  {
    "name": "MALEFICIO HONEY GIN",
-   "kana": "マレフィシオ ハニー",
+   "kana": "マレフィシオ ハニー ジン",
    "abv": 40.0,
    "country": "アルゼンチン",
    "country_main": "アルゼンチン",
@@ -7469,7 +7469,7 @@
   },
   {
    "name": "MALEFICIO PINK GIN",
-   "kana": "マレフィシオ ピンク",
+   "kana": "マレフィシオ ピンク ジン",
    "abv": 40.0,
    "country": "アルゼンチン",
    "country_main": "アルゼンチン",
@@ -7478,7 +7478,7 @@
   },
   {
    "name": "MANGUIN ORI' GIN L'OLIVE GIN",
-   "kana": "マンギャン オリ ロリーブ",
+   "kana": "マンギャン オリ ロリーブ ジン",
    "abv": 41.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -7487,7 +7487,7 @@
   },
   {
    "name": "MARSHALL LONDON DRY GIN",
-   "kana": "マーシャル",
+   "kana": "マーシャル ジン",
    "abv": 43.0,
    "country": "スウェーデン",
    "country_main": "スウェーデン",
@@ -7495,22 +7495,22 @@
    "botanicals": "ジュニパー、アンジェリカルート、ギニアショウガ、グレープフルーツピール、グレインズオブパラダイス、コリアンダーシード、レモンピール"
   },
   {
-   "name": "MARTIN MILLER'S GIN",
-   "kana": "マーティンミラーズ",
-   "abv": 40.0,
-   "country": "イギリス",
-   "country_main": "イギリス",
-   "note": "1903年設計の銅製ポットスティルでゆっくりと低温蒸溜。純粋なアイスランドの氷河水を使用。",
-   "botanicals": "ジュニパー、アンジェリカ、アイリス、カッシア、きゅうり、コリアンダーシード、オレンジピール、ナツメグ、ライムピール、レモンピール、リコリス"
-  },
-  {
    "name": "MARTIN MILLER’S GIN 9MOONS",
-   "kana": "マーティンミラーズ 9ムーンズ",
+   "kana": "マーティンミラーズ 9ムーンズ ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
    "note": "極寒の地、アイスランドはボルガルネスにて熟成。アメリカンオークの新樽で９ヶ月間熟成",
    "botanicals": "ジュニパー、コリアンダー、アンジェリカ、カシア、ナツメグ、フローレンティンアイリス、リコリス、ビターオレンジピール、レモンピール、ライムピール"
+  },
+  {
+   "name": "MARTIN MILLER'S GIN",
+   "kana": "マーティンミラーズ ジン",
+   "abv": 40.0,
+   "country": "イギリス",
+   "country_main": "イギリス",
+   "note": "1903年設計の銅製ポットスティルでゆっくりと低温蒸溜。純粋なアイスランドの氷河水を使用。",
+   "botanicals": "ジュニパー、アンジェリカ、アイリス、カッシア、きゅうり、コリアンダーシード、オレンジピール、ナツメグ、ライムピール、レモンピール、リコリス"
   },
   {
    "name": "MIKKELLER Oloroso Cask Black",
@@ -7524,7 +7524,7 @@
   },
   {
    "name": "MIKKELLER Navy Botanical GIN",
-   "kana": "ミッケラー ネイビー ボタニカル",
+   "kana": "ミッケラー ネイビー ボタニカル ジン",
    "abv": 58.0,
    "country": "デンマーク",
    "country_main": "デンマーク",
@@ -7533,7 +7533,7 @@
   },
   {
    "name": "MIKKELLER Botanical GIN",
-   "kana": "ミッケラー ボタニカル",
+   "kana": "ミッケラー ボタニカル ジン",
    "abv": 44.0,
    "country": "デンマーク",
    "country_main": "デンマーク",
@@ -7542,7 +7542,7 @@
   },
   {
    "name": "MYAOI Gin The First Encounter",
-   "kana": "ミャオイ ザ ファースト エンカウンター",
+   "kana": "ミャオイ ザ ファースト エンカウンター ジン",
    "abv": 46.0,
    "country": "日本（北海道：長沼町）",
    "country_main": "日本",
@@ -7551,7 +7551,7 @@
   },
   {
    "name": "MYAOI Gin Hatsukoi",
-   "kana": "ミャオイ ハツコイ",
+   "kana": "ミャオイ ハツコイ ジン",
    "abv": 46.0,
    "country": "日本（北海道：長沼町）",
    "country_main": "日本",
@@ -7560,7 +7560,7 @@
   },
   {
    "name": "MYAOI Gin Hanabi",
-   "kana": "ミャオイ ハナビ",
+   "kana": "ミャオイ ハナビ ジン",
    "abv": 43.0,
    "country": "日本（北海道：長沼町）",
    "country_main": "日本",
@@ -7569,7 +7569,7 @@
   },
   {
    "name": "MYAOI Gin VeryBerry",
-   "kana": "ミャオイ ベリーベリー",
+   "kana": "ミャオイ ベリーベリー ジン",
    "abv": 43.0,
    "country": "日本（北海道：長沼町）",
    "country_main": "日本",
@@ -7587,7 +7587,7 @@
   },
   {
    "name": "MUTEMAN GIN",
-   "kana": "ミュートマン",
+   "kana": "ミュートマン ジン",
    "abv": 40.0,
    "country": "フィンランド",
    "country_main": "フィンランド",
@@ -7596,7 +7596,7 @@
   },
   {
    "name": "MIL GIN",
-   "kana": "ミル",
+   "kana": "ミル ジン",
    "abv": 42.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -7605,7 +7605,7 @@
   },
   {
    "name": "Mintis BLACKCURRANT Gin",
-   "kana": "ミンティス ブラックカラント",
+   "kana": "ミンティス ブラックカラント ジン",
    "abv": 41.8,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -7632,7 +7632,7 @@
   },
   {
    "name": "MOON GIN Oriental YUZU",
-   "kana": "ムーン オリエンタル ユズ",
+   "kana": "ムーン オリエンタル ユズ ジン",
    "abv": 44.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -7650,7 +7650,7 @@
   },
   {
    "name": "MEY SELECTIONS GIN",
-   "kana": "メイ セレクションズ",
+   "kana": "メイ セレクションズ ジン",
    "abv": 41.5,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -7659,7 +7659,7 @@
   },
   {
    "name": "MAYFIELD SUSSEX HOP GIN",
-   "kana": "メイフィールド サセックスホップ",
+   "kana": "メイフィールド サセックスホップ ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -7677,7 +7677,7 @@
   },
   {
    "name": "meyer's gin",
-   "kana": "メイヤーズ",
+   "kana": "メイヤーズ ジン",
    "abv": 38.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -7686,7 +7686,7 @@
   },
   {
    "name": "Menaud GIN",
-   "kana": "メノー",
+   "kana": "メノー ジン",
    "abv": 42.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -7695,7 +7695,7 @@
   },
   {
    "name": "MELIFERA GIN",
-   "kana": "メリフェラ",
+   "kana": "メリフェラ ジン",
    "abv": 43.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -7704,7 +7704,7 @@
   },
   {
    "name": "Marylebone Gin",
-   "kana": "メリルボーン",
+   "kana": "メリルボーン ジン",
    "abv": 50.2,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -7722,7 +7722,7 @@
   },
   {
    "name": "LA DISTILLERIE DE MONACO GIN AUX AGRUMES",
-   "kana": "モナコ オーザグリュム",
+   "kana": "モナコ オーザグリュム ジン",
    "abv": 40.0,
    "country": "モナコ",
    "country_main": "モナコ",
@@ -7731,7 +7731,7 @@
   },
   {
    "name": "MONKEY 47 SCHWARZWALD DRY GIN",
-   "kana": "モンキー47 シュヴァルツヴァルト",
+   "kana": "モンキー47 シュヴァルツヴァルト ジン",
    "abv": 47.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -7740,7 +7740,7 @@
   },
   {
    "name": "MONTEOESTE GIN",
-   "kana": "モンテオエステ",
+   "kana": "モンテオエステ ジン",
    "abv": 40.0,
    "country": "日本（兵庫）",
    "country_main": "日本",
@@ -7749,7 +7749,7 @@
   },
   {
    "name": "MOMBASA CLUB LONDON DRY GIN",
-   "kana": "モンバサ クラブ",
+   "kana": "モンバサ クラブ ジン",
    "abv": 41.5,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -7758,7 +7758,7 @@
   },
   {
    "name": "MOHN Island POPY GIN",
-   "kana": "モーン アイランド ポピー",
+   "kana": "モーン アイランド ポピー ジン",
    "abv": 45.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -7793,17 +7793,8 @@
    "botanicals": "ジュニパー、コリアンダー、ベルガモット、ローズマリー"
   },
   {
-   "name": "YASO GIN 2020",
-   "kana": "ヤソ 2020",
-   "abv": 50.0,
-   "country": "日本（新潟）",
-   "country_main": "日本",
-   "note": "新潟県上越市の越後薬草が2020年2月に発売したクラフトジン。80種の野草由来スピリッツに23種のボタニカルを加えて造られる。",
-   "botanicals": "ジュニパー、タイム、フェンネル、アニスシード、リコリス"
-  },
-  {
    "name": "YASO GIN 2020 103",
-   "kana": "ヤソ 2020 103",
+   "kana": "ヤソ 2020 103 ジン",
    "abv": 41.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -7811,8 +7802,17 @@
    "botanicals": "ジュニパー、タイム、フェンネル、アニスシード、リコリス"
   },
   {
+   "name": "YASO GIN 2020",
+   "kana": "ヤソ 2020 ジン",
+   "abv": 50.0,
+   "country": "日本（新潟）",
+   "country_main": "日本",
+   "note": "新潟県上越市の越後薬草が2020年2月に発売したクラフトジン。80種の野草由来スピリッツに23種のボタニカルを加えて造られる。",
+   "botanicals": "ジュニパー、タイム、フェンネル、アニスシード、リコリス"
+  },
+  {
    "name": "YASO GIN 2022 150",
-   "kana": "ヤソ 2022 150",
+   "kana": "ヤソ 2022 150 ジン",
    "abv": 41.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -7821,7 +7821,7 @@
   },
   {
    "name": "YASO GIN〜森の中にあるラベンダー畑〜",
-   "kana": "ヤソ 森の中にあるラベンダー畑",
+   "kana": "ヤソ 森の中にあるラベンダー畑 ジン",
    "abv": 0.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -7830,7 +7830,7 @@
   },
   {
    "name": "YUMARREST INDUSTRIAL GIN ORDINARY",
-   "kana": "ヤマレスト インダストリアル オーディナリー",
+   "kana": "ヤマレスト インダストリアル オーディナリー ジン",
    "abv": 45.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -7839,7 +7839,7 @@
   },
   {
    "name": "yumarrest Industrial GIN Danger",
-   "kana": "ヤマレスト インダストリアル デンジャー",
+   "kana": "ヤマレスト インダストリアル デンジャー ジン",
    "abv": 80.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -7848,7 +7848,7 @@
   },
   {
    "name": "Yumarrest Ramune GIN",
-   "kana": "ヤマレスト ラムネ",
+   "kana": "ヤマレスト ラムネ ジン",
    "abv": 48.0,
    "country": "日本",
    "country_main": "日本",
@@ -7866,7 +7866,7 @@
   },
   {
    "name": "YU GIN",
-   "kana": "ユー",
+   "kana": "ユー ジン",
    "abv": 43.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -7884,7 +7884,7 @@
   },
   {
    "name": "YO HA KHU GIN",
-   "kana": "ヨハク",
+   "kana": "ヨハク ジン",
    "abv": 45.0,
    "country": "日本（長野）",
    "country_main": "日本",
@@ -7893,7 +7893,7 @@
   },
   {
    "name": "GÖTEBORG GIN",
-   "kana": "ヨーテボリ",
+   "kana": "ヨーテボリ ジン",
    "abv": 45.0,
    "country": "スウェーデン",
    "country_main": "スウェーデン",
@@ -7938,7 +7938,7 @@
   },
   {
    "name": "LANGTONS No.1 THE LAKELAND GIN",
-   "kana": "ラングトンズ ナンバー1 レイクランド",
+   "kana": "ラングトンズ ナンバー1 レイクランド ジン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -8019,7 +8019,7 @@
   },
   {
    "name": "Liverpool Organic Gin",
-   "kana": "リバプール オーガニック",
+   "kana": "リバプール オーガニック ジン",
    "abv": 43.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -8028,7 +8028,7 @@
   },
   {
    "name": "Reid+Reid Native Dry Gin",
-   "kana": "リード リード ネイティブ",
+   "kana": "リード リード ネイティブ ジン",
    "abv": 42.0,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -8037,7 +8037,7 @@
   },
   {
    "name": "LUO PaloSanto Gin",
-   "kana": "ルオ パロサント",
+   "kana": "ルオ パロサント ジン",
    "abv": 40.0,
    "country": "日本（東京：渋谷）",
    "country_main": "日本",
@@ -8046,7 +8046,7 @@
   },
   {
    "name": "LUO 盆栽 GIN ‐Bonsai Gin‐",
-   "kana": "ルオ 盆栽",
+   "kana": "ルオ 盆栽 ジン",
    "abv": 40.0,
    "country": "日本（東京：渋谷）",
    "country_main": "日本",
@@ -8091,7 +8091,7 @@
   },
   {
    "name": "RUTTE CELERY GIN",
-   "kana": "ルッテ セロリ",
+   "kana": "ルッテ セロリ ジン",
    "abv": 43.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -8118,7 +8118,7 @@
   },
   {
    "name": "LOOPUYT 1772 DRY GIN",
-   "kana": "ルーパイト 1772",
+   "kana": "ルーパイト 1772 ジン",
    "abv": 45.1,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -8127,7 +8127,7 @@
   },
   {
    "name": "THE LAKES GIN EEXPLORER",
-   "kana": "レイクス エクスプローラー",
+   "kana": "レイクス エクスプローラー ジン",
    "abv": 47.1,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -8136,7 +8136,7 @@
   },
   {
    "name": "THE LAKES Classic Gin",
-   "kana": "レイクス クラシック",
+   "kana": "レイクス クラシック ジン",
    "abv": 46.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -8145,7 +8145,7 @@
   },
   {
    "name": "THE LAKES GIN SINGLE BATCH LAKES DISTILLERY",
-   "kana": "レイクス シングルバッチ",
+   "kana": "レイクス シングルバッチ ジン",
    "abv": 47.3,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -8181,7 +8181,7 @@
   },
   {
    "name": "LEOPOLD'S GIN",
-   "kana": "レオポルズ",
+   "kana": "レオポルズ ジン",
    "abv": 40.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -8190,7 +8190,7 @@
   },
   {
    "name": "HANDCRAFTED RED DOOR HIGHLAND GIN",
-   "kana": "レッドドア",
+   "kana": "レッドドア ジン",
    "abv": 45.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -8199,7 +8199,7 @@
   },
   {
    "name": "LADY TRIỆU CONTEMPORARY VIETNAM GIN",
-   "kana": "レディトリエウ コンテンポラリー",
+   "kana": "レディトリエウ コンテンポラリー ジン",
    "abv": 43.0,
    "country": "ベトナム",
    "country_main": "ベトナム",
@@ -8208,7 +8208,7 @@
   },
   {
    "name": "LADY TRIỆU SAPA CITRUS TEA GIN",
-   "kana": "レディトリエウ サパシトラスティー",
+   "kana": "レディトリエウ サパシトラスティー ジン",
    "abv": 43.0,
    "country": "ベトナム",
    "country_main": "ベトナム",
@@ -8217,7 +8217,7 @@
   },
   {
    "name": "LADY TRIỆU DALAT FLOWER BOM GIN",
-   "kana": "レディトリエウ ダラットフラワーボム",
+   "kana": "レディトリエウ ダラットフラワーボム ジン",
    "abv": 43.0,
    "country": "ベトナム",
    "country_main": "ベトナム",
@@ -8226,7 +8226,7 @@
   },
   {
    "name": "LADY TRIỆU HOI SPICE ROAD GIN",
-   "kana": "レディトリエウ ホイスパイスロード",
+   "kana": "レディトリエウ ホイスパイスロード ジン",
    "abv": 43.0,
    "country": "ベトナム",
    "country_main": "ベトナム",
@@ -8234,22 +8234,22 @@
    "botanicals": "ジュニパー、コリアンダーシード、レッドペッパー（丸ごと）、ポメロピール、アンジェリカルート、ライムピール、ヨモギ、フェンネルシード、ジャスミン、カッシア（シナモン）、生姜、ブラックカルダモン、ワイルドフォレストペッパー"
   },
   {
-   "name": "RETROGRADE GIN",
-   "kana": "レトログレード",
-   "abv": 47.0,
-   "country": "日本（北海道：鷹栖町）",
-   "country_main": "日本",
-   "note": "世界規模で再評価・再解釈が大きく進み、 次々と新しく個性的なボトルがリリースされ続けているジンですが、 私たちは、敢えてオーソドックスなジンを作ることを選びました。目指したのは、ジントニックやマティーニをはじめとするカクテルを支える、 オールドスタイルかつなめらかな口当たりの高品質なジンです。原酒にはイギリス産の小麦由来のものを使用し、 蒸溜時には 140 を超えるセクションからのハートカットにこだわることで、 口当たりや飲み心地の良さを感じていただけます。ボタニカルはクラシカルなレシピを下敷きにしつつ、 鷹栖町産のブルーベリーや国産シトラスのピール、希少なティムールペッパーなども採用することで、 ジンらしくありながらやわらかで、微かな刺激がフックとなるような味に仕上げました。",
-   "botanicals": "ジュニパー、アンジェリカ、オークモス、オレンジピール、カルダモン、コリアンダー、シナモン、ティムールペッパー、ブルーベリー、レモンピール"
-  },
-  {
    "name": "RETROGRADE GIN No.13",
-   "kana": "レトログレード No.13",
+   "kana": "レトログレード No.13 ジン",
    "abv": 47.0,
    "country": "日本（北海道：鷹栖町）",
    "country_main": "日本",
    "note": "世界規模で再評価・再解釈が長く、次々と斬新なボトルがリリースされ続けているジンですが、私たちは、順番オーソドックスなジンを作ることを選びました。 目指したのは、ジントニックヤマティーニをはじめカクテルを支える、オールドスタイルかつ滑らかな口当たりの高品質なジンです。 原酒にはイギリス産の小麦由来のものを使用し、蒸溜時には140を超えるセクションからのハートカットにこだわることで、口当りや飲み心地の良さを感じていただけます。 ボタニカルは古典的なレシピを下敷きにしつつ、鷹栖町産のブルーベリーや国産シトラスのピール、希少ナティムールペッパーなども採用することで、ジンらしくありながら柔らかで、微かな刺激がフックとなるような味に仕上げました。ジンは世界中で再評価と再解釈が進み、個性的な新ボトルが次々と市場に登場しています。しかし、私たちはより伝統的なアプローチを選びました。目指したのは、ジントニックやマティーニといったカクテルによく合う、ベルベットのような風味を持つ、プレミアムでクラシックなジンです。原酒には英国産小麦のみを使用し、蒸留工程で140以上のセクションから厳選されたハートカットの小麦を厳選することで、滑らかな舌触りと飲みごたえを実現しています。ボタニカルブレンドは伝統的なレシピを基本としながらも、鷹栖町産のブルーベリー、国産柑橘ピール、希少なティムールペッパーなどを加えることで、ジン本来の個性を保ちつつ、優しく繊細な味わいに仕上げました。",
    "botanicals": "ジュニパー、アンジェリカ、オークモス、オレンジピール（愛媛県岩城）、カルダモン、コリアンダー、シナモン、ティムールペッパー、ブリーベリー（鷹栖町）、レモンピール（愛媛県岩城）"
+  },
+  {
+   "name": "RETROGRADE GIN",
+   "kana": "レトログレード ジン",
+   "abv": 47.0,
+   "country": "日本（北海道：鷹栖町）",
+   "country_main": "日本",
+   "note": "世界規模で再評価・再解釈が大きく進み、 次々と新しく個性的なボトルがリリースされ続けているジンですが、 私たちは、敢えてオーソドックスなジンを作ることを選びました。目指したのは、ジントニックやマティーニをはじめとするカクテルを支える、 オールドスタイルかつなめらかな口当たりの高品質なジンです。原酒にはイギリス産の小麦由来のものを使用し、 蒸溜時には 140 を超えるセクションからのハートカットにこだわることで、 口当たりや飲み心地の良さを感じていただけます。ボタニカルはクラシカルなレシピを下敷きにしつつ、 鷹栖町産のブルーベリーや国産シトラスのピール、希少なティムールペッパーなども採用することで、 ジンらしくありながらやわらかで、微かな刺激がフックとなるような味に仕上げました。",
+   "botanicals": "ジュニパー、アンジェリカ、オークモス、オレンジピール、カルダモン、コリアンダー、シナモン、ティムールペッパー、ブルーベリー、レモンピール"
   },
   {
    "name": "RENEGADE",
@@ -8262,7 +8262,7 @@
   },
   {
    "name": "LEVEL GIN PREMIUM",
-   "kana": "レベル プレミアム",
+   "kana": "レベル プレミアム ジン",
    "abv": 44.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -8271,7 +8271,7 @@
   },
   {
    "name": "CRAFT GIN REN",
-   "kana": "レン",
+   "kana": "レン ジン",
    "abv": 45.0,
    "country": "日本（山梨）",
    "country_main": "日本",
@@ -8280,7 +8280,7 @@
   },
   {
    "name": "ROYAL SEDANG 1888 SMALL BATCH GIN",
-   "kana": "ロイヤルセダン 1888 スモールバッチ",
+   "kana": "ロイヤルセダン 1888 スモールバッチ ジン",
    "abv": 42.2,
    "country": "フランス",
    "country_main": "フランス",
@@ -8289,7 +8289,7 @@
   },
   {
    "name": "JAPANESE CRAFT GIN 六",
-   "kana": "ロク",
+   "kana": "ロク ジン",
    "abv": 43.0,
    "country": "日本",
    "country_main": "日本",
@@ -8297,17 +8297,8 @@
    "botanicals": "ジュニパー、玉露、桜の葉、桜の花、山椒、煎茶、柚子"
   },
   {
-   "name": "ROKUMOJI GIN",
-   "kana": "ロクモジ",
-   "abv": 43.0,
-   "country": "日本（新潟）",
-   "country_main": "日本",
-   "note": "新潟県南魚沼市の「ろくもじ株式会社」が手がけるクラフトジン。新潟の森林資源を中心としたボタニカルを各々浸漬・蒸留してブレンドする製法で、地域の里山由来の素材を活かす。",
-   "botanicals": "ジュニパー、クロモジ、アテビ（佐渡ヒバ）、村上茶（ほうじ茶）、ドライアップル、アンジェリカルート"
-  },
-  {
    "name": "ROKUMOJI Craft GIN 2022 Green Planet",
-   "kana": "ロクモジ 2022 グリーンプラネット",
+   "kana": "ロクモジ 2022 グリーンプラネット ジン",
    "abv": 43.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -8316,7 +8307,7 @@
   },
   {
    "name": "ROKUMOJI Craft GIN 2022 Special Edition",
-   "kana": "ロクモジ 2022 スペシャル",
+   "kana": "ロクモジ 2022 スペシャル ジン",
    "abv": 43.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -8325,7 +8316,7 @@
   },
   {
    "name": "ROKUMOJI Craft GIN 2023 Botanical Trip",
-   "kana": "ロクモジ 2023 ボタニカルトリップ",
+   "kana": "ロクモジ 2023 ボタニカルトリップ ジン",
    "abv": 43.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -8333,17 +8324,17 @@
    "botanicals": "ジュニパー、クロモジ、タムシバ、ハイネズの実、杉、雷電様の水"
   },
   {
-   "name": "ROCK ROSE GIN",
-   "kana": "ロックローズ",
-   "abv": 41.5,
-   "country": "イギリス（スコットランド）",
-   "country_main": "イギリス",
-   "note": "スコットランド最北端に位置する蒸溜所”ダネット・ベイ”。伝統的なボタニカルに加え、ロディオラ・ロゼア(岩に咲くバラ)やローワンベリーなどローカルボタニカル5種使用。マーティンとクレアによる55回の実験の後、ケイスネスの風味をほんのり感じる最終レシピが選択され、最初のバッチが2014年8月17日に蒸留されました。",
-   "botanicals": "ジュニパー、カルダモン、コリアンダーシード、シーバックソーン、バーベナ、ビルベリー、ローワンベリー、ロディオラロゼア"
+   "name": "ROKUMOJI GIN",
+   "kana": "ロクモジ ジン",
+   "abv": 43.0,
+   "country": "日本（新潟）",
+   "country_main": "日本",
+   "note": "新潟県南魚沼市の「ろくもじ株式会社」が手がけるクラフトジン。新潟の森林資源を中心としたボタニカルを各々浸漬・蒸留してブレンドする製法で、地域の里山由来の素材を活かす。",
+   "botanicals": "ジュニパー、クロモジ、アテビ（佐渡ヒバ）、村上茶（ほうじ茶）、ドライアップル、アンジェリカルート"
   },
   {
    "name": "ROCK ROSE GIN Winter Edition",
-   "kana": "ロックローズ ウィンター",
+   "kana": "ロックローズ ウィンター ジン",
    "abv": 41.5,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8352,7 +8343,7 @@
   },
   {
    "name": "ROCK ROSE GIN Autumn Edition",
-   "kana": "ロックローズ オータム",
+   "kana": "ロックローズ オータム ジン",
    "abv": 41.5,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8361,7 +8352,7 @@
   },
   {
    "name": "ROCK ROSE GIN Summer Edition",
-   "kana": "ロックローズ サマー",
+   "kana": "ロックローズ サマー ジン",
    "abv": 41.5,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8369,8 +8360,17 @@
    "botanicals": "ジュニパー、カルダモン、クローバー、コリアンダーシード、シーバックソーン、セイヨウナツユキソウ、バーベナ、ビルベリー、レモンバーム、レモンタイム、レモンバーベナ、ローワンベリー、ロディオラロゼア"
   },
   {
+   "name": "ROCK ROSE GIN",
+   "kana": "ロックローズ ジン",
+   "abv": 41.5,
+   "country": "イギリス（スコットランド）",
+   "country_main": "イギリス",
+   "note": "スコットランド最北端に位置する蒸溜所”ダネット・ベイ”。伝統的なボタニカルに加え、ロディオラ・ロゼア(岩に咲くバラ)やローワンベリーなどローカルボタニカル5種使用。マーティンとクレアによる55回の実験の後、ケイスネスの風味をほんのり感じる最終レシピが選択され、最初のバッチが2014年8月17日に蒸留されました。",
+   "botanicals": "ジュニパー、カルダモン、コリアンダーシード、シーバックソーン、バーベナ、ビルベリー、ローワンベリー、ロディオラロゼア"
+  },
+  {
    "name": "ROCK ROSE GIN Spring Edition",
-   "kana": "ロックローズ スプリング",
+   "kana": "ロックローズ スプリング ジン",
    "abv": 41.5,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8388,7 +8388,7 @@
   },
   {
    "name": "LOTTE Cacao Gin",
-   "kana": "ロッテ カカオ",
+   "kana": "ロッテ カカオ ジン",
    "abv": 43.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -8397,7 +8397,7 @@
   },
   {
    "name": "ROMEO'S GIN",
-   "kana": "ロメオス",
+   "kana": "ロメオス ジン",
    "abv": 46.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -8406,7 +8406,7 @@
   },
   {
    "name": "RON DE JEREMY HEDGEHOG GIN",
-   "kana": "ロンデジェレミー ヘッジホッグ",
+   "kana": "ロンデジェレミー ヘッジホッグ ジン",
    "abv": 43.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -8415,7 +8415,7 @@
   },
   {
    "name": "RON DE JEREMY HEDGEHOG GIN",
-   "kana": "ロンデジェレミー ヘッジホッグ",
+   "kana": "ロンデジェレミー ヘッジホッグ ジン",
    "abv": 43.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -8424,7 +8424,7 @@
   },
   {
    "name": "LONDON HILL DRY GIN",
-   "kana": "ロンドンヒル",
+   "kana": "ロンドンヒル ジン",
    "abv": 47.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -8433,7 +8433,7 @@
   },
   {
    "name": "Lord of Barbes Organic GIN",
-   "kana": "ロードオブバルベス オーガニック",
+   "kana": "ロードオブバルベス オーガニック ジン",
    "abv": 50.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -8441,17 +8441,8 @@
    "botanicals": "ジュニパー、アンジェリカルート、カルダモン、ギニアショウガ、コリアンダー、セイヨウトウキ、ナツメグ、バオバブ、マンゴー、生姜"
   },
   {
-   "name": "LONE WOLF GIN",
-   "kana": "ローンウルフ",
-   "abv": 40.0,
-   "country": "イギリス（スコットランド）",
-   "country_main": "イギリス",
-   "note": "大麦麦芽と小麦麦芽を使った100％麦芽でつくられるローグウェーブウォツカをベースに14種類のボタニカルを使用。",
-   "botanicals": "ジュニパー、松（スコッツパイン）、グレープフルーツピール、レモンピール、コリアンダーシード、カルダモン、アンジェリカルート、オリスルート、レモングラス、ピンクペッパー、コブミカンの葉、メース、アーモンド、ラベンダー"
-  },
-  {
    "name": "LONE WOLF Cactus & Lime Gin",
-   "kana": "ローンウルフ カクタス＆ライム",
+   "kana": "ローンウルフ カクタス＆ライム ジン",
    "abv": 40.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8460,7 +8451,7 @@
   },
   {
    "name": "LONE WOLF GIN Gunpowder Gin",
-   "kana": "ローンウルフ ガンパウダー",
+   "kana": "ローンウルフ ガンパウダー ジン",
    "abv": 57.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8469,7 +8460,7 @@
   },
   {
    "name": "LONE WOLF GIN Gunpowder Gin 旧ボトル",
-   "kana": "ローンウルフ ガンパウダー 旧ボトル",
+   "kana": "ローンウルフ ガンパウダー 旧ボトル ジン",
    "abv": 57.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8478,7 +8469,7 @@
   },
   {
    "name": "LONE WOLF Cloudy & Lemon Gin",
-   "kana": "ローンウルフ クラウディ＆レモン",
+   "kana": "ローンウルフ クラウディ＆レモン ジン",
    "abv": 40.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8486,8 +8477,17 @@
    "botanicals": "ジュニパー、コリアンダーシード、アンジェリカルート、グリーンカルダモン、ピンクペッパー、オリスルート、メース、アーモンド、ラベンダー、レモングラス、カフィアライムリーフ、グレープフルーツピール、シチリアレモンピール"
   },
   {
+   "name": "LONE WOLF GIN",
+   "kana": "ローンウルフ ジン",
+   "abv": 40.0,
+   "country": "イギリス（スコットランド）",
+   "country_main": "イギリス",
+   "note": "大麦麦芽と小麦麦芽を使った100％麦芽でつくられるローグウェーブウォツカをベースに14種類のボタニカルを使用。",
+   "botanicals": "ジュニパー、松（スコッツパイン）、グレープフルーツピール、レモンピール、コリアンダーシード、カルダモン、アンジェリカルート、オリスルート、レモングラス、ピンクペッパー、コブミカンの葉、メース、アーモンド、ラベンダー"
+  },
+  {
    "name": "LONE WOLF Peach & Passion Fruit Gin",
-   "kana": "ローンウルフ ピーチ＆パッションフルーツ",
+   "kana": "ローンウルフ ピーチ＆パッションフルーツ ジン",
    "abv": 40.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8496,7 +8496,7 @@
   },
   {
    "name": "LONE WOLF GIN 旧ボトル",
-   "kana": "ローンウルフ 旧ボトル",
+   "kana": "ローンウルフ 旧ボトル ジン",
    "abv": 44.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8505,7 +8505,7 @@
   },
   {
    "name": "ONE KEY GIN",
-   "kana": "ワンキー",
+   "kana": "ワンキー ジン",
    "abv": 40.0,
    "country": "スロベニア",
    "country_main": "スロベニア",
@@ -8559,7 +8559,7 @@
   },
   {
    "name": "VIDDA TORR GIN",
-   "kana": "ヴィッダトール",
+   "kana": "ヴィッダトール ジン",
    "abv": 43.0,
    "country": "ノルウェー",
    "country_main": "ノルウェー",
@@ -8568,7 +8568,7 @@
   },
   {
    "name": "Japanese GIN 和美人 The Forest",
-   "kana": "和美人 ザ フォレスト",
+   "kana": "和美人 ザ フォレスト ジン",
    "abv": 47.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -8577,7 +8577,7 @@
   },
   {
    "name": "JAPANESE GIN \"WA BI GIN\" 旧ボトル",
-   "kana": "和美人 旧ボトル",
+   "kana": "和美人 旧ボトル ジン",
    "abv": 45.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -8586,7 +8586,7 @@
   },
   {
    "name": "KI NO TOU Kyoto Old Tom Gin",
-   "kana": "季の冬 オールドトム",
+   "kana": "季の冬 オールドトム ジン",
    "abv": 47.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -8603,17 +8603,8 @@
    "botanicals": "ジュニパー、オリスルート、赤松、檜、レモン、黄柚子、山椒、木の芽、宇治玉露、生姜、赤紫蘇、笹、城州白梅、ハスカップベリー"
   },
   {
-   "name": "KI NO BI Kyoto Dry Gin",
-   "kana": "季の美",
-   "abv": 45.0,
-   "country": "日本（京都）",
-   "country_main": "日本",
-   "note": "京都の伝統にインスパイアを受け、京都で蒸溜、ブレンディング、ボトリングしたジン。11種のボタニカルを6つのカテゴリーに分けて蒸溜しています。アルコール度数45%",
-   "botanicals": "ジュニパー、オリス、レモン、赤紫蘇、赤松、木の芽、笹の葉、山椒（実）、生姜、緑茶（玉露）、柚子"
-  },
-  {
    "name": "KI NO BI GO Kyoto Dry Gin",
-   "kana": "季の美 ゴー",
+   "kana": "季の美 ゴー ジン",
    "abv": 50.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -8621,8 +8612,17 @@
    "botanicals": "ジュニパー、黄柚子、赤松、赤紫蘇、笹の葉、生姜、レモン、オリス、玉露（宇治）、青山椒、木の芽"
   },
   {
+   "name": "KI NO BI Kyoto Dry Gin",
+   "kana": "季の美 ジン",
+   "abv": 45.0,
+   "country": "日本（京都）",
+   "country_main": "日本",
+   "note": "京都の伝統にインスパイアを受け、京都で蒸溜、ブレンディング、ボトリングしたジン。11種のボタニカルを6つのカテゴリーに分けて蒸溜しています。アルコール度数45%",
+   "botanicals": "ジュニパー、オリス、レモン、赤紫蘇、赤松、木の芽、笹の葉、山椒（実）、生姜、緑茶（玉露）、柚子"
+  },
+  {
    "name": "KI NO BI Sloe Gin-type Haskap Liqueur",
-   "kana": "季の美 スロー ハスカップ",
+   "kana": "季の美 スロー ハスカップ ジン",
    "abv": 30.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -8631,7 +8631,7 @@
   },
   {
    "name": "KI NO BI House Gin",
-   "kana": "季の美 ハウス",
+   "kana": "季の美 ハウス ジン",
    "abv": 43.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -8640,7 +8640,7 @@
   },
   {
    "name": "KI NO BI SEI Kyoto Dry Gin",
-   "kana": "季の美 聖",
+   "kana": "季の美 聖 ジン",
    "abv": 54.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -8649,7 +8649,7 @@
   },
   {
    "name": "KI NO TEA Kyoto Dry Gin",
-   "kana": "季の茶",
+   "kana": "季の茶 ジン",
    "abv": 45.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -8658,7 +8658,7 @@
   },
   {
    "name": "TOKYO HACHIO GIN Classic",
-   "kana": "東京 八王子 クラシック",
+   "kana": "東京 八王子 クラシック ジン",
    "abv": 45.0,
    "country": "日本（東京：八王子）",
    "country_main": "日本",
@@ -8667,7 +8667,7 @@
   },
   {
    "name": "TOKYO HACHIO GIN Classic",
-   "kana": "東京 八王子 クラシック",
+   "kana": "東京 八王子 クラシック ジン",
    "abv": 40.0,
    "country": "日本（東京：八王子）",
    "country_main": "日本",
@@ -8676,7 +8676,7 @@
   },
   {
    "name": "SAKURAO GIN ORIGINAL",
-   "kana": "桜尾 オリジナル",
+   "kana": "桜尾 オリジナル ジン",
    "abv": 47.0,
    "country": "日本（広島）",
    "country_main": "日本",
@@ -8685,7 +8685,7 @@
   },
   {
    "name": "SAKURAO GIN HAMAGOU",
-   "kana": "桜尾 ハマゴウ",
+   "kana": "桜尾 ハマゴウ ジン",
    "abv": 47.0,
    "country": "日本（広島）",
    "country_main": "日本",
@@ -8694,7 +8694,7 @@
   },
   {
    "name": "SAKURAO GIN White Herb 5thANNIVERSARY",
-   "kana": "桜尾 ホワイトハーブ 5周年",
+   "kana": "桜尾 ホワイトハーブ 5周年 ジン",
    "abv": 47.0,
    "country": "日本（広島）",
    "country_main": "日本",
@@ -8703,7 +8703,7 @@
   },
   {
    "name": "Japanese Craft Gin 棘玉 -TOGEDAMA-",
-   "kana": "棘玉 トゲダマ",
+   "kana": "棘玉 トゲダマ ジン",
    "abv": 47.0,
    "country": "日本（埼玉）",
    "country_main": "日本",
@@ -8712,7 +8712,7 @@
   },
   {
    "name": "KIKKA GIN",
-   "kana": "橘花",
+   "kana": "橘花 ジン",
    "abv": 56.0,
    "country": "日本（奈良）",
    "country_main": "日本",
@@ -8721,7 +8721,7 @@
   },
   {
    "name": "KIKKA GIN Batch4",
-   "kana": "橘花 バッチ4",
+   "kana": "橘花 バッチ4 ジン",
    "abv": 59.0,
    "country": "日本（奈良）",
    "country_main": "日本",
@@ -8730,7 +8730,7 @@
   },
   {
    "name": "KIKKA GIN Batch5",
-   "kana": "橘花 バッチ5",
+   "kana": "橘花 バッチ5 ジン",
    "abv": 59.0,
    "country": "日本（奈良）",
    "country_main": "日本",
@@ -8739,7 +8739,7 @@
   },
   {
    "name": "KIKKA GIN Batch7",
-   "kana": "橘花 バッチ7",
+   "kana": "橘花 バッチ7 ジン",
    "abv": 59.0,
    "country": "日本（奈良）",
    "country_main": "日本",
@@ -8748,7 +8748,7 @@
   },
   {
    "name": "KIKKA GIN 一閃",
-   "kana": "橘花 一閃",
+   "kana": "橘花 一閃 ジン",
    "abv": 59.0,
    "country": "日本（奈良）",
    "country_main": "日本",
@@ -8757,7 +8757,7 @@
   },
   {
    "name": "KIKKA GIN 朱華（ハネズ）",
-   "kana": "橘花 朱華（ハネズ）",
+   "kana": "橘花 朱華（ハネズ） ジン",
    "abv": 43.0,
    "country": "日本（奈良）",
    "country_main": "日本",
@@ -8766,7 +8766,7 @@
   },
   {
    "name": "KIKKA GIN 流転",
-   "kana": "橘花 流転",
+   "kana": "橘花 流転 ジン",
    "abv": 47.0,
    "country": "日本（奈良）",
    "country_main": "日本",
@@ -8775,7 +8775,7 @@
   },
   {
    "name": "KIKKA GIN Batch 邂逅",
-   "kana": "橘花 邂逅",
+   "kana": "橘花 邂逅 ジン",
    "abv": 45.0,
    "country": "日本（奈良）",
    "country_main": "日本",
@@ -8784,7 +8784,7 @@
   },
   {
    "name": "JAPANESE GIN 翠",
-   "kana": "翠 スイ",
+   "kana": "翠 スイ ジン",
    "abv": 40.0,
    "country": "日本",
    "country_main": "日本",
@@ -8793,7 +8793,7 @@
   },
   {
    "name": "Japanese Craft GIN 葉〈YOU〉",
-   "kana": "葉 ヨウ",
+   "kana": "葉 ヨウ ジン",
    "abv": 37.0,
    "country": "日本",
    "country_main": "日本",
@@ -8801,17 +8801,8 @@
    "botanicals": "ジュニパー、紫蘇、梅、柑橘類"
   },
   {
-   "name": "KIN NO BI KYOTO DRY GIN",
-   "kana": "金の美",
-   "abv": 45.7,
-   "country": "日本（京都）",
-   "country_main": "日本",
-   "note": "季の美（「季節の美しさ」）は伝統にインスピレーションを受け、京都で蒸留、ブレンド、瓶詰めされている。米酒ベースと有名な酒どころ伏見の純粋な地下水を使用。",
-   "botanicals": "ジュニパー、アカマツ、オリス、レモン、柚子、緑茶（玉露）、赤紫蘇、笹の葉、山椒、木の芽"
-  },
-  {
    "name": "KIN NO BI Kyoto Dry Gin with added Gold Leaf",
-   "kana": "金の美 ゴールドリーフ",
+   "kana": "金の美 ゴールドリーフ ジン",
    "abv": 45.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -8819,8 +8810,17 @@
    "botanicals": "ジュニパー、ヒノキチップ、黄柚子、玉露、山椒の実、笹の葉、金箔"
   },
   {
+   "name": "KIN NO BI KYOTO DRY GIN",
+   "kana": "金の美 ジン",
+   "abv": 45.7,
+   "country": "日本（京都）",
+   "country_main": "日本",
+   "note": "季の美（「季節の美しさ」）は伝統にインスピレーションを受け、京都で蒸留、ブレンド、瓶詰めされている。米酒ベースと有名な酒どころ伏見の純粋な地下水を使用。",
+   "botanicals": "ジュニパー、アカマツ、オリス、レモン、柚子、緑茶（玉露）、赤紫蘇、笹の葉、山椒、木の芽"
+  },
+  {
    "name": "TATEYAMA GIN EXPERIMENT SUMMER",
-   "kana": "館山 エクスペリメント サマー",
+   "kana": "館山 エクスペリメント サマー ジン",
    "abv": 40.0,
    "country": "日本（千葉：館山）",
    "country_main": "日本",
@@ -8829,7 +8829,7 @@
   },
   {
    "name": "TATEYAMA GIN EXPERIMENT CINNAMON/THYME",
-   "kana": "館山 エクスペリメント シナモン タイム",
+   "kana": "館山 エクスペリメント シナモン タイム ジン",
    "abv": 40.0,
    "country": "日本（千葉：館山）",
    "country_main": "日本",
@@ -8838,7 +8838,7 @@
   },
   {
    "name": "TATEYAMA GIN EXPERIMENT FOREST",
-   "kana": "館山 エクスペリメント フォレスト",
+   "kana": "館山 エクスペリメント フォレスト ジン",
    "abv": 40.0,
    "country": "日本（千葉：館山）",
    "country_main": "日本",
@@ -8847,7 +8847,7 @@
   },
   {
    "name": "TATEYAMA GIN EXPERIMENT LEAVES",
-   "kana": "館山 エクスペリメント リーブス",
+   "kana": "館山 エクスペリメント リーブス ジン",
    "abv": 47.0,
    "country": "日本（千葉：館山）",
    "country_main": "日本",
