@@ -24,7 +24,7 @@
   },
   {
    "name": "ISLE OF SKYE TOMMY'S GIN",
-   "kana": "アイルオブスカイ トミーズ",
+   "kana": "アイル オブ スカイ トミーズ",
    "abv": 45.0,
    "country": "イギリス（スコットランド：スカイ島）",
    "country_main": "イギリス",
@@ -33,7 +33,7 @@
   },
   {
    "name": "ISLE OF HARRIS GIN",
-   "kana": "アイルオブハリス",
+   "kana": "アイル オブ ハリス",
    "abv": 45.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -51,7 +51,7 @@
   },
   {
    "name": "AKAYANE CRAFT GIN HEART 秋",
-   "kana": "アカヤネ",
+   "kana": "アカヤネ ハート アキ",
    "abv": 46.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -60,7 +60,7 @@
   },
   {
    "name": "AKAYANE CRAFT GIN HEART 冬",
-   "kana": "アカヤネ",
+   "kana": "アカヤネ ハート フユ",
    "abv": 46.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -69,7 +69,7 @@
   },
   {
    "name": "AKAYANE 緑茶",
-   "kana": "アカヤネ",
+   "kana": "アカヤネ リョクチャ",
    "abv": 47.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -78,7 +78,7 @@
   },
   {
    "name": "AKAYANE CRAFT GIN 美風",
-   "kana": "アカヤネ/ビフウ",
+   "kana": "アカヤネ ビフウ",
    "abv": 46.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -87,7 +87,7 @@
   },
   {
    "name": "agataJapan ORIGINALS 千葉県ジン",
-   "kana": "アガタジャパン",
+   "kana": "アガタジャパン オリジナルズ 千葉県",
    "abv": 40.0,
    "country": "日本（千葉：館山）",
    "country_main": "日本",
@@ -96,7 +96,7 @@
   },
   {
    "name": "L’AGULHAS GIN",
-   "kana": "アガラス ジン",
+   "kana": "アガラス",
    "abv": 43.0,
    "country": "南アフリカ",
    "country_main": "南アフリカ",
@@ -114,7 +114,7 @@
   },
   {
    "name": "ACQUEVERDI GIN DELLE ALPI",
-   "kana": "アクアヴェルディ/アクアベルディ",
+   "kana": "アクアヴェルディ デッレ アルピ",
    "abv": 43.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -123,7 +123,7 @@
   },
   {
    "name": "AGRICOLO BLAGHEUR",
-   "kana": "アグリコロ",
+   "kana": "アグリコロ ブラゲール",
    "abv": 47.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -132,7 +132,7 @@
   },
   {
    "name": "AGRICOLO GADAN",
-   "kana": "アグリコロガーデン",
+   "kana": "アグリコロ ガダン",
    "abv": 47.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -150,7 +150,7 @@
   },
   {
    "name": "Astobiza Dry Gin Premium",
-   "kana": "アストビサ",
+   "kana": "アストビサ プレミアム",
    "abv": 40.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -177,7 +177,7 @@
   },
   {
    "name": "ADELAIDE HILLS DISTILLERY 78 DESERT STRENGTH",
-   "kana": "アデレードヒル",
+   "kana": "アデレードヒルズ 78 デザートストレングス",
    "abv": 48.0,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -186,7 +186,7 @@
   },
   {
    "name": "ANOHKA'S TEMPEST DRY GIN",
-   "kana": "アノーカ",
+   "kana": "アノーカ テンペスト",
    "abv": 47.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -222,7 +222,7 @@
   },
   {
    "name": "AMRTA [1-7-34] [2021]",
-   "kana": "アムリタ",
+   "kana": "アムリタ [1-7-34] [2021]",
    "abv": 40.0,
    "country": "日本（山梨）",
    "country_main": "日本",
@@ -231,7 +231,7 @@
   },
   {
    "name": "AMRTA GIN 夏 蝉時雨",
-   "kana": "アムリタ",
+   "kana": "アムリタ ナツ セミシグレ",
    "abv": 40.0,
    "country": "日本（山梨）",
    "country_main": "日本",
@@ -240,7 +240,7 @@
   },
   {
    "name": "AMRTA GIN 春 朧月夜",
-   "kana": "アムリタ",
+   "kana": "アムリタ ハル オボロヅキヨ",
    "abv": 40.0,
    "country": "日本（山梨）",
    "country_main": "日本",
@@ -249,7 +249,7 @@
   },
   {
    "name": "AMRTA GIN 秋 柿紅葉",
-   "kana": "アムリタ",
+   "kana": "アムリタ アキ カキモミジ",
    "abv": 40.0,
    "country": "日本（山梨）",
    "country_main": "日本",
@@ -258,7 +258,7 @@
   },
   {
    "name": "AMRTA LIMITED.08",
-   "kana": "アムリタ",
+   "kana": "アムリタ リミテッド.08",
    "abv": 40.0,
    "country": "日本（山梨）",
    "country_main": "日本",
@@ -267,7 +267,7 @@
   },
   {
    "name": "AMRUT NILGIRIS INDIAN DRY GIN",
-   "kana": "アムルット",
+   "kana": "アムルット ニルギリ",
    "abv": 42.8,
    "country": "インド",
    "country_main": "インド",
@@ -276,7 +276,7 @@
   },
   {
    "name": "ARIA PORTLAND DRY GIN",
-   "kana": "アリア",
+   "kana": "アリア ポートランド",
    "abv": 45.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -285,7 +285,7 @@
   },
   {
    "name": "FirstEssence OrangeFlower 2024",
-   "kana": "アルケミエ",
+   "kana": "ファーストエッセンス オレンジフラワー 2024",
    "abv": 45.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -303,7 +303,7 @@
   },
   {
    "name": "アルケミエ 4",
-   "kana": "アルケミエ",
+   "kana": "アルケミエ 4",
    "abv": 45.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -312,7 +312,7 @@
   },
   {
    "name": "アルケミエ CHOCOLATE GIN 2020",
-   "kana": "アルケミエ",
+   "kana": "アルケミエ チョコレート 2020",
    "abv": 45.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -321,7 +321,7 @@
   },
   {
    "name": "アルケミエ G-ABSINTHE",
-   "kana": "アルケミエ",
+   "kana": "アルケミエ G-アブサン",
    "abv": 58.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -330,7 +330,7 @@
   },
   {
    "name": "アルケミエ Lavender 4",
-   "kana": "アルケミエ",
+   "kana": "アルケミエ ラベンダー 4",
    "abv": 45.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -339,7 +339,7 @@
   },
   {
    "name": "アルケミエ WILD DEER 六ノ里",
-   "kana": "アルケミエ",
+   "kana": "アルケミエ ワイルドディア 六ノ里",
    "abv": 50.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -348,7 +348,7 @@
   },
   {
    "name": "アルケミエ YES DOG Cambodia",
-   "kana": "アルケミエ",
+   "kana": "アルケミエ イエスドッグ カンボジア",
    "abv": 45.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -357,7 +357,7 @@
   },
   {
    "name": "アルケミエ ファーストエッセンス ウェット MMXXI 五",
-   "kana": "アルケミエ",
+   "kana": "アルケミエ ファーストエッセンス ウェット MMXXI 五",
    "abv": 48.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -366,7 +366,7 @@
   },
   {
    "name": "アルケミエ ファーストエッセンス オレンジ＃12",
-   "kana": "アルケミエ",
+   "kana": "アルケミエ ファーストエッセンス オレンジ ＃12",
    "abv": 48.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -375,7 +375,7 @@
   },
   {
    "name": "アルケミエ ファーストエッセンス カモミール 三",
-   "kana": "アルケミエ",
+   "kana": "アルケミエ ファーストエッセンス カモミール 三",
    "abv": 45.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -384,7 +384,7 @@
   },
   {
    "name": "アルケミエ ファーストエッセンス ラベンダー",
-   "kana": "アルケミエ",
+   "kana": "アルケミエ ファーストエッセンス ラベンダー",
    "abv": 45.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -393,7 +393,7 @@
   },
   {
    "name": "アルケミエ フキノハナ",
-   "kana": "アルケミエ",
+   "kana": "アルケミエ フキノハナ",
    "abv": 45.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -402,7 +402,7 @@
   },
   {
    "name": "アルケミエ 金木犀",
-   "kana": "アルケミエ",
+   "kana": "アルケミエ キンモクセイ",
    "abv": 45.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -411,7 +411,7 @@
   },
   {
    "name": "アルケミエ 犬啼 ジュニパー",
-   "kana": "アルケミエ",
+   "kana": "アルケミエ イヌナキ ジュニパー",
    "abv": 45.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -420,7 +420,7 @@
   },
   {
    "name": "アルケミエ 犬啼 ホップ",
-   "kana": "アルケミエ",
+   "kana": "アルケミエ イヌナキ ホップ",
    "abv": 45.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -429,7 +429,7 @@
   },
   {
    "name": "アルケミエ 蛇穴 バッチ1",
-   "kana": "アルケミエ",
+   "kana": "アルケミエ ジャアナ バッチ1",
    "abv": 45.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -438,7 +438,7 @@
   },
   {
    "name": "アルケミエ 蛇穴 バッチ2",
-   "kana": "アルケミエ",
+   "kana": "アルケミエ ジャケツ バッチ2",
    "abv": 45.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -456,7 +456,7 @@
   },
   {
    "name": "AWA GIN",
-   "kana": "アワジン",
+   "kana": "アワ",
    "abv": 45.0,
    "country": "日本（徳島）",
    "country_main": "日本",
@@ -465,7 +465,7 @@
   },
   {
    "name": "AWA GIN classic",
-   "kana": "アワジン",
+   "kana": "アワ クラシック",
    "abv": 45.0,
    "country": "日本（徳島）",
    "country_main": "日本",
@@ -474,7 +474,7 @@
   },
   {
    "name": "UNGAVA CANADIAN PREMIUM GIN",
-   "kana": "アンガヴァ / アンガバ",
+   "kana": "アンガヴァ プレミアム",
    "abv": 43.1,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -483,7 +483,7 @@
   },
   {
    "name": "UNCLE VAL'S BOTANICAL GIN",
-   "kana": "アンクルヴァルズ / アンクルバルズ",
+   "kana": "アンクルヴァルズ ボタニカル",
    "abv": 45.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -492,7 +492,7 @@
   },
   {
    "name": "UNCLE VAL'S PEPPERED GIN",
-   "kana": "アンクルヴァルズ / アンクルバルズ",
+   "kana": "アンクルヴァルズ ペッパード",
    "abv": 45.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -501,7 +501,7 @@
   },
   {
    "name": "UNCLE VAL'S RESTORATIVE GIN",
-   "kana": "アンクルヴァルズ / アンクルバルズ",
+   "kana": "アンクルヴァルズ レストラティブ",
    "abv": 45.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -510,7 +510,7 @@
   },
   {
    "name": "ANTHER CHERRY GIN 2018 HARVEST",
-   "kana": "アンサー",
+   "kana": "アンサー チェリー 2018 ハーベスト",
    "abv": 27.0,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -528,7 +528,7 @@
   },
   {
    "name": "Unbirthday Edition仁丹 Original Gin",
-   "kana": "アンバースデイ",
+   "kana": "アンバースデイ 仁丹 オリジナル",
    "abv": 40.0,
    "country": "日本（鹿児島：指宿）",
    "country_main": "日本",
@@ -537,7 +537,7 @@
   },
   {
    "name": "Unbirthday 指宿 DRY GIN",
-   "kana": "アンバースデイ",
+   "kana": "アンバースデイ 指宿",
    "abv": 40.0,
    "country": "日本（鹿児島：指宿）",
    "country_main": "日本",
@@ -555,7 +555,7 @@
   },
   {
    "name": "UNRULY GIN",
-   "kana": "アンルリー/アンルリィ",
+   "kana": "アンルリー",
    "abv": 43.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -564,7 +564,7 @@
   },
   {
    "name": "AVIATION GIN",
-   "kana": "アヴィエイション/アビエイション",
+   "kana": "アビエイション",
    "abv": 42.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -582,7 +582,7 @@
   },
   {
    "name": "Arctic Blue Gin Rose",
-   "kana": "アークティックブルー",
+   "kana": "アークティックブルー ローズ",
    "abv": 58.5,
    "country": "フィンランド",
    "country_main": "フィンランド",
@@ -591,7 +591,7 @@
   },
   {
    "name": "GIN - ARTISANAL",
-   "kana": "アーショナル",
+   "kana": "アーティザナル",
    "abv": 40.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -600,7 +600,7 @@
   },
   {
    "name": "ARCHIE ROSE Distiller's Strength Gin",
-   "kana": "アーチーローズ",
+   "kana": "アーチーローズ ディスティラーズストレングス",
    "abv": 52.4,
    "country": "オーストラリア（シドニー）",
    "country_main": "オーストラリア",
@@ -609,7 +609,7 @@
   },
   {
    "name": "ARBIKIE KIRSTY'S GIN",
-   "kana": "アービキー",
+   "kana": "アービキー カースティ",
    "abv": 43.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -645,7 +645,7 @@
   },
   {
    "name": "IMAGINATION REIKORANGI TRIPLE DISTILLED DRY GIN",
-   "kana": "イマジネーション",
+   "kana": "イマジネーション レイコランギ",
    "abv": 42.0,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -672,7 +672,7 @@
   },
   {
    "name": "Gin Ivana Ciabatti Elisir Ginepro",
-   "kana": "イルジン",
+   "kana": "イヴァナ チャバッティ エリシル ジネプロ",
    "abv": 42.5,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -681,7 +681,7 @@
   },
   {
    "name": "INK GIN",
-   "kana": "インクジン",
+   "kana": "インク",
    "abv": 43.0,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -690,7 +690,7 @@
   },
   {
    "name": "INDIAN SUMMER GIN",
-   "kana": "インディアンサマー",
+   "kana": "インディアン サマー",
    "abv": 46.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -708,7 +708,7 @@
   },
   {
    "name": "因伯人-Impact-",
-   "kana": "インパクト",
+   "kana": "インパクハク インパクト",
    "abv": 47.0,
    "country": "日本（鳥取）",
    "country_main": "日本",
@@ -717,7 +717,7 @@
   },
   {
    "name": "INFINITY 8 GIN BLACK EDITION",
-   "kana": "インフィニティエイト",
+   "kana": "インフィニティ エイト ブラック エディション",
    "abv": 41.0,
    "country": "イタリア（ヴェネト）",
    "country_main": "イタリア",
@@ -726,7 +726,7 @@
   },
   {
    "name": "THE EAST INDIA COMPANY LONDON",
-   "kana": "イーストインディアン",
+   "kana": "イーストインディアカンパニー ロンドン",
    "abv": 42.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -753,7 +753,7 @@
   },
   {
    "name": "WHITLEY NEILL Gooseberry",
-   "kana": "ウィットリーニール",
+   "kana": "ウィットリーニール グーズベリー",
    "abv": 43.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -762,7 +762,7 @@
   },
   {
    "name": "WHITLEY NEILL Quince",
-   "kana": "ウィットリーニール",
+   "kana": "ウィットリーニール クインス",
    "abv": 43.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -771,7 +771,7 @@
   },
   {
    "name": "WHITLEY NEILL Raspberry",
-   "kana": "ウィットリーニール",
+   "kana": "ウィットリーニール ラズベリー",
    "abv": 43.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -780,7 +780,7 @@
   },
   {
    "name": "WHITLEY NEILL RHUBARB & GINGER GIN",
-   "kana": "ウィットリーニール",
+   "kana": "ウィットリーニール ルバーブ＆ジンジャー",
    "abv": 41.3,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -789,7 +789,7 @@
   },
   {
    "name": "WILLIAMS ELEGANT 48 GIN",
-   "kana": "ウィリアムズ",
+   "kana": "ウィリアムズ エレガント 48",
    "abv": 48.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -825,7 +825,7 @@
   },
   {
    "name": "CRAFT GIN UTAGAWA 生姜",
-   "kana": "ウタガワ",
+   "kana": "ウタガワ 生姜",
    "abv": 40.0,
    "country": "日本（群馬）",
    "country_main": "日本",
@@ -834,7 +834,7 @@
   },
   {
    "name": "CRAFT GIN UTAGAWA 柚子",
-   "kana": "ウタガワ",
+   "kana": "ウタガワ 柚子",
    "abv": 40.0,
    "country": "日本（群馬）",
    "country_main": "日本",
@@ -843,7 +843,7 @@
   },
   {
    "name": "WOODLAND SAUERLAND DRY GIN",
-   "kana": "ウッドランド",
+   "kana": "ウッドランド ザウアーラント",
    "abv": 57.2,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -852,7 +852,7 @@
   },
   {
    "name": "WOODLAND SAUERLAND DRY GIN",
-   "kana": "ウッドランド",
+   "kana": "ウッドランド ザウアーラント",
    "abv": 45.5,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -861,7 +861,7 @@
   },
   {
    "name": "丹波山俱楽部 UNICUS Maitake Gin by Distiller M",
-   "kana": "ウニクス",
+   "kana": "タンバヤマクラブ ウニクス マイタケ",
    "abv": 47.0,
    "country": "日本（東京：渋谷）",
    "country_main": "日本",
@@ -870,7 +870,7 @@
   },
   {
    "name": "WOLFREST ALBA Distilled Dry Gin",
-   "kana": "ウルフレスト",
+   "kana": "ウルフレスト アルバ",
    "abv": 45.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -888,7 +888,7 @@
   },
   {
    "name": "EIGHT LANDS Organic Speyside Gin",
-   "kana": "エイトランズ",
+   "kana": "エイトランズ オーガニック",
    "abv": 46.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -897,7 +897,7 @@
   },
   {
    "name": "EIRIN CRAFT YUZUGIN",
-   "kana": "エイリン",
+   "kana": "エイリン 柚子",
    "abv": 47.0,
    "country": "日本（福岡）",
    "country_main": "日本",
@@ -906,7 +906,7 @@
   },
   {
    "name": "Question GIN",
-   "kana": "エイリン/クエスチョン",
+   "kana": "クエスチョン",
    "abv": 45.0,
    "country": "日本（福岡）",
    "country_main": "日本",
@@ -915,7 +915,7 @@
   },
   {
    "name": "酒ジン わさび",
-   "kana": "エイリン/サケジン",
+   "kana": "サケジン ワサビ",
    "abv": 47.0,
    "country": "日本（福岡）",
    "country_main": "日本",
@@ -942,7 +942,7 @@
   },
   {
    "name": "CACAO ETHIQUE BATCH NO.1",
-   "kana": "エシカル",
+   "kana": "カカオ エティーク バッチ No.1",
    "abv": 46.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -951,7 +951,7 @@
   },
   {
    "name": "CACAO ETHIQUE T",
-   "kana": "エシカル",
+   "kana": "カカオ エティーク T",
    "abv": 46.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -960,7 +960,7 @@
   },
   {
    "name": "CHAOS ABSINTHE",
-   "kana": "エシカル",
+   "kana": "カオス アブサン",
    "abv": 55.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -969,7 +969,7 @@
   },
   {
    "name": "COFFEE ETHIQUE BATCH NO.1",
-   "kana": "エシカル",
+   "kana": "コーヒー エシーク バッチNo.1",
    "abv": 46.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -978,7 +978,7 @@
   },
   {
    "name": "ETHICAL GIN LITTLE JOY SPIRITS",
-   "kana": "エシカル",
+   "kana": "エシカル リトルジョイ スピリッツ",
    "abv": 45.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -987,7 +987,7 @@
   },
   {
    "name": "KASTORI GTEIST GIN",
-   "kana": "エシカル",
+   "kana": "カストリ ガイスト",
    "abv": 40.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -996,7 +996,7 @@
   },
   {
    "name": "KOMBUCHA ETHIQUE",
-   "kana": "エシカル",
+   "kana": "コンブチャ エシック",
    "abv": 46.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1005,7 +1005,7 @@
   },
   {
    "name": "RUTA & POMACE",
-   "kana": "エシカル",
+   "kana": "ルータ ポマス",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1014,7 +1014,7 @@
   },
   {
    "name": "SHILTAKE ETHIQUE",
-   "kana": "エシカル",
+   "kana": "シイタケ エシック",
    "abv": 41.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1023,7 +1023,7 @@
   },
   {
    "name": "正調粕取杜松酒",
-   "kana": "エシカル",
+   "kana": "セイチョウカストリ ネズザケ",
    "abv": 43.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1032,7 +1032,7 @@
   },
   {
    "name": "In the woods",
-   "kana": "エシカル/エニグマ/インザウッドズ",
+   "kana": "イン ザ ウッズ",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1041,7 +1041,7 @@
   },
   {
    "name": "エシカル エニグマ 華香花GIN",
-   "kana": "エシカル/エニグマ/カカカ",
+   "kana": "エシカル エニグマ カカカ",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1050,7 +1050,7 @@
   },
   {
    "name": "KELP ETHIQUE prototype",
-   "kana": "エシカル/エニグマ/ケルプエシーク",
+   "kana": "ケルプ エシーク プロトタイプ",
    "abv": 46.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1059,7 +1059,7 @@
   },
   {
    "name": "SUMMER SEA BREEZE",
-   "kana": "エシカル/エニグマ/サマーシーブリーズ",
+   "kana": "サマーシーブリーズ",
    "abv": 45.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1068,7 +1068,7 @@
   },
   {
    "name": "猩々之杜松酒",
-   "kana": "エシカル/エニグマ/ショウジョウノサケ",
+   "kana": "ショウジョウノネズザケ",
    "abv": 50.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1077,7 +1077,7 @@
   },
   {
    "name": "GIN KHIAO WAN",
-   "kana": "エシカル/エニグマ/ジンキャオワーン",
+   "kana": "キャオワーン",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1086,7 +1086,7 @@
   },
   {
    "name": "REVIVE From SORRA prototype",
-   "kana": "エシカル/エニグマ/ソラ",
+   "kana": "リバイブ ソラ プロトタイプ",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1095,7 +1095,7 @@
   },
   {
    "name": "CHIBANICAL GIN",
-   "kana": "エシカル/エニグマ/チバニカル",
+   "kana": "チバニカル",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1104,7 +1104,7 @@
   },
   {
    "name": "Do Remi Pop",
-   "kana": "エシカル/エニグマ/ドレミポップ",
+   "kana": "ドレミ ポップ",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1113,7 +1113,7 @@
   },
   {
    "name": "DOUGHNUTS GINEVER",
-   "kana": "エシカル/エニグマ/ドーナッツジュネヴァ",
+   "kana": "ドーナッツ ジュネヴァ",
    "abv": 42.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1122,7 +1122,7 @@
   },
   {
    "name": "HANEMOMO GIN Batch.2",
-   "kana": "エシカル/エニグマ/ハネモモ",
+   "kana": "ハネモモ バッチ2",
    "abv": 43.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1131,7 +1131,7 @@
   },
   {
    "name": "HANEMOMO GIN Batsh.3",
-   "kana": "エシカル/エニグマ/ハネモモ",
+   "kana": "ハネモモ バッチ3",
    "abv": 43.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1140,7 +1140,7 @@
   },
   {
    "name": "HANNO ÉTHIQUE",
-   "kana": "エシカル/エニグマ/ハンノエシーク",
+   "kana": "ハンノ エシーク",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1149,7 +1149,7 @@
   },
   {
    "name": "Burnt Fruits Perfume",
-   "kana": "エシカル/エニグマ/バーントフルーツパフューム",
+   "kana": "バーントフルーツ パフューム",
    "abv": 46.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1158,7 +1158,7 @@
   },
   {
    "name": "Miaou meow mellow",
-   "kana": "エシカル/エニグマ/ミャオウニャンメロウ",
+   "kana": "ミャオウ ミャオウ メロウ",
    "abv": 48.0,
    "country": "東京",
    "country_main": "東京",
@@ -1167,7 +1167,7 @@
   },
   {
    "name": "REVIVE from CIDER",
-   "kana": "エシカル/エニグマ/リヴァイブ シードル",
+   "kana": "リバイブ シードル",
    "abv": 46.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1176,7 +1176,7 @@
   },
   {
    "name": "Rainy Night Park",
-   "kana": "エシカル/エニグマ/レイニーナイトパーク",
+   "kana": "レイニーナイトパーク",
    "abv": 43.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1185,7 +1185,7 @@
   },
   {
    "name": "Cloud9",
-   "kana": "エシカル/クラウドナイン",
+   "kana": "クラウドナイン",
    "abv": 42.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1194,7 +1194,7 @@
   },
   {
    "name": "Stage GIN 2nd Anniversary",
-   "kana": "エシカル/ステージ",
+   "kana": "ステージ 2ndアニバーサリー",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1203,7 +1203,7 @@
   },
   {
    "name": "Stage GIN 3rd Anniversary",
-   "kana": "エシカル/ステージ",
+   "kana": "ステージ 3rdアニバーサリー",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1212,7 +1212,7 @@
   },
   {
    "name": "Ne10",
-   "kana": "エシカル/ネオン",
+   "kana": "ネオン10",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1221,7 +1221,7 @@
   },
   {
    "name": "BATON TOUCH No.4",
-   "kana": "エシカル/バトンタッチ",
+   "kana": "バトンタッチ No.4",
    "abv": 43.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1230,7 +1230,7 @@
   },
   {
    "name": "HOLON GIN SEASONAL 金木犀",
-   "kana": "エシカル/ホロン",
+   "kana": "ホロン シーズナル 金木犀",
    "abv": 39.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1239,7 +1239,7 @@
   },
   {
    "name": "HOLON GIN SEASONAL 桜",
-   "kana": "エシカル/ホロン",
+   "kana": "ホロン シーズナル 桜",
    "abv": 39.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1248,7 +1248,7 @@
   },
   {
    "name": "HOLON GIN SEASONAL 梅紫蘇",
-   "kana": "エシカル/ホロン",
+   "kana": "ホロン シーズナル 梅紫蘇",
    "abv": 39.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1257,7 +1257,7 @@
   },
   {
    "name": "HOLON GIN SEASONAL 蜜柑",
-   "kana": "エシカル/ホロン",
+   "kana": "ホロン シーズナル 蜜柑",
    "abv": 39.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1266,7 +1266,7 @@
   },
   {
    "name": "HOLON GIN 晴",
-   "kana": "エシカル/ホロン",
+   "kana": "ホロン 晴",
    "abv": 40.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1275,7 +1275,7 @@
   },
   {
    "name": "東京リバーサイド BORDERLESS GIN",
-   "kana": "エシカル/ボーダーレスジン",
+   "kana": "トウキョウリバーサイド ボーダーレス",
    "abv": 47.0,
    "country": "日本",
    "country_main": "日本",
@@ -1284,7 +1284,7 @@
   },
   {
    "name": "LAST -another- YASO",
-   "kana": "エシカル/ラスト",
+   "kana": "ラスト アナザー ヤソウ",
    "abv": 43.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1293,7 +1293,7 @@
   },
   {
    "name": "LAST -elegant-",
-   "kana": "エシカル/ラスト",
+   "kana": "ラスト エレガント",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1302,7 +1302,7 @@
   },
   {
    "name": "LAST -modest-",
-   "kana": "エシカル/ラスト",
+   "kana": "ラスト モデスト",
    "abv": 43.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1311,7 +1311,7 @@
   },
   {
    "name": "LAST ‐elysium‐",
-   "kana": "エシカル/ラスト",
+   "kana": "ラスト エリュシウム",
    "abv": 42.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1320,7 +1320,7 @@
   },
   {
    "name": "LITTLE JOY SPIRITS",
-   "kana": "エシカル/リトルジョイスピリッツ",
+   "kana": "リトルジョイスピリッツ",
    "abv": 45.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1329,7 +1329,7 @@
   },
   {
    "name": "REVIVE From Beer",
-   "kana": "エシカル/リバイブ",
+   "kana": "リバイブ ビア",
    "abv": 40.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1338,7 +1338,7 @@
   },
   {
    "name": "REVIVE From BEER",
-   "kana": "エシカル/リバイブ",
+   "kana": "リバイブ ビア",
    "abv": 40.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1347,7 +1347,7 @@
   },
   {
    "name": "REVIVE From Hoegaarden",
-   "kana": "エシカル/リバイブ",
+   "kana": "リバイブ ヒューガルデン",
    "abv": 45.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1356,7 +1356,7 @@
   },
   {
    "name": "REVIVE from BLACK TIDE",
-   "kana": "エシカル/リバイブ/ブラックタイド",
+   "kana": "リバイブ ブラックタイド",
    "abv": 57.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1365,7 +1365,7 @@
   },
   {
    "name": "REVIVE from NINJA",
-   "kana": "エシカル/リヴァイブ/リバイブ",
+   "kana": "リバイブ ニンジャ",
    "abv": 45.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1374,7 +1374,7 @@
   },
   {
    "name": "ETHICAL GIN LOSS IS MORE",
-   "kana": "エシカル/ロスイズモア",
+   "kana": "エシカル ロスイズモア",
    "abv": 47.0,
    "country": "日本（東京：蔵前）",
    "country_main": "日本",
@@ -1383,7 +1383,7 @@
   },
   {
    "name": "EDGERTON ORIGINAL PINK GIN",
-   "kana": "エジャートン",
+   "kana": "エジャートン オリジナル ピンク",
    "abv": 43.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -1392,7 +1392,7 @@
   },
   {
    "name": "Echlinville Irish Pot Still Gin",
-   "kana": "エッケンビル",
+   "kana": "エクリンヴィル ポットスティル",
    "abv": 46.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -1401,7 +1401,7 @@
   },
   {
    "name": "EDINBURGH CANNONBALL Navy Strength Gin",
-   "kana": "エディンバラ/エジンバラ",
+   "kana": "エディンバラ キャノンボール ネイビーストレングス",
    "abv": 57.2,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -1410,7 +1410,7 @@
   },
   {
    "name": "EDINBURGH GIN",
-   "kana": "エディンバラ/エジンバラ",
+   "kana": "エディンバラ",
    "abv": 43.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -1419,7 +1419,7 @@
   },
   {
    "name": "EDINBURGH Seaside Gin",
-   "kana": "エディンバラ/エジンバラ",
+   "kana": "エディンバラ シーサイド",
    "abv": 43.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -1428,7 +1428,7 @@
   },
   {
    "name": "EDEB.MILL ST Andrews Golf Gin",
-   "kana": "エデンミール",
+   "kana": "エデンミル セントアンドリュース ゴルフ",
    "abv": 42.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -1437,7 +1437,7 @@
   },
   {
    "name": "EDEB.MILL ST Andrews Scotch Rugby Milk histle Gin",
-   "kana": "エデンミール",
+   "kana": "エデンミル セントアンドリュース ラグビー ミルクシスル",
    "abv": 42.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -1446,7 +1446,7 @@
   },
   {
    "name": "EDEN.MILL ST ANDREWS GIN",
-   "kana": "エデンミール",
+   "kana": "エデンミル セントアンドリュース",
    "abv": 42.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -1455,7 +1455,7 @@
   },
   {
    "name": "EDEN.MILL ST ANDREWS Golf GIN",
-   "kana": "エデンミール",
+   "kana": "エデンミル セントアンドリュース ゴルフ",
    "abv": 42.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -1464,7 +1464,7 @@
   },
   {
    "name": "EDEN.MILL ST Andrews Hop Gin",
-   "kana": "エデンミール",
+   "kana": "エデンミル セントアンドリュース ホップ",
    "abv": 46.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -1473,7 +1473,7 @@
   },
   {
    "name": "ELG NO.1",
-   "kana": "エルグ",
+   "kana": "エルグ No.1",
    "abv": 47.2,
    "country": "デンマーク",
    "country_main": "デンマーク",
@@ -1491,7 +1491,7 @@
   },
   {
    "name": "ENGINE Organic Gin",
-   "kana": "エンジン",
+   "kana": "エンジン オーガニック",
    "abv": 42.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -1500,7 +1500,7 @@
   },
   {
    "name": "EMPIRE DROUGHT GIN",
-   "kana": "エンパイア",
+   "kana": "エンパイア ドラウト",
    "abv": 80.0,
    "country": "南アフリカ",
    "country_main": "南アフリカ",
@@ -1518,7 +1518,7 @@
   },
   {
    "name": "EMPRESS 1908 ELDERFLOWER ROSE GIN",
-   "kana": "エンプレス",
+   "kana": "エンプレス 1908 エルダーフラワー ローズ",
    "abv": 42.5,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -1527,7 +1527,7 @@
   },
   {
    "name": "EMPRESS 1908 GIN",
-   "kana": "エンプレス",
+   "kana": "エンプレス 1908",
    "abv": 42.5,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -1536,7 +1536,7 @@
   },
   {
    "name": "OSAKA GIN ORIJIN",
-   "kana": "オオサカ",
+   "kana": "オオサカ オリジン",
    "abv": 45.0,
    "country": "日本（大阪）",
    "country_main": "日本",
@@ -1572,7 +1572,7 @@
   },
   {
    "name": "OSUZU GIN DistiRally NEXT 2022",
-   "kana": "オスズ",
+   "kana": "オスズ ディスティラリー ネクスト 2022",
    "abv": 45.0,
    "country": "日本（宮崎）",
    "country_main": "日本",
@@ -1581,7 +1581,7 @@
   },
   {
    "name": "OPIHR",
-   "kana": "オピーア/オピア",
+   "kana": "オピーア",
    "abv": 42.5,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -1590,7 +1590,7 @@
   },
   {
    "name": "OPIHR Aromatic Bitters",
-   "kana": "オピーア/オピア",
+   "kana": "オピーア アロマティックビターズ",
    "abv": 43.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -1599,7 +1599,7 @@
   },
   {
    "name": "OPIHR Smouldering Spice",
-   "kana": "オピーア/オピア",
+   "kana": "オピーア スモルダリングスパイス",
    "abv": 43.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -1608,7 +1608,7 @@
   },
   {
    "name": "OFF TRAIL – Azeotrope #1 【New Pot】Beer Distilled Gin",
-   "kana": "オフトレイル",
+   "kana": "オフトレイル アゼオトロープ #1 ニューポット ビア",
    "abv": 47.0,
    "country": "日本（山梨）",
    "country_main": "日本",
@@ -1617,7 +1617,7 @@
   },
   {
    "name": "OFF TRAIL – Azeotrope #2 【New Pot Blended】Malt Gin",
-   "kana": "オフトレイル",
+   "kana": "オフトレイル アゼオトロープ #2 ニューポットブレンデッド モルト",
    "abv": 47.0,
    "country": "日本（山梨）",
    "country_main": "日本",
@@ -1626,7 +1626,7 @@
   },
   {
    "name": "OBSESSED～吐息～",
-   "kana": "オブセスト",
+   "kana": "オブセスト 吐息",
    "abv": 42.0,
    "country": "日本（宮城）",
    "country_main": "日本",
@@ -1635,7 +1635,7 @@
   },
   {
    "name": "ohoro GIN Limited Edition LAVENDER",
-   "kana": "オホロ",
+   "kana": "オホロ リミテッドエディション ラベンダー",
    "abv": 47.0,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -1671,7 +1671,7 @@
   },
   {
    "name": "Distillerie du Gorvello gin Oriant 1672",
-   "kana": "オリオン1672",
+   "kana": "ゴルヴェロ オリアン 1672",
    "abv": 42.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -1680,7 +1680,7 @@
   },
   {
    "name": "ORI-Gin 1848",
-   "kana": "オリジン",
+   "kana": "オリジン 1848",
    "abv": 48.0,
    "country": "日本（沖縄：那覇）",
    "country_main": "日本",
@@ -1698,7 +1698,7 @@
   },
   {
    "name": "OMABRAK Single Malt Gin",
-   "kana": "オルナブラック",
+   "kana": "オマブラック シングルモルト",
    "abv": 43.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -1707,7 +1707,7 @@
   },
   {
    "name": "ON SPRING Special Craft Gin",
-   "kana": "オンスプリング",
+   "kana": "オンスプリング スペシャル",
    "abv": 45.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -1734,7 +1734,7 @@
   },
   {
    "name": "O de V Super Premium 100% ITALIAN GIN Black",
-   "kana": "オードヴィー/オードビー",
+   "kana": "オードヴィー スーパープレミアム ブラック",
    "abv": 47.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -1743,7 +1743,7 @@
   },
   {
    "name": "O de V Super Premium 100% ITALIAN GIN White",
-   "kana": "オードヴィー/オードビー",
+   "kana": "オードヴィー スーパープレミアム ホワイト",
    "abv": 47.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -1752,7 +1752,7 @@
   },
   {
    "name": "青舞",
-   "kana": "オーブ/オウブ",
+   "kana": "アオマイ",
    "abv": 40.0,
    "country": "日本（山口県：長門市）",
    "country_main": "日本",
@@ -1770,7 +1770,7 @@
   },
   {
    "name": "OLD CURIOSITY LAVENDER & ECHINACEA GIN",
-   "kana": "オールドキュリオシティ",
+   "kana": "オールドキュリオシティ ラベンダー&エキナセア",
    "abv": 39.0,
    "country": "イギリス（スコットランド：エディンバラ）",
    "country_main": "イギリス",
@@ -1788,7 +1788,7 @@
   },
   {
    "name": "GARAPPA ~#1 CRAFT GIN~ 河童",
-   "kana": "カッパ",
+   "kana": "ガラッパ 河童",
    "abv": 47.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -1806,7 +1806,7 @@
   },
   {
    "name": "HARRISAN GIN SHINJUKU CRAFT GIN",
-   "kana": "カトマオ/ハリサン",
+   "kana": "ハリサン 新宿",
    "abv": 47.0,
    "country": "日本（東京：新宿）",
    "country_main": "日本",
@@ -1815,7 +1815,7 @@
   },
   {
    "name": "CANNABIS SATIVA GIN",
-   "kana": "カナビス",
+   "kana": "カナビス サティバ",
    "abv": 40.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -1842,7 +1842,7 @@
   },
   {
    "name": "香の雫",
-   "kana": "カノモリ/カノシズク",
+   "kana": "カノシズク",
    "abv": 40.0,
    "country": "日本（長野）",
    "country_main": "日本",
@@ -1860,7 +1860,7 @@
   },
   {
    "name": "香雪",
-   "kana": "カユキ",
+   "kana": "コウセツ",
    "abv": 45.0,
    "country": "日本（和歌山）",
    "country_main": "日本",
@@ -1869,7 +1869,7 @@
   },
   {
    "name": "CAORUNN Small Batch Scottish GIN",
-   "kana": "カルーン",
+   "kana": "カルーン スモールバッチ",
    "abv": 41.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -1878,7 +1878,7 @@
   },
   {
    "name": "KAVALAN GIN",
-   "kana": "カヴァラン/カバラン",
+   "kana": "カバラン",
    "abv": 40.0,
    "country": "台湾",
    "country_main": "台湾",
@@ -1887,7 +1887,7 @@
   },
   {
    "name": "KIRKJUVAGR ARKH-ANGELL ORKNEY GIN",
-   "kana": "カーキュヴァー/カーキュバー",
+   "kana": "カーキュヴァー アークエンジェル",
    "abv": 57.0,
    "country": "イギリス（スコットランド：オークニー）",
    "country_main": "イギリス",
@@ -1896,7 +1896,7 @@
   },
   {
    "name": "KIRKJUVAGR ORKNEY GIN",
-   "kana": "カーキュヴァー/カーキュバー",
+   "kana": "カーキュヴァー",
    "abv": 43.0,
    "country": "イギリス（スコットランド：オークニー）",
    "country_main": "イギリス",
@@ -1905,7 +1905,7 @@
   },
   {
    "name": "GARDEN SHED BRAMBLE PEACH GIN",
-   "kana": "ガーデンシェッド",
+   "kana": "ガーデンシェッド ブランブルピーチ",
    "abv": 40.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -1923,7 +1923,7 @@
   },
   {
    "name": "GARNISH ISLAMD PINK GIN",
-   "kana": "ガーニッシュアイランド",
+   "kana": "ガーニッシュアイランド ピンク",
    "abv": 46.0,
    "country": "アイルランド（ガーニッシュ島）",
    "country_main": "アイルランド",
@@ -1968,7 +1968,7 @@
   },
   {
    "name": "KIKKA GIN",
-   "kana": "キッカ",
+   "kana": "橘花",
    "abv": 56.0,
    "country": "日本（奈良）",
    "country_main": "日本",
@@ -1977,7 +1977,7 @@
   },
   {
    "name": "KIKKA GIN Batch 邂逅",
-   "kana": "キッカ",
+   "kana": "橘花 邂逅",
    "abv": 45.0,
    "country": "日本（奈良）",
    "country_main": "日本",
@@ -1986,7 +1986,7 @@
   },
   {
    "name": "KIKKA GIN Batch4",
-   "kana": "キッカ",
+   "kana": "橘花 バッチ4",
    "abv": 59.0,
    "country": "日本（奈良）",
    "country_main": "日本",
@@ -1995,7 +1995,7 @@
   },
   {
    "name": "KIKKA GIN Batch5",
-   "kana": "キッカ",
+   "kana": "橘花 バッチ5",
    "abv": 59.0,
    "country": "日本（奈良）",
    "country_main": "日本",
@@ -2004,7 +2004,7 @@
   },
   {
    "name": "KIKKA GIN Batch7",
-   "kana": "キッカ",
+   "kana": "橘花 バッチ7",
    "abv": 59.0,
    "country": "日本（奈良）",
    "country_main": "日本",
@@ -2013,7 +2013,7 @@
   },
   {
    "name": "KIKKA GIN 一閃",
-   "kana": "キッカ",
+   "kana": "橘花 一閃",
    "abv": 59.0,
    "country": "日本（奈良）",
    "country_main": "日本",
@@ -2022,7 +2022,7 @@
   },
   {
    "name": "KIKKA GIN 朱華（ハネズ）",
-   "kana": "キッカ",
+   "kana": "橘花 朱華（ハネズ）",
    "abv": 43.0,
    "country": "日本（奈良）",
    "country_main": "日本",
@@ -2031,7 +2031,7 @@
   },
   {
    "name": "KIKKA GIN 流転",
-   "kana": "キッカ",
+   "kana": "橘花 流転",
    "abv": 47.0,
    "country": "日本（奈良）",
    "country_main": "日本",
@@ -2040,7 +2040,7 @@
   },
   {
    "name": "KI NO BI Kyoto Dry Gin",
-   "kana": "キノビ",
+   "kana": "季の美",
    "abv": 45.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -2049,7 +2049,7 @@
   },
   {
    "name": "KI NO BI Sloe Gin-type Haskap Liqueur",
-   "kana": "キノビ",
+   "kana": "季の美 スロー ハスカップ",
    "abv": 30.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -2058,7 +2058,7 @@
   },
   {
    "name": "KIN NO BI KYOTO DRY GIN",
-   "kana": "キノビ",
+   "kana": "金の美",
    "abv": 45.7,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -2067,7 +2067,7 @@
   },
   {
    "name": "KI NO TEA Kyoto Dry Gin",
-   "kana": "キノビ/キノティー",
+   "kana": "季の茶",
    "abv": 45.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -2076,7 +2076,7 @@
   },
   {
    "name": "KI NO TOU Kyoto Old Tom Gin",
-   "kana": "キノビ/キノトウ",
+   "kana": "季の冬 オールドトム",
    "abv": 47.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -2085,7 +2085,7 @@
   },
   {
    "name": "KI NO BAI Kyoto Plum and Berry Liqueur",
-   "kana": "キノビ/キノバイ",
+   "kana": "季の梅 プラムアンドベリー",
    "abv": 29.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -2094,7 +2094,7 @@
   },
   {
    "name": "KI NO BI GO Kyoto Dry Gin",
-   "kana": "キノビ/キノビゴー",
+   "kana": "季の美 ゴー",
    "abv": 50.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -2103,7 +2103,7 @@
   },
   {
    "name": "KI NO BI SEI Kyoto Dry Gin",
-   "kana": "キノビ/キノビセイ",
+   "kana": "季の美 聖",
    "abv": 54.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -2112,7 +2112,7 @@
   },
   {
    "name": "KI NO BI House Gin",
-   "kana": "キノビ/キノビハウス",
+   "kana": "季の美 ハウス",
    "abv": 43.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -2121,7 +2121,7 @@
   },
   {
    "name": "KIN NO BI Kyoto Dry Gin with added Gold Leaf",
-   "kana": "キノビ/キンノビ",
+   "kana": "金の美 ゴールドリーフ",
    "abv": 45.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -2148,7 +2148,7 @@
   },
   {
    "name": "OLD CURIOSITY LAVENDER & ECHINACEA GIN",
-   "kana": "キュリオシティ",
+   "kana": "オールドキュリオシティ ラベンダー&エキナセア",
    "abv": 39.0,
    "country": "イギリス（スコットランド：エディンバラ）",
    "country_main": "イギリス",
@@ -2166,7 +2166,7 @@
   },
   {
    "name": "KYRO × KINOBI Gin",
-   "kana": "キュロ",
+   "kana": "キュロ × 季の美",
    "abv": 43.7,
    "country": "フィンランド",
    "country_main": "フィンランド",
@@ -2175,7 +2175,7 @@
   },
   {
    "name": "KYRO Dark Gin",
-   "kana": "キュロ",
+   "kana": "キュロ ダーク",
    "abv": 42.6,
    "country": "フィンランド",
    "country_main": "フィンランド",
@@ -2193,7 +2193,7 @@
   },
   {
    "name": "KYRO Koskue",
-   "kana": "キュロ",
+   "kana": "キュロ コスクエ",
    "abv": 42.6,
    "country": "フィンランド",
    "country_main": "フィンランド",
@@ -2202,7 +2202,7 @@
   },
   {
    "name": "KYRO Pink Gin",
-   "kana": "キュロ",
+   "kana": "キュロ ピンク",
    "abv": 38.2,
    "country": "フィンランド",
    "country_main": "フィンランド",
@@ -2211,7 +2211,7 @@
   },
   {
    "name": "CUBICAL MANGO GIN",
-   "kana": "キュービカル",
+   "kana": "キュービカル マンゴー",
    "abv": 37.5,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -2220,7 +2220,7 @@
   },
   {
    "name": "CUBICAL PREMIUM LONDON DRY GIN",
-   "kana": "キュービカル",
+   "kana": "キュービカル プレミアム",
    "abv": 40.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -2229,7 +2229,7 @@
   },
   {
    "name": "AICHI Craft gin kiyosu",
-   "kana": "キヨス",
+   "kana": "アイチ キヨス",
    "abv": 40.0,
    "country": "日本（愛知）",
    "country_main": "日本",
@@ -2247,7 +2247,7 @@
   },
   {
    "name": "KING OF SOHO Variorum Gin",
-   "kana": "キングオブソーホー",
+   "kana": "キングオブソーホー ヴァリオラム",
    "abv": 37.5,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -2265,7 +2265,7 @@
   },
   {
    "name": "GILLIAM‘S premium",
-   "kana": "ギリアムス",
+   "kana": "ギリアムス プレミアム",
    "abv": 41.0,
    "country": "ベルギー（フランダース）",
    "country_main": "ベルギー",
@@ -2274,7 +2274,7 @@
   },
   {
    "name": "GILLIAM’S GIN",
-   "kana": "ギリアムズ",
+   "kana": "ギリアムス",
    "abv": 41.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -2283,7 +2283,7 @@
   },
   {
    "name": "GILT Single malt GIN",
-   "kana": "ギルト",
+   "kana": "ギルト シングルモルト",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -2292,7 +2292,7 @@
   },
   {
    "name": "GIN nez -銀鼠-",
-   "kana": "ギンネズ",
+   "kana": "ネ 銀鼠",
    "abv": 44.0,
    "country": "日本（宮崎）",
    "country_main": "日本",
@@ -2301,7 +2301,7 @@
   },
   {
    "name": "Queensborough Gin",
-   "kana": "クイーンボロー",
+   "kana": "クイーンズボロー",
    "abv": 43.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -2310,7 +2310,7 @@
   },
   {
    "name": "双子蒸留所 KWELI WHITE",
-   "kana": "クウェリホワイト",
+   "kana": "クウェリ ホワイト",
    "abv": 42.0,
    "country": "日本（群馬：前橋）",
    "country_main": "日本",
@@ -2319,7 +2319,7 @@
   },
   {
    "name": "草木酒フォレストジン",
-   "kana": "クサキ/フォレスト",
+   "kana": "クサキシュ フォレスト",
    "abv": 45.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -2337,7 +2337,7 @@
   },
   {
    "name": "日の丸ジン 蔵風土 HINOMARU GIN CRAFT",
-   "kana": "クラウド",
+   "kana": "ヒノマル クラフウド",
    "abv": 40.0,
    "country": "日本（茨城）",
    "country_main": "日本",
@@ -2355,7 +2355,7 @@
   },
   {
    "name": "KWV CRUXLAND GIN Infused With BLACK WINTER TRUFFLES",
-   "kana": "クラックスランド",
+   "kana": "クラックスランド ブラックウィンタートリュフ",
    "abv": 43.0,
    "country": "南アフリカ",
    "country_main": "南アフリカ",
@@ -2364,7 +2364,7 @@
   },
   {
    "name": "CRAFTER'S AROMATIC FLOWER GIN",
-   "kana": "クラフターズ",
+   "kana": "クラフターズ アロマティックフラワー",
    "abv": 44.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -2382,7 +2382,7 @@
   },
   {
    "name": "CRAFTERS WILD FOREST GIN",
-   "kana": "クラフターズ",
+   "kana": "クラフターズ ワイルドフォレスト",
    "abv": 47.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -2391,7 +2391,7 @@
   },
   {
    "name": "富井蒸留所 CRAZY POTION GIN",
-   "kana": "クレイジーポーション",
+   "kana": "トミイ クレイジーポーション",
    "abv": 45.0,
    "country": "日本（長野）",
    "country_main": "日本",
@@ -2427,7 +2427,7 @@
   },
   {
    "name": "Clover Gin Lucky4",
-   "kana": "クローバー",
+   "kana": "クローバー ラッキー4",
    "abv": 44.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -2436,7 +2436,7 @@
   },
   {
    "name": "Clover Gin passion",
-   "kana": "クローバー",
+   "kana": "クローバー パッション",
    "abv": 40.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -2454,7 +2454,7 @@
   },
   {
    "name": "GROUND CONTROL Apple",
-   "kana": "グランドコントロール",
+   "kana": "グランドコントロール アップル",
    "abv": 45.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -2463,7 +2463,7 @@
   },
   {
    "name": "GROUND CONTROL corn",
-   "kana": "グランドコントロール",
+   "kana": "グランドコントロール コーン",
    "abv": 45.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -2472,7 +2472,7 @@
   },
   {
    "name": "GREENALL'S Wild Berry Gin",
-   "kana": "グリノールズ",
+   "kana": "グリノールズ ワイルドベリー",
    "abv": 37.5,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -2481,7 +2481,7 @@
   },
   {
    "name": "GREENALLS Original London Dry Gin",
-   "kana": "グリノールズ",
+   "kana": "グリノールズ オリジナル",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -2490,7 +2490,7 @@
   },
   {
    "name": "PILLONI GIN GRIFU",
-   "kana": "グリフ/グライフ",
+   "kana": "ピローニ グリフ",
    "abv": 43.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -2508,7 +2508,7 @@
   },
   {
    "name": "GREENHOOK Ginsmiths American Dry Gin",
-   "kana": "グリーンフック",
+   "kana": "グリーンフック ジンスミス",
    "abv": 47.0,
    "country": "アメリカ（ブルックリン）",
    "country_main": "アメリカ",
@@ -2517,7 +2517,7 @@
   },
   {
    "name": "GREENHOOK Ginsmiths Beach Plum Liqueur",
-   "kana": "グリーンフック",
+   "kana": "グリーンフック ジンスミス ビーチプラム",
    "abv": 30.0,
    "country": "アメリカ（ブルックリン）",
    "country_main": "アメリカ",
@@ -2526,7 +2526,7 @@
   },
   {
    "name": "GREENHOOK Ginsmiths Old Tom Gin",
-   "kana": "グリーンフック",
+   "kana": "グリーンフック ジンスミス オールドトム",
    "abv": 50.0,
    "country": "アメリカ（ブルックリン）",
    "country_main": "アメリカ",
@@ -2535,7 +2535,7 @@
   },
   {
    "name": "GLENDALOUGH BEECH LEAF GIN",
-   "kana": "グレンダロッホ",
+   "kana": "グレンダロッホ ビーチリーフ",
    "abv": 43.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -2544,7 +2544,7 @@
   },
   {
    "name": "GLENDALOUGH ROSE GIN",
-   "kana": "グレンダロッホ",
+   "kana": "グレンダロッホ ローズ",
    "abv": 37.5,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -2553,7 +2553,7 @@
   },
   {
    "name": "GLENDALOUGH Wild Autumn Gin",
-   "kana": "グレンダロッホ",
+   "kana": "グレンダロッホ ワイルドオータム",
    "abv": 41.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -2562,7 +2562,7 @@
   },
   {
    "name": "GLENDALOUGH Wild Botanical Gin",
-   "kana": "グレンダロッホ",
+   "kana": "グレンダロッホ ワイルドボタニカル",
    "abv": 41.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -2571,7 +2571,7 @@
   },
   {
    "name": "GLENDALOUGH Wild Spring Gin",
-   "kana": "グレンダロッホ",
+   "kana": "グレンダロッホ ワイルドスプリング",
    "abv": 41.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -2580,7 +2580,7 @@
   },
   {
    "name": "GLENDALOUGH Wild Summer Gin",
-   "kana": "グレンダロッホ",
+   "kana": "グレンダロッホ ワイルドサマー",
    "abv": 41.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -2589,7 +2589,7 @@
   },
   {
    "name": "GLENDALOUGH Wild Winter Gin",
-   "kana": "グレンダロッホ",
+   "kana": "グレンダロッホ ワイルドウィンター",
    "abv": 41.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -2607,7 +2607,7 @@
   },
   {
    "name": "CADENHEAD'S CLASSIC GIN",
-   "kana": "ケイデンヘッド",
+   "kana": "ケイデンヘッズ クラシック",
    "abv": 50.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -2616,7 +2616,7 @@
   },
   {
    "name": "ORD RAJ",
-   "kana": "ケイデンヘッド/オールドラジェ",
+   "kana": "オールドラジェ",
    "abv": 46.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -2634,7 +2634,7 @@
   },
   {
    "name": "CAPE TOWN Classic",
-   "kana": "ケープタウン",
+   "kana": "ケープタウン クラシック",
    "abv": 43.0,
    "country": "南アフリカ",
    "country_main": "南アフリカ",
@@ -2643,7 +2643,7 @@
   },
   {
    "name": "CAPE TOWN Pinklady",
-   "kana": "ケープタウン",
+   "kana": "ケープタウン ピンクレディ",
    "abv": 43.0,
    "country": "南アフリカ",
    "country_main": "南アフリカ",
@@ -2652,7 +2652,7 @@
   },
   {
    "name": "CAPE TOWN Rooidos Red",
-   "kana": "ケープタウン",
+   "kana": "ケープタウン ルイボス レッド",
    "abv": 43.0,
    "country": "南アフリカ",
    "country_main": "南アフリカ",
@@ -2688,7 +2688,7 @@
   },
   {
    "name": "香立",
-   "kana": "コダチ",
+   "kana": "コウリツ",
    "abv": 47.0,
    "country": "日本（和歌山）",
    "country_main": "日本",
@@ -2697,7 +2697,7 @@
   },
   {
    "name": "COTSWOLDS CLOUDY CHRISTMAS GIN",
-   "kana": "コッツウォルズ",
+   "kana": "コッツウォルズ クラウディ クリスマス",
    "abv": 46.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -2715,7 +2715,7 @@
   },
   {
    "name": "COTSWOLDS GINGER GIN",
-   "kana": "コッツウォルズ",
+   "kana": "コッツウォルズ ジンジャー",
    "abv": 46.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -2724,7 +2724,7 @@
   },
   {
    "name": "COTSWOLDS NO.1 WILDFLOWER GIN",
-   "kana": "コッツウォルズ",
+   "kana": "コッツウォルズ No.1 ワイルドフラワー",
    "abv": 41.7,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -2733,7 +2733,7 @@
   },
   {
    "name": "COTSWOLDS Old Tom Gin",
-   "kana": "コッツウォルズ",
+   "kana": "コッツウォルズ オールドトム",
    "abv": 42.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -2742,7 +2742,7 @@
   },
   {
    "name": "THE ALCHEMIST'S GIN COPPER HEAD",
-   "kana": "コパーヘッド",
+   "kana": "アルケミスト カッパーヘッド",
    "abv": 40.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -2751,7 +2751,7 @@
   },
   {
    "name": "Copenhagen Orange Gin",
-   "kana": "コペンハーゲン",
+   "kana": "コペンハーゲン オレンジ",
    "abv": 41.0,
    "country": "デンマーク（コペンハーゲン）",
    "country_main": "デンマーク",
@@ -2760,7 +2760,7 @@
   },
   {
    "name": "KOMASA Gin ほうじ茶",
-   "kana": "コマサ",
+   "kana": "コマサ ほうじ茶",
    "abv": 45.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -2769,7 +2769,7 @@
   },
   {
    "name": "KOMASA Gin 桜島小みかん",
-   "kana": "コマサ",
+   "kana": "コマサ 桜島小みかん",
    "abv": 45.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -2778,7 +2778,7 @@
   },
   {
    "name": "KOMASA Gin 苺",
-   "kana": "コマサ",
+   "kana": "コマサ 苺",
    "abv": 45.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -2787,7 +2787,7 @@
   },
   {
    "name": "CORSAIR Barrel Aged Gin",
-   "kana": "コルセア",
+   "kana": "コルセア バレルエイジド",
    "abv": 46.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -2796,7 +2796,7 @@
   },
   {
    "name": "GIN COLLESI",
-   "kana": "コレッスィ/コレッシー",
+   "kana": "コレッシ",
    "abv": 42.8,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -2805,7 +2805,7 @@
   },
   {
    "name": "GIN COLLESI Amarillo HOP",
-   "kana": "コレッスィ/コレッシー",
+   "kana": "コレッシ アマリロホップ",
    "abv": 42.8,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -2814,7 +2814,7 @@
   },
   {
    "name": "Dictador Premium Colombian Aged Gin Treasure",
-   "kana": "コロンビアン",
+   "kana": "ディクタドール プレミアム トレジャー",
    "abv": 43.0,
    "country": "コロンビア",
    "country_main": "コロンビア",
@@ -2823,7 +2823,7 @@
   },
   {
    "name": "DICTADOR PREMIUM COLOMBIAN ORTODOXY GIN",
-   "kana": "コロンビアン",
+   "kana": "ディクタドール プレミアム オルトドクシー",
    "abv": 43.0,
    "country": "コロンビア",
    "country_main": "コロンビア",
@@ -2832,7 +2832,7 @@
   },
   {
    "name": "Gin Colombo N.º 7",
-   "kana": "コロンボ ナンバー7",
+   "kana": "コロンボ No.7",
    "abv": 43.1,
    "country": "スリランカ",
    "country_main": "スリランカ",
@@ -2841,7 +2841,7 @@
   },
   {
    "name": "KOVAL Barreled Gin",
-   "kana": "コーヴァル/コーバル",
+   "kana": "コーヴァル バレルド",
    "abv": 47.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -2850,7 +2850,7 @@
   },
   {
    "name": "KOVAL Dry Gin",
-   "kana": "コーヴァル/コーバル",
+   "kana": "コーヴァル",
    "abv": 47.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -2859,7 +2859,7 @@
   },
   {
    "name": "GOTO GIN prototype‐x",
-   "kana": "ゴトジン",
+   "kana": "ゴトジン プロトタイプ-x",
    "abv": 47.0,
    "country": "日本（長崎：五島列島）",
    "country_main": "日本",
@@ -2868,7 +2868,7 @@
   },
   {
    "name": "GOTO GIN prototype‐ｙ",
-   "kana": "ゴトジン",
+   "kana": "ゴトジン プロトタイプ-y",
    "abv": 47.0,
    "country": "日本（長崎：五島列島）",
    "country_main": "日本",
@@ -2877,7 +2877,7 @@
   },
   {
    "name": "GOTO GIN the cacao",
-   "kana": "ゴトジン",
+   "kana": "ゴトジン ザカカオ",
    "abv": 47.0,
    "country": "日本（長崎：五島列島）",
    "country_main": "日本",
@@ -2886,7 +2886,7 @@
   },
   {
    "name": "GOTO GIN the origin",
-   "kana": "ゴトジン",
+   "kana": "ゴトジン ザオリジン",
    "abv": 47.0,
    "country": "日本（長崎：五島列島）",
    "country_main": "日本",
@@ -2895,7 +2895,7 @@
   },
   {
    "name": "GOTO GIN 間伏の秋朝映",
-   "kana": "ゴトジン",
+   "kana": "ゴトジン まぶしのあきあさばえ",
    "abv": 47.0,
    "country": "日本（長崎：五島列島）",
    "country_main": "日本",
@@ -2904,7 +2904,7 @@
   },
   {
    "name": "GOTO GIN 祈りの陽だまり",
-   "kana": "ゴトジン",
+   "kana": "ゴトジン いのりのひだまり",
    "abv": 47.0,
    "country": "日本（長崎：五島列島）",
    "country_main": "日本",
@@ -2913,7 +2913,7 @@
   },
   {
    "name": "GOTO GIN 空よ雲よ アコウ樹ささやく秋麗",
-   "kana": "ゴトジン",
+   "kana": "ゴトジン そらよくもよ アコウじゅささやくしゅうれい",
    "abv": 47.0,
    "country": "日本（長崎：五島列島）",
    "country_main": "日本",
@@ -2922,7 +2922,7 @@
   },
   {
    "name": "GOTO GIN 空よ雲よ 半泊の海から",
-   "kana": "ゴトジン",
+   "kana": "ゴトジン そらよくもよ はんどまりのうみから",
    "abv": 47.0,
    "country": "日本（長崎：五島列島）",
    "country_main": "日本",
@@ -2931,7 +2931,7 @@
   },
   {
    "name": "GOTO GIN 空よ雲よ 涼しき青の道",
-   "kana": "ゴトジン",
+   "kana": "ゴトジン そらよくもよ すずしきあおのみち",
    "abv": 47.0,
    "country": "日本（長崎：五島列島）",
    "country_main": "日本",
@@ -2940,7 +2940,7 @@
   },
   {
    "name": "GOTO GIN 高浜の潮騒",
-   "kana": "ゴトジン",
+   "kana": "ゴトジン たかはまのしおさい",
    "abv": 47.0,
    "country": "日本（長崎：五島列島）",
    "country_main": "日本",
@@ -2949,7 +2949,7 @@
   },
   {
    "name": "GOTO GIN 春霞の野々切",
-   "kana": "ゴトジン",
+   "kana": "ゴトジン はるがすみののぎり",
    "abv": 47.0,
    "country": "日本（長崎：五島列島）",
    "country_main": "日本",
@@ -2958,7 +2958,7 @@
   },
   {
    "name": "GOTO GIN 波止場の詩",
-   "kana": "ゴトジン",
+   "kana": "ゴトジン はとばのうた",
    "abv": 47.0,
    "country": "日本（長崎：五島列島）",
    "country_main": "日本",
@@ -2967,7 +2967,7 @@
   },
   {
    "name": "GOTO GIN 風薫る空の旅",
-   "kana": "ゴトジン",
+   "kana": "ゴトジン かぜかおるそらのたび",
    "abv": 47.0,
    "country": "日本（長崎：五島列島）",
    "country_main": "日本",
@@ -2976,7 +2976,7 @@
   },
   {
    "name": "GORDON'S Crtsp Cucumber",
-   "kana": "ゴードン",
+   "kana": "ゴードン クリスプキューカンバー",
    "abv": 37.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -3003,7 +3003,7 @@
   },
   {
    "name": "GORDON'S JIN Green",
-   "kana": "ゴードン",
+   "kana": "ゴードン グリーン",
    "abv": 37.5,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -3012,7 +3012,7 @@
   },
   {
    "name": "GORDON'S Old Bottle 1980年代",
-   "kana": "ゴードン",
+   "kana": "ゴードン オールドボトル 1980年代",
    "abv": 40.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -3021,7 +3021,7 @@
   },
   {
    "name": "GORDON'S Siclcan Lemon",
-   "kana": "ゴードン",
+   "kana": "ゴードン シチリアンレモン",
    "abv": 37.5,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -3030,7 +3030,7 @@
   },
   {
    "name": "GORDON'S Sloe Gin",
-   "kana": "ゴードン",
+   "kana": "ゴードン スロー",
    "abv": 26.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -3039,7 +3039,7 @@
   },
   {
    "name": "GORDON'S Sloe Gin 旧ボトル",
-   "kana": "ゴードン",
+   "kana": "ゴードン スロー 旧ボトル",
    "abv": 26.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -3048,7 +3048,7 @@
   },
   {
    "name": "GORDON'S Spot of Elderflower",
-   "kana": "ゴードン",
+   "kana": "ゴードン スポットオブエルダーフラワー",
    "abv": 37.5,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -3057,7 +3057,7 @@
   },
   {
    "name": "GOLD 999.9 GIN",
-   "kana": "ゴールド",
+   "kana": "ゴールド 999.9",
    "abv": 40.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -3075,7 +3075,7 @@
   },
   {
    "name": "SAIGON BAIGUR PUEMIUM DRY GIN",
-   "kana": "サイゴンバイガー",
+   "kana": "サイゴン バイガー プレミアム",
    "abv": 43.0,
    "country": "ベトナム（ホーチミン）",
    "country_main": "ベトナム",
@@ -3084,7 +3084,7 @@
   },
   {
    "name": "Silent Pool 10th Anniversary Edition Gin",
-   "kana": "サイレントプール",
+   "kana": "サイレントプール 10周年",
    "abv": 43.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -3102,7 +3102,7 @@
   },
   {
    "name": "SILENT POOL Gin Japan Edition",
-   "kana": "サイレントプール",
+   "kana": "サイレントプール ジャパンエディション",
    "abv": 43.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -3111,7 +3111,7 @@
   },
   {
    "name": "SILENT POOL PLATINUM celebratiqn GIN",
-   "kana": "サイレントプール",
+   "kana": "サイレントプール プラチナ セレブレーション",
    "abv": 43.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -3120,7 +3120,7 @@
   },
   {
    "name": "SILENT POOL Rare Citrus Gin",
-   "kana": "サイレントプール",
+   "kana": "サイレントプール レアシトラス",
    "abv": 43.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -3129,7 +3129,7 @@
   },
   {
    "name": "SILENT POOL Rose Expression",
-   "kana": "サイレントプール",
+   "kana": "サイレントプール ローズ",
    "abv": 43.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -3147,7 +3147,7 @@
   },
   {
    "name": "SAKURAO GIN HAMAGOU",
-   "kana": "サクラオ",
+   "kana": "桜尾 ハマゴウ",
    "abv": 47.0,
    "country": "日本（広島）",
    "country_main": "日本",
@@ -3156,7 +3156,7 @@
   },
   {
    "name": "SAKURAO GIN ORIGINAL",
-   "kana": "サクラオ",
+   "kana": "桜尾 オリジナル",
    "abv": 47.0,
    "country": "日本（広島）",
    "country_main": "日本",
@@ -3165,7 +3165,7 @@
   },
   {
    "name": "SAKURAO GIN White Herb 5thANNIVERSARY",
-   "kana": "サクラオ",
+   "kana": "桜尾 ホワイトハーブ 5周年",
    "abv": 47.0,
    "country": "日本（広島）",
    "country_main": "日本",
@@ -3183,7 +3183,7 @@
   },
   {
    "name": "M* Non-Alcoholic Gin Saturday 3pm",
-   "kana": "サタデー",
+   "kana": "エムスター サタデー3pm",
    "abv": 0.0,
    "country": "日本（和歌山）",
    "country_main": "日本",
@@ -3201,7 +3201,7 @@
   },
   {
    "name": "早苗饗蒸留所 SANABURI GIN prototype02",
-   "kana": "サナブリ",
+   "kana": "サナブリ プロトタイプ02",
    "abv": 47.0,
    "country": "日本（秋田）",
    "country_main": "日本",
@@ -3219,7 +3219,7 @@
   },
   {
    "name": "GABRIEL BOUDIER SAFFRON GIN",
-   "kana": "サフラン",
+   "kana": "ガブリエル ブーディエ サフラン",
    "abv": 40.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -3237,7 +3237,7 @@
   },
   {
    "name": "Salcombe Gin Daring",
-   "kana": "サルコム",
+   "kana": "サルコム デアリング",
    "abv": 46.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -3246,7 +3246,7 @@
   },
   {
    "name": "Salcombe Gin Rose Sainte Marie",
-   "kana": "サルコム",
+   "kana": "サルコム ローズ サント・マリー",
    "abv": 41.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -3255,7 +3255,7 @@
   },
   {
    "name": "Salcombe Gin Start Point",
-   "kana": "サルコム",
+   "kana": "サルコム スタートポイント",
    "abv": 44.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -3264,7 +3264,7 @@
   },
   {
    "name": "SALCOMBE GIN VOYAGER SERIES 'PHANTOM'",
-   "kana": "サルコム",
+   "kana": "サルコム ヴォイジャー ファントム",
    "abv": 46.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -3273,7 +3273,7 @@
   },
   {
    "name": "SUNSET HILLS SMALL BATCH GIN",
-   "kana": "サンセット ヒルズ",
+   "kana": "サンセットヒルズ スモールバッチ",
    "abv": 40.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -3291,7 +3291,7 @@
   },
   {
    "name": "JAPANESE GIN 翠",
-   "kana": "サントリー/スイ",
+   "kana": "翠 スイ",
    "abv": 40.0,
    "country": "日本",
    "country_main": "日本",
@@ -3300,7 +3300,7 @@
   },
   {
    "name": "JAPANESE CRAFT GIN 六",
-   "kana": "サントリー/ロク",
+   "kana": "ロク",
    "abv": 43.0,
    "country": "日本",
    "country_main": "日本",
@@ -3309,7 +3309,7 @@
   },
   {
    "name": "SIR EDMOND GIN",
-   "kana": "サーエドモンド",
+   "kana": "サー エドモンド",
    "abv": 40.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -3327,7 +3327,7 @@
   },
   {
    "name": "SHETLAND REEL OCEAN SENT GIN",
-   "kana": "シェットランドリール",
+   "kana": "シェットランドリール オーシャンセント",
    "abv": 49.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -3336,7 +3336,7 @@
   },
   {
    "name": "SHETLAND REEL SIMMER GIN",
-   "kana": "シェットランドリール",
+   "kana": "シェットランドリール シマー",
    "abv": 49.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -3345,7 +3345,7 @@
   },
   {
    "name": "Sherigham Beacon Bin",
-   "kana": "シェリンガム",
+   "kana": "シェリンガム ビーコン",
    "abv": 43.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -3363,7 +3363,7 @@
   },
   {
    "name": "Sheringham Raincoast Gin",
-   "kana": "シェリンガム",
+   "kana": "シェリンガム レインコースト",
    "abv": 43.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -3372,7 +3372,7 @@
   },
   {
    "name": "Sheringham Seaside Gin",
-   "kana": "シェリンガム",
+   "kana": "シェリンガム シーサイド",
    "abv": 43.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -3390,7 +3390,7 @@
   },
   {
    "name": "SiCX KYOTO LEMON CITRIC ACID GIN",
-   "kana": "シックス",
+   "kana": "シックス 京都 レモン シトリックアシッド",
    "abv": 45.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -3399,7 +3399,7 @@
   },
   {
    "name": "SICX KYOTO SPICE MAGIC GIN",
-   "kana": "シックス",
+   "kana": "シックス 京都 スパイスマジック",
    "abv": 45.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -3408,7 +3408,7 @@
   },
   {
    "name": "SiCX KYOTO TROPICAL MANGO GIN",
-   "kana": "シックス",
+   "kana": "シックス 京都 トロピカルマンゴー",
    "abv": 45.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -3417,7 +3417,7 @@
   },
   {
    "name": "SIX DOGS BLUE GIN",
-   "kana": "シックスドッグス",
+   "kana": "シックスドッグス ブルー",
    "abv": 43.0,
    "country": "南アフリカ",
    "country_main": "南アフリカ",
@@ -3426,7 +3426,7 @@
   },
   {
    "name": "Sipsmith Lemon Drizzle Gin",
-   "kana": "シップスミス",
+   "kana": "シップスミス レモンドリズル",
    "abv": 40.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -3444,7 +3444,7 @@
   },
   {
    "name": "SIPSMITH V.J.O.P BLACK",
-   "kana": "シップスミス",
+   "kana": "シップスミス V.J.O.P ブラック",
    "abv": 57.7,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -3489,7 +3489,7 @@
   },
   {
    "name": "Schinken häger",
-   "kana": "シュリヒテ/シンケンヘーガー",
+   "kana": "シンケンヘーガー",
    "abv": 38.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -3498,7 +3498,7 @@
   },
   {
    "name": "XORIGUER MAHON GIN",
-   "kana": "ショリゲル",
+   "kana": "ショリゲル マオン",
    "abv": 38.0,
    "country": "スペイン（メノルカ島）",
    "country_main": "スペイン",
@@ -3516,7 +3516,7 @@
   },
   {
    "name": "黒澤 白樺 ジン",
-   "kana": "シラカバ",
+   "kana": "クロサワ シラカバ",
    "abv": 40.0,
    "country": "日本（長野）",
    "country_main": "日本",
@@ -3534,7 +3534,7 @@
   },
   {
    "name": "新蒸留研究所 No.7 ［draft］ハイジュニパージン",
-   "kana": "シンジョウリュウ",
+   "kana": "シンジョウリュウケンキュウジョ No.7 ドラフト ハイジュニパー",
    "abv": 47.0,
    "country": "日本（富山）",
    "country_main": "日本",
@@ -3543,7 +3543,7 @@
   },
   {
    "name": "ジンの香りの原点に関する研究",
-   "kana": "シンジョウリュウジョ",
+   "kana": "ジンノカオリノゲンテンニカンスルケンキュウ",
    "abv": 47.0,
    "country": "日本（富山）",
    "country_main": "日本",
@@ -3561,7 +3561,7 @@
   },
   {
    "name": "GIN&P GIN",
-   "kana": "ジェネピー",
+   "kana": "ジンアンドピー",
    "abv": 42.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -3579,7 +3579,7 @@
   },
   {
    "name": "GENEROUS GIN Azur",
-   "kana": "ジェネラス",
+   "kana": "ジェネラス アジュール",
    "abv": 40.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -3588,7 +3588,7 @@
   },
   {
    "name": "GENEROUS GIN Organic",
-   "kana": "ジェネラス",
+   "kana": "ジェネラス オーガニック",
    "abv": 44.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -3597,7 +3597,7 @@
   },
   {
    "name": "GENEROUS GIN Purple",
-   "kana": "ジェネラス",
+   "kana": "ジェネラス パープル",
    "abv": 44.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -3615,7 +3615,7 @@
   },
   {
    "name": "GERANHUM Premium London Dry GIN",
-   "kana": "ジェラニウム",
+   "kana": "ジェラニウム プレミアム",
    "abv": 55.0,
    "country": "デンマーク（コペンハーゲン）",
    "country_main": "デンマーク",
@@ -3624,7 +3624,7 @@
   },
   {
    "name": "GERANHUM Premium London Dry GIN",
-   "kana": "ジェラニウム",
+   "kana": "ジェラニウム プレミアム",
    "abv": 44.0,
    "country": "デンマーク（コペンハーゲン）",
    "country_main": "デンマーク",
@@ -3651,7 +3651,7 @@
   },
   {
    "name": "GINEPRAIO ORGANCIC TUSCAN DRY GIN",
-   "kana": "ジネプライオ",
+   "kana": "ジネプライオ オーガニック",
    "abv": 45.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -3660,7 +3660,7 @@
   },
   {
    "name": "樹々 JAPANESE CRAFT GIN RUGBY LABEL",
-   "kana": "ジュジュ",
+   "kana": "ジュジュ ラグビーラベル",
    "abv": 43.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -3669,7 +3669,7 @@
   },
   {
    "name": "樹々 PLUM BLOSSOM",
-   "kana": "ジュジュ",
+   "kana": "ジュジュ プラムブロッサム",
    "abv": 40.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -3687,7 +3687,7 @@
   },
   {
    "name": "THE.JUNIPER.TREE POFEIDIO GIN",
-   "kana": "ジュニパーツリー",
+   "kana": "ジュニパーツリー ポセイディオ",
    "abv": 47.0,
    "country": "メキシコ",
    "country_main": "メキシコ",
@@ -3696,7 +3696,7 @@
   },
   {
    "name": "JUNIMPERIUM ESTONIAN ARTISAN GIN",
-   "kana": "ジュニペリウム",
+   "kana": "ジュニンペリウム",
    "abv": 45.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -3705,7 +3705,7 @@
   },
   {
    "name": "JUNIMPERIUM ESTONIAN ARTISAN GIN Blended Dry Gin",
-   "kana": "ジュニペリウム",
+   "kana": "ジュニンペリウム ブレンデッド",
    "abv": 45.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -3714,7 +3714,7 @@
   },
   {
    "name": "JUNIMPERIUM ESTONIAN ARTISAN GIN CHERRY INFUSED",
-   "kana": "ジュニペリウム",
+   "kana": "ジュニンペリウム チェリー インフューズド",
    "abv": 40.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -3723,7 +3723,7 @@
   },
   {
    "name": "JUNIMPERIUM ESTONIAN ARTISAN GIN Limited Cherry",
-   "kana": "ジュニペリウム",
+   "kana": "ジュニンペリウム リミテッド チェリー",
    "abv": 40.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -3732,7 +3732,7 @@
   },
   {
    "name": "JUNIMPERIUM ESTONIAN ARTISAN GIN Navy Strength",
-   "kana": "ジュニペリウム",
+   "kana": "ジュニンペリウム ネイビー ストレングス",
    "abv": 59.26,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -3741,7 +3741,7 @@
   },
   {
    "name": "JUNIMPERIUM ESTONIAN ARTISAN GIN RHUBARB INFUSED",
-   "kana": "ジュニペリウム",
+   "kana": "ジュニンペリウム ルバーブインフューズド",
    "abv": 40.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -3750,7 +3750,7 @@
   },
   {
    "name": "JUNIMPERIUM ESTONIAN ARTISAN GIN SLOE GIN",
-   "kana": "ジュニペリウム",
+   "kana": "ジュニンペリウム スロー",
    "abv": 30.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -3759,7 +3759,7 @@
   },
   {
    "name": "JUNIMPERIUM ESTONIAN ARTISAN GIN WINTER EDITION",
-   "kana": "ジュニペリウム",
+   "kana": "ジュニンペリウム ウィンターエディション",
    "abv": 43.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -3777,7 +3777,7 @@
   },
   {
    "name": "JODHPUR RESERVE LONDON DRY GIN",
-   "kana": "ジョードプル",
+   "kana": "ジョードプル リザーブ",
    "abv": 43.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -3786,7 +3786,7 @@
   },
   {
    "name": "JIN7 series 00",
-   "kana": "ジン セブン シリーズ00",
+   "kana": "ジンセブン シリーズ 00",
    "abv": 47.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -3804,7 +3804,7 @@
   },
   {
    "name": "GIN of Fire citrus",
-   "kana": "ジンオブファイヤー",
+   "kana": "ジンオブファイアー シトラス",
    "abv": 40.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -3822,7 +3822,7 @@
   },
   {
    "name": "JINX Old Tom Gin",
-   "kana": "ジンクス",
+   "kana": "ジンクス オールド トム",
    "abv": 43.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -3831,7 +3831,7 @@
   },
   {
    "name": "JUNG ONE GIN",
-   "kana": "ジングワン/ジュンクワン",
+   "kana": "ジョンウォン",
    "abv": 47.0,
    "country": "韓国（ソウル）",
    "country_main": "韓国",
@@ -3849,7 +3849,7 @@
   },
   {
    "name": "jinjinGIN KUMAMOTO",
-   "kana": "ジンジンジン",
+   "kana": "ジンジンジン クマモト",
    "abv": 47.0,
    "country": "日本（熊本）",
    "country_main": "日本",
@@ -3858,7 +3858,7 @@
   },
   {
    "name": "NIKKA WHISKY GINSPIRE",
-   "kana": "ジンスパイア",
+   "kana": "ニッカ ジンスパイア",
    "abv": 43.0,
    "country": "日本",
    "country_main": "日本",
@@ -3867,7 +3867,7 @@
   },
   {
    "name": "JIN7 series 00",
-   "kana": "ジンセブン",
+   "kana": "ジンセブン シリーズ 00",
    "abv": 47.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -3885,7 +3885,7 @@
   },
   {
    "name": "Vir-Gin SIO-WASABI SPICY",
-   "kana": "ジンプシー",
+   "kana": "ヴァージン 塩わさび スパイシー",
    "abv": 42.0,
    "country": "日本（静岡：沼津）",
    "country_main": "日本",
@@ -3894,7 +3894,7 @@
   },
   {
    "name": "Vir-Gin UME-SHISO FRUITY",
-   "kana": "ジンプシー",
+   "kana": "ヴァージン 梅しそ フルーティー",
    "abv": 42.0,
    "country": "日本（静岡：沼津）",
    "country_main": "日本",
@@ -3912,7 +3912,7 @@
   },
   {
    "name": "Gin. Belet No.7",
-   "kana": "ジンベレ NO.7",
+   "kana": "ベレ No.7",
    "abv": 40.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -3930,7 +3930,7 @@
   },
   {
    "name": "GIN MARE CAPRI",
-   "kana": "ジンマーレ",
+   "kana": "ジンマーレ カプリ",
    "abv": 42.7,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -3948,7 +3948,7 @@
   },
   {
    "name": "GIN LANE 1751",
-   "kana": "ジンレーン",
+   "kana": "ジンレーン 1751",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -3957,7 +3957,7 @@
   },
   {
    "name": "GIN LANE 1751 London Dry Royal Storengths Gin",
-   "kana": "ジンレーン",
+   "kana": "ジンレーン 1751 ロイヤルストレングス",
    "abv": 47.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -3966,7 +3966,7 @@
   },
   {
    "name": "GIN LANE 1751 VICTORIA PINK GIN",
-   "kana": "ジンレーン",
+   "kana": "ジンレーン 1751 ヴィクトリアピンク",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -3984,7 +3984,7 @@
   },
   {
    "name": "SIEGFRIED RHEINLAND DRY GIN",
-   "kana": "ジークフリート",
+   "kana": "ジークフリート ラインラント",
    "abv": 41.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -3993,7 +3993,7 @@
   },
   {
    "name": "G-GIN Classic",
-   "kana": "ジージン",
+   "kana": "ジージン クラシック",
    "abv": 46.2,
    "country": "スウェーデン",
    "country_main": "スウェーデン",
@@ -4002,7 +4002,7 @@
   },
   {
    "name": "G-GIN Gold",
-   "kana": "ジージン",
+   "kana": "ジージン ゴールド",
    "abv": 46.2,
    "country": "スウェーデン",
    "country_main": "スウェーデン",
@@ -4011,7 +4011,7 @@
   },
   {
    "name": "G-GIN Rose",
-   "kana": "ジージン",
+   "kana": "ジージン ローズ",
    "abv": 46.2,
    "country": "スウェーデン",
    "country_main": "スウェーデン",
@@ -4020,7 +4020,7 @@
   },
   {
    "name": "GINIUS GIN",
-   "kana": "ジーニアス",
+   "kana": "ジニウス",
    "abv": 50.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -4029,7 +4029,7 @@
   },
   {
    "name": "NGINIOUS!! Swiss Blended Gin",
-   "kana": "ジーニアス",
+   "kana": "ジニアス ブレンデッド",
    "abv": 45.0,
    "country": "スイス",
    "country_main": "スイス",
@@ -4038,7 +4038,7 @@
   },
   {
    "name": "gini bezaubernd",
-   "kana": "ジーニー",
+   "kana": "ジニ ベツァウベルント",
    "abv": 40.5,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -4047,7 +4047,7 @@
   },
   {
    "name": "ORIGINE GINO SMALL BATCH",
-   "kana": "ジーノ",
+   "kana": "オリジネ ジーノ スモールバッチ",
    "abv": 45.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -4056,7 +4056,7 @@
   },
   {
    "name": "g’Vine Gin Floraison",
-   "kana": "ジーヴァイン / ジーバイン",
+   "kana": "ジーヴァイン フロレゾン",
    "abv": 40.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -4065,7 +4065,7 @@
   },
   {
    "name": "翠靄~sui-ai~ wet Gin",
-   "kana": "スイアイ",
+   "kana": "スイアイ ウェット",
    "abv": 40.0,
    "country": "日本（東京：八王子）",
    "country_main": "日本",
@@ -4074,7 +4074,7 @@
   },
   {
    "name": "SCAPEGRACE CLASSIC GIN",
-   "kana": "スケープグレース",
+   "kana": "スケープグレース クラシック",
    "abv": 42.2,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -4101,7 +4101,7 @@
   },
   {
    "name": "STILL DAM GIN NANKOU UME-スティルダムジン 南高梅-",
-   "kana": "スティルダム",
+   "kana": "スティルダム 南高梅",
    "abv": 45.0,
    "country": "日本（佐賀）",
    "country_main": "日本",
@@ -4110,7 +4110,7 @@
   },
   {
    "name": "STILL DAM GIN STOOM SHIPS",
-   "kana": "スティルダム",
+   "kana": "スティルダム ストゥームシップス",
    "abv": 45.0,
    "country": "日本（佐賀）",
    "country_main": "日本",
@@ -4119,7 +4119,7 @@
   },
   {
    "name": "STILLDAM GIN 1st Anniversary Lemongrass & Bergomot",
-   "kana": "スティルダム",
+   "kana": "スティルダム 1stアニバーサリー レモングラス＆ベルガモット",
    "abv": 45.0,
    "country": "日本（佐賀）",
    "country_main": "日本",
@@ -4128,7 +4128,7 @@
   },
   {
    "name": "STILLDAM GIN ING 2nd dot",
-   "kana": "スティルダム",
+   "kana": "スティルダム イング 2nd ドット",
    "abv": 45.0,
    "country": "日本（佐賀）",
    "country_main": "日本",
@@ -4137,7 +4137,7 @@
   },
   {
    "name": "STILLDAM GIN NANKOU UME",
-   "kana": "スティルダム",
+   "kana": "スティルダム 南高梅",
    "abv": 45.0,
    "country": "日本（佐賀）",
    "country_main": "日本",
@@ -4146,7 +4146,7 @@
   },
   {
    "name": "STILLDAM GIN Roast & Smoke",
-   "kana": "スティルダム",
+   "kana": "スティルダム ロースト＆スモーク",
    "abv": 45.0,
    "country": "日本（佐賀）",
    "country_main": "日本",
@@ -4155,7 +4155,7 @@
   },
   {
    "name": "STILLDAM GIN Saga mikan",
-   "kana": "スティルダム",
+   "kana": "スティルダム 佐賀みかん",
    "abv": 45.0,
    "country": "日本（佐賀）",
    "country_main": "日本",
@@ -4164,7 +4164,7 @@
   },
   {
    "name": "STILLDAM GIN Standard",
-   "kana": "スティルダム",
+   "kana": "スティルダム スタンダード",
    "abv": 45.0,
    "country": "日本（佐賀）",
    "country_main": "日本",
@@ -4173,7 +4173,7 @@
   },
   {
    "name": "STILLDAM ING single dot",
-   "kana": "スティルダム",
+   "kana": "スティルダム イング シングルドット",
    "abv": 45.0,
    "country": "日本（佐賀）",
    "country_main": "日本",
@@ -4182,7 +4182,7 @@
   },
   {
    "name": "STIN GIN Classic Proof",
-   "kana": "スティン",
+   "kana": "スティン クラシックプルーフ",
    "abv": 47.0,
    "country": "オーストリア（スティリア）",
    "country_main": "オーストリア",
@@ -4191,7 +4191,7 @@
   },
   {
    "name": "STIN GIN Over Proof",
-   "kana": "スティン",
+   "kana": "スティン オーバープルーフ",
    "abv": 57.0,
    "country": "オーストリア（スティリア）",
    "country_main": "オーストリア",
@@ -4200,7 +4200,7 @@
   },
   {
    "name": "THE STING SMALL BATCH LONDON DRY GIN",
-   "kana": "スティング",
+   "kana": "スティング スモールバッチ",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -4209,7 +4209,7 @@
   },
   {
    "name": "STOCKHOLMS BRANNERI DRY GIN",
-   "kana": "ストックホルム",
+   "kana": "ストックホルムス ブレネリ",
    "abv": 40.0,
    "country": "スウェーデン",
    "country_main": "スウェーデン",
@@ -4218,7 +4218,7 @@
   },
   {
    "name": "STOCKHOLMS BRANNERI OAK GIN",
-   "kana": "ストックホルム",
+   "kana": "ストックホルムス ブレネリ オーク",
    "abv": 45.0,
    "country": "スウェーデン",
    "country_main": "スウェーデン",
@@ -4227,7 +4227,7 @@
   },
   {
    "name": "STRATHEARN JUNIPER GIN",
-   "kana": "ストラスアーン",
+   "kana": "ストラスアーン ジュニパー",
    "abv": 47.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -4236,7 +4236,7 @@
   },
   {
    "name": "Strathcona Badlands Seaberry Gin",
-   "kana": "ストラスコナ",
+   "kana": "ストラスコナ バッドランズ シーベリー",
    "abv": 44.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -4245,7 +4245,7 @@
   },
   {
    "name": "STRATHCONA BARREL AGED GIN",
-   "kana": "ストラスコナ",
+   "kana": "ストラスコナ バレルエイジド",
    "abv": 44.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -4263,7 +4263,7 @@
   },
   {
    "name": "R. JELÍNEK Slovácká borovička",
-   "kana": "スロヴァッカ/スロバッカ",
+   "kana": "イェリネク スロヴァツカ ボロヴィチカ",
    "abv": 45.0,
    "country": "スロバキア",
    "country_main": "スロバキア",
@@ -4272,7 +4272,7 @@
   },
   {
    "name": "SLOANE'S PREMIUM DRY GIN",
-   "kana": "スローアンズ",
+   "kana": "スローンズ プレミアム",
    "abv": 40.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -4290,7 +4290,7 @@
   },
   {
    "name": "Zuidam OUDE Jeneuer",
-   "kana": "ズィダム/ズイダム",
+   "kana": "ザイダム アウデ イェネーバー",
    "abv": 38.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -4299,7 +4299,7 @@
   },
   {
    "name": "ZUIDAM DUTCH COURAGE DRY GIN",
-   "kana": "ズイダム/ズィダム",
+   "kana": "ザイダム ダッチカレッジ",
    "abv": 44.5,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -4317,7 +4317,7 @@
   },
   {
    "name": "SACRED Cassia",
-   "kana": "セイクレッド",
+   "kana": "セイクレッド カシア",
    "abv": 40.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -4335,7 +4335,7 @@
   },
   {
    "name": "SACRED GIN Coriander",
-   "kana": "セイクレッド",
+   "kana": "セイクレッド コリアンダー",
    "abv": 43.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -4344,7 +4344,7 @@
   },
   {
    "name": "SACRED GIN JUNIPER",
-   "kana": "セイクレッド",
+   "kana": "セイクレッド ジュニパー",
    "abv": 43.8,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -4353,7 +4353,7 @@
   },
   {
    "name": "SACRED Licorice",
-   "kana": "セイクレッド",
+   "kana": "セイクレッド リコリス",
    "abv": 40.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -4362,7 +4362,7 @@
   },
   {
    "name": "SACRED Organic Gin",
-   "kana": "セイクレッド",
+   "kana": "セイクレッド オーガニック",
    "abv": 48.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -4371,7 +4371,7 @@
   },
   {
    "name": "SACRED Organic Gin 10×Juniper",
-   "kana": "セイクレッド",
+   "kana": "セイクレッド オーガニック 10×ジュニパー",
    "abv": 48.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -4380,7 +4380,7 @@
   },
   {
    "name": "クラフトジン瀬戸内 檸檬",
-   "kana": "セトウチ",
+   "kana": "セトウチ レモン",
    "abv": 47.0,
    "country": "日本（広島）",
    "country_main": "日本",
@@ -4398,7 +4398,7 @@
   },
   {
    "name": "Save Beer Spirits",
-   "kana": "セーブビアスピリッツ",
+   "kana": "セーブ ビア スピリッツ",
    "abv": 40.0,
    "country": "日本（茨城）",
    "country_main": "日本",
@@ -4407,7 +4407,7 @@
   },
   {
    "name": "SAVE BEER SPIRITS 2020 CRAFT GIN",
-   "kana": "セーブビアスピリッツ",
+   "kana": "セーブ ビア スピリッツ 2020",
    "abv": 40.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -4425,7 +4425,7 @@
   },
   {
    "name": "ZELOT'S HEART GIN",
-   "kana": "ゼロツハート",
+   "kana": "ゼロッツハート",
    "abv": 44.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -4434,7 +4434,7 @@
   },
   {
    "name": "SOTHIS GIN BATCH1 M.CHAPOUTIER",
-   "kana": "ソディス",
+   "kana": "ソティス バッチ1 M.シャプティエ",
    "abv": 42.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -4452,7 +4452,7 @@
   },
   {
    "name": "Sorgin Rose",
-   "kana": "ソルジン",
+   "kana": "ソルジン ローズ",
    "abv": 37.7,
    "country": "フランス",
    "country_main": "フランス",
@@ -4461,7 +4461,7 @@
   },
   {
    "name": "Sorgin Yellow",
-   "kana": "ソルジン",
+   "kana": "ソルジン イエロー",
    "abv": 45.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -4479,7 +4479,7 @@
   },
   {
    "name": "TATEYAMA GIN EXPERIMENT CINNAMON/THYME",
-   "kana": "タテヤマ",
+   "kana": "館山 エクスペリメント シナモン タイム",
    "abv": 40.0,
    "country": "日本（千葉：館山）",
    "country_main": "日本",
@@ -4488,7 +4488,7 @@
   },
   {
    "name": "TATEYAMA GIN EXPERIMENT FOREST",
-   "kana": "タテヤマ",
+   "kana": "館山 エクスペリメント フォレスト",
    "abv": 40.0,
    "country": "日本（千葉：館山）",
    "country_main": "日本",
@@ -4497,7 +4497,7 @@
   },
   {
    "name": "TATEYAMA GIN EXPERIMENT LEAVES",
-   "kana": "タテヤマ",
+   "kana": "館山 エクスペリメント リーブス",
    "abv": 47.0,
    "country": "日本（千葉：館山）",
    "country_main": "日本",
@@ -4506,7 +4506,7 @@
   },
   {
    "name": "TATEYAMA GIN EXPERIMENT SUMMER",
-   "kana": "タテヤマ",
+   "kana": "館山 エクスペリメント サマー",
    "abv": 40.0,
    "country": "日本（千葉：館山）",
    "country_main": "日本",
@@ -4515,7 +4515,7 @@
   },
   {
    "name": "TANQUERAY Black Currant Royal Distilled Gln",
-   "kana": "タンカレー",
+   "kana": "タンカレー ブラックカラント ロイヤル",
    "abv": 41.3,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -4524,7 +4524,7 @@
   },
   {
    "name": "TANQUERAY Lavage Gin",
-   "kana": "タンカレー",
+   "kana": "タンカレー ラバージュ",
    "abv": 47.3,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -4533,7 +4533,7 @@
   },
   {
    "name": "TANQUERAY Malacca Gin",
-   "kana": "タンカレー",
+   "kana": "タンカレー マラッカ",
    "abv": 41.3,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -4542,7 +4542,7 @@
   },
   {
    "name": "TANQUERAY NO.10",
-   "kana": "タンカレー",
+   "kana": "タンカレー No.10",
    "abv": 47.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -4551,7 +4551,7 @@
   },
   {
    "name": "TANQUERAY NO.10 GRAPEFERUIT&ROSEMARY",
-   "kana": "タンカレー",
+   "kana": "タンカレー No.10 グレープフルーツ＆ローズマリー",
    "abv": 45.3,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -4560,7 +4560,7 @@
   },
   {
    "name": "TANQUERAY Rangpur Gin",
-   "kana": "タンカレー",
+   "kana": "タンカレー ランプール",
    "abv": 41.3,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -4569,7 +4569,7 @@
   },
   {
    "name": "TANQUERAY Sevilla",
-   "kana": "タンカレー",
+   "kana": "タンカレー セビリア",
    "abv": 41.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -4578,7 +4578,7 @@
   },
   {
    "name": "TANGLIN SINGAPORE MOONSHINE",
-   "kana": "タングリン",
+   "kana": "タングリン シンガポール ムーンシャイン",
    "abv": 32.0,
    "country": "シンガポール",
    "country_main": "シンガポール",
@@ -4605,7 +4605,7 @@
   },
   {
    "name": "TARQUINS DRY GIN",
-   "kana": "タークィンズ/タークインズ",
+   "kana": "タークィンズ",
    "abv": 42.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -4614,7 +4614,7 @@
   },
   {
    "name": "TARSIER Southeast Asian Dry Gin",
-   "kana": "ターザー/メガネザル",
+   "kana": "ターサー",
    "abv": 45.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -4632,7 +4632,7 @@
   },
   {
    "name": "DAVID ITALIAN PREMIUM GIN",
-   "kana": "ダビデ",
+   "kana": "ダビデ プレミアム",
    "abv": 40.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -4650,7 +4650,7 @@
   },
   {
    "name": "DANCING SANDS Chocolate Gin",
-   "kana": "ダンシングサンズ",
+   "kana": "ダンシングサンズ チョコレート",
    "abv": 44.0,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -4659,7 +4659,7 @@
   },
   {
    "name": "DANCING SANDS Sauvignon Blanc Gin",
-   "kana": "ダンシングサンズ",
+   "kana": "ダンシングサンズ ソーヴィニヨンブラン",
    "abv": 37.5,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -4668,7 +4668,7 @@
   },
   {
    "name": "DANCING SANDS Wasabi Gin",
-   "kana": "ダンシングサンズ",
+   "kana": "ダンシングサンズ ワサビ",
    "abv": 58.0,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -4677,7 +4677,7 @@
   },
   {
    "name": "DARNLEY'S ORIGINAL GIN",
-   "kana": "ダーンレイズ",
+   "kana": "ダーンレイズ オリジナル",
    "abv": 40.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -4686,7 +4686,7 @@
   },
   {
    "name": "DARNLEY'S SPICED GIN",
-   "kana": "ダーンレイズ",
+   "kana": "ダーンレイズ スパイスド",
    "abv": 42.7,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -4695,7 +4695,7 @@
   },
   {
    "name": "DARNLEY'S SPICED GIN Navy Strength",
-   "kana": "ダーンレイズ",
+   "kana": "ダーンレイズ スパイスド ネイビーストレングス",
    "abv": 57.1,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -4704,7 +4704,7 @@
   },
   {
    "name": "DARNLEY’S VIEW LONDON DRY GIN",
-   "kana": "ダーンレイズ",
+   "kana": "ダーンレイズ ビュー",
    "abv": 40.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -4713,7 +4713,7 @@
   },
   {
    "name": "丸森蒸留所 竹霖之風",
-   "kana": "チクリンノカゼ",
+   "kana": "マルモリ チクリンノカゼ",
    "abv": 40.0,
    "country": "日本（宮城県：丸森町）",
    "country_main": "日本",
@@ -4722,7 +4722,7 @@
   },
   {
    "name": "CHINNERY 銭納利 桂花和鳥龍",
-   "kana": "チネリ",
+   "kana": "チネリ 桂花烏龍（ケイカウーロン）",
    "abv": 43.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -4731,7 +4731,7 @@
   },
   {
    "name": "尽～tsukusu～",
-   "kana": "ツクシ",
+   "kana": "ツクス",
    "abv": 47.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -4740,7 +4740,7 @@
   },
   {
    "name": "TS' SPIRITS 5th anniversary Gin",
-   "kana": "ティーズ",
+   "kana": "ティーズスピリッツ 5周年",
    "abv": 43.0,
    "country": "日本（熊本）",
    "country_main": "日本",
@@ -4749,7 +4749,7 @@
   },
   {
    "name": "Tenn Sporits",
-   "kana": "ティーンスピリッツ",
+   "kana": "テン スピリッツ",
    "abv": 45.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -4767,7 +4767,7 @@
   },
   {
    "name": "TENU GIN LE BON TIKKA",
-   "kana": "テヌ/ルボンティッカ",
+   "kana": "テヌ ル・ボン・ティッカ",
    "abv": 47.0,
    "country": "フィンランド",
    "country_main": "フィンランド",
@@ -4785,7 +4785,7 @@
   },
   {
    "name": "DISTILLERIE DE PARIS gin tonic",
-   "kana": "ディスティレリドパリ",
+   "kana": "ディスティレリ ド パリ トニック",
    "abv": 43.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -4794,7 +4794,7 @@
   },
   {
    "name": "DISTILLERIE DE PARIS perriere",
-   "kana": "ディスティレリドパリ",
+   "kana": "ディスティレリ ド パリ ペリエール",
    "abv": 43.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -4803,7 +4803,7 @@
   },
   {
    "name": "DISTILLERIE DE PARIS semis",
-   "kana": "ディスティレリドパリ",
+   "kana": "ディスティレリ ド パリ スミ",
    "abv": 43.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -4830,7 +4830,7 @@
   },
   {
    "name": "D1 LONDON GIN",
-   "kana": "ディーワン",
+   "kana": "ディーワン ロンドン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -4857,7 +4857,7 @@
   },
   {
    "name": "DENNOSHIN 1812 TRIPLE JUNIPER",
-   "kana": "デンノシン",
+   "kana": "デンノシン 1812 トリプルジュニパー",
    "abv": 40.0,
    "country": "日本（長崎）",
    "country_main": "日本",
@@ -4875,7 +4875,7 @@
   },
   {
    "name": "2~3 TWENTY THIRD ST. DISTILLERY SIGNATURE GIN",
-   "kana": "トゥエンティーサード",
+   "kana": "トゥエンティーサード ストリート シグネチャー",
    "abv": 40.0,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -4893,7 +4893,7 @@
   },
   {
    "name": "TOM GIN #01",
-   "kana": "トウキョウトム",
+   "kana": "トムジン #01",
    "abv": 47.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -4902,7 +4902,7 @@
   },
   {
    "name": "TOM GIN #02",
-   "kana": "トウキョウトム",
+   "kana": "トムジン #02",
    "abv": 47.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -4911,7 +4911,7 @@
   },
   {
    "name": "TOM GIN #07",
-   "kana": "トウキョウトム",
+   "kana": "トムジン #07",
    "abv": 47.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -4920,7 +4920,7 @@
   },
   {
    "name": "TOM GIN Juniper BOMB",
-   "kana": "トウキョウトム",
+   "kana": "トムジン ジュニパーボム",
    "abv": 47.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -4929,7 +4929,7 @@
   },
   {
    "name": "TOM GIN Juniper BOMB Ver 2020 Chichibu",
-   "kana": "トウキョウトム",
+   "kana": "トムジン ジュニパーボム 2020 秩父",
    "abv": 47.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -4956,7 +4956,7 @@
   },
   {
    "name": "Japanese Craft Gin 棘玉 -TOGEDAMA-",
-   "kana": "トゲタマ",
+   "kana": "棘玉 トゲダマ",
    "abv": 47.0,
    "country": "日本（埼玉）",
    "country_main": "日本",
@@ -4965,7 +4965,7 @@
   },
   {
    "name": "棘玉 秩父SingleCask Challengeing No.？？？",
-   "kana": "トゲタマ",
+   "kana": "トゲタマ チチブ シングルカスク No.???",
    "abv": 47.0,
    "country": "日本（埼玉）",
    "country_main": "日本",
@@ -4974,7 +4974,7 @@
   },
   {
    "name": "棘玉 秩父シングルカスク cask number 1",
-   "kana": "トゲタマ",
+   "kana": "トゲタマ チチブ シングルカスク カスクナンバー1",
    "abv": 63.0,
    "country": "日本（埼玉）",
    "country_main": "日本",
@@ -4983,7 +4983,7 @@
   },
   {
    "name": "浦和の涙 No.3 URAWA GIN",
-   "kana": "トゲタマ/ウラワノナミダ",
+   "kana": "ウラワノナミダ No.3 ウラワ",
    "abv": 47.0,
    "country": "日本（埼玉）",
    "country_main": "日本",
@@ -4992,7 +4992,7 @@
   },
   {
    "name": "TOKKI SONBI GIN",
-   "kana": "トッキソジュ",
+   "kana": "トッキ ソンビ",
    "abv": 48.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -5001,7 +5001,7 @@
   },
   {
    "name": "TOBERMORY Hebridean Gin",
-   "kana": "トバモリー",
+   "kana": "トバモリー ヘブリディアン",
    "abv": 43.3,
    "country": "アイランズ（マル島）",
    "country_main": "アイランズ",
@@ -5010,7 +5010,7 @@
   },
   {
    "name": "TOPO Organic Piedmont Gin",
-   "kana": "トポ",
+   "kana": "トポ オーガニック ピードモント",
    "abv": 46.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -5019,7 +5019,7 @@
   },
   {
    "name": "TOMMY'S GIN",
-   "kana": "トミー",
+   "kana": "トミーズ",
    "abv": 45.0,
    "country": "イギリス（スカイ島）",
    "country_main": "イギリス",
@@ -5028,7 +5028,7 @@
   },
   {
    "name": "虎ノ門 赤丸薄荷と白樺の葉",
-   "kana": "トラノモン",
+   "kana": "トラノモン アカマルハッカトシラカバノハ",
    "abv": 45.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -5037,7 +5037,7 @@
   },
   {
    "name": "八丈島の月桃とパッションフルーツ",
-   "kana": "トラノモン",
+   "kana": "ハチジョウジマノゲットウトパッションフルーツ",
    "abv": 45.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -5046,7 +5046,7 @@
   },
   {
    "name": "虎ノ門蒸留所 青梅の梅",
-   "kana": "トラノモン/オウメノウメ",
+   "kana": "トラノモン オウメノウメ",
    "abv": 45.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -5055,7 +5055,7 @@
   },
   {
    "name": "TWC BORDERLESS GIN blended Edition",
-   "kana": "トラノモン/ボーダーレスジン",
+   "kana": "ボーダーレス ブレンデッド",
    "abv": 46.0,
    "country": "日本",
    "country_main": "日本",
@@ -5064,7 +5064,7 @@
   },
   {
    "name": "THOMPSON BROS",
-   "kana": "トンプソン",
+   "kana": "トンプソンブラザーズ",
    "abv": 45.7,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5073,7 +5073,7 @@
   },
   {
    "name": "THOMPSON BRO'S Juniper Cask",
-   "kana": "トンプソンブラザーズ",
+   "kana": "トンプソンブラザーズ ジュニパーカスク",
    "abv": 44.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -5091,7 +5091,7 @@
   },
   {
    "name": "DOCKYARD DRY GIN",
-   "kana": "ドッグヤード",
+   "kana": "ドックヤード",
    "abv": 41.2,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -5100,7 +5100,7 @@
   },
   {
    "name": "DREYBERG RED BERRY GIN",
-   "kana": "ドライバーグ",
+   "kana": "ドライバーグ レッドベリー",
    "abv": 40.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -5109,7 +5109,7 @@
   },
   {
    "name": "DRUMSHANBO GUNPOWDER IRISH GIN",
-   "kana": "ドラムシャンボ",
+   "kana": "ドラムシャンボ ガンパウダー",
    "abv": 43.0,
    "country": "アイルランド（ドラムシャンボ）",
    "country_main": "アイルランド",
@@ -5127,7 +5127,7 @@
   },
   {
    "name": "ANGE GIARD GIN DOZ",
-   "kana": "ドーズ",
+   "kana": "アンジュ ジアール ドーズ",
    "abv": 42.0,
    "country": "フランス（ノルマンディー）",
    "country_main": "フランス",
@@ -5136,7 +5136,7 @@
   },
   {
    "name": "NIGHT TRAVELLER",
-   "kana": "ナイトトラベラー",
+   "kana": "ナイト トラベラー",
    "abv": 45.0,
    "country": "日本（秋田）",
    "country_main": "日本",
@@ -5145,7 +5145,7 @@
   },
   {
    "name": "NINTH WAVE IRISH GIN",
-   "kana": "ナインスウェーブ",
+   "kana": "ナインス ウェーブ",
    "abv": 43.0,
    "country": "北アイルランド",
    "country_main": "北アイルランド",
@@ -5154,7 +5154,7 @@
   },
   {
    "name": "NAKATSU GIN CHITA BANANA",
-   "kana": "ナカツ",
+   "kana": "ナカツ チタ バナナ",
    "abv": 50.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -5163,7 +5163,7 @@
   },
   {
    "name": "NAKATSU GIN RUBYGRAPEFRUIT",
-   "kana": "ナカツ",
+   "kana": "ナカツ ルビーグレープフルーツ",
    "abv": 50.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -5172,7 +5172,7 @@
   },
   {
    "name": "NAKATSU GIN ベルガモット 1st Batch",
-   "kana": "ナカツ",
+   "kana": "ナカツ ベルガモット 1stバッチ",
    "abv": 50.0,
    "country": "日本（兵庫）",
    "country_main": "日本",
@@ -5181,7 +5181,7 @@
   },
   {
    "name": "NAKATSU GIN（ 知多バナナ 3rd Batch ）",
-   "kana": "ナカツ",
+   "kana": "ナカツ 知多バナナ 3rdバッチ",
    "abv": 50.0,
    "country": "日本（兵庫）",
    "country_main": "日本",
@@ -5190,7 +5190,7 @@
   },
   {
    "name": "naturadistill 固有種蒸溜酒［FIRST BATCH］",
-   "kana": "ナチュラディスティル",
+   "kana": "ナチュラディスティル 固有種 ファーストバッチ",
    "abv": 47.0,
    "country": "日本（福島）",
    "country_main": "日本",
@@ -5199,7 +5199,7 @@
   },
   {
    "name": "naturadistill 柚子加加阿蒸溜酒 Yuzu Cacao Gin",
-   "kana": "ナチュラディスティル",
+   "kana": "ナチュラディスティル 柚子カカオ",
    "abv": 47.0,
    "country": "日本（福島）",
    "country_main": "日本",
@@ -5208,7 +5208,7 @@
   },
   {
    "name": "GIN NATURE THE FIRST RELEASE",
-   "kana": "ナチュール",
+   "kana": "ナチュール ザ ファーストリリース",
    "abv": 45.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -5217,7 +5217,7 @@
   },
   {
    "name": "No.3 LONDON DRY GIN",
-   "kana": "ナンバー3",
+   "kana": "No.3",
    "abv": 46.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5226,7 +5226,7 @@
   },
   {
    "name": "No.3 LONDON DRY GIN KINGSMAN EDITION",
-   "kana": "ナンバー3",
+   "kana": "No.3 キングスマンエディション",
    "abv": 49.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5235,7 +5235,7 @@
   },
   {
    "name": "NUMBER EIGHT 1st Anniversary",
-   "kana": "ナンバー8/ナンバーエイト",
+   "kana": "ナンバーエイト 1stアニバーサリー",
    "abv": 46.0,
    "country": "日本（神奈川）",
    "country_main": "日本",
@@ -5244,7 +5244,7 @@
   },
   {
    "name": "NUMBER EIGHT 2020 Gold Edition",
-   "kana": "ナンバー8/ナンバーエイト",
+   "kana": "ナンバーエイト 2020 ゴールドエディション",
    "abv": 46.0,
    "country": "日本（神奈川）",
    "country_main": "日本",
@@ -5253,7 +5253,7 @@
   },
   {
    "name": "NUMBER EIGHT GIN",
-   "kana": "ナンバー8/ナンバーエイト",
+   "kana": "ナンバーエイト",
    "abv": 46.0,
    "country": "日本（神奈川）",
    "country_main": "日本",
@@ -5262,7 +5262,7 @@
   },
   {
    "name": "NUMBER EIGHT GIN MOLE EDITION",
-   "kana": "ナンバー8/ナンバーエイト",
+   "kana": "ナンバーエイト モレエディション",
    "abv": 46.0,
    "country": "日本（神奈川）",
    "country_main": "日本",
@@ -5271,7 +5271,7 @@
   },
   {
    "name": "No.8 DISTILLERY BORDERLESS GIN",
-   "kana": "ナンバーエイト/ボーダーレスジン",
+   "kana": "ナンバーエイト ボーダーレス",
    "abv": 46.0,
    "country": "日本",
    "country_main": "日本",
@@ -5289,7 +5289,7 @@
   },
   {
    "name": "NIKKA COFFEY GIN",
-   "kana": "ニッカ",
+   "kana": "ニッカ カフェ",
    "abv": 47.0,
    "country": "日本（宮城：仙台）",
    "country_main": "日本",
@@ -5298,7 +5298,7 @@
   },
   {
    "name": "NEW ANGOULEME FRENCH GIN",
-   "kana": "ニューアングレーム",
+   "kana": "ニュー アングレーム",
    "abv": 43.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -5307,7 +5307,7 @@
   },
   {
    "name": "SCAPEGRACE Classic",
-   "kana": "ニュージーランド",
+   "kana": "スケープグレース クラシック",
    "abv": 42.2,
    "country": "スケープグレース",
    "country_main": "スケープグレース",
@@ -5316,7 +5316,7 @@
   },
   {
    "name": "NEVERSINK RESERVE SPIRITS GIN",
-   "kana": "ネバーシンク/ネヴァーシンク",
+   "kana": "ネバーシンク リザーブ",
    "abv": 45.0,
    "country": "アメリカ（ニューヨーク）",
    "country_main": "アメリカ",
@@ -5325,7 +5325,7 @@
   },
   {
    "name": "NEVERSINK SPIRITS GIN",
-   "kana": "ネバーシンク/ネヴァーシンク",
+   "kana": "ネバーシンク",
    "abv": 43.0,
    "country": "アメリカ（ニューヨーク）",
    "country_main": "アメリカ",
@@ -5334,7 +5334,7 @@
   },
   {
    "name": "Non-Alcoholic Gin NEMA 0.00%",
-   "kana": "ネマ",
+   "kana": "ネマ 0.00%",
    "abv": 0.0,
    "country": "日本（長野）",
    "country_main": "日本",
@@ -5343,7 +5343,7 @@
   },
   {
    "name": "NEVER NEVER JUNIPER FREAK GIN",
-   "kana": "ネヴァーネヴァー/ネバーネバー",
+   "kana": "ネバーネバー ジュニパー フリーク",
    "abv": 58.0,
    "country": "オーストラリア（南オーストラリア：マクラーレンヴェイル）",
    "country_main": "オーストラリア",
@@ -5352,7 +5352,7 @@
   },
   {
    "name": "NEVER NEVER SOUTHERN STRENGTH GIN",
-   "kana": "ネヴァーネヴァー/ネバーネバー",
+   "kana": "ネバーネバー サザン ストレングス",
    "abv": 52.0,
    "country": "オーストラリア（南オーストラリア：マクラーレンヴェイル）",
    "country_main": "オーストラリア",
@@ -5361,7 +5361,7 @@
   },
   {
    "name": "NEVER NEVER TRIPLE JUNIPER GIN",
-   "kana": "ネヴァーネヴァー/ネバーネバー",
+   "kana": "ネバーネバー トリプル ジュニパー",
    "abv": 43.0,
    "country": "オーストラリア（南オーストラリア：マクラーレンヴェイル）",
    "country_main": "オーストラリア",
@@ -5370,7 +5370,7 @@
   },
   {
    "name": "GIN NEVE Dolomites",
-   "kana": "ネーベ",
+   "kana": "ネーベ ドロミテ",
    "abv": 43.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -5379,7 +5379,7 @@
   },
   {
    "name": "NOUAISON GIN BY G'VINE",
-   "kana": "ノエゾン",
+   "kana": "ノエゾン バイ ジーヴァイン",
    "abv": 45.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -5388,7 +5388,7 @@
   },
   {
    "name": "NOUAISON GIN RESRRVE",
-   "kana": "ノエゾン",
+   "kana": "ノエゾン リザーブ",
    "abv": 42.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -5406,7 +5406,7 @@
   },
   {
    "name": "KNOCKEEN HILLS ELDERFLOWER GIN",
-   "kana": "ノッキーンヒルズ",
+   "kana": "ノッキーンヒルズ エルダーフラワー",
    "abv": 43.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5415,7 +5415,7 @@
   },
   {
    "name": "KNOCKEEN HILLS HEATHER GIN",
-   "kana": "ノッキーンヒルズ",
+   "kana": "ノッキーンヒルズ ヘザー",
    "abv": 47.3,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5433,7 +5433,7 @@
   },
   {
    "name": "NORDES Atlantic Galician Gin",
-   "kana": "ノルデス/ノルディス",
+   "kana": "ノルデス アトランティック",
    "abv": 40.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -5451,7 +5451,7 @@
   },
   {
    "name": "NORTH COAST 500 GIN",
-   "kana": "ノースコースト",
+   "kana": "ノースコースト 500",
    "abv": 41.5,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -5469,7 +5469,7 @@
   },
   {
    "name": "NORDES GIN",
-   "kana": "ノーデン",
+   "kana": "ノルデス",
    "abv": 40.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -5478,7 +5478,7 @@
   },
   {
    "name": "HIGHWOOD Old Tom Gin",
-   "kana": "ハイウッド",
+   "kana": "ハイウッド オールドトム",
    "abv": 40.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -5487,7 +5487,7 @@
   },
   {
    "name": "HIDDEN WORLD GIN",
-   "kana": "ハイデンワールド",
+   "kana": "ヒドゥンワールド",
    "abv": 60.0,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -5496,7 +5496,7 @@
   },
   {
    "name": "HEIGHT OF ARROWS BRIGHT GIN",
-   "kana": "ハイトオブアローズ",
+   "kana": "ハイトオブアローズ ブライト",
    "abv": 48.0,
    "country": "イギリス（スコットランド：エディンバラ）",
    "country_main": "イギリス",
@@ -5505,7 +5505,7 @@
   },
   {
    "name": "MATSUI GIN THE HAKUTO PREMIUM",
-   "kana": "ハクト",
+   "kana": "マツイ 白兎 プレミアム",
    "abv": 47.0,
    "country": "日本（鳥取）",
    "country_main": "日本",
@@ -5523,7 +5523,7 @@
   },
   {
    "name": "TOKYO HACHIO GIN Classic",
-   "kana": "ハチオウジン",
+   "kana": "東京 八王子 クラシック",
    "abv": 45.0,
    "country": "日本（東京：八王子）",
    "country_main": "日本",
@@ -5532,7 +5532,7 @@
   },
   {
    "name": "TOKYO HACHIO GIN Classic",
-   "kana": "ハチオウジン",
+   "kana": "東京 八王子 クラシック",
    "abv": 40.0,
    "country": "日本（東京：八王子）",
    "country_main": "日本",
@@ -5541,7 +5541,7 @@
   },
   {
    "name": "TOKYO HACHIO GIN ORIENTAL",
-   "kana": "ハチオウジン",
+   "kana": "トウキョウ ハチオウ オリエンタル",
    "abv": 45.0,
    "country": "日本（東京：八王子）",
    "country_main": "日本",
@@ -5550,7 +5550,7 @@
   },
   {
    "name": "TOKYO SPICE GIN",
-   "kana": "ハチオウジン",
+   "kana": "トウキョウ スパイス",
    "abv": 41.0,
    "country": "日本（東京：八王子）",
    "country_main": "日本",
@@ -5577,7 +5577,7 @@
   },
   {
    "name": "HAPENNY DUBLIN DRY GIN",
-   "kana": "ハペニー",
+   "kana": "ハペニー ダブリン",
    "abv": 41.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -5604,7 +5604,7 @@
   },
   {
    "name": "HANSEN BARRELED TROUBLE GIN",
-   "kana": "ハンセントラブル",
+   "kana": "ハンセン バレルド トラブル",
    "abv": 42.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -5613,7 +5613,7 @@
   },
   {
    "name": "HANSEN TROUBLE GIN",
-   "kana": "ハンセントラブル",
+   "kana": "ハンセン トラブル",
    "abv": 40.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -5622,7 +5622,7 @@
   },
   {
    "name": "40° 48'N HARBOR GIN",
-   "kana": "ハーバー",
+   "kana": "40° 48'N ハーバー",
    "abv": 40.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -5640,7 +5640,7 @@
   },
   {
    "name": "Baron's Gin BIRD CHERRY",
-   "kana": "バイロン",
+   "kana": "バロンズ バードチェリー",
    "abv": 43.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -5649,7 +5649,7 @@
   },
   {
    "name": "Baron's Gin MELANCHOLY THISTLE",
-   "kana": "バイロン",
+   "kana": "バロンズ メランコリーシスル",
    "abv": 43.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -5667,7 +5667,7 @@
   },
   {
    "name": "BATHTUB GIN Explorers' Edition #1",
-   "kana": "バスタブ",
+   "kana": "バスタブ エクスプローラーズエディション No.1",
    "abv": 50.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -5676,7 +5676,7 @@
   },
   {
    "name": "BATHTUB OldTom GIN",
-   "kana": "バスタブ",
+   "kana": "バスタブ オールドトム",
    "abv": 42.4,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -5694,7 +5694,7 @@
   },
   {
    "name": "BUCKINGHAM PALACE small‐batch DRY GIN",
-   "kana": "バッキンガムパレス",
+   "kana": "バッキンガムパレス スモールバッチ",
    "abv": 42.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5703,7 +5703,7 @@
   },
   {
    "name": "BUCKINGHAM PALACE CORONATION DRY GIN",
-   "kana": "バッキンガムパレス/コロネーション",
+   "kana": "バッキンガムパレス コロネーション",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5712,7 +5712,7 @@
   },
   {
    "name": "BAREKSTEN BOTANICAL GIN",
-   "kana": "バレクステン",
+   "kana": "バレクステン ボタニカル",
    "abv": 46.0,
    "country": "ノルウェー",
    "country_main": "ノルウェー",
@@ -5721,7 +5721,7 @@
   },
   {
    "name": "BAREKSTEN DOUBLE GIN",
-   "kana": "バレクステン",
+   "kana": "バレクステン ダブル",
    "abv": 43.0,
    "country": "ノルウェー",
    "country_main": "ノルウェー",
@@ -5730,7 +5730,7 @@
   },
   {
    "name": "Valley of Mother of God - Canadian Wild Juniper Gin",
-   "kana": "バレー・オブ・マザー・オブ・ゴッド",
+   "kana": "バレー オブ マザー オブ ゴッド ワイルドジュニパー",
    "abv": 43.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -5739,7 +5739,7 @@
   },
   {
    "name": "Valley of Mother of God - Maplewood Smoked Gin",
-   "kana": "バレー・オブ・マザー・オブ・ゴッド",
+   "kana": "バレー オブ マザー オブ ゴッド メープルウッド スモークド",
    "abv": 43.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -5748,7 +5748,7 @@
   },
   {
    "name": "BERTHA'S REVENGE IRISH MILK GIN",
-   "kana": "バーサスリベンジ",
+   "kana": "バーサズ リベンジ アイリッシュミルク",
    "abv": 42.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -5784,7 +5784,7 @@
   },
   {
    "name": "Burleighs LONDON DRY GIN EXPORT STRENGTH",
-   "kana": "バーレイズ",
+   "kana": "バーレイズ エクスポートストレングス",
    "abv": 47.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -5802,7 +5802,7 @@
   },
   {
    "name": "GION GIN",
-   "kana": "パチパチ/ギオン",
+   "kana": "ギオン",
    "abv": 48.0,
    "country": "日本（愛媛）",
    "country_main": "日本",
@@ -5811,7 +5811,7 @@
   },
   {
    "name": "PANAREA ISLAND GIN",
-   "kana": "パナレア",
+   "kana": "パナレア アイランド",
    "abv": 44.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -5820,7 +5820,7 @@
   },
   {
    "name": "PANAREA SUNSET GIN",
-   "kana": "パナレア",
+   "kana": "パナレア サンセット",
    "abv": 44.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -5829,7 +5829,7 @@
   },
   {
    "name": "PERFUME GIN CHIRAN TEA -BARTENDER’S EDITION-",
-   "kana": "パヒューム",
+   "kana": "パヒューム 知覧ティー バーテンダーズエディション",
    "abv": 47.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -5838,7 +5838,7 @@
   },
   {
    "name": "PERFUME GIN HOSHO -BARTENDER’S BLEND-",
-   "kana": "パヒューム",
+   "kana": "パヒューム 芳樟 バーテンダーズブレンド",
    "abv": 47.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -5847,7 +5847,7 @@
   },
   {
    "name": "PERFUME GIN LEMONGRASS -BARTENDER’S EDITION-",
-   "kana": "パヒューム",
+   "kana": "パヒューム レモングラス バーテンダーズエディション",
    "abv": 47.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -5856,7 +5856,7 @@
   },
   {
    "name": "Driftwood Parabola Floral GIN",
-   "kana": "パラボラ",
+   "kana": "ドリフトウッド パラボラ フローラル",
    "abv": 45.0,
    "country": "カナダ",
    "country_main": "カナダ",
@@ -5883,7 +5883,7 @@
   },
   {
    "name": "GINEBRA SAN MIGUEL",
-   "kana": "ヒネブラ・サンミゲル",
+   "kana": "ヒネブラ サンミゲル",
    "abv": 43.0,
    "country": "フィリピン",
    "country_main": "フィリピン",
@@ -5910,7 +5910,7 @@
   },
   {
    "name": "HILBING MALBEC GIN",
-   "kana": "ヒルビング",
+   "kana": "ヒルビング マルベック",
    "abv": 40.0,
    "country": "アルゼンチン",
    "country_main": "アルゼンチン",
@@ -5928,7 +5928,7 @@
   },
   {
    "name": "BIG GINO ITALIAN LABEL",
-   "kana": "ビッグジーノ",
+   "kana": "ビッグジーノ イタリアンラベル",
    "abv": 40.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -5937,7 +5937,7 @@
   },
   {
    "name": "BIG GINO PEPINO LOCO",
-   "kana": "ビッグジーノ",
+   "kana": "ビッグジーノ ペピーノロコ",
    "abv": 38.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -5946,7 +5946,7 @@
   },
   {
    "name": "BIG GINO RED HOT FRUITS",
-   "kana": "ビッグジーノ",
+   "kana": "ビッグジーノ レッドホットフルーツ",
    "abv": 38.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -5955,7 +5955,7 @@
   },
   {
    "name": "BIMBER DA HONG PAO TEA GIN",
-   "kana": "ビンバー",
+   "kana": "ビンバー ダーホンパオティー",
    "abv": 51.8,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -5964,7 +5964,7 @@
   },
   {
    "name": "BIMBER KUMQUAT GIN",
-   "kana": "ビンバー",
+   "kana": "ビンバー キンカン",
    "abv": 47.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -5982,7 +5982,7 @@
   },
   {
    "name": "BEEFEATER 24",
-   "kana": "ビーフィーター",
+   "kana": "ビーフィーター 24",
    "abv": 45.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -5991,7 +5991,7 @@
   },
   {
    "name": "BEEFEATER Burroughs Reserve",
-   "kana": "ビーフィーター",
+   "kana": "ビーフィーター バロウズリザーブ",
    "abv": 43.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -6000,7 +6000,7 @@
   },
   {
    "name": "BEEFEATER Crown Jewel",
-   "kana": "ビーフィーター",
+   "kana": "ビーフィーター クラウンジュエル",
    "abv": 50.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -6009,7 +6009,7 @@
   },
   {
    "name": "BEEFEATER LONDON DISTILLED",
-   "kana": "ビーフィーター",
+   "kana": "ビーフィーター ロンドンディスティルド",
    "abv": 47.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -6018,7 +6018,7 @@
   },
   {
    "name": "BEEFEATER LONDON DISTILLED",
-   "kana": "ビーフィーター",
+   "kana": "ビーフィーター ロンドンディスティルド",
    "abv": 40.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -6027,7 +6027,7 @@
   },
   {
    "name": "BEEFEATER LONDON GARDEN",
-   "kana": "ビーフィーター",
+   "kana": "ビーフィーター ロンドンガーデン",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6036,7 +6036,7 @@
   },
   {
    "name": "BEEFEATER Old Bottle",
-   "kana": "ビーフィーター",
+   "kana": "ビーフィーター オールドボトル",
    "abv": 40.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -6045,7 +6045,7 @@
   },
   {
    "name": "BEEFEATER Pink Strawberry",
-   "kana": "ビーフィーター",
+   "kana": "ビーフィーター ピンクストロベリー",
    "abv": 37.5,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -6054,7 +6054,7 @@
   },
   {
    "name": "TL PEARCE CACAO EDITION",
-   "kana": "ピアス",
+   "kana": "TLピアス カカオ エディション",
    "abv": 43.0,
    "country": "日本（千葉：野田）",
    "country_main": "日本",
@@ -6063,7 +6063,7 @@
   },
   {
    "name": "TLPEARCE GIN",
-   "kana": "ピアス",
+   "kana": "TLピアス",
    "abv": 43.0,
    "country": "日本（千葉：野田）",
    "country_main": "日本",
@@ -6072,7 +6072,7 @@
   },
   {
    "name": "PICKERING'S GIN",
-   "kana": "ピッカリング",
+   "kana": "ピッカリングス",
    "abv": 42.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -6099,7 +6099,7 @@
   },
   {
    "name": "Pure Bread Gin ＃1",
-   "kana": "ピュアブレッド",
+   "kana": "ピュアブレッド ＃1",
    "abv": 41.0,
    "country": "日本（石川県：金沢）",
    "country_main": "日本",
@@ -6153,7 +6153,7 @@
   },
   {
    "name": "1st Cut Fresh Hop Riwaka Gin",
-   "kana": "ファーストカット",
+   "kana": "ファーストカット フレッシュホップ リワカ",
    "abv": 42.0,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -6171,7 +6171,7 @@
   },
   {
    "name": "Filliers Dry Gin 28",
-   "kana": "フィラーズ",
+   "kana": "フィリエルス 28",
    "abv": 46.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -6189,7 +6189,7 @@
   },
   {
    "name": "FAIR. Barrel Aged Gin",
-   "kana": "フェア",
+   "kana": "フェア バレルエイジド",
    "abv": 42.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -6198,7 +6198,7 @@
   },
   {
    "name": "FAIR. Juniper gin organic",
-   "kana": "フェア",
+   "kana": "フェア ジュニパー オーガニック",
    "abv": 42.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -6207,7 +6207,7 @@
   },
   {
    "name": "Feckin Irish Gin",
-   "kana": "フェッキンアイリッシュジン",
+   "kana": "フェッキン",
    "abv": 40.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -6216,7 +6216,7 @@
   },
   {
    "name": "FERDINAND'S 7Y EDITION",
-   "kana": "フェルディナンズ",
+   "kana": "フェルディナンズ 7年 エディション",
    "abv": 44.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -6225,7 +6225,7 @@
   },
   {
    "name": "FERDINAND'S Eau de vie Style Gin",
-   "kana": "フェルディナンズ",
+   "kana": "フェルディナンズ オードヴィー スタイル",
    "abv": 46.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -6234,7 +6234,7 @@
   },
   {
    "name": "FERDINAND'S SAAR DRY GIN",
-   "kana": "フェルディナンズ",
+   "kana": "フェルディナンズ ザール",
    "abv": 44.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -6252,7 +6252,7 @@
   },
   {
    "name": "VOR GIN Barrel Aged",
-   "kana": "フォア",
+   "kana": "フォア バレルエイジド",
    "abv": 47.0,
    "country": "アイスランド",
    "country_main": "アイスランド",
@@ -6270,7 +6270,7 @@
   },
   {
    "name": "VON HALLERS GIN",
-   "kana": "フォンハラーズ/ボンハラーズ",
+   "kana": "フォンハラーズ",
    "abv": 44.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -6279,7 +6279,7 @@
   },
   {
    "name": "Forthave Blue Gin Review",
-   "kana": "フォーセイヴ",
+   "kana": "フォーセイヴ ブルー",
    "abv": 43.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -6288,7 +6288,7 @@
   },
   {
    "name": "FOUR PILLARS BLOODY SHIRAZ GIN",
-   "kana": "フォーピラーズ",
+   "kana": "フォーピラーズ ブラッディシラーズ",
    "abv": 37.8,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -6297,7 +6297,7 @@
   },
   {
    "name": "FOUR PILLARS Chakging Seasons Gin",
-   "kana": "フォーピラーズ",
+   "kana": "フォーピラーズ チェンジングシーズンズ",
    "abv": 43.8,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -6306,7 +6306,7 @@
   },
   {
    "name": "FOUR PILLARS Christmas Gin",
-   "kana": "フォーピラーズ",
+   "kana": "フォーピラーズ クリスマス",
    "abv": 43.8,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -6315,7 +6315,7 @@
   },
   {
    "name": "FOUR PILLARS Navy Strength Gin",
-   "kana": "フォーピラーズ",
+   "kana": "フォーピラーズ ネイビーストレングス",
    "abv": 58.8,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -6324,7 +6324,7 @@
   },
   {
    "name": "FOUR PILLARS Olive Leaf",
-   "kana": "フォーピラーズ",
+   "kana": "フォーピラーズ オリーブリーフ",
    "abv": 42.8,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -6333,7 +6333,7 @@
   },
   {
    "name": "FOUR PILLARS Rare Dry Gin",
-   "kana": "フォーピラーズ",
+   "kana": "フォーピラーズ レア",
    "abv": 41.8,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -6342,7 +6342,7 @@
   },
   {
    "name": "FOUR PILLARS Spiced Negroni Gin",
-   "kana": "フォーピラーズ",
+   "kana": "フォーピラーズ スパイスドネグローニ",
    "abv": 43.8,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -6351,7 +6351,7 @@
   },
   {
    "name": "深川ツブロ 朴葉（ほおば）Batch 2",
-   "kana": "フカガワ",
+   "kana": "フカガワツブロ ホオバ バッチ2",
    "abv": 45.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -6360,7 +6360,7 @@
   },
   {
    "name": "深川ツブロ 苺",
-   "kana": "フカガワ",
+   "kana": "フカガワツブロ イチゴ",
    "abv": 45.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -6369,7 +6369,7 @@
   },
   {
    "name": "深川ツブロ ARTPARA HUKAGWA Chamomile",
-   "kana": "フカガワ/アートパラ",
+   "kana": "フカガワツブロ アートパラ カモミール",
    "abv": 47.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -6378,7 +6378,7 @@
   },
   {
    "name": "深川ツブロ 蜃気楼乃龍",
-   "kana": "フカガワ/シンキロウノウサギ",
+   "kana": "フカガワツブロ シンキロウノリュウ",
    "abv": 45.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -6387,7 +6387,7 @@
   },
   {
    "name": "深川ツブロ クラフトジン FUEKI",
-   "kana": "フカガワ/フエキ",
+   "kana": "フカガワツブロ フエキ",
    "abv": 47.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -6396,7 +6396,7 @@
   },
   {
    "name": "自由×自然×ワクワク ”Freeee!!!\"",
-   "kana": "フリー",
+   "kana": "ジユウ シゼン ワクワク フリー",
    "abv": 47.0,
    "country": "日本（福岡）",
    "country_main": "日本",
@@ -6414,7 +6414,7 @@
   },
   {
    "name": "Blackwoods vintage dry gin",
-   "kana": "ブラックウッズ",
+   "kana": "ブラックウッズ ヴィンテージ",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6423,7 +6423,7 @@
   },
   {
    "name": "ORGANIC BLACK CHAI GIN",
-   "kana": "ブラックチャイ",
+   "kana": "オーガニック ブラックチャイ",
    "abv": 43.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6450,7 +6450,7 @@
   },
   {
    "name": "blanc ブラン 金沢クラフトジン",
-   "kana": "ブラン",
+   "kana": "ブラン 金沢",
    "abv": 40.0,
    "country": "日本（石川：金沢）",
    "country_main": "日本",
@@ -6486,7 +6486,7 @@
   },
   {
    "name": "Burdon HIERBABUENA GIN",
-   "kana": "ブルドン",
+   "kana": "ブルドン イエルバブエナ",
    "abv": 37.5,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -6495,7 +6495,7 @@
   },
   {
    "name": "Burdon HIERBABUENA GIN CEREZAS",
-   "kana": "ブルドン",
+   "kana": "ブルドン イエルバブエナ セレサス",
    "abv": 37.5,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -6531,7 +6531,7 @@
   },
   {
    "name": "BLOOMSBURY LEMON",
-   "kana": "ブルームスバリー",
+   "kana": "ブルームスバリー レモン",
    "abv": 45.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -6540,7 +6540,7 @@
   },
   {
    "name": "BLOOMSBURY ORANGE",
-   "kana": "ブルームスバリー",
+   "kana": "ブルームスバリー オレンジ",
    "abv": 45.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -6558,7 +6558,7 @@
   },
   {
    "name": "BLUE RABBIT PREMIUM GIN",
-   "kana": "ブルーラビット",
+   "kana": "ブルーラビット プレミアム",
    "abv": 43.0,
    "country": "日本（東京：田園調布）",
    "country_main": "日本",
@@ -6567,7 +6567,7 @@
   },
   {
    "name": "No.1 ORIGINAL BLUE GIN",
-   "kana": "ブルーロンドン",
+   "kana": "No.1 オリジナルブルー",
    "abv": 47.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -6585,7 +6585,7 @@
   },
   {
    "name": "Gin Brecon Special Reserve",
-   "kana": "ブレコン",
+   "kana": "ブレコン スペシャルリザーブ",
    "abv": 40.0,
    "country": "イギリス（ウェールズ）",
    "country_main": "イギリス",
@@ -6594,7 +6594,7 @@
   },
   {
    "name": "FEW BREAKFAST GIN",
-   "kana": "ブレックファースト",
+   "kana": "フュー ブレックファースト",
    "abv": 42.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -6603,7 +6603,7 @@
   },
   {
    "name": "BROCKMANS PREMIUM GIN",
-   "kana": "ブロックマンズ",
+   "kana": "ブロックマンズ プレミアム",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6612,7 +6612,7 @@
   },
   {
    "name": "BRONCO 20 YOKOHAMA DRY GIN",
-   "kana": "ブロンコ",
+   "kana": "ブロンコ 20 ヨコハマ",
    "abv": 47.0,
    "country": "日本（神奈川：横浜）",
    "country_main": "日本",
@@ -6639,7 +6639,7 @@
   },
   {
    "name": "BROKEN BONES LJUBLJANA DRAGON GIN",
-   "kana": "ブローケンボーン/ブロークンボーン",
+   "kana": "ブロークンボーンズ リュブリャナ ドラゴン",
    "abv": 45.0,
    "country": "スロベニア",
    "country_main": "スロベニア",
@@ -6648,7 +6648,7 @@
   },
   {
    "name": "BROKEN BONES LONDON DRY GIN",
-   "kana": "ブローケンボーン/ブロークンボーン",
+   "kana": "ブロークンボーンズ",
    "abv": 45.0,
    "country": "スロベニア",
    "country_main": "スロベニア",
@@ -6657,7 +6657,7 @@
   },
   {
    "name": "BROKEN BONES NAVY STRENGTH GIN",
-   "kana": "ブローケンボーン/ブロークンボーン",
+   "kana": "ブロークンボーンズ ネイビーストレングス",
    "abv": 57.0,
    "country": "スロベニア",
    "country_main": "スロベニア",
@@ -6666,7 +6666,7 @@
   },
   {
    "name": "BUSS N°509 PREMIUM GIN MASTER CUT",
-   "kana": "ブース",
+   "kana": "ブース No.509 マスターカット",
    "abv": 45.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -6675,7 +6675,7 @@
   },
   {
    "name": "BUSS N°509 White Rain",
-   "kana": "ブース",
+   "kana": "ブース No.509 ホワイトレイン",
    "abv": 50.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -6693,7 +6693,7 @@
   },
   {
    "name": "BOODLES British London Dry Gin Old Bottle",
-   "kana": "ブードルズ",
+   "kana": "ブードルズ オールドボトル",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6702,7 +6702,7 @@
   },
   {
    "name": "POOR TOMS SYDNEY DRY GIN",
-   "kana": "プアートムズ",
+   "kana": "プアートムズ シドニー",
    "abv": 41.3,
    "country": "オーストリア",
    "country_main": "オーストリア",
@@ -6711,7 +6711,7 @@
   },
   {
    "name": "Puerto de Indias - Sevillian Gin Premium Strawberry",
-   "kana": "プエルトデインディアス",
+   "kana": "プエルトデインディアス プレミアム ストロベリー",
    "abv": 37.5,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -6720,7 +6720,7 @@
   },
   {
    "name": "Puerto De Irdias SEVILLIAN GIN PREMIUM",
-   "kana": "プエルトデインディアス",
+   "kana": "プエルトデインディアス プレミアム",
    "abv": 40.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -6729,7 +6729,7 @@
   },
   {
    "name": "Puerto De Irdias SEVILLIAN GIN PREMIUM CLASSIC",
-   "kana": "プエルトデインディアス",
+   "kana": "プエルトデインディアス プレミアム クラシック",
    "abv": 40.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -6747,7 +6747,7 @@
   },
   {
    "name": "PLOW 004 Chamomile Gin 2024",
-   "kana": "プラウ カモミール",
+   "kana": "プラウ 004 カモミール 2024",
    "abv": 40.0,
    "country": "日本（山梨）",
    "country_main": "日本",
@@ -6756,7 +6756,7 @@
   },
   {
    "name": "PLOW 005 Sauna Gin",
-   "kana": "プラウ サウナ",
+   "kana": "プラウ 005 サウナ",
    "abv": 40.0,
    "country": "日本（山梨）",
    "country_main": "日本",
@@ -6765,7 +6765,7 @@
   },
   {
    "name": "PLATINVM London Dry Gin GOLD 24K",
-   "kana": "プラチナム",
+   "kana": "プラチナム ゴールド 24K",
    "abv": 43.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -6801,7 +6801,7 @@
   },
   {
    "name": "PROFESSORE Crocodile Gin",
-   "kana": "プロフェッサー",
+   "kana": "プロフェッサー クロコダイル",
    "abv": 45.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -6810,7 +6810,7 @@
   },
   {
    "name": "PROFESSORE Madam Gin",
-   "kana": "プロフェッサー",
+   "kana": "プロフェッサー マダム",
    "abv": 42.9,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -6819,7 +6819,7 @@
   },
   {
    "name": "PROFESSORE Monsieur Gin",
-   "kana": "プロフェッサー",
+   "kana": "プロフェッサー ムッシュ",
    "abv": 43.7,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -6828,7 +6828,7 @@
   },
   {
    "name": "Height of Arrows GIN",
-   "kana": "ヘイトオブアローズ",
+   "kana": "ハイトオブアローズ",
    "abv": 43.0,
    "country": "イギリス（スコットランド：エディンバラ）",
    "country_main": "イギリス",
@@ -6837,7 +6837,7 @@
   },
   {
    "name": "HEIMAT GIN",
-   "kana": "ヘイマット",
+   "kana": "ハイマット",
    "abv": 43.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -6855,7 +6855,7 @@
   },
   {
    "name": "HAYMAN'S FAMILY RESERVE GIN",
-   "kana": "ヘイマンズ",
+   "kana": "ヘイマンズ ファミリーリザーブ",
    "abv": 41.3,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6864,7 +6864,7 @@
   },
   {
    "name": "HAYMAN'S Old Tom",
-   "kana": "ヘイマンズ",
+   "kana": "ヘイマンズ オールドトム",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6873,7 +6873,7 @@
   },
   {
    "name": "RON DE JEREMY HEDGEHOG GIN",
-   "kana": "ヘッジホック",
+   "kana": "ロンデジェレミー ヘッジホッグ",
    "abv": 43.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -6882,7 +6882,7 @@
   },
   {
    "name": "FLAME of PASSION",
-   "kana": "ヘッジホック/フレイムオブパッション",
+   "kana": "フレイム オブ パッション",
    "abv": 43.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -6891,7 +6891,7 @@
   },
   {
    "name": "RON DE JEREMY HEDGEHOG GIN",
-   "kana": "ヘッジホッグ",
+   "kana": "ロンデジェレミー ヘッジホッグ",
    "abv": 43.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -6900,7 +6900,7 @@
   },
   {
    "name": "HENNERS GIN",
-   "kana": "ヘネス",
+   "kana": "ヘナーズ",
    "abv": 45.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -6918,7 +6918,7 @@
   },
   {
    "name": "HELSINKI SAILOR'S GIN",
-   "kana": "ヘルシンキ",
+   "kana": "ヘルシンキ セーラーズ",
    "abv": 57.2,
    "country": "フィンランド",
    "country_main": "フィンランド",
@@ -6927,7 +6927,7 @@
   },
   {
    "name": "MUTEMAN GIN",
-   "kana": "ヘルシンキ/ミュートマン",
+   "kana": "ミュートマン",
    "abv": 40.0,
    "country": "フィンランド",
    "country_main": "フィンランド",
@@ -6945,7 +6945,7 @@
   },
   {
    "name": "HERNO Islay Cask Gin",
-   "kana": "ヘルノ",
+   "kana": "ヘルノ アイラカスク",
    "abv": 45.0,
    "country": "スウェーデン",
    "country_main": "スウェーデン",
@@ -6954,7 +6954,7 @@
   },
   {
    "name": "HERNO Juniper Cask",
-   "kana": "ヘルノ",
+   "kana": "ヘルノ ジュニパーカスク",
    "abv": 47.0,
    "country": "スウェーデン",
    "country_main": "スウェーデン",
@@ -6963,7 +6963,7 @@
   },
   {
    "name": "HERNO Navy Strengts Gin",
-   "kana": "ヘルノ",
+   "kana": "ヘルノ ネイビーストレングス",
    "abv": 57.0,
    "country": "スウェーデン",
    "country_main": "スウェーデン",
@@ -6972,7 +6972,7 @@
   },
   {
    "name": "HERNO Old Tom Gin",
-   "kana": "ヘルノ",
+   "kana": "ヘルノ オールドトム",
    "abv": 43.0,
    "country": "スウェーデン",
    "country_main": "スウェーデン",
@@ -6981,7 +6981,7 @@
   },
   {
    "name": "HERNO Pink BTL Gin",
-   "kana": "ヘルノ",
+   "kana": "ヘルノ ピンクボトル",
    "abv": 42.0,
    "country": "スウェーデン",
    "country_main": "スウェーデン",
@@ -6990,7 +6990,7 @@
   },
   {
    "name": "Hendrick's Oasium Gin",
-   "kana": "ヘンドリックス",
+   "kana": "ヘンドリックス オアシウム",
    "abv": 43.4,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -6999,7 +6999,7 @@
   },
   {
    "name": "HENDRICK'S Amazonia",
-   "kana": "ヘンドリックス",
+   "kana": "ヘンドリックス アマゾニア",
    "abv": 43.4,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -7017,7 +7017,7 @@
   },
   {
    "name": "Hendrick's Grand Cabaret Gin",
-   "kana": "ヘンドリックス",
+   "kana": "ヘンドリックス グランカバレ",
    "abv": 43.4,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -7026,7 +7026,7 @@
   },
   {
    "name": "HENDRICK'S Lunar",
-   "kana": "ヘンドリックス",
+   "kana": "ヘンドリックス ルナー",
    "abv": 43.4,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -7035,7 +7035,7 @@
   },
   {
    "name": "HENDRICK'S Midsummer",
-   "kana": "ヘンドリックス",
+   "kana": "ヘンドリックス ミッドサマー",
    "abv": 43.4,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -7044,7 +7044,7 @@
   },
   {
    "name": "HENDRICK'S NEPTUNIA",
-   "kana": "ヘンドリックス",
+   "kana": "ヘンドリックス ネプチュニア",
    "abv": 43.4,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -7053,7 +7053,7 @@
   },
   {
    "name": "HENDRICK'S Orbium",
-   "kana": "ヘンドリックス",
+   "kana": "ヘンドリックス オービウム",
    "abv": 43.4,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -7062,7 +7062,7 @@
   },
   {
    "name": "Hendrick's Sunspell Gin",
-   "kana": "ヘンドリックス",
+   "kana": "ヘンドリックス サンスペル",
    "abv": 43.4,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -7089,7 +7089,7 @@
   },
   {
    "name": "BEAR'S BOOK MAGIC GIN",
-   "kana": "ベアーズブック",
+   "kana": "ベアーズブック マジック",
    "abv": 45.0,
    "country": "日本（熊本）",
    "country_main": "日本",
@@ -7098,7 +7098,7 @@
   },
   {
    "name": "BENIZAKURA 9148 No.0104",
-   "kana": "ベニザクラ",
+   "kana": "ベニザクラ 9148 No.0104",
    "abv": 45.0,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -7107,7 +7107,7 @@
   },
   {
    "name": "BENIZAKURA 9148 No.0825",
-   "kana": "ベニザクラ",
+   "kana": "ベニザクラ 9148 No.0825",
    "abv": 45.0,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -7116,7 +7116,7 @@
   },
   {
    "name": "BENIZAKURA 9148 No.1006",
-   "kana": "ベニザクラ",
+   "kana": "ベニザクラ 9148 No.1006",
    "abv": 56.0,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -7125,7 +7125,7 @@
   },
   {
    "name": "BENIZAKURA 9148 No.1007",
-   "kana": "ベニザクラ",
+   "kana": "ベニザクラ 9148 No.1007",
    "abv": 53.0,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -7134,7 +7134,7 @@
   },
   {
    "name": "BENIZAKURA 9148 No.1308",
-   "kana": "ベニザクラ",
+   "kana": "ベニザクラ 9148 No.1308",
    "abv": 45.0,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -7143,7 +7143,7 @@
   },
   {
    "name": "BENIZAKURA 9148 No.1995",
-   "kana": "ベニザクラ",
+   "kana": "ベニザクラ 9148 No.1995",
    "abv": 45.0,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -7152,7 +7152,7 @@
   },
   {
    "name": "BENIZAKURA 9148 No.3891",
-   "kana": "ベニザクラ",
+   "kana": "ベニザクラ 9148 No.3891",
    "abv": 45.0,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -7161,7 +7161,7 @@
   },
   {
    "name": "BENIZAKURA DISTILLERY ＃0000",
-   "kana": "ベニザクラ",
+   "kana": "ベニザクラ No.0000",
    "abv": 46.0,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -7170,7 +7170,7 @@
   },
   {
    "name": "紅櫻蒸溜所 9148 1012",
-   "kana": "ベニザクラ",
+   "kana": "ベニザクラ 9148 1012",
    "abv": 45.0,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -7188,7 +7188,7 @@
   },
   {
    "name": "BERRY BROS & RUDD",
-   "kana": "ベリーブラザース",
+   "kana": "ベリーブラザーズ&ラッド",
    "abv": 40.6,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -7197,7 +7197,7 @@
   },
   {
    "name": "BERRY BROS & RUDD PINK GRAPEFRUIT & ROSEMARY",
-   "kana": "ベリーブラザース",
+   "kana": "ベリーブラザーズ&ラッド ピンクグレープフルーツ&ローズマリー",
    "abv": 40.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -7206,7 +7206,7 @@
   },
   {
    "name": "BERRY BROS & RUDD ORANGE & THYME",
-   "kana": "ベリーブラザーズ",
+   "kana": "ベリーブラザーズ&ラッド オレンジ&タイム",
    "abv": 40.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -7233,7 +7233,7 @@
   },
   {
    "name": "PATIENT WOLF MELBOURNE DRY GIN",
-   "kana": "ペイシェントウルフ",
+   "kana": "ペイシェントウルフ メルボルン",
    "abv": 41.5,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -7251,7 +7251,7 @@
   },
   {
    "name": "火の帆 BOUQUET",
-   "kana": "ホノホ",
+   "kana": "ホノホ ブーケ",
    "abv": 45.0,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -7260,7 +7260,7 @@
   },
   {
    "name": "火の帆 KIBOU",
-   "kana": "ホノホ",
+   "kana": "ホノホ キボウ",
    "abv": 45.0,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -7269,7 +7269,7 @@
   },
   {
    "name": "火の帆 KIBOU BLUE",
-   "kana": "ホノホ",
+   "kana": "ホノホ キボウ ブルー",
    "abv": 45.0,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -7278,7 +7278,7 @@
   },
   {
    "name": "火の帆 UMI",
-   "kana": "ホノホ",
+   "kana": "ホノホ ウミ",
    "abv": 45.0,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -7287,7 +7287,7 @@
   },
   {
    "name": "火の帆 Wento 2022",
-   "kana": "ホノホ",
+   "kana": "ホノホ ウェント 2022",
    "abv": null,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -7296,7 +7296,7 @@
   },
   {
    "name": "GinYa!",
-   "kana": "ホノホ/ジーニャ",
+   "kana": "ジンヤ",
    "abv": 45.0,
    "country": "日本（北海道）",
    "country_main": "日本",
@@ -7305,7 +7305,7 @@
   },
   {
    "name": "No 8 Distillery HOROPITO Gin",
-   "kana": "ホロピト",
+   "kana": "ナンバー8 ホロピト",
    "abv": 42.0,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -7323,7 +7323,7 @@
   },
   {
    "name": "HOLON GIN AME",
-   "kana": "ホロン",
+   "kana": "ホロン アメ",
    "abv": 40.0,
    "country": "日本（東京）",
    "country_main": "日本",
@@ -7332,7 +7332,7 @@
   },
   {
    "name": "HOOGHOUDT RIJKE JENEVER No.45",
-   "kana": "ホーフハウトレイカ",
+   "kana": "ホーフハウト レイカ イェネーフェル No.45",
    "abv": 35.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -7341,7 +7341,7 @@
   },
   {
    "name": "SILVIO CARTA BOIGIN",
-   "kana": "ボイジン",
+   "kana": "シルヴィオ・カルタ ボイジン",
    "abv": 40.0,
    "country": "イタリア（サルディニア島）",
    "country_main": "イタリア",
@@ -7350,7 +7350,7 @@
   },
   {
    "name": "BOGART’S REAL ENGLISH GIN",
-   "kana": "ボガーツ",
+   "kana": "ボガーツ リアルイングリッシュ",
    "abv": 45.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -7368,7 +7368,7 @@
   },
   {
    "name": "BOSQUE ALTA MONTANA",
-   "kana": "ボスケ",
+   "kana": "ボスケ アルタモンターニャ",
    "abv": 53.0,
    "country": "アルゼンチン",
    "country_main": "アルゼンチン",
@@ -7377,7 +7377,7 @@
   },
   {
    "name": "BOSQUE NATIVO GIN",
-   "kana": "ボスケ",
+   "kana": "ボスケ ナティーボ",
    "abv": 42.0,
    "country": "アルゼンチン",
    "country_main": "アルゼンチン",
@@ -7386,7 +7386,7 @@
   },
   {
    "name": "THE BOTANICAL'S PREMIUM LONDON DRY GIN",
-   "kana": "ボタニカルズ",
+   "kana": "ボタニカルズ プレミアム",
    "abv": 42.5,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -7404,7 +7404,7 @@
   },
   {
    "name": "THE BOTANIST GASTRONOMY EDITION",
-   "kana": "ボタニスト",
+   "kana": "ボタニスト ガストロノミー エディション",
    "abv": 60.0,
    "country": "イギリス（アイラ島）",
    "country_main": "イギリス",
@@ -7413,7 +7413,7 @@
   },
   {
    "name": "BOTTEGA BACUR DISTILLED DRY GIN",
-   "kana": "ボッテガバクール",
+   "kana": "ボッテガ バクール",
    "abv": 40.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -7422,7 +7422,7 @@
   },
   {
    "name": "BOBBY’S GIN PINANG RACI SPICE BLEND NO.1",
-   "kana": "ボビーズ",
+   "kana": "ボビーズ ピナンラチ スパイスブレンド No.1",
    "abv": 42.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -7431,7 +7431,7 @@
   },
   {
    "name": "BOBBY’S SCHIEDAM DRY GIN",
-   "kana": "ボビーズ",
+   "kana": "ボビーズ スキーダム",
    "abv": 42.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -7440,7 +7440,7 @@
   },
   {
    "name": "BOBBY’S SCHIEDAM Jenever",
-   "kana": "ボビーズ",
+   "kana": "ボビーズ スキーダム ジュネヴァ",
    "abv": 38.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -7449,7 +7449,7 @@
   },
   {
    "name": "BOBBYS 5YRS EDITION",
-   "kana": "ボビーズ",
+   "kana": "ボビーズ 5年エディション",
    "abv": 42.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -7458,7 +7458,7 @@
   },
   {
    "name": "DE BORGEN BEFORE GIN JENEVER",
-   "kana": "ボルゲン",
+   "kana": "ボルゲン ビフォア イェネーフェル",
    "abv": 38.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -7467,7 +7467,7 @@
   },
   {
    "name": "DE BORGEN DUTCH CORNWYN",
-   "kana": "ボルゲン",
+   "kana": "ボルゲン コルンワイン",
    "abv": 38.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -7476,7 +7476,7 @@
   },
   {
    "name": "DE BORGEN HOLLAND GIN",
-   "kana": "ボルゲン",
+   "kana": "ボルゲン ホランド",
    "abv": 40.8,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -7485,7 +7485,7 @@
   },
   {
    "name": "BOLS GENEVER Original",
-   "kana": "ボルス ジュネヴァ",
+   "kana": "ボルス ジュネヴァ オリジナル",
    "abv": 42.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -7494,7 +7494,7 @@
   },
   {
    "name": "BOMBAY SAPPHIRE East",
-   "kana": "ボンベイサファイア",
+   "kana": "ボンベイサファイア イースト",
    "abv": 42.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -7503,7 +7503,7 @@
   },
   {
    "name": "BOMBAY SAPPHIRE English Estate",
-   "kana": "ボンベイサファイア",
+   "kana": "ボンベイサファイア イングリッシュエステート",
    "abv": 41.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -7512,7 +7512,7 @@
   },
   {
    "name": "BOMBAY SAPPHIRE PREMIER MURCIAN LEMON",
-   "kana": "ボンベイサファイア",
+   "kana": "ボンベイサファイア プルミエ ムルシアレモン",
    "abv": 47.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -7521,7 +7521,7 @@
   },
   {
    "name": "BOMBAY SAPPHIRE Sunset",
-   "kana": "ボンベイサファイア",
+   "kana": "ボンベイサファイア サンセット",
    "abv": 43.0,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -7530,7 +7530,7 @@
   },
   {
    "name": "STAR OF BOMBAY",
-   "kana": "ボンベイサファイア/スターオブボンベイ",
+   "kana": "スター オブ ボンベイ",
    "abv": 47.5,
    "country": "イギリス（ロンドン）",
    "country_main": "イギリス",
@@ -7539,7 +7539,7 @@
   },
   {
    "name": "BOE SUPERIOR GIN",
-   "kana": "ボーエ",
+   "kana": "ボーエ スーペリア",
    "abv": 47.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -7548,7 +7548,7 @@
   },
   {
    "name": "Boord's Old Tom London Gin",
-   "kana": "ボーズ",
+   "kana": "ボーズ オールドトム",
    "abv": 47.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -7557,7 +7557,7 @@
   },
   {
    "name": "虎ノ門蒸留所 BORDERLESS GIN",
-   "kana": "ボーダーレスジン",
+   "kana": "トラノモン ボーダーレス",
    "abv": 47.0,
    "country": "日本",
    "country_main": "日本",
@@ -7584,7 +7584,7 @@
   },
   {
    "name": "PORTERS ORCHARD GIN",
-   "kana": "ポーターズ",
+   "kana": "ポーターズ オーチャード",
    "abv": 40.0,
    "country": "イギリス（スコットランド：アバディーン）",
    "country_main": "イギリス",
@@ -7593,7 +7593,7 @@
   },
   {
    "name": "PORTERS TROPICAL OLDTOM GIN",
-   "kana": "ポーターズ",
+   "kana": "ポーターズ トロピカル オールドトム",
    "abv": 40.0,
    "country": "イギリス（スコットランド：アバディーン）",
    "country_main": "イギリス",
@@ -7602,7 +7602,7 @@
   },
   {
    "name": "Port of Dragons 100% Pure",
-   "kana": "ポートオブドラゴンズ",
+   "kana": "ポートオブドラゴンズ 100% ピュア",
    "abv": 44.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -7629,7 +7629,7 @@
   },
   {
    "name": "MAWSIM GIN SPICES & HERBS",
-   "kana": "マウシム",
+   "kana": "マウシム スパイス＆ハーブ",
    "abv": 43.0,
    "country": "カンボジア",
    "country_main": "カンボジア",
@@ -7638,7 +7638,7 @@
   },
   {
    "name": "MAWSIM GIN TROPICAL CITRUS",
-   "kana": "マウシム",
+   "kana": "マウシム トロピカルシトラス",
    "abv": 43.0,
    "country": "カンボジア",
    "country_main": "カンボジア",
@@ -7647,7 +7647,7 @@
   },
   {
    "name": "MACARONESIAN WHITE GIN",
-   "kana": "マカロネシアン",
+   "kana": "マカロネシアン ホワイト",
    "abv": 40.0,
    "country": "スペイン（カナリア諸島：テネリフェ）",
    "country_main": "スペイン",
@@ -7656,7 +7656,7 @@
   },
   {
    "name": "MCHENRY CLASSIC DRY GIN",
-   "kana": "マクヘンリー",
+   "kana": "マクヘンリー クラシック",
    "abv": 40.0,
    "country": "オーストラリア（タスマニア）",
    "country_main": "オーストラリア",
@@ -7665,7 +7665,7 @@
   },
   {
    "name": "まさひろ オキナワジン Recipe02",
-   "kana": "マサヒロ",
+   "kana": "マサヒロ オキナワ レシピ02",
    "abv": 47.0,
    "country": "日本（沖縄）",
    "country_main": "日本",
@@ -7674,7 +7674,7 @@
   },
   {
    "name": "Gin Mascaro 9",
-   "kana": "マスカロナイン",
+   "kana": "マスカロ 9",
    "abv": 40.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -7701,7 +7701,7 @@
   },
   {
    "name": "Mcqueen And The Violet Fog Gin",
-   "kana": "マックイーン",
+   "kana": "マックイーン アンドザヴァイオレットフォグ",
    "abv": 40.0,
    "country": "ブラジル",
    "country_main": "ブラジル",
@@ -7710,7 +7710,7 @@
   },
   {
    "name": "MUFF IRISH POTATO GIN",
-   "kana": "マフ",
+   "kana": "マフ ポテト",
    "abv": 40.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -7728,7 +7728,7 @@
   },
   {
    "name": "POLI ITALIAN GIN MARCONI 42",
-   "kana": "マルコーニ",
+   "kana": "ポーリ マルコーニ 42",
    "abv": 42.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -7737,7 +7737,7 @@
   },
   {
    "name": "POLI ITALIAN GIN MARCONI 44",
-   "kana": "マルコーニ",
+   "kana": "ポーリ マルコーニ 44",
    "abv": 44.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -7746,7 +7746,7 @@
   },
   {
    "name": "POLI ITALIAN GIN MARCONI 46",
-   "kana": "マルコーニ",
+   "kana": "ポーリ マルコーニ 46",
    "abv": 46.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -7755,7 +7755,7 @@
   },
   {
    "name": "MALFY GIN Con Arancia",
-   "kana": "マルフィー",
+   "kana": "マルフィ コン アランチャ",
    "abv": 41.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -7764,7 +7764,7 @@
   },
   {
    "name": "MALFY GIN Con Limone",
-   "kana": "マルフィー",
+   "kana": "マルフィ コン リモーネ",
    "abv": 41.0,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -7773,7 +7773,7 @@
   },
   {
    "name": "MAREDSOUS VALEO BOTANICAL DRY GIN",
-   "kana": "マレッツ",
+   "kana": "マレッツ ヴァレオ ボタニカル",
    "abv": 40.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -7791,7 +7791,7 @@
   },
   {
    "name": "MALEFICIO HONEY GIN",
-   "kana": "マレフィシオ",
+   "kana": "マレフィシオ ハニー",
    "abv": 40.0,
    "country": "アルゼンチン",
    "country_main": "アルゼンチン",
@@ -7800,7 +7800,7 @@
   },
   {
    "name": "MALEFICIO PINK GIN",
-   "kana": "マレフィシオ",
+   "kana": "マレフィシオ ピンク",
    "abv": 40.0,
    "country": "アルゼンチン",
    "country_main": "アルゼンチン",
@@ -7809,7 +7809,7 @@
   },
   {
    "name": "MALEFICIO SUNSET ORANGE GIN",
-   "kana": "マレフィシオ",
+   "kana": "マレフィシオ サンセットオレンジ",
    "abv": 40.0,
    "country": "アルゼンチン",
    "country_main": "アルゼンチン",
@@ -7818,7 +7818,7 @@
   },
   {
    "name": "MANGUIN ORI' GIN L'OLIVE GIN",
-   "kana": "マンギャン オリー",
+   "kana": "マンギャン オリ ロリーブ",
    "abv": 41.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -7827,7 +7827,7 @@
   },
   {
    "name": "MAKAR MULBERRY AGED GIN",
-   "kana": "マーカー",
+   "kana": "マカール マルベリーエイジド",
    "abv": 43.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -7836,7 +7836,7 @@
   },
   {
    "name": "MAKAR OAK AGED GIN",
-   "kana": "マーカー",
+   "kana": "マカール オークエイジド",
    "abv": 43.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -7845,7 +7845,7 @@
   },
   {
    "name": "MAKAR ORIGINAL DRY GIN",
-   "kana": "マーカー",
+   "kana": "マカール オリジナル",
    "abv": 43.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -7872,7 +7872,7 @@
   },
   {
    "name": "MARTIN MILLER’S GIN 9MOONS",
-   "kana": "マーティンミラーズ",
+   "kana": "マーティンミラーズ 9ムーンズ",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -7881,7 +7881,7 @@
   },
   {
    "name": "MIKKELLER Botanical GIN",
-   "kana": "ミッケラー",
+   "kana": "ミッケラー ボタニカル",
    "abv": 44.0,
    "country": "デンマーク",
    "country_main": "デンマーク",
@@ -7890,7 +7890,7 @@
   },
   {
    "name": "MIKKELLER Navy Botanical GIN",
-   "kana": "ミッケラー",
+   "kana": "ミッケラー ネイビー ボタニカル",
    "abv": 58.0,
    "country": "デンマーク",
    "country_main": "デンマーク",
@@ -7899,7 +7899,7 @@
   },
   {
    "name": "MIKKELLER Oloroso Cask Black",
-   "kana": "ミッケラー",
+   "kana": "ミッケラー オロロソ カスク ブラック",
    "abv": 43.0,
    "country": "デンマーク",
    "country_main": "デンマーク",
@@ -7908,7 +7908,7 @@
   },
   {
    "name": "MYAOI Gin Hanabi",
-   "kana": "ミャオイ",
+   "kana": "ミャオイ ハナビ",
    "abv": 43.0,
    "country": "日本（北海道：長沼町）",
    "country_main": "日本",
@@ -7917,7 +7917,7 @@
   },
   {
    "name": "MYAOI Gin Hatsukoi",
-   "kana": "ミャオイ",
+   "kana": "ミャオイ ハツコイ",
    "abv": 46.0,
    "country": "日本（北海道：長沼町）",
    "country_main": "日本",
@@ -7926,7 +7926,7 @@
   },
   {
    "name": "MYAOI Gin The First Encounter",
-   "kana": "ミャオイ",
+   "kana": "ミャオイ ザ ファースト エンカウンター",
    "abv": 46.0,
    "country": "日本（北海道：長沼町）",
    "country_main": "日本",
@@ -7935,7 +7935,7 @@
   },
   {
    "name": "MYAOI Gin VeryBerry",
-   "kana": "ミャオイ",
+   "kana": "ミャオイ ベリーベリー",
    "abv": 43.0,
    "country": "日本（北海道：長沼町）",
    "country_main": "日本",
@@ -7953,7 +7953,7 @@
   },
   {
    "name": "Mintis BLACKCURRANT Gin",
-   "kana": "ミンティス",
+   "kana": "ミンティス ブラックカラント",
    "abv": 41.8,
    "country": "イタリア",
    "country_main": "イタリア",
@@ -7971,7 +7971,7 @@
   },
   {
    "name": "ALIENOR MOON HARBOUR LONDON DRY GIN",
-   "kana": "ムーン",
+   "kana": "アリエノール ムーンハーバー",
    "abv": 45.8,
    "country": "フランス",
    "country_main": "フランス",
@@ -7989,7 +7989,7 @@
   },
   {
    "name": "MOON Cherry",
-   "kana": "ムーン",
+   "kana": "ムーン チェリー",
    "abv": 44.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -7998,7 +7998,7 @@
   },
   {
    "name": "MOON GIN Oriental YUZU",
-   "kana": "ムーン",
+   "kana": "ムーン オリエンタル ユズ",
    "abv": 44.0,
    "country": "ベルギー",
    "country_main": "ベルギー",
@@ -8007,7 +8007,7 @@
   },
   {
    "name": "MEY SELECTIONS GIN",
-   "kana": "メイ セレクション",
+   "kana": "メイ セレクションズ",
    "abv": 41.5,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8016,7 +8016,7 @@
   },
   {
    "name": "MAYFIELD SUSSEX HOP GIN",
-   "kana": "メイフィールド サセックス",
+   "kana": "メイフィールド サセックスホップ",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -8043,7 +8043,7 @@
   },
   {
    "name": "Jean-Paul Mette Spiritueux Baies de Genievre",
-   "kana": "メッテ",
+   "kana": "ジャン ポール メッテ ベ ド ジュニエーヴル",
    "abv": 45.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -8079,7 +8079,7 @@
   },
   {
    "name": "THE MELBOURNE GIN COMPANY DRY GIN",
-   "kana": "メルボルン",
+   "kana": "メルボルン ジンカンパニー",
    "abv": 42.0,
    "country": "オーストラリア",
    "country_main": "オーストラリア",
@@ -8088,7 +8088,7 @@
   },
   {
    "name": "LA DISTILLERIE DE MONACO GIN AUX AGRUMES",
-   "kana": "モナコ",
+   "kana": "モナコ オーザグリュム",
    "abv": 40.0,
    "country": "モナコ",
    "country_main": "モナコ",
@@ -8097,7 +8097,7 @@
   },
   {
    "name": "MONKEY 47 SCHWARZWALD DRY GIN",
-   "kana": "モンキー47",
+   "kana": "モンキー47 シュヴァルツヴァルト",
    "abv": 47.0,
    "country": "ドイツ",
    "country_main": "ドイツ",
@@ -8115,7 +8115,7 @@
   },
   {
    "name": "MOMBASA CLUB LONDON DRY GIN",
-   "kana": "モンバサ",
+   "kana": "モンバサ クラブ",
    "abv": 41.5,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -8124,7 +8124,7 @@
   },
   {
    "name": "MOHN Island POPY GIN",
-   "kana": "モーン",
+   "kana": "モーン アイランド ポピー",
    "abv": 45.0,
    "country": "エストニア",
    "country_main": "エストニア",
@@ -8133,7 +8133,7 @@
   },
   {
    "name": "THE HERBALIST YASO GIN Limited Edition 03 Not Equal",
-   "kana": "ヤソ",
+   "kana": "ハーバリスト 八蘇 リミテッドエディション 03 ノットイコール",
    "abv": 45.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -8142,7 +8142,7 @@
   },
   {
    "name": "YASO 103",
-   "kana": "ヤソ",
+   "kana": "ヤソ 103",
    "abv": 41.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -8151,7 +8151,7 @@
   },
   {
    "name": "YASO 104",
-   "kana": "ヤソ",
+   "kana": "ヤソ 104",
    "abv": 41.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -8160,7 +8160,7 @@
   },
   {
    "name": "YASO 150",
-   "kana": "ヤソ",
+   "kana": "ヤソ 150",
    "abv": 41.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -8169,7 +8169,7 @@
   },
   {
    "name": "YASO GIN 2020",
-   "kana": "ヤソ",
+   "kana": "ヤソ 2020",
    "abv": 50.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -8178,7 +8178,7 @@
   },
   {
    "name": "YASO GIN 2020 103",
-   "kana": "ヤソ",
+   "kana": "ヤソ 2020 103",
    "abv": 41.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -8187,7 +8187,7 @@
   },
   {
    "name": "YASO GIN 2022 150",
-   "kana": "ヤソ",
+   "kana": "ヤソ 2022 150",
    "abv": 41.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -8196,7 +8196,7 @@
   },
   {
    "name": "YASO GIN〜森の中にあるラベンダー畑〜",
-   "kana": "ヤソ",
+   "kana": "ヤソ 森の中にあるラベンダー畑",
    "abv": 0.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -8205,7 +8205,7 @@
   },
   {
    "name": "yumarrest Industrial GIN Danger",
-   "kana": "ヤマレスト",
+   "kana": "ヤマレスト インダストリアル デンジャー",
    "abv": 80.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -8214,7 +8214,7 @@
   },
   {
    "name": "YUMARREST INDUSTRIAL GIN ORDINARY",
-   "kana": "ヤマレスト",
+   "kana": "ヤマレスト インダストリアル オーディナリー",
    "abv": 45.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -8223,7 +8223,7 @@
   },
   {
    "name": "Yumarrest Ramune GIN",
-   "kana": "ヤマレスト",
+   "kana": "ヤマレスト ラムネ",
    "abv": 48.0,
    "country": "日本",
    "country_main": "日本",
@@ -8241,7 +8241,7 @@
   },
   {
    "name": "YU GIN",
-   "kana": "ユー ジン",
+   "kana": "ユー",
    "abv": 43.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -8250,7 +8250,7 @@
   },
   {
    "name": "Japanese Craft GIN 葉〈YOU〉",
-   "kana": "ヨウ",
+   "kana": "葉 ヨウ",
    "abv": 37.0,
    "country": "日本",
    "country_main": "日本",
@@ -8259,7 +8259,7 @@
   },
   {
    "name": "よきつきー令月ー",
-   "kana": "ヨキツキ",
+   "kana": "ヨキツキ レイゲツ",
    "abv": 40.0,
    "country": "日本（長崎）",
    "country_main": "日本",
@@ -8286,7 +8286,7 @@
   },
   {
    "name": "LANGTONS No.1 THE LAKELAND GIN",
-   "kana": "ラングトンズ ナンバー1",
+   "kana": "ラングトンズ ナンバー1 レイクランド",
    "abv": 40.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -8295,7 +8295,7 @@
   },
   {
    "name": "Liverpool Organic Gin",
-   "kana": "リバプール",
+   "kana": "リバプール オーガニック",
    "abv": 43.0,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -8304,7 +8304,7 @@
   },
   {
    "name": "京都ジン 輪廻",
-   "kana": "リンネ",
+   "kana": "キョウト リンネ",
    "abv": 40.0,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -8313,7 +8313,7 @@
   },
   {
    "name": "Reid+Reid Native Dry Gin",
-   "kana": "リードリード",
+   "kana": "リード リード ネイティブ",
    "abv": 42.0,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -8322,7 +8322,7 @@
   },
   {
    "name": "LUO PaloSanto Gin",
-   "kana": "ルオ/パロサント",
+   "kana": "ルオ パロサント",
    "abv": 40.0,
    "country": "日本（東京：渋谷）",
    "country_main": "日本",
@@ -8331,7 +8331,7 @@
   },
   {
    "name": "LUO 盆栽 GIN ‐Bonsai Gin‐",
-   "kana": "ルオ/ボンサイ",
+   "kana": "ルオ 盆栽",
    "abv": 40.0,
    "country": "日本（東京：渋谷）",
    "country_main": "日本",
@@ -8340,7 +8340,7 @@
   },
   {
    "name": "LE GIN CALVADOS CASK FINISH",
-   "kana": "ルジン",
+   "kana": "ルジン カルヴァドスカスクフィニッシュ",
    "abv": 42.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -8349,7 +8349,7 @@
   },
   {
    "name": "LE GIN CHRISTIAN DROUIN",
-   "kana": "ルジン",
+   "kana": "ルジン クリスチャンドルアン",
    "abv": 42.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -8358,7 +8358,7 @@
   },
   {
    "name": "LE GIN CHRISTIAN DROUIN CARMINA",
-   "kana": "ルジン",
+   "kana": "ルジン クリスチャンドルアン カルミナ",
    "abv": 42.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -8367,7 +8367,7 @@
   },
   {
    "name": "LE GIN CHRISTIAN DROUIN PIRA",
-   "kana": "ルジン",
+   "kana": "ルジン クリスチャンドルアン ピラ",
    "abv": 42.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -8376,7 +8376,7 @@
   },
   {
    "name": "RUTTE CELERY GIN",
-   "kana": "ルッテ",
+   "kana": "ルッテ セロリ",
    "abv": 43.0,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -8385,7 +8385,7 @@
   },
   {
    "name": "Roots Marlborough Dry Giｎ",
-   "kana": "ルーツ",
+   "kana": "ルーツ マールボロ",
    "abv": 45.0,
    "country": "ニュージーランド",
    "country_main": "ニュージーランド",
@@ -8394,7 +8394,7 @@
   },
   {
    "name": "LOOPUYT 1772 DRY GIN",
-   "kana": "ルーピー",
+   "kana": "ルーパイト 1772",
    "abv": 45.1,
    "country": "オランダ",
    "country_main": "オランダ",
@@ -8403,7 +8403,7 @@
   },
   {
    "name": "THE LAKES Classic Gin",
-   "kana": "レイクス",
+   "kana": "レイクス クラシック",
    "abv": 46.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -8412,7 +8412,7 @@
   },
   {
    "name": "THE LAKES GIN EEXPLORER",
-   "kana": "レイクス",
+   "kana": "レイクス エクスプローラー",
    "abv": 47.1,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -8421,7 +8421,7 @@
   },
   {
    "name": "THE LAKES GIN SINGLE BATCH LAKES DISTILLERY",
-   "kana": "レイクス",
+   "kana": "レイクス シングルバッチ",
    "abv": 47.3,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -8430,7 +8430,7 @@
   },
   {
    "name": "LAZY MASTER -Smoky Gold-",
-   "kana": "レイジーマスター",
+   "kana": "レイジーマスター スモーキーゴールド",
    "abv": 42.0,
    "country": "日本（静岡）",
    "country_main": "日本",
@@ -8439,7 +8439,7 @@
   },
   {
    "name": "LAZY MASTER ‐Shiny Lemongrass‐",
-   "kana": "レイジーマスター",
+   "kana": "レイジーマスター シャイニーレモングラス",
    "abv": 42.0,
    "country": "日本（静岡）",
    "country_main": "日本",
@@ -8448,7 +8448,7 @@
   },
   {
    "name": "LEOPOLD'S GIN",
-   "kana": "レオポルド",
+   "kana": "レオポルズ",
    "abv": 40.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -8466,7 +8466,7 @@
   },
   {
    "name": "LADY TRIỆU CONTEMPORARY VIETNAM GIN",
-   "kana": "レディトリエ",
+   "kana": "レディトリエウ コンテンポラリー",
    "abv": 43.0,
    "country": "ベトナム",
    "country_main": "ベトナム",
@@ -8475,7 +8475,7 @@
   },
   {
    "name": "LADY TRIỆU DALAT FLOWER BOM GIN",
-   "kana": "レディトリエ",
+   "kana": "レディトリエウ ダラットフラワーボム",
    "abv": 43.0,
    "country": "ベトナム",
    "country_main": "ベトナム",
@@ -8484,7 +8484,7 @@
   },
   {
    "name": "LADY TRIỆU HOI SPICE ROAD GIN",
-   "kana": "レディトリエ",
+   "kana": "レディトリエウ ホイスパイスロード",
    "abv": 43.0,
    "country": "ベトナム",
    "country_main": "ベトナム",
@@ -8493,7 +8493,7 @@
   },
   {
    "name": "LADY TRIỆU SAPA CITRUS TEA GIN",
-   "kana": "レディトリエ",
+   "kana": "レディトリエウ サパシトラスティー",
    "abv": 43.0,
    "country": "ベトナム",
    "country_main": "ベトナム",
@@ -8511,7 +8511,7 @@
   },
   {
    "name": "RETROGRADE GIN No.13",
-   "kana": "レトログレード",
+   "kana": "レトログレード No.13",
    "abv": 47.0,
    "country": "日本（北海道：鷹栖町）",
    "country_main": "日本",
@@ -8529,7 +8529,7 @@
   },
   {
    "name": "LEVEL GIN PREMIUM",
-   "kana": "レベル",
+   "kana": "レベル プレミアム",
    "abv": 44.0,
    "country": "スペイン",
    "country_main": "スペイン",
@@ -8547,7 +8547,7 @@
   },
   {
    "name": "ROYAL SEDANG 1888 SMALL BATCH GIN",
-   "kana": "ロイヤルセダン",
+   "kana": "ロイヤルセダン 1888 スモールバッチ",
    "abv": 42.2,
    "country": "フランス",
    "country_main": "フランス",
@@ -8556,7 +8556,7 @@
   },
   {
    "name": "ROKUMOJI Craft GIN 2022 Green Planet",
-   "kana": "ロクモジ",
+   "kana": "ロクモジ 2022 グリーンプラネット",
    "abv": 43.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -8565,7 +8565,7 @@
   },
   {
    "name": "ROKUMOJI Craft GIN 2022 Special Edition",
-   "kana": "ロクモジ",
+   "kana": "ロクモジ 2022 スペシャル",
    "abv": 43.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -8574,7 +8574,7 @@
   },
   {
    "name": "ROKUMOJI Craft GIN 2023 Botanical Trip",
-   "kana": "ロクモジ",
+   "kana": "ロクモジ 2023 ボタニカルトリップ",
    "abv": 43.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -8601,7 +8601,7 @@
   },
   {
    "name": "ROCK ROSE GIN Autumn Edition",
-   "kana": "ロックローズ",
+   "kana": "ロックローズ オータム",
    "abv": 41.5,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8610,7 +8610,7 @@
   },
   {
    "name": "ROCK ROSE GIN Spring Edition",
-   "kana": "ロックローズ",
+   "kana": "ロックローズ スプリング",
    "abv": 41.5,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8619,7 +8619,7 @@
   },
   {
    "name": "ROCK ROSE GIN Summer Edition",
-   "kana": "ロックローズ",
+   "kana": "ロックローズ サマー",
    "abv": 41.5,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8628,7 +8628,7 @@
   },
   {
    "name": "ROCK ROSE GIN Winter Edition",
-   "kana": "ロックローズ",
+   "kana": "ロックローズ ウィンター",
    "abv": 41.5,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8637,7 +8637,7 @@
   },
   {
    "name": "ROCK ROSE Reserve Shelly Cask Edition",
-   "kana": "ロックローズ",
+   "kana": "ロックローズ リザーブ シェリーカスク",
    "abv": 41.5,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8646,7 +8646,7 @@
   },
   {
    "name": "LOTTE Cacao Gin",
-   "kana": "ロッテ",
+   "kana": "ロッテ カカオ",
    "abv": 43.0,
    "country": "日本（新潟）",
    "country_main": "日本",
@@ -8664,7 +8664,7 @@
   },
   {
    "name": "Natural GIN Liqueur Rp.2",
-   "kana": "ロングゴッド",
+   "kana": "ナチュラル リキュール Rp.2",
    "abv": 26.0,
    "country": "日本（岐阜）",
    "country_main": "日本",
@@ -8682,7 +8682,7 @@
   },
   {
    "name": "Lord of Barbes Organic GIN",
-   "kana": "ロードオブバーベス",
+   "kana": "ロードオブバルベス オーガニック",
    "abv": 50.0,
    "country": "フランス",
    "country_main": "フランス",
@@ -8691,7 +8691,7 @@
   },
   {
    "name": "LONE WOLF Cactus & Lime Gin",
-   "kana": "ローンウルフ",
+   "kana": "ローンウルフ カクタス＆ライム",
    "abv": 40.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8700,7 +8700,7 @@
   },
   {
    "name": "LONE WOLF Cloudy & Lemon Gin",
-   "kana": "ローンウルフ",
+   "kana": "ローンウルフ クラウディ＆レモン",
    "abv": 40.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8718,7 +8718,7 @@
   },
   {
    "name": "LONE WOLF GIN Gunpowder Gin",
-   "kana": "ローンウルフ",
+   "kana": "ローンウルフ ガンパウダー",
    "abv": 57.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8727,7 +8727,7 @@
   },
   {
    "name": "LONE WOLF GIN Gunpowder Gin 旧ボトル",
-   "kana": "ローンウルフ",
+   "kana": "ローンウルフ ガンパウダー 旧ボトル",
    "abv": 57.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8736,7 +8736,7 @@
   },
   {
    "name": "LONE WOLF GIN 旧ボトル",
-   "kana": "ローンウルフ",
+   "kana": "ローンウルフ 旧ボトル",
    "abv": 44.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8745,7 +8745,7 @@
   },
   {
    "name": "LONE WOLF Peach & Passion Fruit Gin",
-   "kana": "ローンウルフ",
+   "kana": "ローンウルフ ピーチ＆パッションフルーツ",
    "abv": 40.0,
    "country": "イギリス（スコットランド）",
    "country_main": "イギリス",
@@ -8754,7 +8754,7 @@
   },
   {
    "name": "JAPANESE GIN \"WA BI GIN\" 旧ボトル",
-   "kana": "ワビジン",
+   "kana": "和美人 旧ボトル",
    "abv": 45.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -8763,7 +8763,7 @@
   },
   {
    "name": "Japanese GIN 和美人 The Forest",
-   "kana": "ワビジン",
+   "kana": "和美人 ザ フォレスト",
    "abv": 47.0,
    "country": "日本（鹿児島）",
    "country_main": "日本",
@@ -8781,7 +8781,7 @@
   },
   {
    "name": "STANDARD SPIRIT WORMWOOD GIN",
-   "kana": "ワームウッド",
+   "kana": "スタンダードスピリット ワームウッド",
    "abv": 45.0,
    "country": "アメリカ",
    "country_main": "アメリカ",
@@ -8799,7 +8799,7 @@
   },
   {
    "name": "WARLD GIN DAY GIN 2019 BATCH",
-   "kana": "ワールドジンデイ",
+   "kana": "ワールドジンデイ 2019 バッチ",
    "abv": 47.7,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -8808,7 +8808,7 @@
   },
   {
    "name": "Victorian Vat BESPOKE BATCH",
-   "kana": "ヴィクトリアン/ビクトリアン",
+   "kana": "ヴィクトリアン ヴァット ビスポークバッチ",
    "abv": 52.5,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -8817,7 +8817,7 @@
   },
   {
    "name": "Kingsbury Victorian Vat Gin BESPOKE BATCH No.159",
-   "kana": "ヴィクトリアンバット/ビクトリアンバット",
+   "kana": "キングスバリー ヴィクトリアンヴァット ビスポークバッチ No.159",
    "abv": 52.5,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -8826,7 +8826,7 @@
   },
   {
    "name": "Kingsbury Victorian Vat Gin Double Juniper",
-   "kana": "ヴィクトリアンバット/ビクトリアンバット",
+   "kana": "キングスバリー ヴィクトリアンヴァット ダブルジュニパー",
    "abv": 47.0,
    "country": "イギリス（イングランド）",
    "country_main": "イギリス",
@@ -8835,7 +8835,7 @@
   },
   {
    "name": "Kingsbury Victorian Vat Gin Single Cask",
-   "kana": "ヴィクトリアンバット/ビクトリアンバット",
+   "kana": "キングスバリー ヴィクトリアンヴァット シングルカスク",
    "abv": 59.3,
    "country": "イギリス",
    "country_main": "イギリス",
@@ -8844,7 +8844,7 @@
   },
   {
    "name": "VIDDA TORR GIN",
-   "kana": "ヴィッダトール / ビッダトール",
+   "kana": "ヴィッダトール",
    "abv": 43.0,
    "country": "ノルウェー",
    "country_main": "ノルウェー",
