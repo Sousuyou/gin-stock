@@ -192,7 +192,7 @@ select {
   color: var(--text);
 }
 
-.filters { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.filters { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 .toolbar-foot {
   display: flex; align-items: center; justify-content: space-between;
   gap: 10px; margin-top: 12px;

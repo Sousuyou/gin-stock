@@ -32,6 +32,60 @@
     return true;
   }
 
+  // ---- ボタニカルの絞り込み用：表記ゆれを代表名にまとめる ----
+  // 例：「ジュニパー」も「ジュニパーベリー」も同じ＝代表名「ジュニパー」に寄せる。
+  var BOT_SYN = {
+    "ジュニパー": ["ジュニパー", "ジュニパーベリー", "ねずの実", "ネズの実", "杜松"],
+    "コリアンダー": ["コリアンダー", "コリアンダーシード", "コエンドロ"],
+    "アンジェリカ": ["アンジェリカ", "アンジェリカルート", "アンジェリカシード", "セイヨウトウキ"],
+    "リコリス": ["リコリス", "リコリスルート", "甘草", "カンゾウ"],
+    "オリスルート": ["オリス", "オリスルート", "アイリスルート"],
+    "レモンピール": ["レモンピール", "レモン", "レモンの皮", "レモン果皮"],
+    "オレンジピール": ["オレンジピール", "オレンジ", "オレンジの皮", "ビターオレンジ", "スイートオレンジ", "ビターオレンジピール", "スイートオレンジピール", "ビターオレンジの皮"],
+    "カルダモン": ["カルダモン", "カルダモンシード", "グリーンカルダモン"],
+    "シナモン": ["シナモン", "シナモンバーク", "セイロンシナモン"],
+    "カッシア": ["カッシア", "カッシアバーク", "カシア", "カシアバーク", "桂皮"],
+    "アニス": ["アニス", "アニスシード"],
+    "ジンジャー": ["ジンジャー", "生姜", "しょうが", "ショウガ"],
+    "柚子": ["柚子", "ゆず", "ユズ", "木頭柚子"],
+    "山椒": ["山椒", "サンショウ", "さんしょう"],
+    "ナツメグ": ["ナツメグ", "ニクズク"],
+    "クローブ": ["クローブ", "丁子", "チョウジ"],
+    "フェンネル": ["フェンネル", "ウイキョウ"],
+    "エルダーフラワー": ["エルダーフラワー", "エルダー", "ニワトコ"],
+    "カモミール": ["カモミール", "カモマイル"],
+    "グレープフルーツ": ["グレープフルーツ", "グレープフルーツピール", "グレープフルーツの皮"],
+    "ライム": ["ライム", "ライムピール", "ライムの皮"],
+    "ローズマリー": ["ローズマリー", "マンネンロウ"],
+  };
+  // 逆引き（表記→代表名）を作る
+  var BOT_REV = {};
+  Object.keys(BOT_SYN).forEach(function (canon) {
+    BOT_SYN[canon].forEach(function (v) { BOT_REV[v] = canon; });
+  });
+  // プルダウンに出さないゴミ語
+  var BOT_JUNK = {
+    "不明": 1, "公式情報なし": 1, "非公開": 1, "情報なし": 1, "その他": 1,
+    "スパイス": 1, "ハーブ": 1, "各種": 1, "数種": 1, "複数": 1, "各種ボタニカル": 1,
+  };
+  var BOT_MIN = 15; // この件数以上のボタニカルだけプルダウンに出す
+
+  // ボタニカル文字列 → 代表名の配列（重複なし）
+  function botTokens(text) {
+    if (!text) return [];
+    var parts = String(text).split(/[、,／/・\n]+/);
+    var set = {}, out = [];
+    for (var i = 0; i < parts.length; i++) {
+      var p = parts[i].replace(/（[^）]*）/g, "").replace(/\([^)]*\)/g, "").trim();
+      p = p.replace(/(など|等|ほか|他)$/, "").trim();
+      if (!p) continue;
+      var canon = BOT_REV[p] || p;
+      if (BOT_JUNK[canon]) continue;
+      if (!set[canon]) { set[canon] = 1; out.push(canon); }
+    }
+    return out;
+  }
+
   // ---- 頭文字の行（あ/か/さ…/A-Z/#）を求める ----
   var KANA_ROWS = {
     "あ": "あいうえおぁぃぅぇぉ",
@@ -73,6 +127,20 @@
     });
     els.country.innerHTML = optsC.join("");
 
+    // ボタニカルのプルダウン（代表名にまとめ、件数が多い順。BOT_MIN件以上だけ）
+    var byBot = {};
+    GINS.forEach(function (g) {
+      (g._bot || []).forEach(function (t) { byBot[t] = (byBot[t] || 0) + 1; });
+    });
+    var bots = Object.keys(byBot)
+      .filter(function (t) { return byBot[t] >= BOT_MIN; })
+      .sort(function (a, b) { return byBot[b] - byBot[a]; });
+    var optsB = ['<option value="">すべてのボタニカル</option>'];
+    bots.forEach(function (t) {
+      optsB.push('<option value="' + esc(t) + '">' + esc(t) + "（" + byBot[t] + "）</option>");
+    });
+    els.bot.innerHTML = optsB.join("");
+
     // 頭文字インデックス（存在する行だけ）
     var have = {};
     GINS.forEach(function (g) { have[initialOf(g)] = true; });
@@ -87,11 +155,13 @@
   function currentList() {
     var q = els.q.value.trim().toLowerCase();
     var fc = els.country.value;
+    var fb = els.bot.value;
     var fa = els.abv.value;
     var sort = els.sort.value;
 
     var out = GINS.filter(function (g) {
       if (fc && g.country_main !== fc) return false;
+      if (fb && (g._bot || []).indexOf(fb) === -1) return false;
       if (!inAbvBand(g.abv, fa)) return false;
       if (currentInitial && initialOf(g) !== currentInitial) return false;
       if (q) {
@@ -182,6 +252,7 @@
   function resetAll() {
     els.q.value = "";
     els.country.value = "";
+    els.bot.value = "";
     els.abv.value = "";
     els.sort.value = "kana";
     currentInitial = "";
@@ -193,7 +264,7 @@
 
   function init() {
     els = {
-      q: $("q"), country: $("f-country"), abv: $("f-abv"), sort: $("f-sort"),
+      q: $("q"), country: $("f-country"), bot: $("f-bot"), abv: $("f-abv"), sort: $("f-sort"),
       count: $("result-count"), list: $("list"), reset: $("reset"),
       meta: $("data-meta"), kana: $("kana-index"), modal: $("gin-modal"),
     };
@@ -202,6 +273,7 @@
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (data) {
         GINS = (data && data.gins) || [];
+        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); }); // 各ジンのボタニカルを代表名化
         if (els.meta && data.updated) {
           els.meta.textContent = "在庫 " + GINS.length + "銘柄";
         }
@@ -209,7 +281,7 @@
         render();
 
         els.q.addEventListener("input", render);
-        [els.country, els.abv, els.sort].forEach(function (s) { s.addEventListener("change", render); });
+        [els.country, els.bot, els.abv, els.sort].forEach(function (s) { s.addEventListener("change", render); });
         els.reset.addEventListener("click", resetAll);
 
         // 頭文字インデックス
