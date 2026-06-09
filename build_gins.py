@@ -22,6 +22,7 @@ import urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 SOURCE_FILE = os.path.join(HERE, "sheet_source.txt")
 OUT_FILE = os.path.join(HERE, "gins.json")
+OVERRIDE_FILE = os.path.join(HERE, "kana_overrides.json")  # カナ補正の上書きルール
 
 
 def read_source_url():
@@ -66,6 +67,28 @@ def parse_abv(v):
     return float(m.group(1)) if m else None
 
 
+def load_kana_overrides():
+    """kana_overrides.json を読み、{銘柄名: (旧カナ, 新カナ)} の辞書を返す。
+
+    これは「2026-06-09にカナ表記を全面見直しした結果」を、毎回の自動更新でも
+    保つための仕組み。Googleスプレッドシートのセルを直接書き換えられない代わりに、
+    取り込み時にカナだけ補正する。
+    """
+    ov = {}
+    if not os.path.exists(OVERRIDE_FILE):
+        return ov
+    try:
+        data = json.load(open(OVERRIDE_FILE, encoding="utf-8"))
+    except Exception as e:
+        print(f"注意: kana_overrides.json を読めませんでした（{e}）。補正なしで続行します。")
+        return ov
+    for o in data:
+        nm = clean(o.get("name", ""))
+        if nm:
+            ov[nm] = (clean(o.get("old", "")), clean(o.get("new", "")))
+    return ov
+
+
 def find_col(headers, *keys):
     """ヘッダー名に keys のどれかを含む列番号を返す（無ければ -1）。列の順番が変わっても動くように。"""
     for i, h in enumerate(headers):
@@ -96,15 +119,25 @@ def main():
     def cell(row, ci):
         return clean(row[ci]) if 0 <= ci < len(row) else ""
 
+    kana_ov = load_kana_overrides()
+    ov_applied = 0
+
     gins = []
     for row in rows[1:]:
         name = cell(row, ci_name)
         if not name:
             continue  # 名前のない行は飛ばす
         country = cell(row, ci_country)
+        kana = cell(row, ci_kana)
+        # カナ補正：シートのカナが「旧値のまま＝手動で直されていない」ときだけ新カナに置換。
+        # ユーザーが後でシートを直した場合は old と一致しなくなる→補正せずシート優先。
+        rule = kana_ov.get(name)
+        if rule and rule[1] and kana == rule[0]:
+            kana = rule[1]
+            ov_applied += 1
         gins.append({
             "name": name,
-            "kana": cell(row, ci_kana),
+            "kana": kana,
             "abv": parse_abv(row[ci_abv] if 0 <= ci_abv < len(row) else None),
             "country": country,
             "country_main": country_main(country),
@@ -124,7 +157,7 @@ def main():
     }
     with open(OUT_FILE, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
-    print(f"取り込み完了: {len(gins)} 銘柄 → gins.json")
+    print(f"取り込み完了: {len(gins)} 銘柄 → gins.json（カナ補正 {ov_applied} 件適用）")
 
 
 if __name__ == "__main__":
