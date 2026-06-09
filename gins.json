@@ -1,5 +1,5 @@
 {
- "version": 12,
+ "version": 13,
  "updated": "auto",
  "source": "Bar Soutsu ジン在庫カタログ（このリポジトリのgins.jsonがマスター）",
  "count": 983,
@@ -8273,10 +8273,10 @@
    "name": "CRAFT GIN REN",
    "kana": "レン",
    "abv": 45.0,
-   "country": "日本（山形）",
+   "country": "日本（山梨）",
    "country_main": "日本",
-   "note": "",
-   "botanicals": "ジュニパー"
+   "note": "南アルプスワインアンドビバレッジ（山梨県南アルプス市）が手がけるクラフトジン「漣（れん）」。甲斐の天然水を使い、柚子・山椒・茶・山梨県産の桃などをボタニカルに用いた和の一本。",
+   "botanicals": "ジュニパー、コリアンダー、柚子、山椒、茶、桃（山梨県産）"
   },
   {
    "name": "ROYAL SEDANG 1888 SMALL BATCH GIN",
