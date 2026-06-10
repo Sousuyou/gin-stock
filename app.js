@@ -287,7 +287,21 @@
           els.meta.textContent = "在庫 " + GINS.length + "銘柄";
         }
         buildControls();
+
+        // ?q= による直リンク（クイズ道場などから特定銘柄へ飛ぶ）
+        var deepLink = "";
+        try { deepLink = (new URLSearchParams(window.location.search).get("q") || "").trim(); } catch (e) {}
+        if (deepLink) els.q.value = deepLink;
         render();
+        if (deepLink) {
+          // 名前またはカナが完全一致する銘柄が1つなら詳細を自動で開く
+          var dl = deepLink.toLowerCase();
+          var hit = lastList.filter(function (g) {
+            return String(g.name || "").toLowerCase() === dl || String(g.kana || "").toLowerCase() === dl;
+          });
+          if (hit.length === 1) openModal(hit[0]);
+          window.scrollTo({ top: els.list.offsetTop - 70, behavior: "smooth" });
+        }
 
         els.q.addEventListener("input", render);
         [els.country, els.bot, els.abv, els.sort].forEach(function (s) { s.addEventListener("change", render); });
