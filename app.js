@@ -29,6 +29,19 @@
     return String(s == null ? "" : s).normalize("NFKC").trim().toLowerCase().replace(/\s+/g, " ");
   }
 
+  // 検索用の正規化：全半角を揃え(NFKC)＋英字小文字化＋カタカナ→ひらがな統一（かな表記ゆれを吸収）
+  function normSearch(s) {
+    s = String(s == null ? "" : s).normalize("NFKC").toLowerCase();
+    return s.replace(/[ァ-ヶ]/g, function (ch) {
+      return String.fromCharCode(ch.charCodeAt(0) - 0x60); // カタカナ→ひらがな
+    });
+  }
+  // 検索対象テキスト（名前＋カナ＋産地＋ボタニカル＋メモ）を正規化してまとめる
+  function buildHay(g) {
+    return normSearch((g.name || "") + " " + (g.kana || "") + " " + (g.country || "") +
+      " " + (g.botanicals || "") + " " + (g.note || ""));
+  }
+
   function abvLabel(g) {
     return (g.abv == null || isNaN(g.abv)) ? "—" : (String(g.abv).replace(/\.0$/, "") + "%");
   }
@@ -179,7 +192,8 @@
 
   // ---- 絞り込み＋並び替え ----
   function currentList() {
-    var q = els.q.value.trim().toLowerCase();
+    // 空白区切りで複数キーワード化（正規化済み）。全ての語を含む銘柄だけ＝AND・語順自由
+    var qTokens = normSearch(els.q.value).split(/\s+/).filter(Boolean);
     var fc = els.country.value;
     var fb = els.bot.value;
     var fa = els.abv.value;
@@ -190,9 +204,11 @@
       if (fb && (g._bot || []).indexOf(fb) === -1) return false;
       if (!inAbvBand(g.abv, fa)) return false;
       if (currentInitial && initialOf(g) !== currentInitial) return false;
-      if (q) {
-        var hay = (g.name + " " + g.kana + " " + g.country + " " + g.botanicals + " " + g.note).toLowerCase();
-        if (hay.indexOf(q) === -1) return false;
+      if (qTokens.length) {
+        var hay = g._hay || buildHay(g);
+        for (var i = 0; i < qTokens.length; i++) {
+          if (hay.indexOf(qTokens[i]) === -1) return false;
+        }
       }
       return true;
     });
@@ -340,6 +356,7 @@
           };
           if (row.not_gin === true) g.not_gin = true;
           g._bot = botTokens(g.botanicals);
+          g._hay = buildHay(g);
           GINS.push(g);
           added++;
         });
@@ -359,7 +376,7 @@
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (data) {
         GINS = (data && data.gins) || [];
-        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); }); // 各ジンのボタニカルを代表名化
+        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._hay = buildHay(g); }); // ボタニカル代表名化＋検索用テキスト
         if (els.meta && data.updated) {
           els.meta.textContent = "在庫 " + GINS.length + "銘柄";
         }
