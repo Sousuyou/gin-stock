@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <!-- セキュリティ: 読み込み元を自サイトに限定（CSPの手本）。インライン<script>は使わず外部.jsに置く。 -->
+    <!-- セキュリティ: 読み込み元を自サイトに限定（CSPの手本）。インライン<script>は使わず外部.jsに置く。
+         connect-src に Supabase を追加＝カタログが「仮登録（申請箱）」を読み込んで表示するため（閲覧のみ）。 -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https://ypruajtzzfvfhgcirrsv.supabase.co; object-src 'none'; base-uri 'self'"
     />
     <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)" />

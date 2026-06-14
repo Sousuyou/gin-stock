@@ -9,6 +9,12 @@
   var els = {};
   var currentInitial = ""; // 頭文字フィルタ（""=すべて）
 
+  // 申請箱（Supabase）から「仮登録」を読み込んで一緒に表示するための設定。
+  // ここで使うのは公開してよい publishable(anon) キー。閲覧できるのは pending/approved の表示用列だけ（RLSで限定）。
+  var SUPABASE_URL = "https://ypruajtzzfvfhgcirrsv.supabase.co";
+  var SUPABASE_KEY = "sb_publishable_eP6BBO6u2M4iTNkK_jjULA_94qadrt1";
+  var SUB_TABLE = "gin_submissions";
+
   function $(id) { return document.getElementById(id); }
 
   // XSS対策：外部由来テキストは必ずエスケープ
@@ -18,8 +24,25 @@
       .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
   }
 
+  // 重複判定キー：全半角を揃え(NFKC)、連続空白を畳んで小文字化（submit.js / promote_pending.py と同方針）
+  function normName(s) {
+    return String(s == null ? "" : s).normalize("NFKC").trim().toLowerCase().replace(/\s+/g, " ");
+  }
+
   function abvLabel(g) {
-    return g.abv == null ? "—" : (String(g.abv).replace(/\.0$/, "") + "%");
+    return (g.abv == null || isNaN(g.abv)) ? "—" : (String(g.abv).replace(/\.0$/, "") + "%");
+  }
+
+  // 情報の確からしさバッジ：仮登録＝店員申請の未確認／要確認＝出典あいまいな既存銘柄
+  function flagBadge(g) {
+    if (g._provisional) return '<span class="badge badge-provisional">⚠ 仮登録・未確認</span>';
+    if (g.unverified) return '<span class="badge badge-unverified">要確認</span>';
+    return "";
+  }
+  function flagBanner(g) {
+    if (g._provisional) return '<div class="prov-banner">店員による仮登録です。内容は<b>未確認</b>で、オーナーの確認後に正式登録されます。</div>';
+    if (g.unverified) return '<div class="unverified-banner">この銘柄のボタニカル等は公式に確認できていません（メーカー非公開／要確認）。</div>';
+    return "";
   }
 
   function inAbvBand(abv, band) {
@@ -189,6 +212,7 @@
   // ---- カード（グリッド用・ボタニカルのさわりを表示）----
   function cardHTML(g, idx) {
     var badges =
+      flagBadge(g) +
       '<span class="badge badge-country">' + esc(g.country_main) + "</span>" +
       '<span class="badge badge-abv">' + abvLabel(g) + "</span>";
 
@@ -253,9 +277,11 @@
         "<h2>" + esc(g.name) + "</h2>" +
         (g.kana ? '<p class="modal-kana">' + esc(g.kana) + "</p>" : "") +
         '<div class="modal-badges">' +
+          flagBadge(g) +
           '<span class="badge badge-country">' + esc(g.country_main) + "</span>" +
           '<span class="badge badge-abv">' + abvLabel(g) + "</span>" +
         "</div>" +
+        flagBanner(g) +
         (sub ? '<p class="modal-kana">産地：' + esc(g.country) + "</p>" : "") +
         warn +
         bot + note +
@@ -280,6 +306,44 @@
       b.classList.toggle("active", b.getAttribute("data-g") === "");
     });
     render();
+  }
+
+  // ---- 申請箱（Supabase）の「仮登録」を読み込んで一覧に合流させる ----
+  function loadProvisional() {
+    if (!SUPABASE_URL || SUPABASE_URL.indexOf("YOUR_PROJECT_REF") !== -1) return;
+    var url = SUPABASE_URL + "/rest/v1/" + SUB_TABLE +
+      "?status=in.(pending,approved)&select=name,kana,abv,country,country_main,note,botanicals,not_gin&order=created_at.desc";
+    fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY } })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) {
+        if (!rows || !rows.length) return;
+        var seen = {};
+        GINS.forEach(function (g) { seen[normName(g.name)] = true; });
+        var added = 0;
+        rows.forEach(function (row) {
+          var nm = (row.name || row.kana || "").trim();
+          if (!nm) return;
+          var key = normName(nm);
+          if (seen[key]) return; // 既存（確定）や仮登録同士の重複は出さない
+          seen[key] = true;
+          var g = {
+            name: row.name || row.kana || "",
+            kana: row.kana || row.name || "",
+            abv: (row.abv == null || row.abv === "" ? null : Number(row.abv)),
+            country: row.country || row.country_main || "",
+            country_main: row.country_main || "",
+            note: row.note || "",
+            botanicals: row.botanicals || "",
+            _provisional: true
+          };
+          if (row.not_gin === true) g.not_gin = true;
+          g._bot = botTokens(g.botanicals);
+          GINS.push(g);
+          added++;
+        });
+        if (added) { buildControls(); render(); }
+      })
+      .catch(function () { /* 申請箱が読めなくてもカタログは通常どおり表示 */ });
   }
 
   function init() {
@@ -344,6 +408,9 @@
         document.addEventListener("keydown", function (e) {
           if (e.key === "Escape" && !els.modal.hidden) closeModal();
         });
+
+        // 申請箱の「仮登録」を後追いで読み込んで合流（失敗してもカタログは動く）
+        loadProvisional();
       })
       .catch(function (err) {
         els.count.textContent = "";

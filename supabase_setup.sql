@@ -57,6 +57,17 @@ create policy "anon insert only"
 -- 5) 一覧の使い勝手用インデックス（任意）
 create index if not exists gin_submissions_status_idx on public.gin_submissions (status, created_at desc);
 
+-- 6) カタログに「仮登録」を表示するための限定SELECT許可。
+--    表示用の列だけ／pending・approved の行だけ anon に見せる（submitted_by等は見せない）。
+grant select (id, name, kana, abv, country, country_main, note, botanicals, not_gin, status, created_at)
+  on public.gin_submissions to anon;
+drop policy if exists "anon read pending" on public.gin_submissions;
+create policy "anon read pending"
+  on public.gin_submissions
+  for select
+  to anon
+  using (status in ('pending', 'approved'));
+
 -- ============================================================
 -- 確認：以下は Supabase ダッシュボードで目視チェック（出荷ゲート）
 --   ・Table Editor で gin_submissions に「RLS enabled」の鍵マークが付いている

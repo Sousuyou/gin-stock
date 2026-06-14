@@ -234,6 +234,23 @@ select {
   background: var(--accent); color: var(--on-accent); border-color: var(--accent);
   font-variant-numeric: tabular-nums;
 }
+/* 仮登録（店員申請の未確認）＝目立つ金色。要確認（出典あいまいな既存）＝控えめな枠。 */
+.badge-provisional {
+  background: var(--gold); color: var(--on-accent); border-color: var(--gold);
+}
+.badge-unverified {
+  background: transparent; color: var(--gold); border-color: var(--gold);
+}
+.prov-banner {
+  margin: 14px 0 2px; padding: 9px 12px;
+  font-size: 0.82rem; font-weight: 700; line-height: 1.5;
+  color: var(--gold); border: 1px solid var(--gold);
+}
+.unverified-banner {
+  margin: 14px 0 2px; padding: 9px 12px;
+  font-size: 0.78rem; line-height: 1.5;
+  color: var(--muted); border: 1px dashed var(--line);
+}
 
 .gin-bot {
   margin: 3px 0 0; font-size: 0.7rem; line-height: 1.55; color: var(--muted);

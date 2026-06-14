@@ -72,6 +72,17 @@ var SUPABASE_KEY = "sb_publishable_REPLACE_ME";            ← publishable(anon)
 
 > このページは公開カタログのメニューからはリンクしていません。URLを知っているスタッフだけが使います。
 
+## ステップ7：カタログに「仮登録」を表示する（重要・1回だけ）
+申請したジンを、通常のカタログで検索したときに「⚠ 仮登録・未確認」付きで表示するための設定です。
+これを実行しないと、カタログ側は仮登録を読み込めません（カタログ自体は今までどおり動きます）。
+
+1. Supabaseの **SQL Editor** →「New query」
+2. このフォルダの **`supabase_enable_read.sql`** の中身を全部コピーして貼り付け →「Run」
+3. 「Success」と出ればOK。これでカタログで検索すると仮登録も出るようになります。
+
+> 何を許可している？：公開キー(anon)に「pending/approved の表示用の列だけ」を**閲覧**許可します。
+> スタッフ名などは見せず、却下(rejected)した行も見せません。投稿の自己承認は引き続き不可能です。
+
 ---
 
 ## 日々の運用（申請が来たら）
@@ -86,6 +97,10 @@ var SUPABASE_KEY = "sb_publishable_REPLACE_ME";            ← publishable(anon)
    - 実行：`python3 promote_pending.py`
    - approved 行が `gins.json` に追加され、`count`/`version` が自動更新される
 5. `gins.json` の差分を確認して push → 公開カタログに反映
+
+> **カタログ表示との関係**：`pending`／`approved` の行は「仮登録」としてカタログに出ます。
+> `rejected`（却下）にした行や、`promoted`（正式登録済み）にした行は、カタログから自動で消えます。
+> いたずら投稿が出てしまったら、その行を `rejected` にする（または削除する）だけで即座に非表示になります。
 
 ---
 
