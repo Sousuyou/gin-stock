@@ -1,5 +1,5 @@
 {
- "version": 29,
+ "version": 30,
  "updated": "auto",
  "source": "Bar Soutsu ジン在庫カタログ（このリポジトリのgins.jsonがマスター）",
  "count": 980,
@@ -959,7 +959,7 @@
    "botanicals": "ジュニパー、オリスルート、アンジェリカルート、コリアンダー、マンダリンピール、スプルーストップ、タンポポルート、イラクサ、スイバ、ツガサルノコシカケ"
   },
   {
-   "name": "WOODLAND SAUERLAND DRY GIN（45.5%）",
+   "name": "WOODLAND SAUERLAND DRY GIN（45.3%）",
    "kana": "ウッドランド ザウアーラント ジン",
    "abv": 45.3,
    "country": "ドイツ",
@@ -1103,7 +1103,7 @@
    "botanicals": "ジュニパー、オレンジピール、マルベリー、ラベンダー、レモングラス、松の芽"
   },
   {
-   "name": "EDEB.MILL ST Andrews Golf Gin",
+   "name": "EDEN MILL ST Andrews Golf Gin",
    "kana": "エデンミル セントアンドリュース ゴルフ ジン",
    "abv": 42.0,
    "country": "イギリス（スコットランド）",
@@ -1112,7 +1112,7 @@
    "botanicals": "ジュニパー、コリアンダー、昆布、ラベンダー、ヘザー、松（スプルース）、ハリエニシダ"
   },
   {
-   "name": "EDEN.MILL ST ANDREWS Golf GIN",
+   "name": "EDEN MILL ST ANDREWS Golf GIN",
    "kana": "エデンミル セントアンドリュース ゴルフ ジン",
    "abv": 42.0,
    "country": "イギリス（スコットランド）",
@@ -1121,7 +1121,7 @@
    "botanicals": "ジュニパー、コリアンダー、ハリエニシダ（ゴーズ）、ヘザー、ラベンダー、海藻（昆布）、パイン"
   },
   {
-   "name": "EDEN.MILL ST ANDREWS GIN",
+   "name": "EDEN MILL ST ANDREWS GIN",
    "kana": "エデンミル セントアンドリュース ジン",
    "abv": 42.0,
    "country": "イギリス（スコットランド）",
@@ -1130,7 +1130,7 @@
    "botanicals": "ジュニパー、コリアンダーシード、シーバックソーン、レモンピール、レモンバーム、アンジェリカルート"
   },
   {
-   "name": "EDEN.MILL ST Andrews Hop Gin",
+   "name": "EDEN MILL ST Andrews Hop Gin",
    "kana": "エデンミル セントアンドリュース ホップ ジン",
    "abv": 46.0,
    "country": "イギリス（スコットランド）",
@@ -1139,7 +1139,7 @@
    "botanicals": "ジュニパー、コリアンダー、アンジェリカ、柑橘ピール、ホップ（豪州ギャラクシーホップ）"
   },
   {
-   "name": "EDEB.MILL ST Andrews Scotch Rugby Milk histle Gin",
+   "name": "EDEN MILL ST Andrews Scotch Rugby Milk Thistle Gin",
    "kana": "エデンミル セントアンドリュース ラグビー ミルクシスル ジン",
    "abv": 43.0,
    "country": "イギリス（スコットランド）",
@@ -1328,8 +1328,8 @@
    "botanicals": "ラベンダー、ジュニパー、コリアンダー、アンジェリカ、オリス、リコリス、カモミール、レモン、オレンジ、柚子、ライム、グレープフルーツ"
   },
   {
-   "name": "OMABRAK Single Malt Gin",
-   "kana": "オマブラック シングルモルト ジン",
+   "name": "Ornabrak Single Malt Gin",
+   "kana": "オーナブラック シングルモルト ジン",
    "abv": 43.0,
    "country": "アイルランド",
    "country_main": "アイルランド",
@@ -1634,7 +1634,7 @@
    "botanicals": "ジュニパー、ブラックベリー（ブランブル）、ピーチ、ダンデライオンルート、ラベンダー、カモミール（ベースのGarden Shed Ginは13種、蒸留後にブラックベリーとピーチを浸漬）"
   },
   {
-   "name": "GARNISH ISLAMD GIN",
+   "name": "GARNISH ISLAND GIN",
    "kana": "ガーニッシュアイランド ジン",
    "abv": 46.0,
    "country": "アイルランド（ガーニッシュ島）",
@@ -1643,7 +1643,7 @@
    "botanicals": "ジュニパー、ハイビスカス、アイリス、ローズ、ローズマリー、タイム"
   },
   {
-   "name": "GARNISH ISLAMD PINK GIN",
+   "name": "GARNISH ISLAND PINK GIN",
    "kana": "ガーニッシュアイランド ピンク ジン",
    "abv": 46.0,
    "country": "アイルランド（ガーニッシュ島）",
@@ -2886,7 +2886,7 @@
    "botanicals": "ジュニパー、オリスルート、コリアンダー、アンジェリカ、スイートオレンジ、レモン、リコリス、カルダモン、バニラ"
   },
   {
-   "name": "SHILTAKE ETHIQUE",
+   "name": "SHIITAKE ÉTHIQUE",
    "kana": "シイタケ エシック",
    "abv": 41.0,
    "country": "日本（東京：蔵前）",
@@ -3183,7 +3183,7 @@
    "botanicals": "ジュニパー、バニラ、ピンクペッパー、シナモン、カルダモン、ジンジャー、アニス"
   },
   {
-   "name": "GERANHUM Premium London Dry GIN",
+   "name": "GERANIUM Premium London Dry GIN（55%）",
    "kana": "ジェラニウム プレミアム ジン",
    "abv": 55.0,
    "country": "イギリス（イングランド：バーミンガム蒸留）",
@@ -3454,7 +3454,7 @@
    "botanicals": "ジュニパーベリー、リコリス、スウィートオレンジピール、ビターオレンジピール、レモンピール、グレインズ・オブ・パラダイス、コリアンダーシード、アンジェリカルート"
   },
   {
-   "name": "gubger CRAFT GIN",
+   "name": "ginger CRAFT GIN",
    "kana": "ジンジャー",
    "abv": 45.0,
    "country": "日本（沖縄）",
@@ -4012,7 +4012,7 @@
    "botanicals": "ジュニパー、アップル、アロエ、グレープフルーツ、チェリー、ピーチ、ピスタチオ、マカダミアナッツ、ライム"
   },
   {
-   "name": "ZELOT'S HEART GIN",
+   "name": "ZEALOT'S HEART GIN",
    "kana": "ゼロッツハート ジン",
    "abv": 44.0,
    "country": "イギリス（スコットランド）",
@@ -4327,8 +4327,8 @@
    "botanicals": "ジュニパー、ビルベリー、ワイルドローズ（バラの花弁）、オリスルート、コリアンダーシード、レモンピール"
   },
   {
-   "name": "Tenn Sporits",
-   "kana": "テン スピリッツ",
+   "name": "TeenSpirits",
+   "kana": "ティーン スピリッツ",
    "abv": 45.0,
    "country": "日本（静岡：三島）",
    "country_main": "日本",
@@ -6343,7 +6343,7 @@
    "botanicals": "ジュニパー、グラニースミス（青りんご）、ストロベリーガムリーフ、カモミール、レモンマートル、コリアンダーシード、アンジェリカルート、シナモン、カルダモン、クベバペッパー"
   },
   {
-   "name": "Puerto De Irdias SEVILLIAN GIN PREMIUM CLASSIC",
+   "name": "Puerto De Indias SEVILLIAN GIN PREMIUM CLASSIC",
    "kana": "プエルトデインディアス プレミアム クラシック ジン",
    "abv": 40.0,
    "country": "スペイン",
@@ -6352,7 +6352,7 @@
    "botanicals": "ジュニパー、コリアンダー、レモンピール、オレンジピール、ライムピール、グレープフルーツピール、リコリス"
   },
   {
-   "name": "Puerto De Irdias SEVILLIAN GIN PREMIUM",
+   "name": "Puerto De Indias SEVILLIAN GIN PREMIUM",
    "kana": "プエルトデインディアス プレミアム ジン",
    "abv": 40.0,
    "country": "スペイン",
@@ -8774,8 +8774,8 @@
    "botanicals": "ジュニパー、紫蘇、梅、柑橘類"
   },
   {
-   "name": "KIN NO BI Kyoto Dry Gin with added Gold Leaf",
-   "kana": "金の美 ゴールドリーフ ジン",
+   "name": "KI NO BI Kyoto Dry Gin with added Gold Leaf",
+   "kana": "季の美 ゴールドリーフ ジン",
    "abv": 45.7,
    "country": "日本（京都）",
    "country_main": "日本",
@@ -8783,8 +8783,8 @@
    "botanicals": "ジュニパー、オリス、檜、柚子、レモン、玉露（緑茶）、生姜、赤紫蘇、笹、山椒、木の芽、金箔"
   },
   {
-   "name": "KIN NO BI KYOTO DRY GIN",
-   "kana": "金の美 ジン",
+   "name": "KI NO BI KYOTO DRY GIN",
+   "kana": "季の美 ジン",
    "abv": 45.7,
    "country": "日本（京都）",
    "country_main": "日本",
