@@ -41,9 +41,9 @@
 5. `python3 promote_pending.py` 実行 → approved 行を `gins.json` に追記し、`count`/`version` 更新
 6. 差分を確認して push（CSVが必要なら `python3 export_csv.py`）
 
-### 情報の確からしさバッジ
-- `gins.json` の各銘柄に任意の `unverified: true` フラグ。**ボタニカル欄が「メーカー非公開／要確認」の銘柄（約66件）**に付与済みで、カタログに「要確認」バッジが出る。
-- 仮登録（Supabaseの申請）は `_provisional`（実行時フラグ）で「⚠ 仮登録・未確認」バッジ。
+### 情報の確からしさタグ
+- `gins.json` の各銘柄に任意の `unverified: true` フラグ。**ボタニカル欄が「メーカー非公開／要確認」の銘柄（約66件）**に付与済みで、カタログに「**情報怪**」タグが出る（＝情報が不透明）。
+- 仮登録（Supabaseの申請）は `_provisional`（実行時フラグ）で「**仮登録**」タグ。
 - 公開カタログが申請箱を読むため `index.html` の CSP `connect-src` に Supabase を追加。閲覧許可は `supabase_enable_read.sql` で設定（表示用の列・pending/approvedのみ）。
 
 ### 構成ファイル

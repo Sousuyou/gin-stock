@@ -33,15 +33,15 @@
     return (g.abv == null || isNaN(g.abv)) ? "—" : (String(g.abv).replace(/\.0$/, "") + "%");
   }
 
-  // 情報の確からしさバッジ：仮登録＝店員申請の未確認／要確認＝出典あいまいな既存銘柄
+  // 情報の確からしさタグ：仮登録＝店員申請の未確認／情報怪＝出典あいまいな既存銘柄
   function flagBadge(g) {
-    if (g._provisional) return '<span class="badge badge-provisional">⚠ 仮登録・未確認</span>';
-    if (g.unverified) return '<span class="badge badge-unverified">要確認</span>';
+    if (g._provisional) return '<span class="badge badge-provisional">仮登録</span>';
+    if (g.unverified) return '<span class="badge badge-unverified">情報怪</span>';
     return "";
   }
   function flagBanner(g) {
-    if (g._provisional) return '<div class="prov-banner">店員による仮登録です。内容は<b>未確認</b>で、オーナーの確認後に正式登録されます。</div>';
-    if (g.unverified) return '<div class="unverified-banner">この銘柄のボタニカル等は公式に確認できていません（メーカー非公開／要確認）。</div>';
+    if (g._provisional) return '<div class="prov-banner">店員による<b>仮登録</b>です。内容は未確認で、オーナーの確認後に正式登録されます。</div>';
+    if (g.unverified) return '<div class="unverified-banner">情報が不透明な銘柄です。ボタニカル等が公式に確認できていません（メーカー非公開／要確認）。</div>';
     return "";
   }
 
