@@ -203,14 +203,14 @@ select {
    チャコール地＋ゴールドのプラス。ホバーで紙色に反転＋プラスが90°回転。 */
 .apply-btn, .empty-cta {
   display: inline-flex; align-items: center; gap: 8px;
-  background: var(--accent); color: var(--on-accent); text-decoration: none;
-  border: 1px solid var(--accent); border-radius: 0;
-  font-weight: 700; letter-spacing: 0.06em; white-space: nowrap;
-  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+  background: var(--panel); color: var(--text); text-decoration: none;
+  border: 1px solid var(--line); border-radius: 0;
+  font-weight: 700; letter-spacing: 0.04em; white-space: nowrap;
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
-.apply-btn { min-height: 38px; padding: 0 16px; font-size: 0.72rem; }
+.apply-btn { min-height: 38px; padding: 0 14px; font-size: 0.72rem; }
 .apply-btn:hover, .empty-cta:hover {
-  background: var(--panel); color: var(--accent); transform: translateY(-1px);
+  background: var(--panel-soft); border-color: var(--line-strong); color: var(--text); transform: translateY(-1px);
 }
 .cta-ico { width: 15px; height: 15px; color: var(--gold); flex: none; transition: transform 200ms ease; }
 .apply-btn:hover .cta-ico, .empty-cta:hover .cta-ico { transform: scale(1.18); }
