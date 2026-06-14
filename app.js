@@ -216,7 +216,18 @@
     els.count.innerHTML = "全" + GINS.length + "銘柄中　<b>" + list.length + "</b>件を表示";
 
     if (!list.length) {
-      els.list.innerHTML = '<div class="empty">該当する銘柄がありません。条件を変えるか「条件をクリア」を押してください。</div>';
+      var kw = els.q.value.trim();
+      if (kw) {
+        // キーワード検索で0件＝在庫にないジンかも。スタッフ申請フォームへ誘導し、検索語を下書きとして渡す
+        els.list.innerHTML =
+          '<div class="empty">' +
+            '「' + esc(kw) + '」に一致する銘柄は見つかりませんでした。' +
+            '<span class="empty-sub">在庫にあるのにリストに無いジンは、スタッフが申請できます。</span>' +
+            '<a class="empty-cta" href="staff.html?name=' + encodeURIComponent(kw) + '">＋ このジンを申請する（スタッフ用）</a>' +
+          "</div>";
+      } else {
+        els.list.innerHTML = '<div class="empty">該当する銘柄がありません。条件を変えるか「条件をクリア」を押してください。</div>';
+      }
       return;
     }
     var html = "";

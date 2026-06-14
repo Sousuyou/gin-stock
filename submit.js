@@ -218,6 +218,19 @@
     els.dupWarn.textContent = "";
   }
 
+  // カタログの検索画面（index.html）から ?name= で渡された検索語を下書きに入れる。
+  // 日本語を含めばカナ欄、英字なら銘柄名欄へ（PIN解錠後に値が入った状態でフォームが出る）。
+  function prefillFromQuery() {
+    var term = "";
+    try { term = (new URLSearchParams(window.location.search).get("name") || "").trim(); } catch (e) {}
+    if (!term) return;
+    if (/[ぁ-んァ-ヶ一-龯ー]/.test(term)) {
+      els.kana.value = term;
+    } else {
+      els.name.value = term;
+    }
+  }
+
   // ===== 初期化 =====
   function init() {
     els = {
@@ -239,6 +252,8 @@
       msg: $("submit-msg"),
       dupWarn: $("dup-warn")
     };
+
+    prefillFromQuery();
 
     els.pinBtn.addEventListener("click", handlePin);
     els.pinInput.addEventListener("keydown", function (e) {
