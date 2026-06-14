@@ -198,14 +198,22 @@ select {
   gap: 10px; margin-top: 12px; flex-wrap: wrap;
 }
 .toolbar-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.apply-btn {
-  display: inline-flex; align-items: center; min-height: 38px; padding: 0 14px;
+
+/* 申請ボタン（常設＝.apply-btn ／ 0件案内＝.empty-cta）共通の見た目。
+   チャコール地＋ゴールドのプラス。ホバーで紙色に反転＋プラスが90°回転。 */
+.apply-btn, .empty-cta {
+  display: inline-flex; align-items: center; gap: 8px;
   background: var(--accent); color: var(--on-accent); text-decoration: none;
   border: 1px solid var(--accent); border-radius: 0;
-  font-size: 0.78rem; font-weight: 700; white-space: nowrap;
-  transition: transform 160ms ease;
+  font-weight: 700; letter-spacing: 0.06em; white-space: nowrap;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
 }
-.apply-btn:hover { transform: translateY(-1px); color: var(--on-accent); }
+.apply-btn { min-height: 38px; padding: 0 16px; font-size: 0.72rem; }
+.apply-btn:hover, .empty-cta:hover {
+  background: var(--panel); color: var(--accent); transform: translateY(-1px);
+}
+.cta-ico { width: 15px; height: 15px; color: var(--gold); flex: none; transition: transform 200ms ease; }
+.apply-btn:hover .cta-ico, .empty-cta:hover .cta-ico { transform: scale(1.18); }
 .result-count { font-size: 0.8rem; color: var(--text); font-weight: 700; }
 .result-count b { color: var(--green); }
 
@@ -290,14 +298,7 @@ select {
   font-size: 0.82rem; color: var(--muted); border: 1px dashed var(--line);
 }
 .empty-sub { display: block; margin-top: 6px; font-size: 0.74rem; color: var(--muted); }
-.empty-cta {
-  display: inline-block; margin-top: 14px; padding: 10px 18px;
-  background: var(--accent); color: var(--on-accent); text-decoration: none;
-  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.02em;
-  border: 1px solid var(--accent); border-radius: 0;
-  transition: transform 160ms ease;
-}
-.empty-cta:hover { transform: translateY(-1px); color: var(--on-accent); }
+.empty-cta { margin-top: 16px; padding: 11px 20px; font-size: 0.8rem; }
 
 /* 詳細モーダル */
 .modal-backdrop {

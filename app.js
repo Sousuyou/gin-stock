@@ -247,7 +247,9 @@
           '<div class="empty">' +
             '「' + esc(kw) + '」に一致する銘柄は見つかりませんでした。' +
             '<span class="empty-sub">在庫にあるのにリストに無いジンは、スタッフが申請できます。</span>' +
-            '<a class="empty-cta" href="staff.html?name=' + encodeURIComponent(kw) + '">＋ このジンを申請する（スタッフ用）</a>' +
+            '<a class="empty-cta" href="staff.html?name=' + encodeURIComponent(kw) + '">' +
+              '<svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>' +
+              'このジンを申請する（スタッフ用）</a>' +
           "</div>";
       } else {
         els.list.innerHTML = '<div class="empty">該当する銘柄がありません。条件を変えるか「条件をクリア」を押してください。</div>';
