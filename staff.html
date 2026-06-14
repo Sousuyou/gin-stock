@@ -34,7 +34,6 @@
       .form-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 4px; }
       .grid-2 { display: grid; grid-template-columns: 1fr 110px; gap: 12px; }
       .grid-c { display: grid; grid-template-columns: 150px 1fr; gap: 12px; }
-      .grid-half { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
       .check-row { display: flex; align-items: center; gap: 8px; }
       .check-row input { width: auto; min-height: 0; }
       .req { color: var(--red); }
@@ -44,13 +43,14 @@
         font: inherit; resize: vertical;
       }
       .dup-warn { margin: 4px 0 0; font-size: 0.74rem; color: var(--gold); min-height: 1em; }
+      .field-hint { margin: 4px 0 0; font-size: 0.72rem; color: var(--muted); line-height: 1.5; }
       .submit-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
       .submit-msg { font-size: 0.8rem; line-height: 1.5; }
       .submit-msg.is-ok { color: var(--green); }
       .submit-msg.is-error { color: var(--red); }
       .send-where { font-size: 0.66rem; color: var(--muted); }
       @media (max-width: 640px) {
-        .grid-2, .grid-c, .grid-half { grid-template-columns: 1fr; }
+        .grid-2, .grid-c { grid-template-columns: 1fr; }
       }
     </style>
   </head>
@@ -77,14 +77,15 @@
       <section class="card" id="form-wrap" hidden aria-label="新規ジン申請フォーム">
         <div class="form-grid">
           <div>
-            <label class="field-label" for="f-name">銘柄名（英字の正式表記）<span class="req"> *</span></label>
+            <label class="field-label" for="f-name">銘柄名（英字の正式表記）</label>
             <input id="f-name" type="text" autocomplete="off" placeholder="例：FORDS GIN OFFICERS' RESERVE" />
             <p class="dup-warn" id="dup-warn" aria-live="polite"></p>
           </div>
 
           <div>
-            <label class="field-label" for="f-kana">カナ読み<span class="req"> *</span></label>
+            <label class="field-label" for="f-kana">カナ読み</label>
             <input id="f-kana" type="text" autocomplete="off" placeholder="例：フォーズ ジン オフィサーズ リザーブ" />
+            <p class="field-hint">※ 銘柄名・カナ読みは、分かる方だけでもOK（どちらか一方は入力してください）</p>
           </div>
 
           <div class="grid-c">
@@ -113,17 +114,6 @@
           <div>
             <label class="field-label" for="f-note">解説メモ（任意・下書き可）</label>
             <textarea id="f-note" placeholder="味わい・由来など分かる範囲で。未確認情報の下書きでOK"></textarea>
-          </div>
-
-          <div class="grid-half">
-            <div>
-              <label class="field-label" for="f-submitted-by">申請スタッフ名（任意）</label>
-              <input id="f-submitted-by" type="text" autocomplete="off" placeholder="例：田中" />
-            </div>
-            <div>
-              <label class="field-label" for="f-source">情報源URL（任意）</label>
-              <input id="f-source" type="text" autocomplete="off" placeholder="輸入元・公式サイト等" />
-            </div>
           </div>
 
           <div class="check-row">

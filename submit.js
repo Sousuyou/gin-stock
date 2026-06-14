@@ -135,12 +135,14 @@
   function buildPayload() {
     var name = (els.name.value || "").trim();
     var kana = (els.kana.value || "").trim();
+    // 銘柄名・カナ読みはどちらか一方でOK。空の側はもう片方で埋める
+    // （申請箱の name/kana は NOT NULL。オーナーが事実確認時に正式表記へ整える）
+    if (!name) name = kana;
+    if (!kana) kana = name;
     var countryMain = (els.countryMain.value || "").trim();
     var country = (els.country.value || "").trim();
     var note = (els.note.value || "").trim();
     var bot = (els.botanicals.value || "").trim();
-    var src = (els.source.value || "").trim();
-    var by = (els.submittedBy.value || "").trim();
 
     // 度数：数値 or null（"40%"等が来てもparseFloatで救う）
     var abvRaw = (els.abv.value || "").trim();
@@ -154,9 +156,7 @@
       abv: abv,
       country: country || null,
       note: note || null,
-      botanicals: bot || null,
-      source_note: src || null,
-      submitted_by: by || null
+      botanicals: bot || null
     };
     if (els.notGin.checked) p.not_gin = true; // trueのときだけ送る
     // status はクライアントから送らない（DB側で必ず 'pending' になる）
@@ -165,10 +165,9 @@
 
   function handleSubmit() {
     setMsg("", "");
-    // 必須チェック
+    // 必須チェック（銘柄名・カナ読みはどちらか一方でよい）
     var missing = [];
-    if (!(els.name.value || "").trim()) missing.push("銘柄名");
-    if (!(els.kana.value || "").trim()) missing.push("カナ読み");
+    if (!(els.name.value || "").trim() && !(els.kana.value || "").trim()) missing.push("銘柄名またはカナ読み（どちらか一方）");
     if (!(els.countryMain.value || "").trim()) missing.push("国（代表）");
     if (missing.length) {
       setMsg("必須項目が未入力です：" + missing.join("、"), "error");
@@ -212,7 +211,7 @@
   }
 
   function resetForm() {
-    ["name", "kana", "abv", "country", "countryMain", "botanicals", "note", "source", "submittedBy"].forEach(function (k) {
+    ["name", "kana", "abv", "country", "countryMain", "botanicals", "note"].forEach(function (k) {
       if (els[k]) els[k].value = "";
     });
     if (els.notGin) els.notGin.checked = false;
@@ -236,8 +235,6 @@
       botanicals: $("f-botanicals"),
       note: $("f-note"),
       notGin: $("f-not-gin"),
-      source: $("f-source"),
-      submittedBy: $("f-submitted-by"),
       btn: $("do-submit"),
       msg: $("submit-msg"),
       dupWarn: $("dup-warn")
