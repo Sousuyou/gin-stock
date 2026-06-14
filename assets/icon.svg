@@ -1,4 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Bar Soutsu">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="ジン在庫カタログ">
   <rect width="512" height="512" rx="96" fill="#15120f"/>
-  <text x="256" y="300" text-anchor="middle" font-family="system-ui, sans-serif" font-size="180" font-weight="700" fill="#d8ad62">BS</text>
+  <path d="M130 128 L382 128 L256 276 Z" fill="#d8ad62"/>
+  <rect x="246" y="274" width="20" height="92" fill="#d8ad62"/>
+  <rect x="186" y="364" width="140" height="22" rx="11" fill="#d8ad62"/>
+  <circle cx="256" cy="182" r="26" fill="#8bb58f"/>
+  <path d="M236 206 L322 132" stroke="#15120f" stroke-width="10" stroke-linecap="round"/>
 </svg>
