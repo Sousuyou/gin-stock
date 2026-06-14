@@ -195,8 +195,17 @@ select {
 .filters { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 .toolbar-foot {
   display: flex; align-items: center; justify-content: space-between;
-  gap: 10px; margin-top: 12px;
+  gap: 10px; margin-top: 12px; flex-wrap: wrap;
 }
+.toolbar-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.apply-btn {
+  display: inline-flex; align-items: center; min-height: 38px; padding: 0 14px;
+  background: var(--accent); color: var(--on-accent); text-decoration: none;
+  border: 1px solid var(--accent); border-radius: 0;
+  font-size: 0.78rem; font-weight: 700; white-space: nowrap;
+  transition: transform 160ms ease;
+}
+.apply-btn:hover { transform: translateY(-1px); color: var(--on-accent); }
 .result-count { font-size: 0.8rem; color: var(--text); font-weight: 700; }
 .result-count b { color: var(--green); }
 
