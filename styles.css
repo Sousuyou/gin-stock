@@ -239,6 +239,51 @@ select {
   transition: border-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
 }
 .gin-card:hover { border-color: var(--line-strong); transform: translateY(-2px); box-shadow: var(--shadow); }
+
+/* ===== お気に入り（★） ===== */
+.star-ico {
+  fill: none; stroke: var(--muted); stroke-width: 1.6; stroke-linejoin: round;
+  transition: stroke 150ms ease, fill 150ms ease, transform 150ms ease;
+}
+/* カード右上の★トグル（カードと兄弟＝ボタン入れ子を回避） */
+.gin-card-wrap { position: relative; display: flex; }
+.gin-card-wrap > .gin-card { flex: 1; width: 100%; }
+.gin-name, .gin-kana { padding-right: 30px; } /* ★と文字の重なり防止 */
+.fav-btn {
+  position: absolute; top: 6px; right: 6px; z-index: 2;
+  width: 32px; height: 32px; min-height: 0; padding: 0;
+  display: grid; place-items: center;
+  background: transparent; border: none; border-radius: 0; cursor: pointer;
+}
+.fav-btn:hover { transform: none; background: transparent; }
+.fav-btn .star-ico { width: 19px; height: 19px; }
+.fav-btn:hover .star-ico { stroke: var(--gold); transform: scale(1.12); }
+.fav-btn.is-on .star-ico { fill: var(--gold); stroke: var(--gold); }
+/* モーダル内のお気に入りボタン（ラベル付き） */
+.modal-fav {
+  display: inline-flex; align-items: center; gap: 7px;
+  margin: 12px 0 2px; min-height: 36px; padding: 0 14px;
+  background: var(--panel); color: var(--text);
+  border: 1px solid var(--line-strong); border-radius: 0; cursor: pointer;
+  font-size: 0.78rem; font-weight: 700;
+  transition: transform 150ms ease, background 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+.modal-fav:hover { transform: translateY(-1px); background: var(--panel-soft); }
+.modal-fav .star-ico { width: 17px; height: 17px; }
+.modal-fav.is-on { border-color: var(--gold); color: var(--gold); }
+.modal-fav.is-on .star-ico { fill: var(--gold); stroke: var(--gold); }
+/* ツールバーの「お気に入りだけ」トグル */
+.fav-filter {
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 38px; padding: 0 14px;
+  background: var(--panel); color: var(--text);
+  border: 1px solid var(--line); border-radius: 0; cursor: pointer;
+  font-size: 0.78rem; font-weight: 700; white-space: nowrap;
+}
+.fav-filter:hover { transform: translateY(-1px); }
+.fav-filter .star-ico { width: 16px; height: 16px; stroke: var(--gold); }
+.fav-filter.is-on { background: var(--gold); color: var(--on-accent); border-color: var(--gold); }
+.fav-filter.is-on .star-ico { fill: var(--on-accent); stroke: var(--on-accent); }
 .gin-name { margin: 0; font-size: 0.9rem; font-weight: 700; line-height: 1.3; }
 .gin-kana { margin: 0; font-size: 0.67rem; color: var(--muted); letter-spacing: 0.02em; }
 .gin-badges { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 1px; }

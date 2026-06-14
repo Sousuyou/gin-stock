@@ -15,6 +15,13 @@
   var SUPABASE_KEY = "sb_publishable_eP6BBO6u2M4iTNkK_jjULA_94qadrt1";
   var SUB_TABLE = "gin_submissions";
 
+  // お気に入り（★）：この端末のブラウザに保存（localStorage）。銘柄名をキーにする。
+  var FAV_KEY = "soutsu_gin_favs";
+  var favs = loadFavs();   // 登録済み銘柄名のSet
+  var favOnly = false;     // 「お気に入りだけ表示」中か
+  var modalGin = null;     // 現在モーダルで開いている銘柄
+  var STAR_SVG = '<svg class="star-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l-5.4 3 1.2-6L3.3 9.9l6.1-.7L12 3.6l2.6 5.6 6.1.7-4.5 4.4 1.2 6z"/></svg>';
+
   function $(id) { return document.getElementById(id); }
 
   // XSS対策：外部由来テキストは必ずエスケープ
@@ -40,6 +47,24 @@
   function buildHay(g) {
     return normSearch((g.name || "") + " " + (g.kana || "") + " " + (g.country || "") +
       " " + (g.botanicals || "") + " " + (g.note || ""));
+  }
+
+  // ---- お気に入り（localStorage。file://や無効化環境でも落ちないようtry-catch）----
+  function loadFavs() {
+    try {
+      var raw = window.localStorage.getItem(FAV_KEY);
+      var arr = raw ? JSON.parse(raw) : [];
+      return new Set(Array.isArray(arr) ? arr : []);
+    } catch (e) { return new Set(); }
+  }
+  function saveFavs() {
+    try { window.localStorage.setItem(FAV_KEY, JSON.stringify(Array.from(favs))); } catch (e) {}
+  }
+  function isFav(g) { return favs.has(g.name); }
+  function toggleFav(name) {
+    if (!name) return;
+    if (favs.has(name)) favs.delete(name); else favs.add(name);
+    saveFavs();
   }
 
   function abvLabel(g) {
@@ -200,6 +225,7 @@
     var sort = els.sort.value;
 
     var out = GINS.filter(function (g) {
+      if (favOnly && !isFav(g)) return false;
       if (fc && g.country_main !== fc) return false;
       if (fb && (g._bot || []).indexOf(fb) === -1) return false;
       if (!inAbvBand(g.abv, fa)) return false;
@@ -238,15 +264,31 @@
 
     var warn = g.not_gin ? '<p class="not-gin-note">※当店にありますが、ジンではありません</p>' : "";
 
+    var on = isFav(g);
+    var fav =
+      '<button type="button" class="fav-btn' + (on ? " is-on" : "") + '" data-name="' + esc(g.name) +
+        '" aria-label="お気に入り" aria-pressed="' + (on ? "true" : "false") + '">' + STAR_SVG + "</button>";
+
     return (
-      '<button type="button" class="gin-card" data-idx="' + idx + '">' +
-        '<h2 class="gin-name">' + esc(g.name) + "</h2>" +
-        (g.kana ? '<p class="gin-kana">' + esc(g.kana) + "</p>" : "") +
-        '<div class="gin-badges">' + badges + "</div>" +
-        warn +
-        bot +
-      "</button>"
+      '<div class="gin-card-wrap">' +
+        fav +
+        '<button type="button" class="gin-card" data-idx="' + idx + '">' +
+          '<h2 class="gin-name">' + esc(g.name) + "</h2>" +
+          (g.kana ? '<p class="gin-kana">' + esc(g.kana) + "</p>" : "") +
+          '<div class="gin-badges">' + badges + "</div>" +
+          warn +
+          bot +
+        "</button>" +
+      "</div>"
     );
+  }
+
+  // お気に入りトグルボタンの見た目・件数を更新
+  function updateFavBtn() {
+    if (!els.favFilter) return;
+    els.favFilter.classList.toggle("is-on", favOnly);
+    els.favFilter.setAttribute("aria-pressed", favOnly ? "true" : "false");
+    els.favFilter.innerHTML = STAR_SVG + "<span>お気に入り" + (favs.size ? "（" + favs.size + "）" : "") + "</span>";
   }
 
   var lastList = [];
@@ -254,10 +296,15 @@
     var list = currentList();
     lastList = list;
     els.count.innerHTML = "全" + GINS.length + "銘柄中　<b>" + list.length + "</b>件を表示";
+    updateFavBtn();
 
     if (!list.length) {
       var kw = els.q.value.trim();
-      if (kw) {
+      if (favOnly) {
+        els.list.innerHTML = favs.size
+          ? '<div class="empty">お気に入りの中に、今の条件に合う銘柄がありません。条件を変えてみてください。</div>'
+          : '<div class="empty">お気に入りはまだありません。各カード右上の ☆ を押すと追加できます。</div>';
+      } else if (kw) {
         // キーワード検索で0件＝在庫にないジンかも。スタッフ申請フォームへ誘導し、検索語を下書きとして渡す
         els.list.innerHTML =
           '<div class="empty">' +
@@ -279,6 +326,7 @@
 
   // ---- 詳細モーダル ----
   function openModal(g) {
+    modalGin = g;
     var sub = g.country && g.country !== g.country_main ? "（" + esc(g.country) + "）" : "";
     var bot = g.botanicals
       ? '<div class="detail-block"><span class="detail-label">ボタニカル</span><p>' + esc(g.botanicals) + "</p></div>"
@@ -299,6 +347,9 @@
           '<span class="badge badge-country">' + esc(g.country_main) + "</span>" +
           '<span class="badge badge-abv">' + abvLabel(g) + "</span>" +
         "</div>" +
+        '<button type="button" class="modal-fav' + (isFav(g) ? " is-on" : "") + '" data-name="' + esc(g.name) +
+          '" aria-pressed="' + (isFav(g) ? "true" : "false") + '">' + STAR_SVG +
+          "<span>" + (isFav(g) ? "お気に入り済み" : "お気に入りに追加") + "</span></button>" +
         flagBanner(g) +
         (sub ? '<p class="modal-kana">産地：' + esc(g.country) + "</p>" : "") +
         warn +
@@ -320,6 +371,7 @@
     els.abv.value = "";
     els.sort.value = "kana";
     currentInitial = "";
+    favOnly = false;
     [].forEach.call(els.kana.querySelectorAll(".kana-btn"), function (b) {
       b.classList.toggle("active", b.getAttribute("data-g") === "");
     });
@@ -370,6 +422,7 @@
       q: $("q"), country: $("f-country"), bot: $("f-bot"), abv: $("f-abv"), sort: $("f-sort"),
       count: $("result-count"), list: $("list"), reset: $("reset"),
       meta: $("data-meta"), kana: $("kana-index"), modal: $("gin-modal"),
+      favFilter: $("fav-filter"),
     };
 
     fetch("gins.json", { cache: "no-store" })
@@ -400,6 +453,9 @@
         els.q.addEventListener("input", render);
         [els.country, els.bot, els.abv, els.sort].forEach(function (s) { s.addEventListener("change", render); });
         els.reset.addEventListener("click", resetAll);
+        if (els.favFilter) {
+          els.favFilter.addEventListener("click", function () { favOnly = !favOnly; render(); });
+        }
 
         // 頭文字インデックス
         els.kana.addEventListener("click", function (e) {
@@ -412,16 +468,25 @@
           window.scrollTo({ top: els.list.offsetTop - 70, behavior: "smooth" });
         });
 
-        // カードタップ → 詳細モーダル
+        // カードの★トグル／カードタップ → 詳細モーダル
         els.list.addEventListener("click", function (e) {
+          var favBtn = e.target.closest(".fav-btn");
+          if (favBtn) { toggleFav(favBtn.getAttribute("data-name")); render(); return; }
           var card = e.target.closest(".gin-card");
           if (!card) return;
           var idx = parseInt(card.getAttribute("data-idx"), 10);
           if (lastList[idx]) openModal(lastList[idx]);
         });
 
-        // モーダルを閉じる（×・背景クリック・Esc）
+        // モーダル内の★トグル／閉じる（×・背景クリック・Esc）
         els.modal.addEventListener("click", function (e) {
+          var favBtn = e.target.closest(".modal-fav");
+          if (favBtn) {
+            toggleFav(favBtn.getAttribute("data-name"));
+            render();
+            if (modalGin) openModal(modalGin); // モーダルの★表示を更新
+            return;
+          }
           if (e.target === els.modal || e.target.closest(".modal-close")) closeModal();
         });
         document.addEventListener("keydown", function (e) {
