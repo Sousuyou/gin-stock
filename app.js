@@ -14,6 +14,10 @@
   var SUPABASE_URL = "https://ypruajtzzfvfhgcirrsv.supabase.co";
   var SUPABASE_KEY = "sb_publishable_eP6BBO6u2M4iTNkK_jjULA_94qadrt1";
   var SUB_TABLE = "gin_submissions";
+  var MEMO_TABLE = "gin_memos";
+  // スタッフメモ投稿用PIN（申請ページと同じ。SHA-256で照合・平文は置かない。既定 soutsu2026）
+  var MEMO_PIN_SHA256 = "694b39a1bfa7ff68a9dee1972d6323fbb797f368fad85b74429e0fa696529263";
+  var MEMO_UNLOCK_KEY = "soutsu_staff_unlocked";
 
   // お気に入り（★）：この端末のブラウザに保存（localStorage）。銘柄名をキーにする。
   var FAV_KEY = "soutsu_gin_favs";
@@ -386,9 +390,11 @@
         (sub ? '<p class="modal-kana">産地：' + esc(g.country) + "</p>" : "") +
         warn +
         bot + note +
+        '<div class="memo-section"><h3 class="memo-title">スタッフメモ</h3><div id="memo-box" class="memo-box"><p class="memo-empty">読み込み中…</p></div></div>' +
       "</div>";
     els.modal.hidden = false;
     document.body.style.overflow = "hidden";
+    loadMemos(g);
   }
   function closeModal() {
     els.modal.hidden = true;
@@ -448,6 +454,113 @@
         if (added) { buildControls(); render(); }
       })
       .catch(function () { /* 申請箱が読めなくてもカタログは通常どおり表示 */ });
+  }
+
+  // ===== スタッフメモ（各ジンごと・全員閲覧／スタッフのみPIN投稿）=====
+  function safeSGet(k) { try { return window.sessionStorage.getItem(k); } catch (e) { return null; } }
+  function safeSSet(k, v) { try { window.sessionStorage.setItem(k, v); } catch (e) {} }
+  function memoUnlocked() { return safeSGet(MEMO_UNLOCK_KEY) === "1"; }
+
+  // SHA-256（PIN照合。https/localhost の安全コンテキストで動作）
+  function sha256hex(str) {
+    var data = new TextEncoder().encode(str);
+    return crypto.subtle.digest("SHA-256", data).then(function (buf) {
+      var b = new Uint8Array(buf), out = "";
+      for (var i = 0; i < b.length; i++) out += b[i].toString(16).padStart(2, "0");
+      return out;
+    });
+  }
+
+  function fmtMemoTime(s) {
+    var m = /^(\d{4})-(\d{1,2})-(\d{1,2})/.exec(String(s == null ? "" : s));
+    return m ? (Number(m[2]) + "/" + Number(m[3])) : "";
+  }
+
+  // メモ追加UI：解錠済みなら入力欄、未解錠ならPINゲート
+  function memoAddHTML() {
+    if (memoUnlocked()) {
+      return '<div class="memo-add">' +
+        '<textarea id="memo-input" class="memo-input" rows="2" maxlength="500" placeholder="例：ラスト1本／○○さん推し／次回入荷未定"></textarea>' +
+        '<button type="button" class="memo-send">メモを追加</button>' +
+        '<p class="memo-hint" id="memo-msg"></p>' +
+        "</div>";
+    }
+    return '<div class="memo-add">' +
+      '<button type="button" class="memo-unlock">＋ メモを追加（スタッフ）</button>' +
+      '<div class="memo-pin-row" id="memo-pin-row" hidden>' +
+        '<input id="memo-pin" class="memo-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="スタッフPIN" />' +
+        '<button type="button" class="memo-pin-ok">解錠</button>' +
+        '<span class="memo-hint" id="memo-pin-err"></span>' +
+      "</div>" +
+      "</div>";
+  }
+
+  function renderMemoSection(g, memos, errMsg) {
+    var box = document.getElementById("memo-box");
+    if (!box) return;
+    var listHTML;
+    if (errMsg) {
+      listHTML = '<p class="memo-empty">' + esc(errMsg) + "</p>";
+    } else if (memos && memos.length) {
+      var items = memos.map(function (m) {
+        var t = fmtMemoTime(m.created_at);
+        return '<li class="memo-item"><span class="memo-text">' + esc(m.memo) + "</span>" +
+          (t ? '<span class="memo-time">' + esc(t) + "</span>" : "") + "</li>";
+      }).join("");
+      listHTML = '<ul class="memo-list">' + items + "</ul>";
+    } else {
+      listHTML = '<p class="memo-empty">まだメモはありません。</p>';
+    }
+    box.innerHTML = listHTML + memoAddHTML();
+  }
+
+  function loadMemos(g) {
+    var box = document.getElementById("memo-box");
+    if (!box || !g) return;
+    if (!SUPABASE_URL || SUPABASE_URL.indexOf("YOUR_PROJECT_REF") !== -1) {
+      renderMemoSection(g, []); return;
+    }
+    var url = SUPABASE_URL + "/rest/v1/" + MEMO_TABLE +
+      "?gin_name=eq." + encodeURIComponent(g.name) +
+      "&status=eq.active&select=memo,created_at&order=created_at.desc";
+    fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY } })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (rows) { renderMemoSection(g, rows || []); })
+      .catch(function () { renderMemoSection(g, []); });
+  }
+
+  function handleMemoPinVerify() {
+    var inp = document.getElementById("memo-pin");
+    var err = document.getElementById("memo-pin-err");
+    if (!inp) return;
+    var val = (inp.value || "").trim();
+    if (!val) return;
+    if (err) err.textContent = "";
+    if (!window.crypto || !crypto.subtle) { if (err) err.textContent = "httpsで開いてください。"; return; }
+    sha256hex(val).then(function (h) {
+      if (h === MEMO_PIN_SHA256) { safeSSet(MEMO_UNLOCK_KEY, "1"); if (modalGin) loadMemos(modalGin); }
+      else if (err) { err.textContent = "PINが違います。"; inp.value = ""; }
+    }).catch(function () { if (err) err.textContent = "PIN照合エラー。"; });
+  }
+
+  function submitMemo(g) {
+    var inp = document.getElementById("memo-input");
+    var msg = document.getElementById("memo-msg");
+    if (!inp || !g) return;
+    var text = (inp.value || "").trim();
+    if (!text) { if (msg) msg.textContent = "メモを入力してください。"; return; }
+    if (msg) msg.textContent = "送信中…";
+    fetch(SUPABASE_URL + "/rest/v1/" + MEMO_TABLE, {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY,
+        "Content-Type": "application/json", Prefer: "return=minimal"
+      },
+      body: JSON.stringify({ gin_name: g.name, memo: text })
+    }).then(function (res) {
+      if (res.status === 201) { inp.value = ""; loadMemos(g); }
+      else if (msg) msg.textContent = "送信に失敗しました（" + res.status + "）。オーナーにご連絡ください。";
+    }).catch(function () { if (msg) msg.textContent = "送信に失敗しました（通信エラー）。"; });
   }
 
   function init() {
@@ -525,6 +638,13 @@
             if (modalGin) openModal(modalGin); // モーダルの★表示を更新
             return;
           }
+          if (e.target.closest(".memo-unlock")) {
+            var prow = document.getElementById("memo-pin-row");
+            if (prow) { prow.hidden = false; var pin = document.getElementById("memo-pin"); if (pin) pin.focus(); }
+            return;
+          }
+          if (e.target.closest(".memo-pin-ok")) { handleMemoPinVerify(); return; }
+          if (e.target.closest(".memo-send")) { submitMemo(modalGin); return; }
           if (e.target === els.modal || e.target.closest(".modal-close")) closeModal();
         });
         document.addEventListener("keydown", function (e) {
