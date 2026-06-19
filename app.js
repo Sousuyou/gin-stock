@@ -72,6 +72,12 @@
     return (g.abv == null || isNaN(g.abv)) ? "—" : (String(g.abv).replace(/\.0$/, "") + "%");
   }
 
+  // 「2026-06-19」→「2026年6月19日」。形式不明なら空文字（表示しない）。
+  function fmtDate(s) {
+    var m = /^(\d{4})-(\d{1,2})-(\d{1,2})/.exec(String(s == null ? "" : s));
+    return m ? (m[1] + "年" + Number(m[2]) + "月" + Number(m[3]) + "日") : "";
+  }
+
   // 情報の確からしさタグ：仮登録＝店員申請の未確認／情報怪＝出典あいまいな既存銘柄
   function flagBadge(g) {
     if (g._provisional) return '<span class="badge badge-provisional">仮登録</span>';
@@ -458,8 +464,9 @@
       .then(function (data) {
         GINS = (data && data.gins) || [];
         GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._hay = buildHay(g); }); // ボタニカル代表名化＋検索用テキスト
-        if (els.meta && data.updated) {
-          els.meta.textContent = "在庫 " + GINS.length + "銘柄";
+        if (els.meta) {
+          var upd = fmtDate(data.updated);
+          els.meta.textContent = "在庫 " + GINS.length + "銘柄" + (upd ? "・データ最終更新 " + upd : "");
         }
         buildControls();
 
