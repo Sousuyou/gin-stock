@@ -19,6 +19,7 @@
   var FAV_KEY = "soutsu_gin_favs";
   var favs = loadFavs();   // 登録済み銘柄名のSet
   var favOnly = false;     // 「お気に入りだけ表示」中か
+  var provOnly = false;    // 「スタッフ申請（未調査）だけ表示」中か
   var modalGin = null;     // 現在モーダルで開いている銘柄
   var STAR_SVG = '<svg class="star-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l-5.4 3 1.2-6L3.3 9.9l6.1-.7L12 3.6l2.6 5.6 6.1.7-4.5 4.4 1.2 6z"/></svg>';
 
@@ -226,6 +227,7 @@
 
     var out = GINS.filter(function (g) {
       if (favOnly && !isFav(g)) return false;
+      if (provOnly && !g._provisional) return false;
       if (fc && g.country_main !== fc) return false;
       if (fb && (g._bot || []).indexOf(fb) === -1) return false;
       if (!inAbvBand(g.abv, fa)) return false;
@@ -291,16 +293,40 @@
     els.favFilter.innerHTML = STAR_SVG + "<span>お気に入り" + (favs.size ? "（" + favs.size + "）" : "") + "</span>";
   }
 
+  // スタッフ申請（未調査＝仮登録）の件数
+  function provCount() {
+    var n = 0;
+    for (var i = 0; i < GINS.length; i++) if (GINS[i]._provisional) n++;
+    return n;
+  }
+  // 「スタッフ申請（未調査）だけ」トグルの見た目・件数を更新
+  function updateProvBtn() {
+    if (!els.provFilter) return;
+    var n = provCount();
+    els.provFilter.classList.toggle("is-on", provOnly);
+    els.provFilter.setAttribute("aria-pressed", provOnly ? "true" : "false");
+    els.provFilter.innerHTML = "🆕 スタッフ申請（未調査）" + (n ? "（" + n + "）" : "");
+  }
+
   var lastList = [];
   function render() {
     var list = currentList();
     lastList = list;
-    els.count.innerHTML = "全" + GINS.length + "銘柄中　<b>" + list.length + "</b>件を表示";
+    if (provOnly) {
+      els.count.innerHTML = "スタッフ申請（未調査）の銘柄：<b>" + list.length + "</b>件";
+    } else {
+      els.count.innerHTML = "全" + GINS.length + "銘柄中　<b>" + list.length + "</b>件を表示";
+    }
     updateFavBtn();
+    updateProvBtn();
 
     if (!list.length) {
       var kw = els.q.value.trim();
-      if (favOnly) {
+      if (provOnly) {
+        els.list.innerHTML = provCount()
+          ? '<div class="empty">今の条件に合うスタッフ申請の銘柄がありません。「条件をクリア」で、申請された未調査の銘柄をすべて表示します。</div>'
+          : '<div class="empty">スタッフが申請した未調査の銘柄は、今のところありません。<span class="empty-sub">在庫にあるのにリストに無いジンは、スタッフが「在庫にないジンを申請」から追加できます。</span></div>';
+      } else if (favOnly) {
         els.list.innerHTML = favs.size
           ? '<div class="empty">お気に入りの中に、今の条件に合う銘柄がありません。条件を変えてみてください。</div>'
           : '<div class="empty">お気に入りはまだありません。各カード右上の ☆ を押すと追加できます。</div>';
@@ -372,6 +398,7 @@
     els.sort.value = "kana";
     currentInitial = "";
     favOnly = false;
+    provOnly = false;
     [].forEach.call(els.kana.querySelectorAll(".kana-btn"), function (b) {
       b.classList.toggle("active", b.getAttribute("data-g") === "");
     });
@@ -423,6 +450,7 @@
       count: $("result-count"), list: $("list"), reset: $("reset"),
       meta: $("data-meta"), kana: $("kana-index"), modal: $("gin-modal"),
       favFilter: $("fav-filter"),
+      provFilter: $("prov-filter"),
     };
 
     fetch("gins.json", { cache: "no-store" })
@@ -455,6 +483,9 @@
         els.reset.addEventListener("click", resetAll);
         if (els.favFilter) {
           els.favFilter.addEventListener("click", function () { favOnly = !favOnly; render(); });
+        }
+        if (els.provFilter) {
+          els.provFilter.addEventListener("click", function () { provOnly = !provOnly; render(); });
         }
 
         // 頭文字インデックス
