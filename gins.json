@@ -1,5 +1,5 @@
 {
- "version": 35,
+ "version": 36,
  "updated": "2026-06-20",
  "source": "Bar Soutsu ジン在庫カタログ（このリポジトリのgins.jsonがマスター）",
  "count": 991,
@@ -8254,7 +8254,7 @@
   },
   {
    "name": "RETROGRADE GIN No.13",
-   "kana": "レトログレード No.13 ジン",
+   "kana": "レトログレイド No.13 ジン",
    "abv": 47.0,
    "country": "日本（北海道：鷹栖町）",
    "country_main": "日本",
@@ -8263,7 +8263,7 @@
   },
   {
    "name": "RETROGRADE GIN",
-   "kana": "レトログレード ジン",
+   "kana": "レトログレイド ジン",
    "abv": 47.0,
    "country": "日本（北海道：鷹栖町）",
    "country_main": "日本",
