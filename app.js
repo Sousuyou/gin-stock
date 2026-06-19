@@ -82,6 +82,15 @@
     return m ? (m[1] + "年" + Number(m[2]) + "月" + Number(m[3]) + "日") : "";
   }
 
+  // 追加順ソート用：added（既存データ）または _added（仮登録のcreated_at）を数値化。
+  // 無い銘柄は0（=最も古い扱い）＝初期登録分は下にまとまる。
+  function addedTime(g) {
+    var s = g.added || g._added || "";
+    if (!s) return 0;
+    var t = Date.parse(s);
+    return isNaN(t) ? 0 : t;
+  }
+
   // 情報の確からしさタグ：仮登録＝店員申請の未確認／情報怪＝出典あいまいな既存銘柄
   function flagBadge(g) {
     if (g._provisional) return '<span class="badge badge-provisional">仮登録</span>';
@@ -252,6 +261,11 @@
     });
 
     out.sort(function (a, b) {
+      if (sort === "added-desc") {
+        var at = addedTime(a), bt = addedTime(b);
+        if (at !== bt) return bt - at;
+        return (a.kana || a.name).localeCompare(b.kana || b.name, "ja");
+      }
       if (sort === "abv-desc") return (b.abv || -1) - (a.abv || -1);
       if (sort === "abv-asc") return (a.abv == null ? 999 : a.abv) - (b.abv == null ? 999 : b.abv);
       if (sort === "country") {
@@ -421,7 +435,7 @@
   function loadProvisional() {
     if (!SUPABASE_URL || SUPABASE_URL.indexOf("YOUR_PROJECT_REF") !== -1) return;
     var url = SUPABASE_URL + "/rest/v1/" + SUB_TABLE +
-      "?status=in.(pending,approved)&select=name,kana,abv,country,country_main,note,botanicals,not_gin&order=created_at.desc";
+      "?status=in.(pending,approved)&select=name,kana,abv,country,country_main,note,botanicals,not_gin,created_at&order=created_at.desc";
     fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY } })
       .then(function (r) { return r.ok ? r.json() : []; })
       .then(function (rows) {
@@ -443,7 +457,8 @@
             country_main: row.country_main || "",
             note: row.note || "",
             botanicals: row.botanicals || "",
-            _provisional: true
+            _provisional: true,
+            _added: row.created_at || ""
           };
           if (row.not_gin === true) g.not_gin = true;
           g._bot = botTokens(g.botanicals);
