@@ -77,6 +77,16 @@
     return String(s == null ? "" : s).normalize("NFKC").trim().toLowerCase().replace(/\s+/g, " ");
   }
 
+  // 仮登録の自動非表示用の“ゆるい一致キー”：全半角・記号・空白・アクセント・カタカナ差を吸収。
+  // 既存銘柄の name/kana/aliases のどれかと一致したら、その仮登録は出さない（登録後に自動で消える）。
+  function dedupKey(s) {
+    s = String(s == null ? "" : s).normalize("NFKC").toLowerCase();
+    s = s.normalize("NFD").replace(/[̀-ͯ]/g, ""); // アクセント除去（á→a）
+    s = s.replace(/[ァ-ヶ]/g, function (ch) { return String.fromCharCode(ch.charCodeAt(0) - 0x60); }); // カナ→ひらがな
+    s = s.replace(/[^0-9a-z぀-ゟ一-龯]/g, ""); // 英数字・ひらがな・漢字以外（空白/記号/長音）を除去
+    return s;
+  }
+
   // 検索用の正規化：全半角を揃え(NFKC)＋英字小文字化＋カタカナ→ひらがな統一（かな表記ゆれを吸収）
   function normSearch(s) {
     s = String(s == null ? "" : s).normalize("NFKC").toLowerCase();
@@ -87,7 +97,7 @@
   // 検索対象テキスト（名前＋カナ＋産地＋ボタニカル＋メモ）を正規化してまとめる
   function buildHay(g) {
     return normSearch((g.name || "") + " " + (g.kana || "") + " " + (g.country || "") +
-      " " + (g.botanicals || "") + " " + (g.note || ""));
+      " " + (g.botanicals || "") + " " + (g.note || "") + " " + ((g.aliases || []).join(" ")));
   }
 
   // ---- お気に入り（localStorage。file://や無効化環境でも落ちないようtry-catch）----
@@ -508,14 +518,18 @@
       .then(function (rows) {
         if (!rows || !rows.length) return;
         var seen = {};
-        GINS.forEach(function (g) { seen[normName(g.name)] = true; });
+        GINS.forEach(function (g) {
+          if (g.name) seen[dedupKey(g.name)] = true;
+          if (g.kana) seen[dedupKey(g.kana)] = true;
+          (g.aliases || []).forEach(function (a) { if (a) seen[dedupKey(a)] = true; });
+        });
         var added = 0;
         rows.forEach(function (row) {
           var nm = (row.name || row.kana || "").trim();
           if (!nm) return;
-          var key = normName(nm);
-          if (seen[key]) return; // 既存（確定）や仮登録同士の重複は出さない
-          seen[key] = true;
+          var k1 = dedupKey(row.name || nm), k2 = dedupKey(row.kana || nm);
+          if ((k1 && seen[k1]) || (k2 && seen[k2])) return; // 既存（確定）や仮登録同士の重複は出さない（登録済みは自動で消える）
+          seen[k1] = true; if (k2) seen[k2] = true;
           var g = {
             name: row.name || row.kana || "",
             kana: row.kana || row.name || "",
