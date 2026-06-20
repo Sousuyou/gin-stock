@@ -617,9 +617,10 @@
     if (!SUPABASE_URL || SUPABASE_URL.indexOf("YOUR_PROJECT_REF") !== -1) {
       renderMemoSection(g, []); return;
     }
+    // status列はanonにGRANTしていないため絞り込みに使わない（RLSが既にactive行だけ返す）
     var url = SUPABASE_URL + "/rest/v1/" + MEMO_TABLE +
       "?gin_name=eq." + encodeURIComponent(g.name) +
-      "&status=eq.active&select=memo,created_at&order=created_at.desc";
+      "&select=memo,created_at&order=created_at.desc";
     fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY } })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (rows) { renderMemoSection(g, rows || []); })
@@ -671,7 +672,8 @@
   // 全銘柄ぶんの風味タグをSupabaseから読み込み、各 g._tags に付与＋フィルタ再構築
   function loadAllTags() {
     if (!SUPABASE_URL || SUPABASE_URL.indexOf("YOUR_PROJECT_REF") !== -1) return;
-    var url = SUPABASE_URL + "/rest/v1/" + TAGS_TABLE + "?status=eq.active&select=gin_name,tag";
+    // status列はanonにGRANTしていないため絞り込みに使わない（RLSが既にactive行だけ返す）
+    var url = SUPABASE_URL + "/rest/v1/" + TAGS_TABLE + "?select=gin_name,tag";
     fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY } })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (rows) {
