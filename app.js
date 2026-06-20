@@ -18,6 +18,42 @@
   // スタッフメモ投稿用PIN（申請ページと同じ。SHA-256で照合・平文は置かない。既定 soutsu2026）
   var MEMO_PIN_SHA256 = "694b39a1bfa7ff68a9dee1972d6323fbb797f368fad85b74429e0fa696529263";
   var MEMO_UNLOCK_KEY = "soutsu_staff_unlocked";
+  var TAGS_TABLE = "gin_flavor_tags";
+  // 風味タグ（スタッフが付与・全員閲覧・絞り込み可。2群×計28タグ。説明は選択時のヒント=title）
+  var FLAVOR_GROUPS = [
+    { group: "香り・風味", tags: ["ジュニパー", "フローラル", "フルーティー", "シトラス", "ウッディ", "スパイシー", "ペッパー", "ハーバル", "アーシー", "パフューミー", "ベジタル", "マリン", "ナッティ", "スモーキー", "クリーミー", "お茶系", "ビター系"] },
+    { group: "種類・製法", tags: ["コンパウンドジン", "オールドトムジン系", "バレルドジン", "ジュネヴァ", "シュタインヘーガー", "スロージン", "ジンリキュール", "クラシック", "焼酎系", "個性派", "ノンアルコールジン"] }
+  ];
+  var TAG_DESC = {
+    "ジュニパー": "浸漬時間や品種で細分化可。ウッディ・シトラスと重複あり",
+    "フローラル": "薔薇・ラベンダーなど",
+    "フルーティー": "ベリー・林檎・梨・葡萄など",
+    "シトラス": "レモン・ライム・柚子など",
+    "ウッディ": "ヒノキ・杉・黒文字など",
+    "スパイシー": "シナモン・クローブ・スターアニスなど",
+    "ペッパー": "ブラックペッパー・山椒・花椒など",
+    "ハーバル": "タイム・ローズマリーなど",
+    "アーシー": "根・土のようなウェッティな香り。スパイシーと類似",
+    "パフューミー": "複雑でバランスの取れた香り高い銘柄。フローラルと類似",
+    "ベジタル": "きゅうり・草・葉・セロリ・青いトマト・ピーマン・若い茎",
+    "マリン": "海藻・塩気・牡蠣殻・昆布・海風・出汁っぽさ",
+    "ナッティ": "胡麻・ナッツ・アーモンド・豆っぽさ",
+    "スモーキー": "焙煎・焦げ・燻製・スモーク・炭。数は少ない",
+    "クリーミー": "バニラ・ココナッツなど乳酸的な甘い香り",
+    "お茶系": "玉露・煎茶など。ソーダ割り・水割りと好相性",
+    "ビター系": "カカオ・珈琲・ビターズを浸漬添加など",
+    "コンパウンドジン": "ボタニカルを再蒸留せず漬け込んだ銘柄",
+    "オールドトムジン系": "加糖・甘みが強い銘柄（厳密な定義はなし）",
+    "バレルドジン": "樽で熟成されたジン全般",
+    "ジュネヴァ": "モルトワイン主体のオランダ生まれ。取扱少なめ",
+    "シュタインヘーガー": "生のジュニパーを発酵後蒸留。コールドショットで",
+    "スロージン": "西洋すもものリキュール。品揃え薄め",
+    "ジンリキュール": "ジンベースのリキュール。スパイス感強めが多い",
+    "クラシック": "ジュニパー・アンジェリカ・コリアンダー・リコリス等のクラシックなボタニカル中心",
+    "焼酎系": "ベースに焼酎。芋・麦など個性を残す。水割り/ソーダ割りで",
+    "個性派": "隕石・ピスコベース・サクラケムシの糞など…",
+    "ノンアルコールジン": "厳密にはジンでない。フローラル・ウッディ系が多くソーダ割り向き"
+  };
 
   // お気に入り（★）：この端末のブラウザに保存（localStorage）。銘柄名をキーにする。
   var FAV_KEY = "soutsu_gin_favs";
@@ -200,6 +236,7 @@
 
   // ---- フィルタ用セレクト＋頭文字インデックスを作る ----
   function buildControls() {
+    var keepSel = { c: els.country.value, b: els.bot.value, t: els.tag ? els.tag.value : "" };
     var byCountry = {};
     GINS.forEach(function (g) {
       byCountry[g.country_main] = (byCountry[g.country_main] || 0) + 1;
@@ -233,6 +270,26 @@
       if (have[r]) html += '<button type="button" class="kana-btn" data-g="' + esc(r) + '">' + esc(r) + "</button>";
     });
     els.kana.innerHTML = html;
+
+    // 風味タグのプルダウン（実際に使われているタグを群ごとに。0件のタグは出さない）
+    if (els.tag) {
+      var byTag = {};
+      GINS.forEach(function (g) { (g._tags || []).forEach(function (t) { byTag[t] = (byTag[t] || 0) + 1; }); });
+      var optsT = ['<option value="">すべての風味タグ</option>'];
+      FLAVOR_GROUPS.forEach(function (grp) {
+        var used = grp.tags.filter(function (t) { return byTag[t]; });
+        if (!used.length) return;
+        optsT.push('<optgroup label="' + esc(grp.group) + '">');
+        used.forEach(function (t) { optsT.push('<option value="' + esc(t) + '">' + esc(t) + "（" + byTag[t] + "）</option>"); });
+        optsT.push("</optgroup>");
+      });
+      els.tag.innerHTML = optsT.join("");
+    }
+
+    // 絞り込みの選択値を保つ（再構築でリセットされないように）
+    els.country.value = keepSel.c;
+    els.bot.value = keepSel.b;
+    if (els.tag) els.tag.value = keepSel.t;
   }
 
   // ---- 絞り込み＋並び替え ----
@@ -242,6 +299,7 @@
     var fc = els.country.value;
     var fb = els.bot.value;
     var fa = els.abv.value;
+    var ft = els.tag ? els.tag.value : "";
     var sort = els.sort.value;
 
     var out = GINS.filter(function (g) {
@@ -249,6 +307,7 @@
       if (provOnly && !g._provisional) return false;
       if (fc && g.country_main !== fc) return false;
       if (fb && (g._bot || []).indexOf(fb) === -1) return false;
+      if (ft && (g._tags || []).indexOf(ft) === -1) return false;
       if (!inAbvBand(g.abv, fa)) return false;
       if (currentInitial && initialOf(g) !== currentInitial) return false;
       if (qTokens.length) {
@@ -290,6 +349,11 @@
 
     var warn = g.not_gin ? '<p class="not-gin-note">※当店にありますが、ジンではありません</p>' : "";
 
+    var tags = (g._tags && g._tags.length)
+      ? '<div class="gin-tags">' + g._tags.slice(0, 6).map(function (t) { return '<span class="gin-tag">' + esc(t) + "</span>"; }).join("") +
+        (g._tags.length > 6 ? '<span class="gin-tag gin-tag-more">+' + (g._tags.length - 6) + "</span>" : "") + "</div>"
+      : "";
+
     var on = isFav(g);
     var fav =
       '<button type="button" class="fav-btn' + (on ? " is-on" : "") + '" data-name="' + esc(g.name) +
@@ -303,7 +367,7 @@
           (g.kana ? '<p class="gin-kana">' + esc(g.kana) + "</p>" : "") +
           '<div class="gin-badges">' + badges + "</div>" +
           warn +
-          bot +
+          bot + tags +
         "</button>" +
       "</div>"
     );
@@ -405,10 +469,12 @@
         warn +
         bot + note +
         '<div class="memo-section"><h3 class="memo-title">スタッフメモ</h3><div id="memo-box" class="memo-box"><p class="memo-empty">読み込み中…</p></div></div>' +
+        '<div class="tag-section"><h3 class="memo-title">風味タグ</h3><div id="tag-box" class="tag-box"></div></div>' +
       "</div>";
     els.modal.hidden = false;
     document.body.style.overflow = "hidden";
     loadMemos(g);
+    renderTagSection(g);
   }
   function closeModal() {
     els.modal.hidden = true;
@@ -421,6 +487,7 @@
     els.country.value = "";
     els.bot.value = "";
     els.abv.value = "";
+    if (els.tag) els.tag.value = "";
     els.sort.value = "kana";
     currentInitial = "";
     favOnly = false;
@@ -462,6 +529,7 @@
           };
           if (row.not_gin === true) g.not_gin = true;
           g._bot = botTokens(g.botanicals);
+          g._tags = [];
           g._hay = buildHay(g);
           GINS.push(g);
           added++;
@@ -544,16 +612,17 @@
       .catch(function () { renderMemoSection(g, []); });
   }
 
-  function handleMemoPinVerify() {
-    var inp = document.getElementById("memo-pin");
-    var err = document.getElementById("memo-pin-err");
+  // スタッフPIN照合（メモ・タグ共通）。解錠成功でモーダルを再描画し両方の編集UIを出す。
+  function verifyStaffPin(pinId, errId) {
+    var inp = document.getElementById(pinId);
+    var err = document.getElementById(errId);
     if (!inp) return;
     var val = (inp.value || "").trim();
     if (!val) return;
     if (err) err.textContent = "";
     if (!window.crypto || !crypto.subtle) { if (err) err.textContent = "httpsで開いてください。"; return; }
     sha256hex(val).then(function (h) {
-      if (h === MEMO_PIN_SHA256) { safeSSet(MEMO_UNLOCK_KEY, "1"); if (modalGin) loadMemos(modalGin); }
+      if (h === MEMO_PIN_SHA256) { safeSSet(MEMO_UNLOCK_KEY, "1"); if (modalGin) openModal(modalGin); }
       else if (err) { err.textContent = "PINが違います。"; inp.value = ""; }
     }).catch(function () { if (err) err.textContent = "PIN照合エラー。"; });
   }
@@ -578,6 +647,104 @@
     }).catch(function () { if (msg) msg.textContent = "送信に失敗しました（通信エラー）。"; });
   }
 
+  // ===== 風味タグ（各ジンごと・全員閲覧／スタッフのみPIN付与。PINはメモと共通）=====
+  function uniqArr(a) {
+    var seen = {}, out = [];
+    (a || []).forEach(function (x) { if (x && !seen[x]) { seen[x] = 1; out.push(x); } });
+    return out;
+  }
+
+  // 全銘柄ぶんの風味タグをSupabaseから読み込み、各 g._tags に付与＋フィルタ再構築
+  function loadAllTags() {
+    if (!SUPABASE_URL || SUPABASE_URL.indexOf("YOUR_PROJECT_REF") !== -1) return;
+    var url = SUPABASE_URL + "/rest/v1/" + TAGS_TABLE + "?status=eq.active&select=gin_name,tag";
+    fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY } })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (rows) {
+        if (!rows) return;
+        var byGin = {};
+        rows.forEach(function (row) {
+          var k = normName(row.gin_name);
+          (byGin[k] = byGin[k] || []).push(row.tag);
+        });
+        GINS.forEach(function (g) {
+          var arr = uniqArr(byGin[normName(g.name)] || []);
+          g._tags = arr;
+          g._hay = buildHay(g) + " " + normSearch(arr.join(" "));
+        });
+        buildControls();
+        render();
+        if (modalGin && els.modal && !els.modal.hidden) renderTagSection(modalGin);
+      })
+      .catch(function () { /* タグが読めなくてもカタログは通常どおり */ });
+  }
+
+  // 付与パレット（解錠スタッフ用・群ごとにタグを並べる）
+  function tagPaletteHTML(g) {
+    var applied = g._tags || [];
+    var html = '<div class="tag-palette">';
+    FLAVOR_GROUPS.forEach(function (grp) {
+      html += '<div class="tag-grp-label">' + esc(grp.group) + '</div><div class="tag-grp">';
+      grp.tags.forEach(function (t) {
+        var on = applied.indexOf(t) >= 0;
+        html += '<button type="button" class="tag-pick' + (on ? " is-on" : "") + '" data-tag="' + esc(t) +
+          '" title="' + esc(TAG_DESC[t] || "") + '"' + (on ? " disabled" : "") + ">" + esc(t) + "</button>";
+      });
+      html += "</div>";
+    });
+    html += '<p class="memo-hint" id="tag-msg">タップで追加（取り消しはオーナーがTable Editorで）。</p></div>';
+    return html;
+  }
+
+  function renderTagSection(g) {
+    var box = document.getElementById("tag-box");
+    if (!box) return;
+    var applied = g._tags || [];
+    var appliedHTML = applied.length
+      ? '<div class="tag-applied">' + applied.map(function (t) {
+          return '<span class="tag-chip is-on" title="' + esc(TAG_DESC[t] || "") + '">' + esc(t) + "</span>";
+        }).join("") + "</div>"
+      : '<p class="memo-empty">まだ風味タグはありません。</p>';
+    var addHTML;
+    if (memoUnlocked()) {
+      addHTML = tagPaletteHTML(g);
+    } else {
+      addHTML = '<div class="memo-add">' +
+        '<button type="button" class="tag-unlock">＋ タグを付ける（スタッフ）</button>' +
+        '<div class="memo-pin-row" id="tag-pin-row" hidden>' +
+          '<input id="tag-pin" class="memo-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="スタッフPIN" />' +
+          '<button type="button" class="tag-pin-ok">解錠</button>' +
+          '<span class="memo-hint" id="tag-pin-err"></span>' +
+        "</div>" +
+        "</div>";
+    }
+    box.innerHTML = appliedHTML + addHTML;
+  }
+
+  function addTag(g, tag) {
+    if (!g || !tag) return;
+    if ((g._tags || []).indexOf(tag) >= 0) return;
+    var msg = document.getElementById("tag-msg");
+    if (msg) msg.textContent = "追加中…";
+    fetch(SUPABASE_URL + "/rest/v1/" + TAGS_TABLE, {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY,
+        "Content-Type": "application/json", Prefer: "return=minimal"
+      },
+      body: JSON.stringify({ gin_name: g.name, tag: tag })
+    }).then(function (res) {
+      if (res.status === 201) {
+        g._tags = uniqArr((g._tags || []).concat([tag]));
+        g._hay = buildHay(g) + " " + normSearch(g._tags.join(" "));
+        renderTagSection(g);
+        render();
+      } else if (msg) {
+        msg.textContent = "追加に失敗しました（" + res.status + "）。";
+      }
+    }).catch(function () { if (msg) msg.textContent = "追加に失敗しました（通信エラー）。"; });
+  }
+
   function init() {
     els = {
       q: $("q"), country: $("f-country"), bot: $("f-bot"), abv: $("f-abv"), sort: $("f-sort"),
@@ -585,13 +752,14 @@
       meta: $("data-meta"), kana: $("kana-index"), modal: $("gin-modal"),
       favFilter: $("fav-filter"),
       provFilter: $("prov-filter"),
+      tag: $("f-tag"),
     };
 
     fetch("gins.json", { cache: "no-store" })
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (data) {
         GINS = (data && data.gins) || [];
-        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._hay = buildHay(g); }); // ボタニカル代表名化＋検索用テキスト
+        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._tags = g._tags || []; g._hay = buildHay(g); }); // ボタニカル代表名化＋タグ初期化＋検索用テキスト
         if (els.meta) {
           var upd = fmtDate(data.updated);
           els.meta.textContent = "在庫 " + GINS.length + "銘柄" + (upd ? "・データ最終更新 " + upd : "");
@@ -614,7 +782,7 @@
         }
 
         els.q.addEventListener("input", render);
-        [els.country, els.bot, els.abv, els.sort].forEach(function (s) { s.addEventListener("change", render); });
+        [els.country, els.bot, els.abv, els.sort, els.tag].forEach(function (s) { if (s) s.addEventListener("change", render); });
         els.reset.addEventListener("click", resetAll);
         if (els.favFilter) {
           els.favFilter.addEventListener("click", function () { favOnly = !favOnly; render(); });
@@ -658,8 +826,16 @@
             if (prow) { prow.hidden = false; var pin = document.getElementById("memo-pin"); if (pin) pin.focus(); }
             return;
           }
-          if (e.target.closest(".memo-pin-ok")) { handleMemoPinVerify(); return; }
+          if (e.target.closest(".memo-pin-ok")) { verifyStaffPin("memo-pin", "memo-pin-err"); return; }
           if (e.target.closest(".memo-send")) { submitMemo(modalGin); return; }
+          if (e.target.closest(".tag-unlock")) {
+            var trow = document.getElementById("tag-pin-row");
+            if (trow) { trow.hidden = false; var tp = document.getElementById("tag-pin"); if (tp) tp.focus(); }
+            return;
+          }
+          if (e.target.closest(".tag-pin-ok")) { verifyStaffPin("tag-pin", "tag-pin-err"); return; }
+          var pick = e.target.closest(".tag-pick");
+          if (pick && !pick.disabled) { addTag(modalGin, pick.getAttribute("data-tag")); return; }
           if (e.target === els.modal || e.target.closest(".modal-close")) closeModal();
         });
         document.addEventListener("keydown", function (e) {
@@ -668,6 +844,8 @@
 
         // 申請箱の「仮登録」を後追いで読み込んで合流（失敗してもカタログは動く）
         loadProvisional();
+        // 風味タグを読み込んで各銘柄に付与＋フィルタ構築（失敗してもカタログは動く）
+        loadAllTags();
       })
       .catch(function (err) {
         els.count.textContent = "";
