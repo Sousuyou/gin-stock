@@ -20,6 +20,8 @@
   var MEMO_PIN_SHA256 = "694b39a1bfa7ff68a9dee1972d6323fbb797f368fad85b74429e0fa696529263";
   var MEMO_UNLOCK_KEY = "soutsu_staff_unlocked";
   var TAGS_TABLE = "gin_flavor_tags";
+  var AROMA_TABLE = "gin_aroma_strengths";
+  var aromaStrengthState = "loading"; // loading / ready / unavailable
   // 風味タグ（スタッフが付与・全員閲覧・絞り込み可。2群×計28タグ。説明は選択時のヒント=title）
   var FLAVOR_GROUPS = [
     { group: "香り・風味", tags: ["ジュニパー", "フローラル", "フルーティー", "シトラス", "ウッディ", "スパイシー", "ペッパー", "ハーバル", "アーシー", "パフューミー", "ベジタル", "マリン", "ナッティ", "スモーキー", "クリーミー", "お茶系", "ビター系"] },
@@ -261,6 +263,11 @@
     "ストロベリー": "苺",
     "イチゴ": "苺",
     "紫蘇": "青紫蘇",
+    "バラ": "ローズ",
+    "ブルガリアンローズ": "ローズ",
+    "クベバベリー": "クベブペッパー",
+    "クベバ": "クベブペッパー",
+    "コースタルタイム": "タイム",
     "柚子ピール": "柚子",
     "ゆず": "柚子"
   };
@@ -268,6 +275,7 @@
   var BOT_JUNK = {
     "不明": 1, "公式情報なし": 1, "非公開": 1, "情報なし": 1, "その他": 1,
     "スパイス": 1, "ハーブ": 1, "各種": 1, "数種": 1, "複数": 1, "各種ボタニカル": 1,
+    "シトラス": 1, "柑橘": 1, "柑橘ピール": 1, "核果": 1, "ストーンフルーツ": 1,
   };
   var BOT_MIN = 15; // この件数以上のボタニカルだけプルダウンに出す
 
@@ -329,33 +337,36 @@
     var data = botanicalData();
     var components = data.components || {};
     if (!info) {
-      return '<div class="bot-mini" role="status">' +
+      return '<div class="bot-mini is-missing" role="status">' +
         '<button type="button" class="bot-mini-close" aria-label="閉じる">×</button>' +
-        '<p class="bot-mini-eyebrow">Botanical detail</p>' +
-        '<h3>' + esc(requestedName) + '</h3>' +
-        '<p class="bot-mini-empty">この名前の詳細データはまだ登録されていません。</p>' +
+        '<div class="bot-mini-top">' +
+          '<div><p class="bot-mini-eyebrow">Unregistered candidate</p><h3>' + esc(requestedName) + '</h3></div>' +
+          '<span class="bot-mini-family">未登録</span>' +
+        '</div>' +
+        '<p class="bot-mini-empty">在庫カタログから自動検出しましたが、ボタニカル表にはまだ詳細データがありません。</p>' +
         '<a class="bot-mini-open" href="' + botanicalTableUrl(requestedName) + '" target="_blank" rel="noopener">ボタニカル表で検索</a>' +
       "</div>";
     }
     var family = (data.families || {})[info.name] || "分類未設定";
     var compHTML = info.components.slice(0, 8).map(function (name) {
       var c = components[name] || {};
-      var note = (c.family ? c.family + " / " : "") + (c.note || "代表成分");
-      return '<li><b>' + esc(name) + '</b><span>' + esc(note) + '</span></li>';
+      return '<li><b>' + esc(name) + '</b>' +
+        (c.family ? '<em>' + esc(c.family) + '</em>' : "") +
+        '<span>' + esc(c.note || "代表成分") + '</span></li>';
     }).join("");
     return '<div class="bot-mini" role="status">' +
       '<button type="button" class="bot-mini-close" aria-label="閉じる">×</button>' +
-      '<p class="bot-mini-eyebrow">Botanical detail</p>' +
-      '<div class="bot-mini-head">' +
-        '<div><h3>' + esc(info.name) + '</h3><p>' + esc(info.latin) + '</p></div>' +
-        '<span>' + esc(family) + '</span>' +
+      '<div class="bot-mini-top">' +
+        '<div><p class="bot-mini-eyebrow">Botanical detail</p><h3>' + esc(info.name) + '</h3><p>' + esc(info.latin) + '</p></div>' +
+        '<span class="bot-mini-family">' + esc(family) + '</span>' +
       '</div>' +
-      '<dl class="bot-mini-meta">' +
+      '<div class="bot-mini-summary">' + esc(info.aroma) + '</div>' +
+      '<dl class="bot-mini-facts">' +
         '<div><dt>分類</dt><dd>' + esc(info.group) + '</dd></div>' +
         '<div><dt>部位</dt><dd>' + esc(info.part) + '</dd></div>' +
-        '<div><dt>香り</dt><dd>' + esc(info.aroma) + '</dd></div>' +
-        '<div><dt>役割</dt><dd>' + esc(info.role) + '</dd></div>' +
       '</dl>' +
+      '<p class="bot-mini-role">' + esc(info.role) + '</p>' +
+      '<p class="bot-mini-subhead">主な香気成分</p>' +
       '<ul class="bot-mini-components">' + compHTML + '</ul>' +
       '<a class="bot-mini-open" href="' + botanicalTableUrl(info.name) + '" target="_blank" rel="noopener">ボタニカル表で開く</a>' +
     "</div>";
@@ -388,9 +399,19 @@
   function botanicalLinksHTML(text) {
     var tokens = botTokens(text).filter(isBotanicalLinkable);
     if (!tokens.length) return '<p>' + esc(text) + "</p>";
-    return '<div class="bot-link-list">' + tokens.map(function (name) {
-      return '<button type="button" class="bot-link" data-botanical="' + esc(name) + '" title="その場で詳細を見る">' + esc(name) + "</button>";
-    }).join("") + '</div><div id="botanical-popover" class="botanical-popover" hidden></div>';
+    var missing = [];
+    var listHTML = tokens.map(function (name) {
+      var registered = !!findBotanicalInfo(name);
+      if (!registered) missing.push(name);
+      return '<button type="button" class="bot-link' + (registered ? "" : " is-missing") +
+        '" data-botanical="' + esc(name) + '" title="' + (registered ? "その場で詳細を見る" : "未登録候補を見る") + '">' +
+        esc(name) + (registered ? "" : '<span class="bot-missing-mark">未登録</span>') + "</button>";
+    }).join("");
+    var missingHTML = missing.length
+      ? '<div class="bot-missing-box"><b>ボタニカル表 未登録候補</b><span>' + esc(missing.join(" / ")) + '</span></div>'
+      : "";
+    return '<div class="bot-link-list">' + listHTML + '</div>' + missingHTML +
+      '<div id="botanical-popover" class="botanical-popover" hidden></div>';
   }
 
   // ---- 頭文字の行（あ/か/さ…/A-Z/#）を求める ----
@@ -656,12 +677,14 @@
         warn +
         bot + note +
         '<div class="tag-section"><h3 class="memo-title">風味タグ</h3><div id="tag-box" class="tag-box"></div></div>' +
+        '<div class="aroma-section"><h3 class="memo-title">香りの強さ</h3><div id="aroma-box" class="aroma-box"></div></div>' +
         '<div class="memo-section"><h3 class="memo-title">スタッフメモ</h3><div id="memo-box" class="memo-box"><p class="memo-empty">読み込み中…</p></div></div>' +
       "</div>";
     els.modal.hidden = false;
     document.body.style.overflow = "hidden";
     loadMemos(g);
     renderTagSection(g);
+    renderAromaSection(g);
   }
   function closeModal() {
     els.modal.hidden = true;
@@ -721,6 +744,7 @@
           if (row.not_gin === true) g.not_gin = true;
           g._bot = botTokens(g.botanicals);
           g._tags = [];
+          g._aromaStrength = 0;
           g._hay = buildHay(g);
           GINS.push(g);
           added++;
@@ -938,6 +962,112 @@
     }).catch(function () { if (msg) msg.textContent = "追加に失敗しました（通信エラー）。"; });
   }
 
+  function aromaStrengthLabel(value) {
+    if (!value) return "未設定";
+    if (value <= 3) return "穏やか";
+    if (value <= 6) return "中程度";
+    if (value <= 8) return "強め";
+    return "非常に強い";
+  }
+
+  function aromaStrengthHTML(value) {
+    var v = Number(value) || 0;
+    if (!v) {
+      return '<div class="aroma-current is-empty"><span>未設定</span><small>まだ強さが保存されていません</small></div>';
+    }
+    return '<div class="aroma-current"><span>' + v + '</span><small>' + esc(aromaStrengthLabel(v)) + '</small></div>';
+  }
+
+  function renderAromaSection(g) {
+    var box = document.getElementById("aroma-box");
+    if (!box || !g) return;
+    var current = Number(g._aromaStrength) || 0;
+    var value = current || 5;
+    var lockedHTML = '<div class="memo-add">' +
+      '<button type="button" class="aroma-unlock">＋ 強さを設定（スタッフ）</button>' +
+      '<div class="memo-pin-row" id="aroma-pin-row" hidden>' +
+        '<input id="aroma-pin" class="memo-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="スタッフPIN" />' +
+        '<button type="button" class="aroma-pin-ok">解錠</button>' +
+        '<span class="memo-hint" id="aroma-pin-err"></span>' +
+      "</div>" +
+      "</div>";
+    var unavailable = aromaStrengthState === "unavailable";
+    var loading = aromaStrengthState === "loading";
+    var editHTML = '<div class="aroma-editor">' +
+      '<div class="aroma-slider-row">' +
+        '<input id="aroma-range" class="aroma-range" type="range" min="1" max="10" step="1" value="' + value + '"' + (unavailable ? " disabled" : "") + ' />' +
+        '<output id="aroma-output" class="aroma-output">' + value + '</output>' +
+      '</div>' +
+      '<div class="aroma-scale" aria-hidden="true"><span>1</span><span>5</span><span>10</span></div>' +
+      '<button type="button" class="aroma-save"' + (unavailable ? " disabled" : "") + '>保存</button>' +
+      '<p class="memo-hint" id="aroma-msg">' +
+        (unavailable ? "保存先未設定です。supabase_aroma_strengths_setup.sql を実行すると共有保存できます。" : "保存するとスタッフ全員に共有されます。") +
+      '</p>' +
+      "</div>";
+    box.innerHTML =
+      '<div class="aroma-read">' + aromaStrengthHTML(current) +
+        '<p class="aroma-note">' + (loading ? "共有値を読み込み中…" : "1が穏やか、10が最も強い香りです。") + "</p>" +
+      "</div>" +
+      (memoUnlocked() ? editHTML : lockedHTML);
+  }
+
+  function updateAromaOutput() {
+    var range = document.getElementById("aroma-range");
+    var out = document.getElementById("aroma-output");
+    if (range && out) out.textContent = range.value;
+  }
+
+  function loadAllAromaStrengths() {
+    if (!SUPABASE_URL || SUPABASE_URL.indexOf("YOUR_PROJECT_REF") !== -1) return;
+    var url = SUPABASE_URL + "/rest/v1/" + AROMA_TABLE +
+      "?select=gin_name,strength,created_at&order=created_at.desc";
+    fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY } })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (rows) {
+        var byGin = {};
+        (rows || []).forEach(function (row) {
+          var k = normName(row.gin_name);
+          if (!byGin[k]) byGin[k] = Number(row.strength) || 0;
+        });
+        GINS.forEach(function (g) { g._aromaStrength = byGin[normName(g.name)] || 0; });
+        aromaStrengthState = "ready";
+        if (modalGin && els.modal && !els.modal.hidden) renderAromaSection(modalGin);
+      })
+      .catch(function () {
+        aromaStrengthState = "unavailable";
+        if (modalGin && els.modal && !els.modal.hidden) renderAromaSection(modalGin);
+      });
+  }
+
+  function submitAromaStrength(g) {
+    var range = document.getElementById("aroma-range");
+    var msg = document.getElementById("aroma-msg");
+    if (!range || !g) return;
+    var strength = Number(range.value);
+    if (!(strength >= 1 && strength <= 10)) {
+      if (msg) msg.textContent = "1〜10の範囲で選んでください。";
+      return;
+    }
+    if (msg) msg.textContent = "保存中…";
+    fetch(SUPABASE_URL + "/rest/v1/" + AROMA_TABLE, {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY,
+        "Content-Type": "application/json", Prefer: "return=minimal"
+      },
+      body: JSON.stringify({ gin_name: g.name, strength: strength })
+    }).then(function (res) {
+      if (res.status === 201) {
+        g._aromaStrength = strength;
+        aromaStrengthState = "ready";
+        renderAromaSection(g);
+      } else {
+        if (res.status === 404) aromaStrengthState = "unavailable";
+        if (msg) msg.textContent = "保存に失敗しました（" + res.status + "）。";
+      }
+    }).catch(function () { if (msg) msg.textContent = "保存に失敗しました（通信エラー）。"; });
+  }
+
   function init() {
     els = {
       q: $("q"), country: $("f-country"), bot: $("f-bot"), abv: $("f-abv"), sort: $("f-sort"),
@@ -952,7 +1082,7 @@
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (data) {
         GINS = (data && data.gins) || [];
-        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._tags = g._tags || []; g._hay = buildHay(g); }); // ボタニカル代表名化＋タグ初期化＋検索用テキスト
+        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._tags = g._tags || []; g._aromaStrength = 0; g._hay = buildHay(g); }); // ボタニカル代表名化＋タグ初期化＋検索用テキスト
         if (els.meta) {
           var upd = fmtDate(data.updated);
           els.meta.textContent = "在庫 " + GINS.length + "銘柄" + (upd ? "・データ最終更新 " + upd : "");
@@ -1032,7 +1162,17 @@
           if (e.target.closest(".tag-pin-ok")) { verifyStaffPin("tag-pin", "tag-pin-err"); return; }
           var pick = e.target.closest(".tag-pick");
           if (pick && !pick.disabled) { addTag(modalGin, pick.getAttribute("data-tag")); return; }
+          if (e.target.closest(".aroma-unlock")) {
+            var arow = document.getElementById("aroma-pin-row");
+            if (arow) { arow.hidden = false; var ap = document.getElementById("aroma-pin"); if (ap) ap.focus(); }
+            return;
+          }
+          if (e.target.closest(".aroma-pin-ok")) { verifyStaffPin("aroma-pin", "aroma-pin-err"); return; }
+          if (e.target.closest(".aroma-save")) { submitAromaStrength(modalGin); return; }
           if (e.target === els.modal || e.target.closest(".modal-close")) closeModal();
+        });
+        els.modal.addEventListener("input", function (e) {
+          if (e.target.closest(".aroma-range")) updateAromaOutput();
         });
         document.addEventListener("keydown", function (e) {
           if (e.key === "Escape" && !els.modal.hidden) closeModal();
@@ -1042,6 +1182,8 @@
         loadProvisional();
         // 風味タグを読み込んで各銘柄に付与＋フィルタ構築（失敗してもカタログは動く）
         loadAllTags();
+        // 香りの強さを読み込んで各銘柄に付与（保存先未作成でもカタログは動く）
+        loadAllAromaStrengths();
       })
       .catch(function (err) {
         els.count.textContent = "";
