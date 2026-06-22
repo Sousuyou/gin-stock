@@ -162,6 +162,19 @@
     return true;
   }
 
+  function inAromaBand(strength, band) {
+    var v = Number(strength) || 0;
+    if (!band) return true;
+    if (band === "set") return v >= 1 && v <= 10;
+    if (band === "unset") return !v;
+    if (!v) return false;
+    if (band === "1-3") return v >= 1 && v <= 3;
+    if (band === "4-6") return v >= 4 && v <= 6;
+    if (band === "7-8") return v >= 7 && v <= 8;
+    if (band === "9-10") return v >= 9 && v <= 10;
+    return true;
+  }
+
   // ---- ボタニカルの絞り込み用：表記ゆれを代表名にまとめる ----
   // 例：「ジュニパー」も「ジュニパーベリー」も同じ＝代表名「ジュニパー」に寄せる。
   var BOT_SYN = {
@@ -444,7 +457,12 @@
 
   // ---- フィルタ用セレクト＋頭文字インデックスを作る ----
   function buildControls() {
-    var keepSel = { c: els.country.value, b: els.bot.value, t: els.tag ? els.tag.value : "" };
+    var keepSel = {
+      c: els.country.value,
+      b: els.bot.value,
+      t: els.tag ? els.tag.value : "",
+      a: els.aroma ? els.aroma.value : ""
+    };
     var byCountry = {};
     GINS.forEach(function (g) {
       byCountry[g.country_main] = (byCountry[g.country_main] || 0) + 1;
@@ -498,6 +516,7 @@
     els.country.value = keepSel.c;
     els.bot.value = keepSel.b;
     if (els.tag) els.tag.value = keepSel.t;
+    if (els.aroma) els.aroma.value = keepSel.a;
   }
 
   // ---- 絞り込み＋並び替え ----
@@ -508,6 +527,7 @@
     var fb = els.bot.value;
     var fa = els.abv.value;
     var ft = els.tag ? els.tag.value : "";
+    var far = els.aroma ? els.aroma.value : "";
     var sort = els.sort.value;
 
     var out = GINS.filter(function (g) {
@@ -517,6 +537,7 @@
       if (fb && (g._bot || []).indexOf(fb) === -1) return false;
       if (ft && (g._tags || []).indexOf(ft) === -1) return false;
       if (!inAbvBand(g.abv, fa)) return false;
+      if (!inAromaBand(g._aromaStrength, far)) return false;
       if (currentInitial && initialOf(g) !== currentInitial) return false;
       if (qTokens.length) {
         var hay = g._hay || buildHay(g);
@@ -531,6 +552,18 @@
       if (sort === "added-desc") {
         var at = addedTime(a), bt = addedTime(b);
         if (at !== bt) return bt - at;
+        return (a.kana || a.name).localeCompare(b.kana || b.name, "ja");
+      }
+      if (sort === "aroma-desc") {
+        var ad = Number(a._aromaStrength) || 0;
+        var bd = Number(b._aromaStrength) || 0;
+        if (ad !== bd) return (bd || -1) - (ad || -1);
+        return (a.kana || a.name).localeCompare(b.kana || b.name, "ja");
+      }
+      if (sort === "aroma-asc") {
+        var aa = Number(a._aromaStrength) || 0;
+        var ba = Number(b._aromaStrength) || 0;
+        if (aa !== ba) return (aa || 999) - (ba || 999);
         return (a.kana || a.name).localeCompare(b.kana || b.name, "ja");
       }
       if (sort === "abv-desc") return (b.abv || -1) - (a.abv || -1);
@@ -698,6 +731,7 @@
     els.bot.value = "";
     els.abv.value = "";
     if (els.tag) els.tag.value = "";
+    if (els.aroma) els.aroma.value = "";
     els.sort.value = "kana";
     currentInitial = "";
     favOnly = false;
@@ -962,20 +996,12 @@
     }).catch(function () { if (msg) msg.textContent = "追加に失敗しました（通信エラー）。"; });
   }
 
-  function aromaStrengthLabel(value) {
-    if (!value) return "未設定";
-    if (value <= 3) return "穏やか";
-    if (value <= 6) return "中程度";
-    if (value <= 8) return "強め";
-    return "非常に強い";
-  }
-
   function aromaStrengthHTML(value) {
     var v = Number(value) || 0;
     if (!v) {
-      return '<div class="aroma-current is-empty"><span>未設定</span><small>まだ強さが保存されていません</small></div>';
+      return '<div class="aroma-current is-empty"><span>未設定</span></div>';
     }
-    return '<div class="aroma-current"><span>' + v + '</span><small>' + esc(aromaStrengthLabel(v)) + '</small></div>';
+    return '<div class="aroma-current"><span>現在 ' + v + '</span></div>';
   }
 
   function renderAromaSection(g) {
@@ -998,7 +1024,6 @@
         '<input id="aroma-range" class="aroma-range" type="range" min="1" max="10" step="1" value="' + value + '"' + (unavailable ? " disabled" : "") + ' />' +
         '<output id="aroma-output" class="aroma-output">' + value + '</output>' +
       '</div>' +
-      '<div class="aroma-scale" aria-hidden="true"><span>1</span><span>5</span><span>10</span></div>' +
       '<button type="button" class="aroma-save"' + (unavailable ? " disabled" : "") + '>保存</button>' +
       '<p class="memo-hint" id="aroma-msg">' +
         (unavailable ? "保存先未設定です。supabase_aroma_strengths_setup.sql を実行すると共有保存できます。" : "保存するとスタッフ全員に共有されます。") +
@@ -1006,7 +1031,7 @@
       "</div>";
     box.innerHTML =
       '<div class="aroma-read">' + aromaStrengthHTML(current) +
-        '<p class="aroma-note">' + (loading ? "共有値を読み込み中…" : "1が穏やか、10が最も強い香りです。") + "</p>" +
+        '<p class="aroma-note">' + (loading ? "共有値を読み込み中…" : "1〜10で設定します。") + "</p>" +
       "</div>" +
       (memoUnlocked() ? editHTML : lockedHTML);
   }
@@ -1031,10 +1056,12 @@
         });
         GINS.forEach(function (g) { g._aromaStrength = byGin[normName(g.name)] || 0; });
         aromaStrengthState = "ready";
+        render();
         if (modalGin && els.modal && !els.modal.hidden) renderAromaSection(modalGin);
       })
       .catch(function () {
         aromaStrengthState = "unavailable";
+        render();
         if (modalGin && els.modal && !els.modal.hidden) renderAromaSection(modalGin);
       });
   }
@@ -1060,6 +1087,7 @@
       if (res.status === 201) {
         g._aromaStrength = strength;
         aromaStrengthState = "ready";
+        render();
         renderAromaSection(g);
       } else {
         if (res.status === 404) aromaStrengthState = "unavailable";
@@ -1070,7 +1098,7 @@
 
   function init() {
     els = {
-      q: $("q"), country: $("f-country"), bot: $("f-bot"), abv: $("f-abv"), sort: $("f-sort"),
+      q: $("q"), country: $("f-country"), bot: $("f-bot"), abv: $("f-abv"), aroma: $("f-aroma"), sort: $("f-sort"),
       count: $("result-count"), list: $("list"), reset: $("reset"),
       meta: $("data-meta"), kana: $("kana-index"), modal: $("gin-modal"),
       favFilter: $("fav-filter"),
@@ -1105,7 +1133,7 @@
         }
 
         els.q.addEventListener("input", render);
-        [els.country, els.bot, els.abv, els.sort, els.tag].forEach(function (s) { if (s) s.addEventListener("change", render); });
+        [els.country, els.bot, els.abv, els.aroma, els.sort, els.tag].forEach(function (s) { if (s) s.addEventListener("change", render); });
         els.reset.addEventListener("click", resetAll);
         if (els.favFilter) {
           els.favFilter.addEventListener("click", function () { favOnly = !favOnly; render(); });

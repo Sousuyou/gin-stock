@@ -22,7 +22,7 @@
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/icon.svg" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260622-aroma-compact" />
     <!-- 共通テーマ（色・ダークモード）。ローカルの:rootは保険 -->
     <link rel="stylesheet" href="https://sousuyou.github.io/top/theme.css" />
   </head>
@@ -75,10 +75,24 @@
             </select>
           </div>
           <div class="filter-cell">
+            <label class="field-label" for="f-aroma">香りの強さ</label>
+            <select id="f-aroma">
+              <option value="">すべて</option>
+              <option value="set">設定あり</option>
+              <option value="unset">未設定</option>
+              <option value="1-3">1〜3</option>
+              <option value="4-6">4〜6</option>
+              <option value="7-8">7〜8</option>
+              <option value="9-10">9〜10</option>
+            </select>
+          </div>
+          <div class="filter-cell">
             <label class="field-label" for="f-sort">並び替え</label>
             <select id="f-sort">
               <option value="kana">名前順（あいうえお）</option>
               <option value="added-desc">追加が新しい順</option>
+              <option value="aroma-desc">香りが強い順</option>
+              <option value="aroma-asc">香りが弱い順</option>
               <option value="abv-desc">度数が高い順</option>
               <option value="abv-asc">度数が低い順</option>
               <option value="country">国別</option>
@@ -114,6 +128,6 @@
 
     <script src="boot.js" defer></script>
     <script src="/top/botanical-table/botanical-data.js" defer></script>
-    <script src="app.js" defer></script>
+    <script src="app.js?v=20260622-aroma-compact" defer></script>
   </body>
 </html>
