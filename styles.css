@@ -437,6 +437,27 @@ select {
 }
 .modal .detail-block p { margin: 0; font-size: 0.86rem; line-height: 1.8; }
 .muted-text { color: var(--muted); }
+.bot-link-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.bot-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  background: var(--panel-soft);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+.bot-link:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
 
 @media (max-width: 640px) {
   .filters { grid-template-columns: repeat(2, 1fr); }

@@ -15,6 +15,7 @@
   var SUPABASE_KEY = "sb_publishable_eP6BBO6u2M4iTNkK_jjULA_94qadrt1";
   var SUB_TABLE = "gin_submissions";
   var MEMO_TABLE = "gin_memos";
+  var BOTANICAL_TABLE_URL = "https://sousuyou.github.io/top/botanical-table/";
   // スタッフメモ投稿用PIN（申請ページと同じ。SHA-256で照合・平文は置かない。既定 soutsu2026）
   var MEMO_PIN_SHA256 = "694b39a1bfa7ff68a9dee1972d6323fbb797f368fad85b74429e0fa696529263";
   var MEMO_UNLOCK_KEY = "soutsu_staff_unlocked";
@@ -214,6 +215,23 @@
       if (!set[canon]) { set[canon] = 1; out.push(canon); }
     }
     return out;
+  }
+
+  function isBotanicalLinkable(name) {
+    return name &&
+      !/非公開|不明|要確認|公式情報なし|情報なし|メーカー非公開|各種|数種|複数/.test(name);
+  }
+
+  function botanicalTableUrl(name) {
+    return BOTANICAL_TABLE_URL + "?q=" + encodeURIComponent(name);
+  }
+
+  function botanicalLinksHTML(text) {
+    var tokens = botTokens(text).filter(isBotanicalLinkable);
+    if (!tokens.length) return '<p>' + esc(text) + "</p>";
+    return '<div class="bot-link-list">' + tokens.map(function (name) {
+      return '<a class="bot-link" href="' + botanicalTableUrl(name) + '" title="ボタニカル表で見る">' + esc(name) + "</a>";
+    }).join("") + "</div>";
   }
 
   // ---- 頭文字の行（あ/か/さ…/A-Z/#）を求める ----
@@ -453,7 +471,7 @@
     modalGin = g;
     var sub = g.country && g.country !== g.country_main ? "（" + esc(g.country) + "）" : "";
     var bot = g.botanicals
-      ? '<div class="detail-block"><span class="detail-label">ボタニカル</span><p>' + esc(g.botanicals) + "</p></div>"
+      ? '<div class="detail-block"><span class="detail-label">ボタニカル</span>' + botanicalLinksHTML(g.botanicals) + "</div>"
       : '<div class="detail-block"><span class="detail-label">ボタニカル</span><p class="muted-text">（未登録）</p></div>';
     var note = g.note
       ? '<div class="detail-block"><span class="detail-label">メモ</span><p>' + esc(g.note) + "</p></div>"
