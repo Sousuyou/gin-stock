@@ -185,12 +185,85 @@
     "グレープフルーツ": ["グレープフルーツ", "グレープフルーツピール", "グレープフルーツの皮"],
     "ライム": ["ライム", "ライムピール", "ライムの皮"],
     "ローズマリー": ["ローズマリー", "マンネンロウ"],
+    "ローレル": ["ローレル", "ローリエ", "ベイリーフ", "月桂樹"],
+    "レモングラス": ["レモングラス"],
+    "ローズヒップ": ["ローズヒップ"],
+    "オールスパイス": ["オールスパイス", "ピメント"],
+    "紅茶": ["紅茶", "ブラックティー", "アールグレイ"],
+    "ブルーベリー": ["ブルーベリー"],
+    "ガランガル": ["ガランガル"],
+    "ビルベリー": ["ビルベリー"],
+    "エルダーベリー": ["エルダーベリー"],
+    "チコリルート": ["チコリルート", "チコリ"],
+    "リンゴンベリー": ["リンゴンベリー"],
+    "カフィアライムリーフ": ["カフィアライムリーフ", "こぶみかんの葉", "コブミカンの葉", "マックルートライムリーフ"],
+    "ハマナス": ["ハマナス", "浜茄子"],
+    "ヘザー": ["ヘザー"],
+    "メドウスイート": ["メドウスイート", "メドウスウィート"],
+    "ユーカリ": ["ユーカリ"],
+    "シーバックソーン": ["シーバックソーン", "シーベリー"],
+    "ジャスミン": ["ジャスミン"],
+    "レモンマートル": ["レモンマートル"],
+    "ローワンベリー": ["ローワンベリー"],
+    "梅": ["梅", "うめ", "ウメ"],
+    "セイボリー": ["セイボリー"],
+    "バタフライピー": ["バタフライピー"],
+    "大和当帰": ["大和当帰", "当帰"],
+    "ニガヨモギ": ["ニガヨモギ", "ワームウッド", "苦艾"],
+    "パンダンリーフ": ["パンダンリーフ", "パンダン"],
+    "ホーリーバジル": ["ホーリーバジル", "トゥルシー"],
+    "ルバーブ": ["ルバーブ"],
+    "ローズゼラニウム": ["ローズゼラニウム"],
+    "大和橘": ["大和橘"],
+    "苺": ["苺", "イチゴ", "いちご", "ストロベリー"],
+    "杉": ["杉", "スギ"],
+    "ヒバ": ["ヒバ"],
+    "ヨモギ": ["ヨモギ", "蓬"],
+    "海苔": ["海苔", "のり", "ノリ"],
+    "金柑": ["金柑", "キンカン"],
+    "唐辛子": ["唐辛子", "とうがらし", "チリ"],
+    "仏手柑": ["仏手柑", "ブッシュカン", "ブッダハンド"],
+    "蜂蜜": ["蜂蜜", "はちみつ", "ハチミツ", "ハニー"],
   };
   // 逆引き（表記→代表名）を作る
   var BOT_REV = {};
   Object.keys(BOT_SYN).forEach(function (canon) {
     BOT_SYN[canon].forEach(function (v) { BOT_REV[v] = canon; });
   });
+  var BOTANICAL_ALIASES = {
+    "ジュニパー": "ジュニパーベリー",
+    "コリアンダー": "コリアンダーシード",
+    "アンジェリカ": "アンジェリカルート",
+    "リコリスルート": "リコリス",
+    "オリス": "オリスルート",
+    "レモン": "レモンピール",
+    "オレンジ": "オレンジピール",
+    "グレープフルーツ": "グレープフルーツピール",
+    "ライム": "ライムピール",
+    "ベルガモット": "ベルガモットピール",
+    "アニス": "アニスシード",
+    "フェンネル": "フェンネルシード",
+    "キャラウェイ": "キャラウェイシード",
+    "カッシア": "カシア",
+    "カシアバーク": "カシア",
+    "カッシアバーク": "カシア",
+    "クベブ": "クベブペッパー",
+    "キュベブ": "クベブペッパー",
+    "黒胡椒": "ブラックペッパー",
+    "グリーンカルダモン": "カルダモン",
+    "カルダモンシード": "カルダモン",
+    "ベイリーフ": "ローレル",
+    "ローリエ": "ローレル",
+    "緑茶": "煎茶",
+    "アールグレイ": "紅茶",
+    "メドウスウィート": "メドウスイート",
+    "シーベリー": "シーバックソーン",
+    "ストロベリー": "苺",
+    "イチゴ": "苺",
+    "紫蘇": "青紫蘇",
+    "柚子ピール": "柚子",
+    "ゆず": "柚子"
+  };
   // プルダウンに出さないゴミ語
   var BOT_JUNK = {
     "不明": 1, "公式情報なし": 1, "非公開": 1, "情報なし": 1, "その他": 1,
@@ -226,12 +299,98 @@
     return BOTANICAL_TABLE_URL + "?q=" + encodeURIComponent(name);
   }
 
+  function compactBotanicalName(name) {
+    return normSearch(name).replace(/[ー\s・･]/g, "");
+  }
+
+  function botanicalData() {
+    return window.SOUTSU_BOTANICAL_DATA || { components: {}, botanicals: [], families: {} };
+  }
+
+  function findBotanicalInfo(name) {
+    var data = botanicalData();
+    var botanicals = data.botanicals || [];
+    var wanted = BOTANICAL_ALIASES[name] || name;
+    var key = compactBotanicalName(wanted);
+    var i, b;
+    for (i = 0; i < botanicals.length; i++) {
+      b = botanicals[i];
+      if (compactBotanicalName(b.name) === key) return b;
+    }
+    for (i = 0; i < botanicals.length; i++) {
+      b = botanicals[i];
+      var bkey = compactBotanicalName(b.name);
+      if (bkey.indexOf(key) >= 0 || key.indexOf(bkey) >= 0) return b;
+    }
+    return null;
+  }
+
+  function botanicalMiniHTML(requestedName, info) {
+    var data = botanicalData();
+    var components = data.components || {};
+    if (!info) {
+      return '<div class="bot-mini" role="status">' +
+        '<button type="button" class="bot-mini-close" aria-label="閉じる">×</button>' +
+        '<p class="bot-mini-eyebrow">Botanical detail</p>' +
+        '<h3>' + esc(requestedName) + '</h3>' +
+        '<p class="bot-mini-empty">この名前の詳細データはまだ登録されていません。</p>' +
+        '<a class="bot-mini-open" href="' + botanicalTableUrl(requestedName) + '" target="_blank" rel="noopener">ボタニカル表で検索</a>' +
+      "</div>";
+    }
+    var family = (data.families || {})[info.name] || "分類未設定";
+    var compHTML = info.components.slice(0, 8).map(function (name) {
+      var c = components[name] || {};
+      var note = (c.family ? c.family + " / " : "") + (c.note || "代表成分");
+      return '<li><b>' + esc(name) + '</b><span>' + esc(note) + '</span></li>';
+    }).join("");
+    return '<div class="bot-mini" role="status">' +
+      '<button type="button" class="bot-mini-close" aria-label="閉じる">×</button>' +
+      '<p class="bot-mini-eyebrow">Botanical detail</p>' +
+      '<div class="bot-mini-head">' +
+        '<div><h3>' + esc(info.name) + '</h3><p>' + esc(info.latin) + '</p></div>' +
+        '<span>' + esc(family) + '</span>' +
+      '</div>' +
+      '<dl class="bot-mini-meta">' +
+        '<div><dt>分類</dt><dd>' + esc(info.group) + '</dd></div>' +
+        '<div><dt>部位</dt><dd>' + esc(info.part) + '</dd></div>' +
+        '<div><dt>香り</dt><dd>' + esc(info.aroma) + '</dd></div>' +
+        '<div><dt>役割</dt><dd>' + esc(info.role) + '</dd></div>' +
+      '</dl>' +
+      '<ul class="bot-mini-components">' + compHTML + '</ul>' +
+      '<a class="bot-mini-open" href="' + botanicalTableUrl(info.name) + '" target="_blank" rel="noopener">ボタニカル表で開く</a>' +
+    "</div>";
+  }
+
+  function showBotanicalInfo(name) {
+    var panel = document.getElementById("botanical-popover");
+    if (!panel) return;
+    var info = findBotanicalInfo(name);
+    panel.innerHTML = botanicalMiniHTML(name, info);
+    panel.hidden = false;
+    [].forEach.call(els.modal.querySelectorAll(".bot-link"), function (btn) {
+      btn.classList.toggle("is-active", btn.getAttribute("data-botanical") === name);
+    });
+  }
+
+  function closeBotanicalInfo() {
+    var panel = document.getElementById("botanical-popover");
+    if (panel) {
+      panel.hidden = true;
+      panel.innerHTML = "";
+    }
+    if (els.modal) {
+      [].forEach.call(els.modal.querySelectorAll(".bot-link"), function (btn) {
+        btn.classList.remove("is-active");
+      });
+    }
+  }
+
   function botanicalLinksHTML(text) {
     var tokens = botTokens(text).filter(isBotanicalLinkable);
     if (!tokens.length) return '<p>' + esc(text) + "</p>";
     return '<div class="bot-link-list">' + tokens.map(function (name) {
-      return '<a class="bot-link" href="' + botanicalTableUrl(name) + '" title="ボタニカル表で見る">' + esc(name) + "</a>";
-    }).join("") + "</div>";
+      return '<button type="button" class="bot-link" data-botanical="' + esc(name) + '" title="その場で詳細を見る">' + esc(name) + "</button>";
+    }).join("") + '</div><div id="botanical-popover" class="botanical-popover" hidden></div>';
   }
 
   // ---- 頭文字の行（あ/か/さ…/A-Z/#）を求める ----
@@ -846,7 +1005,7 @@
           if (lastList[idx]) openModal(lastList[idx]);
         });
 
-        // モーダル内の★トグル／閉じる（×・背景クリック・Esc）
+        // モーダル内の★トグル／ボタニカル小窓／閉じる（×・背景クリック・Esc）
         els.modal.addEventListener("click", function (e) {
           var favBtn = e.target.closest(".modal-fav");
           if (favBtn) {
@@ -855,6 +1014,9 @@
             if (modalGin) openModal(modalGin); // モーダルの★表示を更新
             return;
           }
+          var botBtn = e.target.closest(".bot-link[data-botanical]");
+          if (botBtn) { showBotanicalInfo(botBtn.getAttribute("data-botanical")); return; }
+          if (e.target.closest(".bot-mini-close")) { closeBotanicalInfo(); return; }
           if (e.target.closest(".memo-unlock")) {
             var prow = document.getElementById("memo-pin-row");
             if (prow) { prow.hidden = false; var pin = document.getElementById("memo-pin"); if (pin) pin.focus(); }
