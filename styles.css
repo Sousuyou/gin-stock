@@ -306,6 +306,12 @@ select {
   background: var(--accent); color: var(--on-accent); border-color: var(--accent);
   font-variant-numeric: tabular-nums;
 }
+.badge-aroma {
+  background: var(--panel-soft);
+  color: var(--gold);
+  border-color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
 /* 仮登録（店員申請の未確認）＝目立つ金色。要確認（出典あいまいな既存）＝控えめな枠。 */
 .badge-provisional {
   background: var(--gold); color: var(--on-accent); border-color: var(--gold);
@@ -380,60 +386,42 @@ select {
 .tag-pick.is-on, .tag-pick:disabled {
   color: var(--on-accent); background: var(--gold); border-color: var(--gold); cursor: default; opacity: 1;
 }
-.aroma-read {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 10px;
-  align-items: center;
-  margin-bottom: 8px;
-}
-.aroma-current {
-  display: inline-flex;
-  align-items: center;
-  min-height: 26px;
-  padding: 3px 9px;
-  border: 1px solid var(--gold);
-  background: var(--panel-soft);
-  color: var(--gold);
-  font-size: 0.74rem;
-  font-weight: 800;
-  font-variant-numeric: tabular-nums;
-}
-.aroma-current.is-empty { border-color: var(--line); }
-.aroma-current.is-empty { color: var(--muted); }
-.aroma-note { margin: 0; color: var(--muted); font-size: 0.76rem; line-height: 1.55; }
 .aroma-editor {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 8px;
+  gap: 5px 8px;
   align-items: center;
-  padding: 8px;
-  border: 1px solid var(--line);
-  background: var(--panel-soft);
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 .aroma-slider-row {
   display: grid;
-  grid-template-columns: minmax(120px, 1fr) 30px;
-  gap: 7px;
+  grid-template-columns: minmax(120px, 1fr) 24px;
+  gap: 6px;
   align-items: center;
   flex: 1 1 190px;
 }
 .aroma-range {
   width: 100%;
-  min-height: 26px;
+  min-height: 22px;
   padding: 0;
   accent-color: var(--gold);
 }
 .aroma-output {
   display: grid;
   place-items: center;
-  min-height: 26px;
-  border: 1px solid var(--gold);
-  background: var(--panel);
+  min-height: 22px;
+  border: 0;
+  background: transparent;
   color: var(--gold);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 800;
+  font-variant-numeric: tabular-nums;
 }
+.aroma-save { min-height: 28px; padding: 0 10px; }
+.aroma-msg:empty { display: none; }
+.aroma-loading { margin: 0 0 6px; }
 
 .gin-bot {
   margin: 3px 0 0; font-size: 0.7rem; line-height: 1.55; color: var(--muted);
@@ -699,5 +687,4 @@ select {
   .bot-mini-top { flex-direction: column; }
   .bot-mini-facts { grid-template-columns: 1fr; }
   .bot-mini-components li { grid-template-columns: 1fr; }
-  .aroma-read { align-items: flex-start; }
 }

@@ -578,11 +578,17 @@
   }
 
   // ---- カード（グリッド用・ボタニカルのさわりを表示）----
+  function aromaBadgeHTML(g) {
+    var v = Number(g._aromaStrength) || 0;
+    return v ? '<span class="badge badge-aroma">香り ' + v + "</span>" : "";
+  }
+
   function cardHTML(g, idx) {
     var badges =
       flagBadge(g) +
       '<span class="badge badge-country">' + esc(g.country_main) + "</span>" +
-      '<span class="badge badge-abv">' + abvLabel(g) + "</span>";
+      '<span class="badge badge-abv">' + abvLabel(g) + "</span>" +
+      aromaBadgeHTML(g);
 
     var bot = g.botanicals
       ? '<p class="gin-bot"><b>Botanical</b>' + esc(g.botanicals) + "</p>"
@@ -996,14 +1002,6 @@
     }).catch(function () { if (msg) msg.textContent = "追加に失敗しました（通信エラー）。"; });
   }
 
-  function aromaStrengthHTML(value) {
-    var v = Number(value) || 0;
-    if (!v) {
-      return '<div class="aroma-current is-empty"><span>未設定</span></div>';
-    }
-    return '<div class="aroma-current"><span>現在 ' + v + '</span></div>';
-  }
-
   function renderAromaSection(g) {
     var box = document.getElementById("aroma-box");
     if (!box || !g) return;
@@ -1025,14 +1023,12 @@
         '<output id="aroma-output" class="aroma-output">' + value + '</output>' +
       '</div>' +
       '<button type="button" class="aroma-save"' + (unavailable ? " disabled" : "") + '>保存</button>' +
-      '<p class="memo-hint" id="aroma-msg">' +
-        (unavailable ? "保存先未設定です。supabase_aroma_strengths_setup.sql を実行すると共有保存できます。" : "保存するとスタッフ全員に共有されます。") +
+      '<p class="memo-hint aroma-msg" id="aroma-msg">' +
+        (unavailable ? "保存先未設定です。supabase_aroma_strengths_setup.sql を実行すると共有保存できます。" : "") +
       '</p>' +
       "</div>";
     box.innerHTML =
-      '<div class="aroma-read">' + aromaStrengthHTML(current) +
-        '<p class="aroma-note">' + (loading ? "共有値を読み込み中…" : "1〜10で設定します。") + "</p>" +
-      "</div>" +
+      (loading ? '<p class="memo-hint aroma-loading">共有値を読み込み中…</p>' : "") +
       (memoUnlocked() ? editHTML : lockedHTML);
   }
 
