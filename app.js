@@ -412,18 +412,13 @@
   function botanicalLinksHTML(text) {
     var tokens = botTokens(text).filter(isBotanicalLinkable);
     if (!tokens.length) return '<p>' + esc(text) + "</p>";
-    var missing = [];
     var listHTML = tokens.map(function (name) {
       var registered = !!findBotanicalInfo(name);
-      if (!registered) missing.push(name);
       return '<button type="button" class="bot-link' + (registered ? "" : " is-missing") +
         '" data-botanical="' + esc(name) + '" title="' + (registered ? "その場で詳細を見る" : "未登録候補を見る") + '">' +
         esc(name) + (registered ? "" : '<span class="bot-missing-mark">未登録</span>') + "</button>";
     }).join("");
-    var missingHTML = missing.length
-      ? '<div class="bot-missing-box"><b>ボタニカル表 未登録候補</b><span>' + esc(missing.join(" / ")) + '</span></div>'
-      : "";
-    return '<div class="bot-link-list">' + listHTML + '</div>' + missingHTML +
+    return '<div class="bot-link-list">' + listHTML + '</div>' +
       '<div id="botanical-popover" class="botanical-popover" hidden></div>';
   }
 
