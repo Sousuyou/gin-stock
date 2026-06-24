@@ -21,6 +21,7 @@
   var MEMO_UNLOCK_KEY = "soutsu_staff_unlocked";
   var TAGS_TABLE = "gin_flavor_tags";
   var AROMA_TABLE = "gin_aroma_strengths";
+  var SOURCE_TABLE = "gin_info_sources";
   var aromaStrengthState = "loading"; // loading / ready / unavailable
   // 風味タグ（スタッフが付与・全員閲覧・絞り込み可。2群×計28タグ。説明は選択時のヒント=title）
   var FLAVOR_GROUPS = [
@@ -73,6 +74,28 @@
     return String(s == null ? "" : s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+
+  function normalizeSourceURL(raw, allowBareDomain) {
+    var s = String(raw == null ? "" : raw).trim();
+    if (!s) return "";
+    if (allowBareDomain && !/^https?:\/\//i.test(s) && /^[a-z0-9][a-z0-9.-]+\.[a-z]{2,}/i.test(s)) {
+      s = "https://" + s;
+    }
+    try {
+      var u = new URL(s);
+      return (u.protocol === "http:" || u.protocol === "https:") ? u.href : "";
+    } catch (e) {
+      return "";
+    }
+  }
+
+  function sourceHostLabel(url) {
+    try {
+      return new URL(url).hostname.replace(/^www\./, "");
+    } catch (e) {
+      return "情報ソース";
+    }
   }
 
   // 重複判定キー：全半角を揃え(NFKC)、連続空白を畳んで小文字化（submit.js / promote_pending.py と同方針）
@@ -150,6 +173,47 @@
     if (g._provisional) return '<div class="prov-banner">店員による<b>仮登録</b>です。内容は未確認で、オーナーの確認後に正式登録されます。</div>';
     if (g.unverified) return '<div class="unverified-banner">情報が不透明な銘柄です。ボタニカル等が公式に確認できていません（メーカー非公開／要確認）。</div>';
     return "";
+  }
+
+  function normalizeSourceItem(item, fromDB) {
+    var url = "", label = "";
+    if (typeof item === "string") {
+      url = item;
+    } else if (item) {
+      url = item.url || item.href || item.source_url || item.sourceUrl || item.info_url || item.infoUrl || "";
+      label = item.label || item.title || item.name || "";
+    }
+    url = normalizeSourceURL(url, false);
+    if (!url) return null;
+    return {
+      id: fromDB && item ? item.id : "",
+      url: url,
+      label: label || sourceHostLabel(url),
+      _db: !!fromDB
+    };
+  }
+
+  function staticInfoSources(g) {
+    var raw = [];
+    if (Array.isArray(g.sources)) raw = raw.concat(g.sources);
+    if (Array.isArray(g.source_urls)) raw = raw.concat(g.source_urls);
+    ["source_url", "sourceUrl", "info_url", "infoUrl", "official_url", "officialUrl", "product_url", "productUrl"].forEach(function (key) {
+      if (g[key]) raw.push({ label: "情報ソース", url: g[key] });
+    });
+    if (g.source && /^https?:\/\//i.test(String(g.source))) raw.push({ label: "情報ソース", url: g.source });
+    return raw.map(function (item) { return normalizeSourceItem(item, false); }).filter(Boolean);
+  }
+
+  function infoSources(g) {
+    var seen = {}, out = [];
+    function add(src) {
+      if (!src || seen[src.url]) return;
+      seen[src.url] = 1;
+      out.push(src);
+    }
+    staticInfoSources(g).forEach(add);
+    (g._infoSources || []).forEach(function (item) { add(normalizeSourceItem(item, true)); });
+    return out;
   }
 
   function inAbvBand(abv, band) {
@@ -692,6 +756,7 @@
     var note = g.note
       ? '<div class="detail-block"><span class="detail-label">メモ</span><p>' + esc(g.note) + "</p></div>"
       : '<div class="detail-block"><span class="detail-label">メモ</span><p class="muted-text">（説明メモは未登録）</p></div>';
+    var sources = '<div class="source-section"><h3 class="memo-title">情報ソース</h3><div id="source-box" class="source-box"><p class="memo-empty">読み込み中…</p></div></div>';
 
     var warn = g.not_gin ? '<div class="not-gin-banner">※当店にありますが、ジンではありません</div>' : "";
 
@@ -711,13 +776,14 @@
         flagBanner(g) +
         (sub ? '<p class="modal-kana">産地：' + esc(g.country) + "</p>" : "") +
         warn +
-        bot + note +
+        bot + note + sources +
         '<div class="tag-section"><h3 class="memo-title">風味タグ</h3><div id="tag-box" class="tag-box"></div></div>' +
         '<div class="aroma-section"><h3 class="memo-title">香りの強さ</h3><div id="aroma-box" class="aroma-box"></div></div>' +
         '<div class="memo-section"><h3 class="memo-title">スタッフメモ</h3><div id="memo-box" class="memo-box"><p class="memo-empty">読み込み中…</p></div></div>' +
       "</div>";
     els.modal.hidden = false;
     document.body.style.overflow = "hidden";
+    loadInfoSources(g);
     loadMemos(g);
     renderTagSection(g);
     renderAromaSection(g);
@@ -783,6 +849,7 @@
           g._tags = [];
           g._aromaStrength = 0;
           g._aromaStrengthSet = false;
+          g._infoSources = [];
           g._hay = buildHay(g);
           GINS.push(g);
           added++;
@@ -790,6 +857,127 @@
         if (added) { buildControls(); render(); }
       })
       .catch(function () { /* 申請箱が読めなくてもカタログは通常どおり表示 */ });
+  }
+
+  // ===== 情報ソースURL（各ジンごと・全員閲覧／スタッフのみPIN追加・削除）=====
+  function sourceAddHTML() {
+    if (memoUnlocked()) {
+      return '<div class="source-add">' +
+        '<input id="source-url" class="source-input source-url-input" type="url" inputmode="url" autocomplete="off" placeholder="https://..." />' +
+        '<input id="source-label" class="source-input source-label-input" type="text" maxlength="80" autocomplete="off" placeholder="公式 / 輸入元など" />' +
+        '<button type="button" class="source-send">URLを追加</button>' +
+        '<p class="memo-hint" id="source-msg"></p>' +
+        "</div>";
+    }
+    return '<div class="memo-add">' +
+      '<button type="button" class="source-unlock">＋ URLを追加（スタッフ）</button>' +
+      '<div class="memo-pin-row" id="source-pin-row" hidden>' +
+        '<input id="source-pin" class="memo-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="スタッフPIN" />' +
+        '<button type="button" class="source-pin-ok">解錠</button>' +
+        '<span class="memo-hint" id="source-pin-err"></span>' +
+      "</div>" +
+      "</div>";
+  }
+
+  function sourceListHTML(g) {
+    var list = infoSources(g);
+    if (!list.length) return '<p class="memo-empty">まだURLはありません。</p>';
+    return '<ul class="source-list">' + list.map(function (src) {
+      var remove = memoUnlocked() && src._db && src.id
+        ? '<button type="button" class="source-remove" data-source-id="' + esc(src.id) + '" title="このURLを削除">削除</button>'
+        : "";
+      return '<li class="source-item">' +
+        '<a class="source-link" href="' + esc(src.url) + '" target="_blank" rel="noopener noreferrer">' +
+          '<b>' + esc(src.label) + '</b>' +
+          '<span>' + esc(src.url) + '</span>' +
+        '</a>' + remove +
+      '</li>';
+    }).join("") + "</ul>";
+  }
+
+  function renderSourceSection(g, errMsg) {
+    var box = document.getElementById("source-box");
+    if (!box || !g) return;
+    var listHTML = sourceListHTML(g);
+    if (errMsg) listHTML += '<p class="memo-empty">' + esc(errMsg) + "</p>";
+    box.innerHTML = listHTML + sourceAddHTML();
+  }
+
+  function loadInfoSources(g) {
+    var box = document.getElementById("source-box");
+    if (!box || !g) return;
+    if (!SUPABASE_URL || SUPABASE_URL.indexOf("YOUR_PROJECT_REF") !== -1) {
+      g._infoSources = [];
+      renderSourceSection(g);
+      return;
+    }
+    var url = SUPABASE_URL + "/rest/v1/" + SOURCE_TABLE +
+      "?gin_name=eq." + encodeURIComponent(g.name) +
+      "&select=id,label,url,created_at&order=created_at.desc";
+    fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY } })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (rows) {
+        g._infoSources = rows || [];
+        if (modalGin === g && els.modal && !els.modal.hidden) renderSourceSection(g);
+      })
+      .catch(function (e) {
+        g._infoSources = [];
+        renderSourceSection(g, e && e.message === "HTTP 404"
+          ? "保存先未設定です。supabase_info_sources_setup.sql を実行するとURLを共有保存できます。"
+          : "");
+      });
+  }
+
+  function submitInfoSource(g) {
+    var urlInput = document.getElementById("source-url");
+    var labelInput = document.getElementById("source-label");
+    var msg = document.getElementById("source-msg");
+    if (!urlInput || !g) return;
+    var url = normalizeSourceURL(urlInput.value, true);
+    if (!url) {
+      if (msg) msg.textContent = "httpまたはhttpsのURLを入力してください。";
+      return;
+    }
+    var label = (labelInput && labelInput.value ? labelInput.value : "").trim() || sourceHostLabel(url);
+    if (msg) msg.textContent = "追加中…";
+    fetch(SUPABASE_URL + "/rest/v1/" + SOURCE_TABLE, {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY,
+        "Content-Type": "application/json", Prefer: "return=minimal"
+      },
+      body: JSON.stringify({ gin_name: g.name, label: label, url: url })
+    }).then(function (res) {
+      if (res.status === 201) {
+        urlInput.value = "";
+        if (labelInput) labelInput.value = "";
+        loadInfoSources(g);
+      } else if (msg) {
+        msg.textContent = res.status === 404
+          ? "保存先未設定です。SQLを実行してください。"
+          : "追加に失敗しました（" + res.status + "）。";
+      }
+    }).catch(function () { if (msg) msg.textContent = "追加に失敗しました（通信エラー）。"; });
+  }
+
+  function removeInfoSource(g, id) {
+    if (!g || !id || !memoUnlocked()) return;
+    var msg = document.getElementById("source-msg");
+    if (msg) msg.textContent = "削除中…";
+    fetch(SUPABASE_URL + "/rest/v1/" + SOURCE_TABLE + "?id=eq." + encodeURIComponent(id), {
+      method: "DELETE",
+      headers: {
+        apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY,
+        Prefer: "return=minimal"
+      }
+    }).then(function (res) {
+      if (res.status === 204) {
+        g._infoSources = (g._infoSources || []).filter(function (src) { return String(src.id) !== String(id); });
+        renderSourceSection(g);
+      } else if (msg) {
+        msg.textContent = "削除に失敗しました（" + res.status + "）。";
+      }
+    }).catch(function () { if (msg) msg.textContent = "削除に失敗しました（通信エラー）。"; });
   }
 
   // ===== スタッフメモ（各ジンごと・全員閲覧／スタッフのみPIN投稿）=====
@@ -1151,7 +1339,7 @@
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (data) {
         GINS = (data && data.gins) || [];
-        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._tags = g._tags || []; g._aromaStrength = 0; g._aromaStrengthSet = false; g._hay = buildHay(g); }); // ボタニカル代表名化＋タグ初期化＋検索用テキスト
+        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._tags = g._tags || []; g._aromaStrength = 0; g._aromaStrengthSet = false; g._infoSources = []; g._hay = buildHay(g); }); // ボタニカル代表名化＋タグ初期化＋検索用テキスト
         if (els.meta) {
           var upd = fmtDate(data.updated);
           els.meta.textContent = "在庫 " + GINS.length + "銘柄" + (upd ? "・データ最終更新 " + upd : "");
@@ -1223,6 +1411,15 @@
           }
           if (e.target.closest(".memo-pin-ok")) { verifyStaffPin("memo-pin", "memo-pin-err"); return; }
           if (e.target.closest(".memo-send")) { submitMemo(modalGin); return; }
+          if (e.target.closest(".source-unlock")) {
+            var srow = document.getElementById("source-pin-row");
+            if (srow) { srow.hidden = false; var sp = document.getElementById("source-pin"); if (sp) sp.focus(); }
+            return;
+          }
+          if (e.target.closest(".source-pin-ok")) { verifyStaffPin("source-pin", "source-pin-err"); return; }
+          if (e.target.closest(".source-send")) { submitInfoSource(modalGin); return; }
+          var sourceRemove = e.target.closest(".source-remove[data-source-id]");
+          if (sourceRemove) { removeInfoSource(modalGin, sourceRemove.getAttribute("data-source-id")); return; }
           if (e.target.closest(".tag-unlock")) {
             var trow = document.getElementById("tag-pin-row");
             if (trow) { trow.hidden = false; var tp = document.getElementById("tag-pin"); if (tp) tp.focus(); }
