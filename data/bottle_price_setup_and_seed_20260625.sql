@@ -1,0 +1,123 @@
+-- ============================================================
+-- Bar Soutsu｜ジン在庫カタログ：ボトル価格目安 テーブル作成スクリプト
+-- ★必ず「gin_submissions / gin_memos / gin_flavor_tags がある正しいプロジェクト」の SQL Editor で実行★
+-- 貼り付けて「Run」する（1回だけ）。最後の NOTIFY でスキーマ再読込まで行う。
+--
+-- 仕様（メモ・風味タグ・香りの強さ・スタッフ評価と同じ安全設計）：
+--   ・各ジン（gin_name）に、スタッフがボトル1本あたりの価格目安（円）を付けられる。
+--   ・閲覧(SELECT)は全員可＝カタログのカードと詳細画面で共有表示する。
+--   ・投稿(INSERT)は anon に許可するが、画面側でスタッフPINを通した人だけが保存できる作り。
+--   ・値は履歴型で保存し、画面側では最新の active 行だけを採用する。
+--   ・誤入力は Table Editor でその行の status を 'hidden' にすれば、次に新しい値が表示される。
+-- ============================================================
+
+create table if not exists public.gin_bottle_prices (
+  id          bigint generated always as identity primary key,
+  gin_name    text not null check (char_length(gin_name) between 1 and 200),
+  price_yen   integer not null check (price_yen between 1 and 1000000),
+  status      text not null default 'active' check (status in ('active','hidden')),
+  created_at  timestamptz not null default now()
+);
+
+alter table public.gin_bottle_prices enable row level security;
+
+alter table public.gin_bottle_prices
+  drop constraint if exists gin_bottle_prices_price_yen_check;
+alter table public.gin_bottle_prices
+  add constraint gin_bottle_prices_price_yen_check check (price_yen between 1 and 1000000);
+
+revoke all on table public.gin_bottle_prices from anon;
+revoke all on table public.gin_bottle_prices from authenticated;
+
+grant insert (gin_name, price_yen) on public.gin_bottle_prices to anon;
+drop policy if exists "anon insert bottle price" on public.gin_bottle_prices;
+create policy "anon insert bottle price"
+  on public.gin_bottle_prices for insert to anon
+  with check (status = 'active');
+
+grant select (id, gin_name, price_yen, created_at) on public.gin_bottle_prices to anon;
+drop policy if exists "anon read active bottle price" on public.gin_bottle_prices;
+create policy "anon read active bottle price"
+  on public.gin_bottle_prices for select to anon
+  using (status = 'active');
+
+create index if not exists gin_bottle_prices_name_idx on public.gin_bottle_prices (gin_name, created_at desc);
+
+NOTIFY pgrst, 'reload schema';
+
+-- ============================================================
+-- 確認（出荷ゲート）：
+--   ・Table Editor で gin_bottle_prices に「RLS enabled」の鍵マーク
+--   ・Policies は「anon insert bottle price」「anon read active bottle price」の2つだけ
+-- 運用：
+--   ・税込/税別や容量差が混ざるため、画面上では「目安」として扱う。
+--   ・誤入力は Table Editor でその行の status を 'hidden' にすると即消える。
+-- ============================================================
+
+
+-- Bar Soutsu｜ボトル価格目安 自動収集シード
+-- 生成日時（JST）: 2026/06/25 3:35:51
+-- SQL投入対象: 55件 / CSV候補: 66件
+-- 先に supabase_bottle_prices_setup.sql をRunしてテーブルを作成してください。
+-- 価格は公開ページから機械抽出した「目安」です。
+-- CSVには低信頼候補も残し、SQLは構造化データ/メタ価格中心の高信頼候補だけに絞っています。
+
+insert into public.gin_bottle_prices (gin_name, price_yen, status)
+values
+  ('AKAYANE CRAFT GIN HEART 秋', 5280, 'active') -- 酒販店 / https://www.hasegawasaketen.com/eshop/products/detail/11728,
+  ('AKAYANE CRAFT GIN 美風', 4400, 'active') -- 酒販店 / https://shopping.kimijimaya.co.jp/view/item/000000007139,
+  ('BEEFEATER Crown Jewel', 9070, 'active') -- 酒販店 / https://www.miraido-onlineshop.com/item/5-beefeater-cj/,
+  ('CAMP Gin', 2310, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/23513,
+  ('CAORUNN Small Batch Scottish GIN', 2200, 'active') -- 酒販店 / https://www.suzusake.com/SHOP/02075.html,
+  ('COTSWOLDS Old Tom Gin', 4950, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/18026,
+  ('CRESCENT', 15000, 'active') -- ふるさと納税 / https://www.furusato-tax.jp/product/detail/43202/5960606,
+  ('DRUMSHANBO GUNPOWDER IRISH GIN', 5170, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/22941,
+  ('EMPRESS 1908 ELDERFLOWER ROSE GIN', 4363, 'active') -- 酒販店 / https://www.syurui.co.jp/products/8989,
+  ('EMPRESS 1908 GIN', 3890, 'active') -- 酒販店 / https://www.syurui.co.jp/products/4596,
+  ('ETHICAL GIN LOSS IS MORE', 4125, 'active') -- 酒販店 / https://field-to-table.jp/products/ethical-gin-loss-is-more-gin,
+  ('FOUR PILLARS Chakging Seasons Gin', 4800, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/17718,
+  ('GARAPPA ~#1 CRAFT GIN~ 河童', 3630, 'active') -- 酒販店 / https://store.shopping.yahoo.co.jp/kishuichibanya/cg-016.html,
+  ('GIN nez -銀鼠-', 10800, 'active') -- 酒販店 / https://store.shopping.yahoo.co.jp/nondonkai/10015847.html,
+  ('HAYMAN''S', 2850, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/8466,
+  ('HAYMAN''S Old Tom', 2530, 'active') -- 酒販店 / https://www.miraido-onlineshop.com/item/5-hayman-old-tom/,
+  ('HINATA', 5500, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/14920,
+  ('HOLON GIN', 5500, 'active') -- 酒販店 / https://shop.andspirits.com/products/holon,
+  ('ISLE OF HARRIS GIN', 6600, 'active') -- 酒販店 / https://www.shinanoya-tokyo.jp/view/item/000000015964,
+  ('JAPANESE GIN 翠', 1349, 'active') -- 酒販店 / https://likaman.net/view/item/000000008571,
+  ('LADY TRIỆU CONTEMPORARY VIETNAM GIN', 5600, 'active') -- 酒販店 / https://gacraftspirits.com/products/lady-trieu-gin-750ml,
+  ('MALFY GIN Con Limone', 4039, 'active') -- 酒販店 / https://www.syurui.co.jp/products/1301,
+  ('MARTIN MILLER''S GIN', 4730, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/12072,
+  ('NAKATSU GIN RUBYGRAPEFRUIT', 3500, 'active') -- 酒販店 / https://www.saketry.com/208940.html,
+  ('NAKATSU GIN（ 知多バナナ 3rd Batch ）', 3850, 'active') -- 酒販店 / https://niigata-hasegawaya.com/products/nakatsu-gin-%E7%9F%A5%E5%A4%9A%E3%83%90%E3%83%8A%E3%83%8A-3rd-batch,
+  ('NORDES Atlantic Galician Gin', 4268, 'active') -- 酒販店 / https://store.shopping.yahoo.co.jp/syupoppo/nordes-atlantic-galisian-gin.html,
+  ('OFF TRAIL – Azeotrope #1 【New Pot】Beer Distilled Gin', 4730, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/19983,
+  ('OFF TRAIL – Azeotrope #2 【New Pot Blended】Malt Gin', 4730, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/19983,
+  ('OSUZU GIN DistiRally NEXT 2022', 4400, 'active') -- 酒販店 / https://youshuchiga.shop-pro.jp/?pid=169133460,
+  ('SILENT POOL Gin', 4950, 'active') -- 酒販店 / https://shop.andspirits.com/products/silent-pool-gin,
+  ('SILENT POOL Rare Citrus Gin', 5720, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/18755,
+  ('Sipsmith Lemon Drizzle Gin', 4550, 'active') -- 酒販店 / https://item.rakuten.co.jp/sakaeyahonten/sipsmith_lemon/,
+  ('SIPSMITH V.J.O.P BLACK', 4598, 'active') -- 酒販店 / https://www.miraido-onlineshop.com/item/5-sip-smith-vjop-ldg/,
+  ('STILL DAM GIN NANKOU UME-スティルダムジン 南高梅-', 4950, 'active') -- 酒販店 / https://sakeroman.com/products/gin-stilldam-gin-shiso-ume,
+  ('STILLDAM GIN NANKOU UME', 4950, 'active') -- 酒販店 / https://sakeroman.com/products/gin-stilldam-gin-shiso-ume,
+  ('TANQUERAY Malacca Gin', 3058, 'active') -- 酒販店 / https://www.miraido-onlineshop.com/item/5-tanqueray-mj/,
+  ('THE HERBALIST YASO GIN Limited Edition 03 Not Equal', 7480, 'active') -- 酒販店 / https://www.shinanoya-tokyo.jp/view/item/000000021068,
+  ('TOKYO HACHIO GIN Classic（40%）', 4450, 'active') -- 酒販店 / https://ginlabliquor.base.shop/items/90189280,
+  ('TOKYO HACHIO GIN Classic（45%）', 4450, 'active') -- 酒販店 / https://ginlabliquor.base.shop/items/90189280,
+  ('Unbirthday 指宿 DRY GIN', 2200, 'active') -- 酒販店 / https://www.higoya.co.jp/c/kuramoto/kagoshima/nansatsu/oj/oj93,
+  ('WELLNESS GIN', 6600, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/22843,
+  ('WHITLEY NEILL', 3335, 'active') -- 酒販店 / https://www.syurui.co.jp/products/3463,
+  ('WHITLEY NEILL Gooseberry', 4298, 'active') -- 酒販店 / https://store.shopping.yahoo.co.jp/enokishouten/3r-406g-qk3c.html,
+  ('WHITLEY NEILL Quince', 3208, 'active') -- 酒販店 / https://www.syurui.co.jp/products/3486,
+  ('WHITLEY NEILL Raspberry', 3300, 'active') -- 輸入元 / https://shop.andspirits.com/products/whitley-neill-raspberry-gin-uitutoriniru-razuberizin,
+  ('WHITLEY NEILL RHUBARB & GINGER GIN', 3335, 'active') -- 酒販店 / https://www.syurui.co.jp/products/3513,
+  ('アルケミエ', 5000, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/20279,
+  ('アルケミエ 4', 6200, 'active') -- 酒販店 / https://www.shinanoya-tokyo.jp/view/item/000000015610,
+  ('アルケミエ ファーストエッセンス オレンジ＃12', 5500, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/23969,
+  ('アルケミエ 金木犀', 5500, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/25568,
+  ('アルケミエ 犬啼 ジュニパー', 5000, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/20279,
+  ('火の帆 KIBOU', 6490, 'active') -- 酒販店 / https://unga-plus.com/products/155230818,
+  ('火の帆 UMI', 8030, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/23115,
+  ('花物語', 3850, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/18858,
+  ('香立', 2500, 'active') -- 酒販店 / https://store.musashiya-net.co.jp/products/detail/16572;
+
+NOTIFY pgrst, 'reload schema';

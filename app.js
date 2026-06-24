@@ -679,7 +679,7 @@
 
   function staffRatingBadgeHTML(g) {
     var v = Number(g._staffRating) || 0;
-    return g._staffRatingSet ? '<span class="badge badge-rating">評価 ★' + v + "</span>" : "";
+    return g._staffRatingSet ? '<span class="badge badge-rating">評価 ' + v + "</span>" : "";
   }
 
   function yenLabel(v) {
@@ -692,10 +692,11 @@
   }
 
   function cardHTML(g, idx) {
-    var badges =
+    var metaBadges =
       flagBadge(g) +
       '<span class="badge badge-country">' + esc(g.country_main) + "</span>" +
-      '<span class="badge badge-abv">' + abvLabel(g) + "</span>" +
+      '<span class="badge badge-abv">' + abvLabel(g) + "</span>";
+    var metricBadges =
       bottlePriceBadgeHTML(g) +
       staffRatingBadgeHTML(g) +
       aromaBadgeHTML(g);
@@ -720,9 +721,12 @@
       '<div class="gin-card-wrap">' +
         fav +
         '<button type="button" class="gin-card" data-idx="' + idx + '">' +
-          '<h2 class="gin-name">' + esc(g.name) + "</h2>" +
-          (g.kana ? '<p class="gin-kana">' + esc(g.kana) + "</p>" : "") +
-          '<div class="gin-badges">' + badges + "</div>" +
+          '<div class="gin-card-head">' +
+            '<h2 class="gin-name">' + esc(g.name) + "</h2>" +
+            (g.kana ? '<p class="gin-kana">' + esc(g.kana) + "</p>" : "") +
+          "</div>" +
+          '<div class="gin-badges gin-meta-badges">' + metaBadges + "</div>" +
+          (metricBadges ? '<div class="gin-metrics">' + metricBadges + "</div>" : "") +
           warn +
           bot + tags +
         "</button>" +
@@ -1474,14 +1478,6 @@
     return n;
   }
 
-  function staffRatingStarsHTML(value, isSet) {
-    var html = '<span class="rating-stars" aria-label="スタッフ評価' + (isSet ? value : "未設定") + '">';
-    for (var i = 1; i <= 10; i++) {
-      html += '<span class="' + (isSet && i <= value ? "is-filled" : "") + '">★</span>';
-    }
-    return html + "</span>";
-  }
-
   function renderStaffRatingSection(g) {
     var box = document.getElementById("rating-box");
     if (!box || !g) return;
@@ -1497,19 +1493,14 @@
       "</div>" +
       "</div>";
     var displayHTML = '<div class="rating-display">' +
-      staffRatingStarsHTML(value, g._staffRatingSet) +
-      '<span class="rating-value">' + (g._staffRatingSet ? value + "/10" : "未設定") + "</span>" +
+      '<span class="rating-score-main">' + (g._staffRatingSet ? value : "-") + '</span>' +
+      '<span class="rating-score-sub">' + (g._staffRatingSet ? "/10" : "未設定") + "</span>" +
       "</div>";
-    var pickHTML = '<div class="rating-picks">' +
-      '<button type="button" class="rating-pick rating-zero' + (value === 0 ? " is-on" : "") + '" data-rating="0">0</button>';
-    for (var i = 1; i <= 10; i++) {
-      pickHTML += '<button type="button" class="rating-pick rating-star-pick' + (i <= value ? " is-on" : "") +
-        '" data-rating="' + i + '" aria-label="' + i + '点">★</button>';
-    }
-    pickHTML += "</div>";
     var editHTML = '<div class="rating-editor">' +
-      '<input id="rating-value" type="hidden" value="' + value + '" />' +
-      pickHTML +
+      '<div class="rating-slider-row">' +
+        '<input id="rating-range" class="rating-range" type="range" min="0" max="10" step="1" value="' + value + '"' + (unavailable ? " disabled" : "") + ' />' +
+        '<output id="rating-output" class="rating-output">' + value + '</output>' +
+      '</div>' +
       '<button type="button" class="rating-save"' + (unavailable ? " disabled" : "") + '>保存</button>' +
       '<p class="memo-hint rating-msg" id="rating-msg">' +
         (unavailable ? "保存先未設定です。supabase_staff_ratings_setup.sql を実行すると共有保存できます。" : "") +
@@ -1521,14 +1512,10 @@
       (memoUnlocked() ? editHTML : lockedHTML);
   }
 
-  function updateStaffRatingPreview(v) {
-    var value = clampStaffRating(v);
-    var inp = document.getElementById("rating-value");
-    if (inp) inp.value = value;
-    [].forEach.call(document.querySelectorAll(".rating-pick[data-rating]"), function (btn) {
-      var n = clampStaffRating(btn.getAttribute("data-rating"));
-      btn.classList.toggle("is-on", n === 0 ? value === 0 : n <= value);
-    });
+  function updateStaffRatingOutput() {
+    var range = document.getElementById("rating-range");
+    var out = document.getElementById("rating-output");
+    if (range && out) out.textContent = clampStaffRating(range.value);
   }
 
   function loadAllStaffRatings() {
@@ -1565,7 +1552,7 @@
   }
 
   function submitStaffRating(g) {
-    var inp = document.getElementById("rating-value");
+    var inp = document.getElementById("rating-range");
     var msg = document.getElementById("rating-msg");
     if (!inp || !g) return;
     var rating = clampStaffRating(inp.value);
@@ -1817,8 +1804,6 @@
             return;
           }
           if (e.target.closest(".rating-pin-ok")) { verifyStaffPin("rating-pin", "rating-pin-err"); return; }
-          var ratingPick = e.target.closest(".rating-pick[data-rating]");
-          if (ratingPick) { updateStaffRatingPreview(ratingPick.getAttribute("data-rating")); return; }
           if (e.target.closest(".rating-save")) { submitStaffRating(modalGin); return; }
           if (e.target.closest(".price-unlock")) {
             var priceRow = document.getElementById("price-pin-row");
@@ -1831,6 +1816,7 @@
         });
         els.modal.addEventListener("input", function (e) {
           if (e.target.closest(".aroma-range")) updateAromaOutput();
+          if (e.target.closest(".rating-range")) updateStaffRatingOutput();
         });
         document.addEventListener("keydown", function (e) {
           if (e.key === "Escape" && !els.modal.hidden) closeModal();
