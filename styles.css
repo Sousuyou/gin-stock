@@ -393,13 +393,13 @@ select {
   font: inherit; font-size: 0.85rem; color: var(--text);
   background: var(--panel); border: 1px solid var(--line); border-radius: 0; resize: vertical;
 }
-.memo-send, .memo-unlock, .memo-pin-ok, .source-send, .source-unlock, .source-pin-ok, .aroma-save, .aroma-unlock, .aroma-pin-ok, .rating-save, .rating-unlock, .rating-pin-ok, .price-save, .price-unlock, .price-pin-ok {
+.memo-send, .memo-unlock, .memo-pin-ok, .source-send, .source-unlock, .source-pin-ok, .staff-save, .staff-edit-unlock, .staff-edit-pin-ok {
   min-height: 36px; padding: 0 14px; border-radius: 0; cursor: pointer;
   font-size: 0.74rem; font-weight: 700; white-space: nowrap;
   color: var(--on-accent); background: var(--accent); border: 1px solid var(--accent);
 }
-.memo-unlock, .source-unlock, .aroma-unlock, .rating-unlock, .price-unlock { color: var(--text); background: var(--panel); border-color: var(--gold); }
-.source-send:disabled, .aroma-save:disabled, .rating-save:disabled, .price-save:disabled { opacity: 0.5; cursor: default; }
+.memo-unlock, .source-unlock, .staff-edit-unlock { color: var(--text); background: var(--panel); border-color: var(--gold); }
+.source-send:disabled, .staff-save:disabled { opacity: 0.5; cursor: default; }
 .memo-pin-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 6px; flex: 1 1 100%; }
 .memo-pin {
   min-height: 36px; padding: 0 10px; max-width: 150px;
@@ -415,7 +415,7 @@ select {
   color: var(--text); background: var(--green-soft); border: 1px solid transparent; border-radius: 999px;
 }
 .gin-tag-more { background: transparent; color: var(--muted); border-color: var(--line); }
-.tag-section, .aroma-section, .rating-section, .price-section { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+.tag-section, .aroma-section, .rating-section, .price-section, .staff-edit-section { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
 .source-section { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 9px; }
 .source-list {
   list-style: none; margin: 0 0 6px; padding: 0;
@@ -540,30 +540,69 @@ button.tag-chip:hover {
 .tag-pick.is-on, .tag-pick:disabled {
   color: var(--on-accent); background: var(--gold); border-color: var(--gold); cursor: default; opacity: 1;
 }
-.aroma-editor,
-.rating-editor {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 7px;
-  align-items: stretch;
-  padding: 0;
-  border: 0;
-  background: transparent;
+.metric-readout {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  min-height: 28px;
+  padding: 5px 8px;
+  background: var(--panel);
+  border: 1px solid var(--line);
 }
-.metric-value-row {
-  display: grid;
-  grid-template-columns: 24px minmax(32px, auto) 24px;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 24px;
+.metric-readout span {
   color: var(--muted);
   font-size: 0.66rem;
   font-weight: 700;
+}
+.metric-readout b {
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 800;
   font-variant-numeric: tabular-nums;
 }
-.aroma-slider-row,
-.rating-slider-row {
-  display: block;
+.metric-readout em {
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-style: normal;
+}
+.staff-editor {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  align-items: stretch;
+}
+.staff-price-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(92px, 0.72fr);
+  gap: 8px;
+}
+.staff-metric-control {
+  display: grid;
+  gap: 5px;
+  padding: 8px;
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+}
+.staff-metric-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.staff-metric-head span {
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 700;
+}
+.metric-scale-row {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr) 24px;
+  gap: 7px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 .aroma-range,
 .rating-range {
@@ -587,14 +626,13 @@ button.tag-chip:hover {
   font-weight: 800;
   font-variant-numeric: tabular-nums;
 }
-.aroma-save,
-.rating-save {
-  min-height: 28px;
+.staff-save {
+  min-height: 32px;
   width: 100%;
   padding: 0 10px;
   justify-self: stretch;
 }
-.aroma-msg:empty { display: none; }
+.staff-edit-msg:empty { display: none; }
 .aroma-loading { margin: 0 0 6px; }
 .price-facts {
   display: grid;
@@ -632,16 +670,9 @@ button.tag-chip:hover {
   font-size: 0.58rem;
   font-style: normal;
 }
-.price-editor {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 8px;
-  align-items: center;
-}
 .price-field {
   display: grid;
   gap: 3px;
-  flex: 1 1 86px;
   min-width: 0;
 }
 .price-field span {
@@ -661,11 +692,7 @@ button.tag-chip:hover {
   border-radius: 0;
   font-variant-numeric: tabular-nums;
 }
-.price-save { min-height: 28px; padding: 0 10px; }
-.price-msg:empty { display: none; }
 .price-loading { margin: 0 0 6px; }
-.price-source-section { margin-top: 12px; }
-.price-source-list { margin-bottom: 0; }
 .rating-display {
   display: flex;
   flex-wrap: wrap;
@@ -685,7 +712,6 @@ button.tag-chip:hover {
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
-.rating-msg:empty { display: none; }
 .rating-loading { margin: 0 0 6px; }
 
 .gin-bot {
@@ -951,16 +977,17 @@ button.tag-chip:hover {
   .gin-kana { font-size: 0.64rem; }
   .badge { padding: 1px 6px; font-size: 0.57rem; }
   .gin-bot { -webkit-line-clamp: 3; font-size: 0.67rem; }
-  .tag-section, .aroma-section, .rating-section, .price-section { margin-top: 10px; padding-top: 9px; }
+  .tag-section, .aroma-section, .rating-section, .price-section, .staff-edit-section { margin-top: 10px; padding-top: 9px; }
   .price-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
   .price-fact { padding: 4px 6px; gap: 4px; }
   .price-fact span { font-size: 0.6rem; }
   .price-fact b { font-size: 0.7rem; }
-  .price-field { flex-basis: 74px; }
   .price-input { min-height: 30px; font-size: 0.78rem; }
-  .aroma-editor, .rating-editor { gap: 6px; }
-  .aroma-save, .rating-save { min-height: 28px; }
-  .source-section, .price-source-section { margin-top: 9px; padding-top: 8px; }
+  .staff-editor { gap: 7px; }
+  .staff-price-row { gap: 6px; }
+  .staff-metric-control { padding: 7px; }
+  .staff-save { min-height: 30px; }
+  .source-section { margin-top: 9px; padding-top: 8px; }
   .source-list { gap: 4px; }
   .source-link { max-width: 100%; min-height: 24px; padding: 2px 6px; }
   .source-link b { max-width: 72px; font-size: 0.64rem; }

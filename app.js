@@ -29,8 +29,7 @@
   var staffRatingState = "loading"; // loading / ready / unavailable
   var bottlePriceState = "loading"; // loading / ready / unavailable
   var DEFAULT_BOTTLE_ML = 700;
-  var SALE_RATE_LOW = 0.30;
-  var SALE_RATE_HIGH = 0.22;
+  var SALE_RATE = 0.15;
   // 風味タグ（スタッフが付与・全員閲覧・絞り込み可。2群×計28タグ。説明は選択時のヒント=title）
   var FLAVOR_GROUPS = [
     { group: "香り・風味", tags: ["ジュニパー", "フローラル", "フルーティー", "シトラス", "ウッディ", "スパイシー", "ペッパー", "ハーバル", "アーシー", "パフューミー", "ベジタル", "マリン", "ナッティ", "スモーキー", "クリーミー", "お茶系", "ビター系"] },
@@ -715,10 +714,7 @@
   function salePriceRange(g) {
     var cost = pourCost(g);
     if (!cost) return null;
-    var low = roundSalePrice(cost / SALE_RATE_LOW);
-    var high = roundSalePrice(cost / SALE_RATE_HIGH);
-    if (high < low) high = low;
-    return { low: low, high: high };
+    return { low: roundSalePrice(cost / SALE_RATE), high: roundSalePrice(cost / SALE_RATE) };
   }
 
   function salePriceLabel(g) {
@@ -857,7 +853,6 @@
     var note = g.note
       ? '<div class="detail-block"><span class="detail-label">メモ</span><p>' + esc(g.note) + "</p></div>"
       : '<div class="detail-block"><span class="detail-label">メモ</span><p class="muted-text">（説明メモは未登録）</p></div>';
-    var priceSources = '<div class="price-source-section source-section"><h3 class="memo-title">価格ソース</h3><div id="price-source-box" class="source-box"></div></div>';
     var sources = '<div class="source-section"><h3 class="memo-title">銘柄情報ソース</h3><div id="source-box" class="source-box"><p class="memo-empty">読み込み中…</p></div></div>';
 
     var warn = g.not_gin ? '<div class="not-gin-banner">※当店にありますが、ジンではありません</div>' : "";
@@ -885,8 +880,8 @@
         '<div class="price-section"><h3 class="memo-title">ボトル価格</h3><div id="price-box" class="price-box"></div></div>' +
         '<div class="aroma-section"><h3 class="memo-title">香りの強さ</h3><div id="aroma-box" class="aroma-box"></div></div>' +
         '<div class="rating-section"><h3 class="memo-title">スタッフ評価</h3><div id="rating-box" class="rating-box"></div></div>' +
+        '<div class="staff-edit-section"><h3 class="memo-title">スタッフ編集</h3><div id="staff-edit-box" class="staff-edit-box"></div></div>' +
         '<div class="tag-section"><h3 class="memo-title">風味タグ</h3><div id="tag-box" class="tag-box"></div></div>' +
-        priceSources +
         sources +
         '<div class="memo-section"><h3 class="memo-title">スタッフメモ</h3><div id="memo-box" class="memo-box"><p class="memo-empty">読み込み中…</p></div></div>' +
       "</div>";
@@ -896,9 +891,9 @@
     loadMemos(g);
     renderTagSection(g);
     renderBottlePriceSection(g);
-    renderPriceSourceSection(g);
     renderAromaSection(g);
     renderStaffRatingSection(g);
+    renderStaffEditSection(g);
   }
   function closeModal() {
     els.modal.hidden = true;
@@ -968,7 +963,6 @@
           g._bottleMl = DEFAULT_BOTTLE_ML;
           g._bottleMlSet = false;
           g._bottlePriceKind = "";
-          g._bottlePriceSource = null;
           g._infoSources = [];
           g._hay = buildHay(g);
           GINS.push(g);
@@ -1024,28 +1018,6 @@
     var listHTML = sourceListHTML(g);
     if (errMsg) listHTML += '<p class="memo-empty">' + esc(errMsg) + "</p>";
     box.innerHTML = listHTML + sourceAddHTML();
-  }
-
-  function renderPriceSourceSection(g) {
-    var box = document.getElementById("price-source-box");
-    if (!box || !g) return;
-    var src = g._bottlePriceSource || null;
-    if (src && src.url) {
-      box.innerHTML = '<ul class="source-list price-source-list">' +
-        '<li class="source-item">' +
-          '<a class="source-link" href="' + esc(src.url) + '" target="_blank" rel="noopener noreferrer" title="' + esc(src.url) + '">' +
-            '<b>' + esc(src.label || "価格") + '</b>' +
-            '<span>' + esc(sourceHostLabel(src.url)) + '</span>' +
-          '</a>' +
-        '</li>' +
-      '</ul>';
-      return;
-    }
-    if (g._bottlePriceKind === "staff") {
-      box.innerHTML = '<p class="memo-empty">スタッフが共有保存した価格です。</p>';
-      return;
-    }
-    box.innerHTML = '<p class="memo-empty">価格ソースは未登録です。</p>';
   }
 
   function loadInfoSources(g) {
@@ -1451,35 +1423,17 @@
     var box = document.getElementById("aroma-box");
     if (!box || !g) return;
     var current = Number(g._aromaStrength) || 0;
-    var value = g._aromaStrengthSet ? current : 0;
-    var lockedHTML = '<div class="memo-add">' +
-      '<button type="button" class="aroma-unlock">＋ 強さを設定（スタッフ）</button>' +
-      '<div class="memo-pin-row" id="aroma-pin-row" hidden>' +
-        '<input id="aroma-pin" class="memo-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="スタッフPIN" />' +
-        '<button type="button" class="aroma-pin-ok">解錠</button>' +
-        '<span class="memo-hint" id="aroma-pin-err"></span>' +
-      "</div>" +
-      "</div>";
-    var unavailable = aromaStrengthState === "unavailable";
     var loading = aromaStrengthState === "loading";
-    var editHTML = '<div class="aroma-editor">' +
-      '<div class="metric-value-row"><span>0</span><output id="aroma-output" class="aroma-output">' + value + '</output><span>10</span></div>' +
-      '<div class="aroma-slider-row">' +
-        '<input id="aroma-range" class="aroma-range" type="range" min="0" max="10" step="1" value="' + value + '"' + (unavailable ? " disabled" : "") + ' />' +
-      '</div>' +
-      '<button type="button" class="aroma-save"' + (unavailable ? " disabled" : "") + '>保存</button>' +
-      '<p class="memo-hint aroma-msg" id="aroma-msg">' +
-        (unavailable ? "保存先未設定です。supabase_aroma_strengths_setup.sql を実行すると共有保存できます。" : "") +
-      '</p>' +
-      "</div>";
     box.innerHTML =
       (loading ? '<p class="memo-hint aroma-loading">共有値を読み込み中…</p>' : "") +
-      (memoUnlocked() ? editHTML : lockedHTML);
+      '<div class="metric-readout">' +
+        '<span>現在値</span><b>' + (g._aromaStrengthSet ? esc(current) : "—") + '</b><em>' + (g._aromaStrengthSet ? "/10" : "未設定") + "</em>" +
+      "</div>";
   }
 
   function updateAromaOutput() {
-    var range = document.getElementById("aroma-range");
-    var out = document.getElementById("aroma-output");
+    var range = document.getElementById("staff-aroma-range");
+    var out = document.getElementById("staff-aroma-output");
     if (range && out) out.textContent = range.value;
   }
 
@@ -1507,12 +1461,18 @@
         });
         aromaStrengthState = "ready";
         render();
-        if (modalGin && els.modal && !els.modal.hidden) renderAromaSection(modalGin);
+        if (modalGin && els.modal && !els.modal.hidden) {
+          renderAromaSection(modalGin);
+          renderStaffEditSection(modalGin);
+        }
       })
       .catch(function () {
         aromaStrengthState = "unavailable";
         render();
-        if (modalGin && els.modal && !els.modal.hidden) renderAromaSection(modalGin);
+        if (modalGin && els.modal && !els.modal.hidden) {
+          renderAromaSection(modalGin);
+          renderStaffEditSection(modalGin);
+        }
       });
   }
 
@@ -1559,39 +1519,19 @@
     var box = document.getElementById("rating-box");
     if (!box || !g) return;
     var value = g._staffRatingSet ? clampStaffRating(g._staffRating) : 0;
-    var unavailable = staffRatingState === "unavailable";
     var loading = staffRatingState === "loading";
-    var lockedHTML = '<div class="memo-add">' +
-      '<button type="button" class="rating-unlock">＋ 評価を設定（スタッフ）</button>' +
-      '<div class="memo-pin-row" id="rating-pin-row" hidden>' +
-        '<input id="rating-pin" class="memo-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="スタッフPIN" />' +
-        '<button type="button" class="rating-pin-ok">解錠</button>' +
-        '<span class="memo-hint" id="rating-pin-err"></span>' +
-      "</div>" +
-      "</div>";
     var displayHTML = '<div class="rating-display">' +
       '<span class="rating-score-main">' + (g._staffRatingSet ? value : "-") + '</span>' +
       '<span class="rating-score-sub">' + (g._staffRatingSet ? "/10" : "未設定") + "</span>" +
       "</div>";
-    var editHTML = '<div class="rating-editor">' +
-      '<div class="metric-value-row"><span>0</span><output id="rating-output" class="rating-output">' + value + '</output><span>10</span></div>' +
-      '<div class="rating-slider-row">' +
-        '<input id="rating-range" class="rating-range" type="range" min="0" max="10" step="1" value="' + value + '"' + (unavailable ? " disabled" : "") + ' />' +
-      '</div>' +
-      '<button type="button" class="rating-save"' + (unavailable ? " disabled" : "") + '>保存</button>' +
-      '<p class="memo-hint rating-msg" id="rating-msg">' +
-        (unavailable ? "保存先未設定です。supabase_staff_ratings_setup.sql を実行すると共有保存できます。" : "") +
-      '</p>' +
-      "</div>";
     box.innerHTML =
       (loading ? '<p class="memo-hint rating-loading">共有評価を読み込み中…</p>' : "") +
-      displayHTML +
-      (memoUnlocked() ? editHTML : lockedHTML);
+      displayHTML;
   }
 
   function updateStaffRatingOutput() {
-    var range = document.getElementById("rating-range");
-    var out = document.getElementById("rating-output");
+    var range = document.getElementById("staff-rating-range");
+    var out = document.getElementById("staff-rating-output");
     if (range && out) out.textContent = clampStaffRating(range.value);
   }
 
@@ -1619,12 +1559,18 @@
         });
         staffRatingState = "ready";
         render();
-        if (modalGin && els.modal && !els.modal.hidden) renderStaffRatingSection(modalGin);
+        if (modalGin && els.modal && !els.modal.hidden) {
+          renderStaffRatingSection(modalGin);
+          renderStaffEditSection(modalGin);
+        }
       })
       .catch(function () {
         staffRatingState = "unavailable";
         render();
-        if (modalGin && els.modal && !els.modal.hidden) renderStaffRatingSection(modalGin);
+        if (modalGin && els.modal && !els.modal.hidden) {
+          renderStaffRatingSection(modalGin);
+          renderStaffEditSection(modalGin);
+        }
       });
   }
 
@@ -1678,16 +1624,7 @@
     var value = g._bottlePriceSet ? clampBottlePrice(g._bottlePrice) : 0;
     var ml = bottleMlValue(g);
     var cost = pourCost(g);
-    var unavailable = bottlePriceState === "unavailable";
     var loading = bottlePriceState === "loading";
-    var lockedHTML = '<div class="memo-add">' +
-      '<button type="button" class="price-unlock">＋ 価格目安を設定（スタッフ）</button>' +
-      '<div class="memo-pin-row" id="price-pin-row" hidden>' +
-        '<input id="price-pin" class="memo-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="スタッフPIN" />' +
-        '<button type="button" class="price-pin-ok">解錠</button>' +
-        '<span class="memo-hint" id="price-pin-err"></span>' +
-      "</div>" +
-      "</div>";
     var displayHTML = g._bottlePriceSet
       ? '<div class="price-facts">' +
           '<div class="price-fact"><span>ボトル</span><b>' + esc(yenLabel(value)) + '<em>' + esc(priceKindLabel(g)) + "</em></b></div>" +
@@ -1696,20 +1633,163 @@
           '<div class="price-fact price-sale"><span>販売目安</span><b>' + esc(salePriceLabel(g)) + "</b></div>" +
         "</div>"
       : '<p class="memo-empty">まだ価格目安はありません。</p>';
-    var editHTML = '<div class="price-editor">' +
-      '<label class="price-field"><span>価格</span><input id="price-input" class="price-input" type="number" inputmode="numeric" min="0" max="1000000" step="100" value="' +
-        (value || "") + '" placeholder="4500" ' + (unavailable ? "disabled" : "") + '/></label>' +
-      '<label class="price-field"><span>容量ml</span><input id="price-ml-input" class="price-input" type="number" inputmode="numeric" min="50" max="3000" step="10" value="' +
-        ml + '" placeholder="700" ' + (unavailable ? "disabled" : "") + '/></label>' +
-      '<button type="button" class="price-save"' + (unavailable ? " disabled" : "") + '>保存</button>' +
-      '<p class="memo-hint price-msg" id="price-msg">' +
-        (unavailable ? "保存先未設定です。supabase_bottle_prices_setup.sql を実行すると共有保存できます。" : "価格はざっくりでOK。容量が未確定なら700ml目安で30ml原価を出します。") +
-      '</p>' +
-      "</div>";
     box.innerHTML =
       (loading ? '<p class="memo-hint price-loading">共有価格を読み込み中…</p>' : "") +
-      displayHTML +
-      (memoUnlocked() ? editHTML : lockedHTML);
+      displayHTML;
+  }
+
+  function renderStaffEditSection(g, message) {
+    var box = document.getElementById("staff-edit-box");
+    if (!box || !g) return;
+    var price = g._bottlePriceSet ? clampBottlePrice(g._bottlePrice) : 0;
+    var ml = bottleMlValue(g);
+    var aroma = g._aromaStrengthSet ? (Number(g._aromaStrength) || 0) : 0;
+    var rating = g._staffRatingSet ? clampStaffRating(g._staffRating) : 0;
+    var priceUnavailable = bottlePriceState === "unavailable";
+    var aromaUnavailable = aromaStrengthState === "unavailable";
+    var ratingUnavailable = staffRatingState === "unavailable";
+    var allUnavailable = priceUnavailable && aromaUnavailable && ratingUnavailable;
+    if (!memoUnlocked()) {
+      box.innerHTML = '<div class="memo-add">' +
+        '<button type="button" class="staff-edit-unlock">＋ 価格・香り・評価を編集（スタッフ）</button>' +
+        '<div class="memo-pin-row" id="staff-edit-pin-row" hidden>' +
+          '<input id="staff-edit-pin" class="memo-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="スタッフPIN" />' +
+          '<button type="button" class="staff-edit-pin-ok">解錠</button>' +
+          '<span class="memo-hint" id="staff-edit-pin-err"></span>' +
+        "</div>" +
+      "</div>";
+      return;
+    }
+    box.innerHTML = '<div class="staff-editor">' +
+      '<div class="staff-price-row">' +
+        '<label class="price-field"><span>価格</span><input id="staff-price-input" class="price-input" type="number" inputmode="numeric" min="0" max="1000000" step="100" value="' +
+          (price || "") + '" placeholder="4500" ' + (priceUnavailable ? "disabled" : "") + '/></label>' +
+        '<label class="price-field"><span>容量ml</span><input id="staff-price-ml-input" class="price-input" type="number" inputmode="numeric" min="50" max="3000" step="10" value="' +
+          ml + '" placeholder="700" ' + (priceUnavailable ? "disabled" : "") + '/></label>' +
+      '</div>' +
+      '<div class="staff-metric-control">' +
+        '<div class="staff-metric-head"><span>香りの強さ</span><output id="staff-aroma-output" class="aroma-output">' + aroma + '</output></div>' +
+        '<div class="metric-scale-row"><span>0</span><input id="staff-aroma-range" class="aroma-range" type="range" min="0" max="10" step="1" value="' + aroma + '"' + (aromaUnavailable ? " disabled" : "") + ' /><span>10</span></div>' +
+      '</div>' +
+      '<div class="staff-metric-control">' +
+        '<div class="staff-metric-head"><span>スタッフ評価</span><output id="staff-rating-output" class="rating-output">' + rating + '</output></div>' +
+        '<div class="metric-scale-row"><span>0</span><input id="staff-rating-range" class="rating-range" type="range" min="0" max="10" step="1" value="' + rating + '"' + (ratingUnavailable ? " disabled" : "") + ' /><span>10</span></div>' +
+      '</div>' +
+      '<button type="button" class="staff-save"' + (allUnavailable ? " disabled" : "") + '>まとめて保存</button>' +
+      '<p class="memo-hint staff-edit-msg" id="staff-edit-msg">' +
+        esc(message || (allUnavailable ? "保存先未設定です。各SQLを実行すると共有保存できます。" : "")) +
+      '</p>' +
+    "</div>";
+  }
+
+  function postBottlePriceValue(g, price, ml) {
+    var headers = {
+      apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY,
+      "Content-Type": "application/json", Prefer: "return=minimal"
+    };
+    function post(body) {
+      return fetch(SUPABASE_URL + "/rest/v1/" + PRICE_TABLE, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(body)
+      });
+    }
+    return post({ gin_name: g.name, price_yen: price, bottle_ml: ml }).then(function (res) {
+      if (res.status === 400) return post({ gin_name: g.name, price_yen: price });
+      return res;
+    }).then(function (res) {
+      if (res.status !== 201) {
+        if (res.status === 404) bottlePriceState = "unavailable";
+        throw new Error("価格 " + res.status);
+      }
+      g._bottlePrice = price;
+      g._bottlePriceSet = true;
+      g._bottleMl = ml;
+      g._bottleMlSet = true;
+      g._bottlePriceKind = "staff";
+      bottlePriceState = "ready";
+    });
+  }
+
+  function postAromaValue(g, strength) {
+    return fetch(SUPABASE_URL + "/rest/v1/" + AROMA_TABLE, {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY,
+        "Content-Type": "application/json", Prefer: "return=minimal"
+      },
+      body: JSON.stringify({ gin_name: g.name, strength: strength })
+    }).then(function (res) {
+      if (res.status !== 201) {
+        if (res.status === 404) aromaStrengthState = "unavailable";
+        throw new Error("香り " + res.status);
+      }
+      g._aromaStrength = strength;
+      g._aromaStrengthSet = true;
+      aromaStrengthState = "ready";
+    });
+  }
+
+  function postStaffRatingValue(g, rating) {
+    return fetch(SUPABASE_URL + "/rest/v1/" + RATING_TABLE, {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY,
+        "Content-Type": "application/json", Prefer: "return=minimal"
+      },
+      body: JSON.stringify({ gin_name: g.name, rating: rating })
+    }).then(function (res) {
+      if (res.status !== 201) {
+        if (res.status === 404) staffRatingState = "unavailable";
+        throw new Error("評価 " + res.status);
+      }
+      g._staffRating = rating;
+      g._staffRatingSet = true;
+      staffRatingState = "ready";
+    });
+  }
+
+  function submitStaffEdit(g) {
+    if (!g) return;
+    var msg = document.getElementById("staff-edit-msg");
+    var tasks = [];
+    var labels = [];
+    var priceInput = document.getElementById("staff-price-input");
+    var mlInput = document.getElementById("staff-price-ml-input");
+    var priceRaw = priceInput && priceInput.value ? priceInput.value.trim() : "";
+    if (priceRaw && bottlePriceState !== "unavailable") {
+      var price = clampBottlePrice(priceRaw);
+      var ml = clampBottleMl(mlInput ? mlInput.value : DEFAULT_BOTTLE_ML);
+      if (price <= 0) { if (msg) msg.textContent = "価格は1円以上で入力してください。"; return; }
+      if (!g._bottlePriceSet || price !== clampBottlePrice(g._bottlePrice) || ml !== bottleMlValue(g)) {
+        tasks.push(function () { return postBottlePriceValue(g, price, ml); });
+        labels.push("価格");
+      }
+    }
+    var aromaRange = document.getElementById("staff-aroma-range");
+    if (aromaRange && aromaStrengthState !== "unavailable" && aromaRange.getAttribute("data-dirty") === "1") {
+      var aroma = Number(aromaRange.value);
+      if (!(aroma >= 0 && aroma <= 10)) { if (msg) msg.textContent = "香りの強さは0〜10で選んでください。"; return; }
+      tasks.push(function () { return postAromaValue(g, aroma); });
+      labels.push("香り");
+    }
+    var ratingRange = document.getElementById("staff-rating-range");
+    if (ratingRange && staffRatingState !== "unavailable" && ratingRange.getAttribute("data-dirty") === "1") {
+      var rating = clampStaffRating(ratingRange.value);
+      tasks.push(function () { return postStaffRatingValue(g, rating); });
+      labels.push("評価");
+    }
+    if (!tasks.length) { if (msg) msg.textContent = "変更はありません。"; return; }
+    if (msg) msg.textContent = "保存中…";
+    Promise.all(tasks.map(function (task) { return task(); })).then(function () {
+      render();
+      renderBottlePriceSection(g);
+      renderAromaSection(g);
+      renderStaffRatingSection(g);
+      renderStaffEditSection(g, labels.join("・") + "を保存しました。");
+    }).catch(function (e) {
+      renderStaffEditSection(g, "保存に失敗しました（" + (e && e.message ? e.message : "通信エラー") + "）。");
+    });
   }
 
   function loadAllBottlePrices() {
@@ -1730,7 +1810,6 @@
             price: clampBottlePrice(row.price_yen),
             ml: row.bottle_ml == null ? 0 : clampBottleMl(row.bottle_ml),
             kind: row.price_kind || "",
-            source: row.source_url ? { label: row.source_label || "価格", url: row.source_url } : null,
             remote: !!row.created_at
           };
         }
@@ -1750,21 +1829,19 @@
           if (byGin[key].kind) g._bottlePriceKind = byGin[key].kind;
           else if (byGin[key].remote && g._bottlePriceKind === "estimated") g._bottlePriceKind = "staff";
           else if (!g._bottlePriceKind) g._bottlePriceKind = "sourced";
-          if (byGin[key].source) g._bottlePriceSource = byGin[key].source;
         } else if (!preserveAbsent) {
           g._bottlePrice = 0;
           g._bottlePriceSet = false;
           g._bottleMl = DEFAULT_BOTTLE_ML;
           g._bottleMlSet = false;
           g._bottlePriceKind = "";
-          g._bottlePriceSource = null;
         }
       });
       bottlePriceState = "ready";
       render();
       if (modalGin && els.modal && !els.modal.hidden) {
         renderBottlePriceSection(modalGin);
-        renderPriceSourceSection(modalGin);
+        renderStaffEditSection(modalGin);
       }
     }
 
@@ -1802,7 +1879,7 @@
         render();
         if (modalGin && els.modal && !els.modal.hidden) {
           renderBottlePriceSection(modalGin);
-          renderPriceSourceSection(modalGin);
+          renderStaffEditSection(modalGin);
         }
       });
   }
@@ -1837,11 +1914,10 @@
         g._bottleMl = ml;
         g._bottleMlSet = true;
         g._bottlePriceKind = "staff";
-        g._bottlePriceSource = g._bottlePriceSource || null;
         bottlePriceState = "ready";
         render();
         renderBottlePriceSection(g);
-        renderPriceSourceSection(g);
+        renderStaffEditSection(g);
       } else {
         if (res.status === 404) bottlePriceState = "unavailable";
         if (msg) msg.textContent = "保存に失敗しました（" + res.status + "）。";
@@ -1863,7 +1939,7 @@
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (data) {
         GINS = (data && data.gins) || [];
-        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._tags = g._tags || []; g._aromaStrength = 0; g._aromaStrengthSet = false; g._staffRating = 0; g._staffRatingSet = false; g._bottlePrice = 0; g._bottlePriceSet = false; g._bottleMl = DEFAULT_BOTTLE_ML; g._bottleMlSet = false; g._bottlePriceKind = ""; g._bottlePriceSource = null; g._infoSources = []; g._hay = buildHay(g); }); // ボタニカル代表名化＋共有値初期化＋検索用テキスト
+        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._tags = g._tags || []; g._aromaStrength = 0; g._aromaStrengthSet = false; g._staffRating = 0; g._staffRatingSet = false; g._bottlePrice = 0; g._bottlePriceSet = false; g._bottleMl = DEFAULT_BOTTLE_ML; g._bottleMlSet = false; g._bottlePriceKind = ""; g._infoSources = []; g._hay = buildHay(g); }); // ボタニカル代表名化＋共有値初期化＋検索用テキスト
         if (els.meta) {
           var upd = fmtDate(data.updated);
           els.meta.textContent = "在庫 " + GINS.length + "銘柄" + (upd ? "・データ最終更新 " + upd : "");
@@ -1961,32 +2037,18 @@
           if (tagRemove) { removeTag(modalGin, tagRemove.getAttribute("data-tag")); return; }
           var pick = e.target.closest(".tag-pick");
           if (pick && !pick.disabled) { addTag(modalGin, pick.getAttribute("data-tag")); return; }
-          if (e.target.closest(".aroma-unlock")) {
-            var arow = document.getElementById("aroma-pin-row");
-            if (arow) { arow.hidden = false; var ap = document.getElementById("aroma-pin"); if (ap) ap.focus(); }
+          if (e.target.closest(".staff-edit-unlock")) {
+            var editRow = document.getElementById("staff-edit-pin-row");
+            if (editRow) { editRow.hidden = false; var editPin = document.getElementById("staff-edit-pin"); if (editPin) editPin.focus(); }
             return;
           }
-          if (e.target.closest(".aroma-pin-ok")) { verifyStaffPin("aroma-pin", "aroma-pin-err"); return; }
-          if (e.target.closest(".aroma-save")) { submitAromaStrength(modalGin); return; }
-          if (e.target.closest(".rating-unlock")) {
-            var rrow = document.getElementById("rating-pin-row");
-            if (rrow) { rrow.hidden = false; var rp = document.getElementById("rating-pin"); if (rp) rp.focus(); }
-            return;
-          }
-          if (e.target.closest(".rating-pin-ok")) { verifyStaffPin("rating-pin", "rating-pin-err"); return; }
-          if (e.target.closest(".rating-save")) { submitStaffRating(modalGin); return; }
-          if (e.target.closest(".price-unlock")) {
-            var priceRow = document.getElementById("price-pin-row");
-            if (priceRow) { priceRow.hidden = false; var pricePin = document.getElementById("price-pin"); if (pricePin) pricePin.focus(); }
-            return;
-          }
-          if (e.target.closest(".price-pin-ok")) { verifyStaffPin("price-pin", "price-pin-err"); return; }
-          if (e.target.closest(".price-save")) { submitBottlePrice(modalGin); return; }
+          if (e.target.closest(".staff-edit-pin-ok")) { verifyStaffPin("staff-edit-pin", "staff-edit-pin-err"); return; }
+          if (e.target.closest(".staff-save")) { submitStaffEdit(modalGin); return; }
           if (e.target === els.modal || e.target.closest(".modal-close")) closeModal();
         });
         els.modal.addEventListener("input", function (e) {
-          if (e.target.closest(".aroma-range")) updateAromaOutput();
-          if (e.target.closest(".rating-range")) updateStaffRatingOutput();
+          if (e.target.closest("#staff-aroma-range")) { e.target.setAttribute("data-dirty", "1"); updateAromaOutput(); }
+          if (e.target.closest("#staff-rating-range")) { e.target.setAttribute("data-dirty", "1"); updateStaffRatingOutput(); }
         });
         document.addEventListener("keydown", function (e) {
           if (e.key === "Escape" && !els.modal.hidden) closeModal();

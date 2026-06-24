@@ -342,8 +342,8 @@ rows.sort((a, b) => a.gin_name.localeCompare(b.gin_name, "ja"));
 fs.mkdirSync(outDir, { recursive: true });
 
 const csv = [
-  ["gin_name", "kana", "price_yen", "bottle_ml", "bottle_ml_kind", "source_label", "source_url", "confidence", "kind", "context"].map(escCsv).join(","),
-  ...rows.map((r) => [r.gin_name, r.kana, r.price_yen, r.bottle_ml, r.bottle_ml_kind, r.source_label, r.source_url, r.confidence, r.kind, r.context].map(escCsv).join(","))
+  ["gin_name", "kana", "price_yen", "bottle_ml", "bottle_ml_kind", "confidence", "kind", "context"].map(escCsv).join(","),
+  ...rows.map((r) => [r.gin_name, r.kana, r.price_yen, r.bottle_ml, r.bottle_ml_kind, r.confidence, r.kind, r.context].map(escCsv).join(","))
 ].join("\n") + "\n";
 fs.writeFileSync(csvPath, csv);
 
@@ -361,15 +361,12 @@ const fullJsonRows = sqlRows.map((r) => ({
   price_yen: r.price_yen,
   bottle_ml: r.bottle_ml || DEFAULT_BOTTLE_ML,
   price_kind: "sourced",
-  source_label: r.source_label,
-  source_url: r.source_url,
   confidence: r.confidence
 }));
 
 fs.writeFileSync(jsonPath, JSON.stringify(fullJsonRows, null, 2) + "\n");
 
 const values = sqlRows.map((r, idx) =>
-  `  -- ${escSql(r.source_label)} / ${escSql(r.source_url)}\n` +
   `  ('${escSql(r.gin_name)}', ${r.price_yen}, ${r.bottle_ml || DEFAULT_BOTTLE_ML}, 'active')${idx < sqlRows.length - 1 ? "," : ""}`
 );
 const generatedAt = new Intl.DateTimeFormat("ja-JP", {

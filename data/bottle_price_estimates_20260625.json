@@ -4,8 +4,6 @@
     "price_yen": 2350,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "公式通販",
-    "source_url": "https://onikoroshi-online.jp/SHOP/GI00001.html",
     "confidence": 62
   },
   {
@@ -13,8 +11,6 @@
     "price_yen": 5280,
     "bottle_ml": 720,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://www.hasegawasaketen.com/eshop/products/detail/11728",
     "confidence": 90
   },
   {
@@ -22,8 +18,6 @@
     "price_yen": 4400,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://shopping.kimijimaya.co.jp/view/item/000000007139",
     "confidence": 90
   },
   {
@@ -31,8 +25,6 @@
     "price_yen": 5500,
     "bottle_ml": 720,
     "price_kind": "sourced",
-    "source_label": "公式通販",
-    "source_url": "https://nissin-shurui.com/?pid=147438729",
     "confidence": 90
   },
   {
@@ -40,8 +32,6 @@
     "price_yen": 9070,
     "bottle_ml": 1000,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://www.miraido-onlineshop.com/item/5-beefeater-cj/",
     "confidence": 95
   },
   {
@@ -49,8 +39,6 @@
     "price_yen": 3300,
     "bottle_ml": 375,
     "price_kind": "sourced",
-    "source_label": "公式通販",
-    "source_url": "https://shop.ethicalspirits.jp/products/cacao-ethique-batch7",
     "confidence": 90
   },
   {
@@ -58,8 +46,6 @@
     "price_yen": 3300,
     "bottle_ml": 375,
     "price_kind": "sourced",
-    "source_label": "公式通販",
-    "source_url": "https://shop.ethicalspirits.jp/products/cacao-ethique-batch7",
     "confidence": 90
   },
   {
@@ -67,8 +53,6 @@
     "price_yen": 2310,
     "bottle_ml": 200,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/23513",
     "confidence": 95
   },
   {
@@ -76,8 +60,6 @@
     "price_yen": 2200,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://www.suzusake.com/SHOP/02075.html",
     "confidence": 95
   },
   {
@@ -85,8 +67,6 @@
     "price_yen": 4950,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/18026",
     "confidence": 95
   },
   {
@@ -94,8 +74,6 @@
     "price_yen": 15000,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "ふるさと納税",
-    "source_url": "https://www.furusato-tax.jp/product/detail/43202/5960606",
     "confidence": 95
   },
   {
@@ -103,8 +81,6 @@
     "price_yen": 5170,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/22941",
     "confidence": 95
   },
   {
@@ -112,8 +88,6 @@
     "price_yen": 7920,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "公式通販",
-    "source_url": "https://eirin0088.base.shop/items/81497456",
     "confidence": 95
   },
   {
@@ -121,8 +95,6 @@
     "price_yen": 4363,
     "bottle_ml": 750,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://www.syurui.co.jp/products/8989",
     "confidence": 95
   },
   {
@@ -130,8 +102,6 @@
     "price_yen": 3890,
     "bottle_ml": 750,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://www.syurui.co.jp/products/4596",
     "confidence": 95
   },
   {
@@ -139,8 +109,6 @@
     "price_yen": 3300,
     "bottle_ml": 375,
     "price_kind": "sourced",
-    "source_label": "共同開発元",
-    "source_url": "https://krispykreme.jp/pr/pr-10559.html",
     "confidence": 62
   },
   {
@@ -148,8 +116,6 @@
     "price_yen": 4125,
     "bottle_ml": 375,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://field-to-table.jp/products/ethical-gin-loss-is-more-gin",
     "confidence": 90
   },
   {
@@ -157,8 +123,6 @@
     "price_yen": 4800,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/17718",
     "confidence": 95
   },
   {
@@ -166,8 +130,6 @@
     "price_yen": 3630,
     "bottle_ml": 720,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.shopping.yahoo.co.jp/kishuichibanya/cg-016.html",
     "confidence": 95
   },
   {
@@ -175,8 +137,6 @@
     "price_yen": 10800,
     "bottle_ml": 200,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.shopping.yahoo.co.jp/nondonkai/10015847.html",
     "confidence": 95
   },
   {
@@ -184,8 +144,6 @@
     "price_yen": 2850,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/8466",
     "confidence": 95
   },
   {
@@ -193,8 +151,6 @@
     "price_yen": 2530,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://www.miraido-onlineshop.com/item/5-hayman-old-tom/",
     "confidence": 95
   },
   {
@@ -202,8 +158,6 @@
     "price_yen": 5500,
     "bottle_ml": 750,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/14920",
     "confidence": 95
   },
   {
@@ -211,8 +165,6 @@
     "price_yen": 5500,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://shop.andspirits.com/products/holon",
     "confidence": 95
   },
   {
@@ -220,8 +172,6 @@
     "price_yen": 5700,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://holongin.com/pages/holon-gin-amehare-release",
     "confidence": 62
   },
   {
@@ -229,8 +179,6 @@
     "price_yen": 5700,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://holongin.com/pages/holongin_seasonal_spring",
     "confidence": 62
   },
   {
@@ -238,8 +186,6 @@
     "price_yen": 5900,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://holongin.com/products/holon-gin-seasonal-%E6%A2%85%E7%B4%AB%E8%98%87-500ml",
     "confidence": 90
   },
   {
@@ -247,8 +193,6 @@
     "price_yen": 5700,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://holongin.com/pages/holon-gin-amehare-release",
     "confidence": 62
   },
   {
@@ -256,8 +200,6 @@
     "price_yen": 6600,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://www.shinanoya-tokyo.jp/view/item/000000015964",
     "confidence": 95
   },
   {
@@ -265,8 +207,6 @@
     "price_yen": 1349,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://likaman.net/view/item/000000008571",
     "confidence": 90
   },
   {
@@ -274,8 +214,6 @@
     "price_yen": 3850,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://komasagin.com/hojicha/",
     "confidence": 62
   },
   {
@@ -283,8 +221,6 @@
     "price_yen": 3850,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://komasagin.com/komikan/",
     "confidence": 62
   },
   {
@@ -292,8 +228,6 @@
     "price_yen": 3850,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://komasagin.com/ichigo/",
     "confidence": 62
   },
   {
@@ -301,8 +235,6 @@
     "price_yen": 5600,
     "bottle_ml": 750,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://gacraftspirits.com/products/lady-trieu-gin-750ml",
     "confidence": 95
   },
   {
@@ -310,8 +242,6 @@
     "price_yen": 4039,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://www.syurui.co.jp/products/1301",
     "confidence": 95
   },
   {
@@ -319,8 +249,6 @@
     "price_yen": 4730,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/12072",
     "confidence": 95
   },
   {
@@ -328,8 +256,6 @@
     "price_yen": 14000,
     "bottle_ml": 350,
     "price_kind": "sourced",
-    "source_label": "輸入元",
-    "source_url": "https://union-liquors.com/products/%E3%83%9E%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%83%BB%E3%83%9F%E3%83%A9%E3%83%BC%E3%82%BA%E3%83%BB%E3%82%B8%E3%83%B3-9%E3%83%A0%E3%83%BC%E3%83%B3%E3%82%BA/",
     "confidence": 62
   },
   {
@@ -337,8 +263,6 @@
     "price_yen": 3850,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "公式通販",
-    "source_url": "https://nakatsugin.thebase.in/items/54976135",
     "confidence": 90
   },
   {
@@ -346,8 +270,6 @@
     "price_yen": 3500,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://www.saketry.com/208940.html",
     "confidence": 95
   },
   {
@@ -355,8 +277,6 @@
     "price_yen": 3850,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://niigata-hasegawaya.com/products/nakatsu-gin-%E7%9F%A5%E5%A4%9A%E3%83%90%E3%83%8A%E3%83%8A-3rd-batch",
     "confidence": 95
   },
   {
@@ -364,8 +284,6 @@
     "price_yen": 4268,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.shopping.yahoo.co.jp/syupoppo/nordes-atlantic-galisian-gin.html",
     "confidence": 95
   },
   {
@@ -373,8 +291,6 @@
     "price_yen": 4730,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/19983",
     "confidence": 95
   },
   {
@@ -382,8 +298,6 @@
     "price_yen": 4730,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/19983",
     "confidence": 95
   },
   {
@@ -391,8 +305,6 @@
     "price_yen": 6000,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://sakenokadoya.com/rokumoji-botanical-trip/",
     "confidence": 62
   },
   {
@@ -400,8 +312,6 @@
     "price_yen": 4950,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://shop.andspirits.com/products/silent-pool-gin",
     "confidence": 95
   },
   {
@@ -409,8 +319,6 @@
     "price_yen": 5720,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/18755",
     "confidence": 95
   },
   {
@@ -418,8 +326,6 @@
     "price_yen": 4550,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://item.rakuten.co.jp/sakaeyahonten/sipsmith_lemon/",
     "confidence": 90
   },
   {
@@ -427,8 +333,6 @@
     "price_yen": 4598,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://www.miraido-onlineshop.com/item/5-sip-smith-vjop-ldg/",
     "confidence": 95
   },
   {
@@ -436,8 +340,6 @@
     "price_yen": 4950,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://sakeroman.com/products/gin-stilldam-gin-shiso-ume",
     "confidence": 95
   },
   {
@@ -445,8 +347,6 @@
     "price_yen": 2500,
     "bottle_ml": 375,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://www.stilldam.saga.jp/products.html",
     "confidence": 62
   },
   {
@@ -454,8 +354,6 @@
     "price_yen": 2500,
     "bottle_ml": 375,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://www.stilldam.saga.jp/products.html",
     "confidence": 62
   },
   {
@@ -463,8 +361,6 @@
     "price_yen": 2500,
     "bottle_ml": 375,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://www.stilldam.saga.jp/products.html",
     "confidence": 62
   },
   {
@@ -472,8 +368,6 @@
     "price_yen": 4950,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://sakeroman.com/products/gin-stilldam-gin-shiso-ume",
     "confidence": 95
   },
   {
@@ -481,8 +375,6 @@
     "price_yen": 2500,
     "bottle_ml": 375,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://www.stilldam.saga.jp/products.html",
     "confidence": 62
   },
   {
@@ -490,8 +382,6 @@
     "price_yen": 2500,
     "bottle_ml": 375,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://www.stilldam.saga.jp/products.html",
     "confidence": 62
   },
   {
@@ -499,8 +389,6 @@
     "price_yen": 2500,
     "bottle_ml": 375,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://www.stilldam.saga.jp/products.html",
     "confidence": 62
   },
   {
@@ -508,8 +396,6 @@
     "price_yen": 2500,
     "bottle_ml": 375,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://www.stilldam.saga.jp/products.html",
     "confidence": 62
   },
   {
@@ -517,8 +403,6 @@
     "price_yen": 3058,
     "bottle_ml": 1000,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://www.miraido-onlineshop.com/item/5-tanqueray-mj/",
     "confidence": 95
   },
   {
@@ -526,8 +410,6 @@
     "price_yen": 7480,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://www.shinanoya-tokyo.jp/view/item/000000021068",
     "confidence": 95
   },
   {
@@ -535,8 +417,6 @@
     "price_yen": 4450,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://ginlabliquor.base.shop/items/90189280",
     "confidence": 95
   },
   {
@@ -544,8 +424,6 @@
     "price_yen": 4450,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://ginlabliquor.base.shop/items/90189280",
     "confidence": 95
   },
   {
@@ -553,8 +431,6 @@
     "price_yen": 2200,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://www.higoya.co.jp/c/kuramoto/kagoshima/nansatsu/oj/oj93",
     "confidence": 95
   },
   {
@@ -562,8 +438,6 @@
     "price_yen": 3333,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "プレスリリース",
-    "source_url": "https://prtimes.jp/main/html/rd/p/000000032.000087270.html",
     "confidence": 62
   },
   {
@@ -571,8 +445,6 @@
     "price_yen": 6600,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/22843",
     "confidence": 95
   },
   {
@@ -580,8 +452,6 @@
     "price_yen": 3335,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://www.syurui.co.jp/products/3463",
     "confidence": 95
   },
   {
@@ -589,8 +459,6 @@
     "price_yen": 4298,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.shopping.yahoo.co.jp/enokishouten/3r-406g-qk3c.html",
     "confidence": 95
   },
   {
@@ -598,8 +466,6 @@
     "price_yen": 3208,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://www.syurui.co.jp/products/3486",
     "confidence": 95
   },
   {
@@ -607,8 +473,6 @@
     "price_yen": 3300,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "輸入元",
-    "source_url": "https://shop.andspirits.com/products/whitley-neill-raspberry-gin-uitutoriniru-razuberizin",
     "confidence": 95
   },
   {
@@ -616,8 +480,6 @@
     "price_yen": 3335,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://www.syurui.co.jp/products/3513",
     "confidence": 95
   },
   {
@@ -625,8 +487,6 @@
     "price_yen": 5000,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/20279",
     "confidence": 95
   },
   {
@@ -634,8 +494,6 @@
     "price_yen": 6200,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://www.shinanoya-tokyo.jp/view/item/000000015610",
     "confidence": 95
   },
   {
@@ -643,8 +501,6 @@
     "price_yen": 5500,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/23969",
     "confidence": 95
   },
   {
@@ -652,8 +508,6 @@
     "price_yen": 5500,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/25568",
     "confidence": 95
   },
   {
@@ -661,8 +515,6 @@
     "price_yen": 5000,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/20279",
     "confidence": 95
   },
   {
@@ -670,8 +522,6 @@
     "price_yen": 6490,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://unga-plus.com/products/155230818",
     "confidence": 95
   },
   {
@@ -679,8 +529,6 @@
     "price_yen": 8030,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/23115",
     "confidence": 95
   },
   {
@@ -688,8 +536,6 @@
     "price_yen": 3850,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/18858",
     "confidence": 95
   },
   {
@@ -697,8 +543,6 @@
     "price_yen": 1034,
     "bottle_ml": 300,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://www.yomeishu.co.jp/herb_liqueur/kanosizuku/",
     "confidence": 62
   },
   {
@@ -706,8 +550,6 @@
     "price_yen": 5192,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://www.yomeishu.co.jp/herb_liqueur/kanomori/",
     "confidence": 62
   },
   {
@@ -715,8 +557,6 @@
     "price_yen": 2500,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "酒販店",
-    "source_url": "https://store.musashiya-net.co.jp/products/detail/16572",
     "confidence": 95
   },
   {
@@ -724,8 +564,6 @@
     "price_yen": 1136,
     "bottle_ml": 200,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://www.oenon.jp/product/liqueur-spirits/other/akitasugi-gin.html",
     "confidence": 62
   },
   {
@@ -733,8 +571,6 @@
     "price_yen": 2420,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "公式通販",
-    "source_url": "https://www.hizennya.com/c/other_sake/n-spirits/n-gin/a-62-2",
     "confidence": 62
   },
   {
@@ -742,8 +578,6 @@
     "price_yen": 2440,
     "bottle_ml": 500,
     "price_kind": "sourced",
-    "source_label": "公式通販",
-    "source_url": "https://nihonkusakilab.com/products/%E8%8D%89%E6%9C%A8%E9%85%92%E3%83%95%E3%82%A9%E3%83%AC%E3%82%B9%E3%83%88%E3%82%B8%E3%83%B3%E5%B0%8F",
     "confidence": 95
   },
   {
@@ -751,8 +585,6 @@
     "price_yen": 3850,
     "bottle_ml": 700,
     "price_kind": "sourced",
-    "source_label": "公式",
-    "source_url": "https://hinomaruwhisky.com/products/%E6%97%A5%E3%81%AE%E4%B8%B8%E3%82%B8%E3%83%B3-%E8%94%B5%E9%A2%A8%E5%9C%9F",
     "confidence": 95
   }
 ]
