@@ -15,6 +15,7 @@ create table if not exists public.gin_bottle_prices (
   id          bigint generated always as identity primary key,
   gin_name    text not null check (char_length(gin_name) between 1 and 200),
   price_yen   integer not null check (price_yen between 1 and 1000000),
+  bottle_ml   integer check (bottle_ml between 50 and 3000),
   status      text not null default 'active' check (status in ('active','hidden')),
   created_at  timestamptz not null default now()
 );
@@ -25,17 +26,21 @@ alter table public.gin_bottle_prices
   drop constraint if exists gin_bottle_prices_price_yen_check;
 alter table public.gin_bottle_prices
   add constraint gin_bottle_prices_price_yen_check check (price_yen between 1 and 1000000);
+alter table public.gin_bottle_prices
+  drop constraint if exists gin_bottle_prices_bottle_ml_check;
+alter table public.gin_bottle_prices
+  add constraint gin_bottle_prices_bottle_ml_check check (bottle_ml between 50 and 3000);
 
 revoke all on table public.gin_bottle_prices from anon;
 revoke all on table public.gin_bottle_prices from authenticated;
 
-grant insert (gin_name, price_yen) on public.gin_bottle_prices to anon;
+grant insert (gin_name, price_yen, bottle_ml) on public.gin_bottle_prices to anon;
 drop policy if exists "anon insert bottle price" on public.gin_bottle_prices;
 create policy "anon insert bottle price"
   on public.gin_bottle_prices for insert to anon
   with check (status = 'active');
 
-grant select (id, gin_name, price_yen, created_at) on public.gin_bottle_prices to anon;
+grant select (id, gin_name, price_yen, bottle_ml, created_at) on public.gin_bottle_prices to anon;
 drop policy if exists "anon read active bottle price" on public.gin_bottle_prices;
 create policy "anon read active bottle price"
   on public.gin_bottle_prices for select to anon

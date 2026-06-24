@@ -12,14 +12,18 @@ const today = new Intl.DateTimeFormat("ja-JP", {
   day: "2-digit"
 }).format(new Date()).replace(/\D/g, "");
 const csvPath = path.join(outDir, `bottle_price_estimates_${today}.csv`);
+const jsonPath = path.join(outDir, `bottle_price_estimates_${today}.json`);
 const sqlPath = path.join(outDir, `bottle_price_estimates_${today}.sql`);
 const combinedSqlPath = path.join(outDir, `bottle_price_setup_and_seed_${today}.sql`);
 const setupSqlPath = path.join(root, "supabase_bottle_prices_setup.sql");
 
 const MIN_PRICE = 900;
 const MAX_PRICE = 250000;
+const DEFAULT_BOTTLE_ML = 700;
 const CONCURRENCY = Number(process.env.PRICE_CONCURRENCY || 8);
 const TIMEOUT_MS = Number(process.env.PRICE_TIMEOUT_MS || 12000);
+const SOURCE_LIMIT = Number(process.env.PRICE_SOURCE_LIMIT || 8);
+const SQL_MIN_CONFIDENCE = Number(process.env.PRICE_SQL_MIN_CONFIDENCE || 48);
 
 const shopDomainHints = [
   "ginbottle.shop",
@@ -112,10 +116,10 @@ function uniqueSources(g) {
     .filter((item) => {
       if (seen.has(item.url)) return false;
       seen.add(item.url);
-      return item.score >= 2;
+      return item.score >= -5;
     })
     .sort((a, b) => b.score - a.score)
-    .slice(0, 3);
+    .slice(0, SOURCE_LIMIT);
 }
 
 function validPrice(n) {
@@ -190,11 +194,11 @@ function collectFromMeta(html, candidates, pageIsYen) {
 function collectFromText(html, candidates) {
   const text = compactText(html);
   const priceWords = "(?:価格|税込|税抜|販売|通常|本体|price|Price|PRICE)";
-  const yenRe = new RegExp(`.{0,32}${priceWords}.{0,32}(?:¥|￥)?\\s*([0-9][0-9,]{2,6})(?:\\s*円|\\s*yen|\\s*JPY|\\s*税込|\\s*税抜)`, "g");
+  const yenRe = new RegExp(`.{0,32}${priceWords}.{0,32}(?:¥|￥)?\\s*(^|[^\\d,])([0-9][0-9,]{2,6})(?:\\s*円|\\s*yen|\\s*JPY|\\s*税込|\\s*税抜)`, "g");
   let m;
-  while ((m = yenRe.exec(text))) pushCandidate(candidates, m[1], 62, "text.price-context", m[0]);
+  while ((m = yenRe.exec(text))) pushCandidate(candidates, m[2], 62, "text.price-context", m[0]);
 
-  const directYenRe = /(?:¥|￥)\s*([0-9][0-9,]{2,6})/g;
+  const directYenRe = /(?:¥|￥)\s*([0-9][0-9,]{2,6})(?![\d,])/g;
   while ((m = directYenRe.exec(text))) {
     const ctx = text.slice(Math.max(0, m.index - 40), Math.min(text.length, m.index + 80));
     if (/送料|送料無料|代引|ポイント|クーポン|レビュー|獲得|以上|未満/.test(ctx)) continue;
@@ -211,6 +215,52 @@ function chooseCandidate(candidates) {
     if (!prev || c.confidence > prev.confidence) grouped.set(key, c);
   }
   return [...grouped.values()].sort((a, b) => b.confidence - a.confidence || a.price - b.price)[0];
+}
+
+function pushVolume(candidates, ml, score, kind, context) {
+  var n = Math.round(Number(ml));
+  if (!Number.isFinite(n) || n < 180 || n > 2000) return;
+  candidates.push({ ml: n, score, kind, context: compactText(context).slice(0, 140) });
+}
+
+function collectVolumesFromText(text, candidates, score, kind) {
+  let m;
+  const mlRe = /(^|[^\d])(\d{2,4})\s*(?:ml|mL|ML|ｍｌ|㎖|ミリリットル)/g;
+  while ((m = mlRe.exec(text))) pushVolume(candidates, m[2], score, kind + ".ml", text.slice(Math.max(0, m.index - 45), m.index + 80));
+
+  const clRe = /(^|[^\d])(\d{1,3}(?:\.\d+)?)\s*(?:cl|cL|CL|ｃｌ)/g;
+  while ((m = clRe.exec(text))) pushVolume(candidates, Number(m[2]) * 10, score, kind + ".cl", text.slice(Math.max(0, m.index - 45), m.index + 80));
+
+  const lRe = /(^|[^\d])(\d(?:\.\d+)?)\s*(?:L|Ｌ|リットル)(?![a-zA-Z])/g;
+  while ((m = lRe.exec(text))) pushVolume(candidates, Number(m[2]) * 1000, score - 5, kind + ".l", text.slice(Math.max(0, m.index - 45), m.index + 80));
+}
+
+function chooseVolume(candidates) {
+  if (!candidates.length) return { ml: DEFAULT_BOTTLE_ML, kind: "default" };
+  const grouped = new Map();
+  for (const c of candidates) {
+    const bonus = [700, 500, 750, 720, 200, 350, 375, 1000].includes(c.ml) ? 4 : 0;
+    const score = c.score + bonus;
+    const prev = grouped.get(String(c.ml));
+    if (!prev || score > prev.score) grouped.set(String(c.ml), { ...c, score });
+  }
+  return [...grouped.values()].sort((a, b) => b.score - a.score)[0];
+}
+
+function extractBottleMl(html, url, ginName, priceContext) {
+  const candidates = [];
+  collectVolumesFromText(url, candidates, 95, "url");
+  collectVolumesFromText(ginName || "", candidates, 80, "gin-name");
+  collectVolumesFromText(priceContext || "", candidates, 70, "price-context");
+
+  const title = (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || "";
+  collectVolumesFromText(compactText(title), candidates, 78, "title");
+
+  const ogTitle = (html.match(/<meta\b[^>]*(?:property|name)=["']og:title["'][^>]*content=["']([^"']+)["'][^>]*>/i) || [])[1] || "";
+  collectVolumesFromText(compactText(ogTitle), candidates, 78, "og-title");
+
+  collectVolumesFromText(compactText(html).slice(0, 200000), candidates, 45, "page");
+  return chooseVolume(candidates);
 }
 
 async function fetchWithTimeout(url) {
@@ -247,10 +297,13 @@ async function collectForGin(g) {
       collectFromText(html, candidates);
       const chosen = chooseCandidate(candidates);
       if (chosen) {
+        const volume = extractBottleMl(html, finalUrl || source.url, g.name + " " + (g.kana || ""), chosen.context);
         return {
           gin_name: g.name,
           kana: g.kana || "",
           price_yen: chosen.price,
+          bottle_ml: volume.ml,
+          bottle_ml_kind: volume.kind,
           source_url: finalUrl || source.url,
           source_label: source.label || domainOf(source.url),
           confidence: chosen.confidence,
@@ -289,14 +342,32 @@ rows.sort((a, b) => a.gin_name.localeCompare(b.gin_name, "ja"));
 fs.mkdirSync(outDir, { recursive: true });
 
 const csv = [
-  ["gin_name", "kana", "price_yen", "source_label", "source_url", "confidence", "kind", "context"].map(escCsv).join(","),
-  ...rows.map((r) => [r.gin_name, r.kana, r.price_yen, r.source_label, r.source_url, r.confidence, r.kind, r.context].map(escCsv).join(","))
+  ["gin_name", "kana", "price_yen", "bottle_ml", "bottle_ml_kind", "source_label", "source_url", "confidence", "kind", "context"].map(escCsv).join(","),
+  ...rows.map((r) => [r.gin_name, r.kana, r.price_yen, r.bottle_ml, r.bottle_ml_kind, r.source_label, r.source_url, r.confidence, r.kind, r.context].map(escCsv).join(","))
 ].join("\n") + "\n";
 fs.writeFileSync(csvPath, csv);
 
-const sqlRows = rows.filter((r) => r.confidence >= 88 && !/記事/.test(r.source_label) && !/amazon/i.test(r.source_url));
-const values = sqlRows.map((r) =>
-  `  ('${escSql(r.gin_name)}', ${r.price_yen}, 'active') -- ${escSql(r.source_label)} / ${escSql(r.source_url)}`
+function sqlSafeRow(r) {
+  if (r.confidence < SQL_MIN_CONFIDENCE) return false;
+  if (/記事|県産品情報/.test(r.source_label)) return false;
+  if (r.kind === "text.yen") return false;
+  if (/価格で探す|送料|地域|\/\s*100\s*ml|100\s*ml|割材|ポイント|クーポン/.test(r.context)) return false;
+  return true;
+}
+
+const sqlRows = rows.filter(sqlSafeRow);
+fs.writeFileSync(jsonPath, JSON.stringify(sqlRows.map((r) => ({
+  gin_name: r.gin_name,
+  price_yen: r.price_yen,
+  bottle_ml: r.bottle_ml || DEFAULT_BOTTLE_ML,
+  source_label: r.source_label,
+  source_url: r.source_url,
+  confidence: r.confidence
+})), null, 2) + "\n");
+
+const values = sqlRows.map((r, idx) =>
+  `  -- ${escSql(r.source_label)} / ${escSql(r.source_url)}\n` +
+  `  ('${escSql(r.gin_name)}', ${r.price_yen}, ${r.bottle_ml || DEFAULT_BOTTLE_ML}, 'active')${idx < sqlRows.length - 1 ? "," : ""}`
 );
 const generatedAt = new Intl.DateTimeFormat("ja-JP", {
   timeZone: "Asia/Tokyo",
@@ -309,12 +380,12 @@ const sql = `-- Bar Soutsu｜ボトル価格目安 自動収集シード\n` +
   `-- 先に supabase_bottle_prices_setup.sql をRunしてテーブルを作成してください。\n` +
   `-- 価格は公開ページから機械抽出した「目安」です。\n` +
   `-- CSVには低信頼候補も残し、SQLは構造化データ/メタ価格中心の高信頼候補だけに絞っています。\n\n` +
-  `insert into public.gin_bottle_prices (gin_name, price_yen, status)\nvalues\n` +
-  values.join(",\n") +
+  `insert into public.gin_bottle_prices (gin_name, price_yen, bottle_ml, status)\nvalues\n` +
+  values.join("\n") +
   `;\n\nNOTIFY pgrst, 'reload schema';\n`;
 fs.writeFileSync(sqlPath, sql);
 
 const setupSql = fs.existsSync(setupSqlPath) ? fs.readFileSync(setupSqlPath, "utf8") : "";
 fs.writeFileSync(combinedSqlPath, setupSql + "\n\n" + sql);
 
-process.stdout.write(JSON.stringify({ count: rows.length, sqlRows: sqlRows.length, csv: csvPath, sql: sqlPath, combinedSql: combinedSqlPath }, null, 2) + "\n");
+process.stdout.write(JSON.stringify({ count: rows.length, sqlRows: sqlRows.length, csv: csvPath, json: jsonPath, sql: sqlPath, combinedSql: combinedSqlPath }, null, 2) + "\n");

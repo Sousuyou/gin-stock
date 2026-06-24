@@ -332,6 +332,12 @@ select {
   border-color: var(--line);
   font-variant-numeric: tabular-nums;
 }
+.badge-cost {
+  background: transparent;
+  color: var(--green);
+  border-color: var(--line);
+  font-variant-numeric: tabular-nums;
+}
 /* 仮登録（店員申請の未確認）＝目立つ金色。要確認（出典あいまいな既存）＝控えめな枠。 */
 .badge-provisional {
   background: var(--gold); color: var(--on-accent); border-color: var(--gold);
@@ -410,6 +416,22 @@ select {
 }
 .gin-tag-more { background: transparent; color: var(--muted); border-color: var(--line); }
 .tag-section, .aroma-section, .rating-section, .price-section { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+.modal-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+.modal-quick-grid .price-section,
+.modal-quick-grid .aroma-section,
+.modal-quick-grid .rating-section {
+  margin-top: 0;
+  border-top: 0;
+  padding-top: 0;
+  min-width: 0;
+}
 .source-section { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 9px; }
 .source-list {
   list-style: none; margin: 0 0 6px; padding: 0;
@@ -570,23 +592,40 @@ button.tag-chip:hover {
 .aroma-save { min-height: 28px; padding: 0 10px; }
 .aroma-msg:empty { display: none; }
 .aroma-loading { margin: 0 0 6px; }
-.price-display {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  align-items: baseline;
+.price-facts {
+  display: grid;
+  gap: 5px;
   margin-bottom: 8px;
 }
-.price-main {
+.price-fact {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: baseline;
+  min-width: 0;
+  padding: 4px 7px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+.price-fact span {
+  flex: none;
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 700;
+}
+.price-fact b {
+  min-width: 0;
   color: var(--gold);
-  font-size: 1rem;
+  font-size: 0.76rem;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
+  text-align: right;
 }
-.price-sub {
+.price-fact em {
+  margin-left: 3px;
   color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-size: 0.58rem;
+  font-style: normal;
 }
 .price-editor {
   display: flex;
@@ -594,10 +633,20 @@ button.tag-chip:hover {
   gap: 6px 8px;
   align-items: center;
 }
+.price-field {
+  display: grid;
+  gap: 3px;
+  flex: 1 1 86px;
+  min-width: 0;
+}
+.price-field span {
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 700;
+}
 .price-input {
-  flex: 1 1 150px;
   min-height: 32px;
-  max-width: 180px;
+  width: 100%;
   padding: 0 10px;
   font: inherit;
   font-size: 0.86rem;
@@ -916,6 +965,7 @@ button.tag-chip:hover {
   .gin-kana { font-size: 0.64rem; }
   .badge { padding: 1px 6px; font-size: 0.57rem; }
   .gin-bot { -webkit-line-clamp: 3; font-size: 0.67rem; }
+  .modal-quick-grid { grid-template-columns: 1fr; }
   .source-add { grid-template-columns: 1fr; }
   .source-send { justify-self: start; }
   .bot-mini-top { flex-direction: column; }
