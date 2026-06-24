@@ -898,7 +898,7 @@
     }).catch(function () { if (msg) msg.textContent = "送信に失敗しました（通信エラー）。"; });
   }
 
-  // ===== 風味タグ（各ジンごと・全員閲覧／スタッフのみPIN付与。PINはメモと共通）=====
+  // ===== 風味タグ（各ジンごと・全員閲覧／スタッフのみPIN編集。PINはメモと共通）=====
   function uniqArr(a) {
     var seen = {}, out = [];
     (a || []).forEach(function (x) { if (x && !seen[x]) { seen[x] = 1; out.push(x); } });
@@ -944,17 +944,27 @@
       });
       html += "</div>";
     });
-    html += '<p class="memo-hint" id="tag-msg">タップで追加（取り消しはオーナーがTable Editorで）。</p></div>';
+    html += '<p class="memo-hint" id="tag-msg">タップで追加。付与済みタグの×で取り消しできます。</p></div>';
     return html;
+  }
+
+  function tagChipHTML(tag, canRemove) {
+    if (!canRemove) {
+      return '<span class="tag-chip is-on" title="' + esc(TAG_DESC[tag] || "") + '">' + esc(tag) + "</span>";
+    }
+    return '<button type="button" class="tag-chip tag-remove is-on" data-tag="' + esc(tag) +
+      '" title="' + esc(tag) + 'を取り消す"><span>' + esc(tag) +
+      '</span><span class="tag-remove-mark" aria-hidden="true">×</span></button>';
   }
 
   function renderTagSection(g) {
     var box = document.getElementById("tag-box");
     if (!box) return;
     var applied = g._tags || [];
+    var canRemove = memoUnlocked();
     var appliedHTML = applied.length
       ? '<div class="tag-applied">' + applied.map(function (t) {
-          return '<span class="tag-chip is-on" title="' + esc(TAG_DESC[t] || "") + '">' + esc(t) + "</span>";
+          return tagChipHTML(t, canRemove);
         }).join("") + "</div>"
       : '<p class="memo-empty">まだ風味タグはありません。</p>';
     var addHTML;
@@ -995,6 +1005,33 @@
         msg.textContent = "追加に失敗しました（" + res.status + "）。";
       }
     }).catch(function () { if (msg) msg.textContent = "追加に失敗しました（通信エラー）。"; });
+  }
+
+  function removeTag(g, tag) {
+    if (!g || !tag || !memoUnlocked()) return;
+    if ((g._tags || []).indexOf(tag) < 0) return;
+    var msg = document.getElementById("tag-msg");
+    if (msg) msg.textContent = "取り消し中…";
+    var url = SUPABASE_URL + "/rest/v1/" + TAGS_TABLE +
+      "?gin_name=eq." + encodeURIComponent(g.name) +
+      "&tag=eq." + encodeURIComponent(tag);
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY,
+        Prefer: "return=minimal"
+      }
+    }).then(function (res) {
+      if (res.status === 204) {
+        g._tags = (g._tags || []).filter(function (t) { return t !== tag; });
+        g._hay = buildHay(g) + " " + normSearch(g._tags.join(" "));
+        buildControls();
+        renderTagSection(g);
+        render();
+      } else if (msg) {
+        msg.textContent = "取り消しに失敗しました（" + res.status + "）。SQLの削除権限を確認してください。";
+      }
+    }).catch(function () { if (msg) msg.textContent = "取り消しに失敗しました（通信エラー）。"; });
   }
 
   function renderAromaSection(g) {
@@ -1179,6 +1216,8 @@
             return;
           }
           if (e.target.closest(".tag-pin-ok")) { verifyStaffPin("tag-pin", "tag-pin-err"); return; }
+          var tagRemove = e.target.closest(".tag-remove[data-tag]");
+          if (tagRemove) { removeTag(modalGin, tagRemove.getAttribute("data-tag")); return; }
           var pick = e.target.closest(".tag-pick");
           if (pick && !pick.disabled) { addTag(modalGin, pick.getAttribute("data-tag")); return; }
           if (e.target.closest(".aroma-unlock")) {
