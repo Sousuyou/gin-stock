@@ -29,6 +29,8 @@
   var staffRatingState = "loading"; // loading / ready / unavailable
   var bottlePriceState = "loading"; // loading / ready / unavailable
   var DEFAULT_BOTTLE_ML = 700;
+  var SALE_RATE_LOW = 0.30;
+  var SALE_RATE_HIGH = 0.22;
   // 風味タグ（スタッフが付与・全員閲覧・絞り込み可。2群×計28タグ。説明は選択時のヒント=title）
   var FLAVOR_GROUPS = [
     { group: "香り・風味", tags: ["ジュニパー", "フローラル", "フルーティー", "シトラス", "ウッディ", "スパイシー", "ペッパー", "ハーバル", "アーシー", "パフューミー", "ベジタル", "マリン", "ナッティ", "スモーキー", "クリーミー", "お茶系", "ビター系"] },
@@ -705,6 +707,32 @@
     return Math.round((Number(g._bottlePrice) || 0) * 30 / ml);
   }
 
+  function roundSalePrice(n) {
+    var step = n >= 2000 ? 100 : 50;
+    return Math.ceil(n / step) * step;
+  }
+
+  function salePriceRange(g) {
+    var cost = pourCost(g);
+    if (!cost) return null;
+    var low = roundSalePrice(cost / SALE_RATE_LOW);
+    var high = roundSalePrice(cost / SALE_RATE_HIGH);
+    if (high < low) high = low;
+    return { low: low, high: high };
+  }
+
+  function salePriceLabel(g) {
+    var range = salePriceRange(g);
+    if (!range) return "—";
+    return range.low === range.high ? yenLabel(range.low) : yenLabel(range.low) + "〜" + yenLabel(range.high);
+  }
+
+  function priceKindLabel(g) {
+    if (g && g._bottlePriceKind === "estimated") return "推定";
+    if (g && g._bottlePriceKind === "staff") return "スタッフ";
+    return "実売";
+  }
+
   function bottlePriceBadgeHTML(g) {
     if (!g._bottlePriceSet) return "";
     return '<span class="badge badge-price">瓶 ' + esc(yenLabel(g._bottlePrice)) + " / " + esc(mlLabel(bottleMlValue(g))) + "</span>" +
@@ -830,7 +858,8 @@
     var note = g.note
       ? '<div class="detail-block"><span class="detail-label">メモ</span><p>' + esc(g.note) + "</p></div>"
       : '<div class="detail-block"><span class="detail-label">メモ</span><p class="muted-text">（説明メモは未登録）</p></div>';
-    var sources = '<div class="source-section"><h3 class="memo-title">情報ソース</h3><div id="source-box" class="source-box"><p class="memo-empty">読み込み中…</p></div></div>';
+    var priceSources = '<div class="price-source-section source-section"><h3 class="memo-title">価格ソース</h3><div id="price-source-box" class="source-box"></div></div>';
+    var sources = '<div class="source-section"><h3 class="memo-title">銘柄情報ソース</h3><div id="source-box" class="source-box"><p class="memo-empty">読み込み中…</p></div></div>';
 
     var warn = g.not_gin ? '<div class="not-gin-banner">※当店にありますが、ジンではありません</div>' : "";
 
@@ -860,6 +889,7 @@
           '<div class="rating-section"><h3 class="memo-title">スタッフ評価</h3><div id="rating-box" class="rating-box"></div></div>' +
         "</div>" +
         '<div class="tag-section"><h3 class="memo-title">風味タグ</h3><div id="tag-box" class="tag-box"></div></div>' +
+        priceSources +
         sources +
         '<div class="memo-section"><h3 class="memo-title">スタッフメモ</h3><div id="memo-box" class="memo-box"><p class="memo-empty">読み込み中…</p></div></div>' +
       "</div>";
@@ -869,6 +899,7 @@
     loadMemos(g);
     renderTagSection(g);
     renderBottlePriceSection(g);
+    renderPriceSourceSection(g);
     renderAromaSection(g);
     renderStaffRatingSection(g);
   }
@@ -939,6 +970,8 @@
           g._bottlePriceSet = false;
           g._bottleMl = DEFAULT_BOTTLE_ML;
           g._bottleMlSet = false;
+          g._bottlePriceKind = "";
+          g._bottlePriceSource = null;
           g._infoSources = [];
           g._hay = buildHay(g);
           GINS.push(g);
@@ -994,6 +1027,28 @@
     var listHTML = sourceListHTML(g);
     if (errMsg) listHTML += '<p class="memo-empty">' + esc(errMsg) + "</p>";
     box.innerHTML = listHTML + sourceAddHTML();
+  }
+
+  function renderPriceSourceSection(g) {
+    var box = document.getElementById("price-source-box");
+    if (!box || !g) return;
+    var src = g._bottlePriceSource || null;
+    if (src && src.url) {
+      box.innerHTML = '<ul class="source-list price-source-list">' +
+        '<li class="source-item">' +
+          '<a class="source-link" href="' + esc(src.url) + '" target="_blank" rel="noopener noreferrer" title="' + esc(src.url) + '">' +
+            '<b>' + esc(src.label || "価格") + '</b>' +
+            '<span>' + esc(sourceHostLabel(src.url)) + '</span>' +
+          '</a>' +
+        '</li>' +
+      '</ul>';
+      return;
+    }
+    if (g._bottlePriceKind === "estimated") {
+      box.innerHTML = '<p class="memo-empty">価格ソース未登録。国・容量・度数からの自動推定値です。</p>';
+      return;
+    }
+    box.innerHTML = '<p class="memo-empty">価格ソースは未登録です。</p>';
   }
 
   function loadInfoSources(g) {
@@ -1638,9 +1693,10 @@
       "</div>";
     var displayHTML = g._bottlePriceSet
       ? '<div class="price-facts">' +
-          '<div class="price-fact"><span>ボトル</span><b>' + esc(yenLabel(value)) + "</b></div>" +
+          '<div class="price-fact"><span>ボトル</span><b>' + esc(yenLabel(value)) + '<em>' + esc(priceKindLabel(g)) + "</em></b></div>" +
           '<div class="price-fact"><span>容量</span><b>' + esc(mlLabel(ml)) + (g._bottleMlSet ? "" : '<em>目安</em>') + "</b></div>" +
           '<div class="price-fact"><span>30ml原価</span><b>' + esc(yenLabel(cost)) + "</b></div>" +
+          '<div class="price-fact price-sale"><span>販売目安</span><b>' + esc(salePriceLabel(g)) + "</b></div>" +
         "</div>"
       : '<p class="memo-empty">まだ価格目安はありません。</p>';
     var editHTML = '<div class="price-editor">' +
@@ -1674,7 +1730,10 @@
         if (!Object.prototype.hasOwnProperty.call(byGin, k)) {
           byGin[k] = {
             price: clampBottlePrice(row.price_yen),
-            ml: row.bottle_ml == null ? 0 : clampBottleMl(row.bottle_ml)
+            ml: row.bottle_ml == null ? 0 : clampBottleMl(row.bottle_ml),
+            kind: row.price_kind || "",
+            source: row.source_url ? { label: row.source_label || "価格", url: row.source_url } : null,
+            remote: !!row.created_at
           };
         }
       });
@@ -1690,16 +1749,25 @@
             g._bottleMl = DEFAULT_BOTTLE_ML;
             g._bottleMlSet = false;
           }
+          if (byGin[key].kind) g._bottlePriceKind = byGin[key].kind;
+          else if (byGin[key].remote && g._bottlePriceKind === "estimated") g._bottlePriceKind = "staff";
+          else if (!g._bottlePriceKind) g._bottlePriceKind = "sourced";
+          if (byGin[key].source) g._bottlePriceSource = byGin[key].source;
         } else if (!preserveAbsent) {
           g._bottlePrice = 0;
           g._bottlePriceSet = false;
           g._bottleMl = DEFAULT_BOTTLE_ML;
           g._bottleMlSet = false;
+          g._bottlePriceKind = "";
+          g._bottlePriceSource = null;
         }
       });
       bottlePriceState = "ready";
       render();
-      if (modalGin && els.modal && !els.modal.hidden) renderBottlePriceSection(modalGin);
+      if (modalGin && els.modal && !els.modal.hidden) {
+        renderBottlePriceSection(modalGin);
+        renderPriceSourceSection(modalGin);
+      }
     }
 
     function fetchSeedRows() {
@@ -1734,7 +1802,10 @@
       .catch(function () {
         if (bottlePriceState !== "ready") bottlePriceState = "unavailable";
         render();
-        if (modalGin && els.modal && !els.modal.hidden) renderBottlePriceSection(modalGin);
+        if (modalGin && els.modal && !els.modal.hidden) {
+          renderBottlePriceSection(modalGin);
+          renderPriceSourceSection(modalGin);
+        }
       });
   }
 
@@ -1767,9 +1838,12 @@
         g._bottlePriceSet = true;
         g._bottleMl = ml;
         g._bottleMlSet = true;
+        g._bottlePriceKind = "staff";
+        g._bottlePriceSource = g._bottlePriceSource || null;
         bottlePriceState = "ready";
         render();
         renderBottlePriceSection(g);
+        renderPriceSourceSection(g);
       } else {
         if (res.status === 404) bottlePriceState = "unavailable";
         if (msg) msg.textContent = "保存に失敗しました（" + res.status + "）。";
@@ -1791,7 +1865,7 @@
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (data) {
         GINS = (data && data.gins) || [];
-        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._tags = g._tags || []; g._aromaStrength = 0; g._aromaStrengthSet = false; g._staffRating = 0; g._staffRatingSet = false; g._bottlePrice = 0; g._bottlePriceSet = false; g._bottleMl = DEFAULT_BOTTLE_ML; g._bottleMlSet = false; g._infoSources = []; g._hay = buildHay(g); }); // ボタニカル代表名化＋共有値初期化＋検索用テキスト
+        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._tags = g._tags || []; g._aromaStrength = 0; g._aromaStrengthSet = false; g._staffRating = 0; g._staffRatingSet = false; g._bottlePrice = 0; g._bottlePriceSet = false; g._bottleMl = DEFAULT_BOTTLE_ML; g._bottleMlSet = false; g._bottlePriceKind = ""; g._bottlePriceSource = null; g._infoSources = []; g._hay = buildHay(g); }); // ボタニカル代表名化＋共有値初期化＋検索用テキスト
         if (els.meta) {
           var upd = fmtDate(data.updated);
           els.meta.textContent = "在庫 " + GINS.length + "銘柄" + (upd ? "・データ最終更新 " + upd : "");

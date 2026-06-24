@@ -356,14 +356,95 @@ function sqlSafeRow(r) {
 }
 
 const sqlRows = rows.filter(sqlSafeRow);
-fs.writeFileSync(jsonPath, JSON.stringify(sqlRows.map((r) => ({
-  gin_name: r.gin_name,
-  price_yen: r.price_yen,
-  bottle_ml: r.bottle_ml || DEFAULT_BOTTLE_ML,
-  source_label: r.source_label,
-  source_url: r.source_url,
-  confidence: r.confidence
-})), null, 2) + "\n");
+
+function median(values) {
+  const a = values.filter((v) => Number.isFinite(v) && v > 0).sort((x, y) => x - y);
+  if (!a.length) return 0;
+  return a[Math.floor(a.length / 2)];
+}
+
+const sourcedByName = new Map(sqlRows.map((r) => [r.gin_name, r]));
+const byCountry700 = new Map();
+for (const r of sqlRows) {
+  const g = gins.find((item) => item.name === r.gin_name);
+  const country = g && g.country_main ? g.country_main : "";
+  const ml = r.bottle_ml || DEFAULT_BOTTLE_ML;
+  const normalized = r.price_yen * DEFAULT_BOTTLE_ML / ml;
+  byCountry700.set(country, [...(byCountry700.get(country) || []), normalized]);
+}
+const countryMedian700 = new Map([...byCountry700.entries()].map(([k, v]) => [k, median(v)]));
+
+function extractMlFromGin(g) {
+  const text = `${g.name || ""} ${g.kana || ""} ${g.note || ""}`;
+  const candidates = [];
+  collectVolumesFromText(text, candidates, 80, "gin-data");
+  return candidates.length ? chooseVolume(candidates).ml : 0;
+}
+
+function estimatedBottleMl(g) {
+  const explicit = extractMlFromGin(g);
+  if (explicit) return explicit;
+  const country = g.country_main || "";
+  if (/アメリカ|カナダ/.test(country)) return 750;
+  if (/日本/.test(country)) return 500;
+  return DEFAULT_BOTTLE_ML;
+}
+
+function countryBase700(g) {
+  const country = g.country_main || "";
+  const median700 = countryMedian700.get(country);
+  if (median700) return median700;
+  if (/日本/.test(country)) return 6000;
+  if (/イギリス|オランダ|フランス|イタリア|スペイン|ベルギー|ドイツ|アイルランド|スウェーデン|フィンランド|デンマーク|ノルウェー|エストニア/.test(country)) return 4600;
+  if (/アメリカ|カナダ|オーストラリア|ニュージーランド/.test(country)) return 5200;
+  return 4800;
+}
+
+function roundEstimate(n) {
+  const step = n >= 10000 ? 500 : 100;
+  return Math.round(n / step) * step;
+}
+
+function estimatedBottlePrice(g, ml) {
+  let normalized700 = countryBase700(g);
+  const text = `${g.name || ""} ${g.kana || ""} ${g.note || ""}`;
+  if (/navy|strength|overproof|cask|barrel|reserve|limited|single|batch|限定|樽|熟成|原酒|プレミアム/i.test(text)) normalized700 *= 1.18;
+  if (/sloe|liqueur|リキュール|ノンアルコール|no.?alcohol/i.test(text)) normalized700 *= 0.82;
+  const abv = Number(g.abv);
+  if (Number.isFinite(abv)) {
+    if (abv >= 55) normalized700 *= 1.18;
+    else if (abv >= 48) normalized700 *= 1.08;
+    else if (abv > 0 && abv < 38) normalized700 *= 0.88;
+  }
+  return Math.max(MIN_PRICE, roundEstimate(normalized700 * ml / DEFAULT_BOTTLE_ML));
+}
+
+const fullJsonRows = gins.map((g) => {
+  const sourced = sourcedByName.get(g.name);
+  if (sourced) {
+    return {
+      gin_name: sourced.gin_name,
+      price_yen: sourced.price_yen,
+      bottle_ml: sourced.bottle_ml || DEFAULT_BOTTLE_ML,
+      price_kind: "sourced",
+      source_label: sourced.source_label,
+      source_url: sourced.source_url,
+      confidence: sourced.confidence
+    };
+  }
+  const ml = estimatedBottleMl(g);
+  return {
+    gin_name: g.name,
+    price_yen: estimatedBottlePrice(g, ml),
+    bottle_ml: ml,
+    price_kind: "estimated",
+    source_label: "",
+    source_url: "",
+    confidence: 20
+  };
+});
+
+fs.writeFileSync(jsonPath, JSON.stringify(fullJsonRows, null, 2) + "\n");
 
 const values = sqlRows.map((r, idx) =>
   `  -- ${escSql(r.source_label)} / ${escSql(r.source_url)}\n` +
@@ -388,4 +469,4 @@ fs.writeFileSync(sqlPath, sql);
 const setupSql = fs.existsSync(setupSqlPath) ? fs.readFileSync(setupSqlPath, "utf8") : "";
 fs.writeFileSync(combinedSqlPath, setupSql + "\n\n" + sql);
 
-process.stdout.write(JSON.stringify({ count: rows.length, sqlRows: sqlRows.length, csv: csvPath, json: jsonPath, sql: sqlPath, combinedSql: combinedSqlPath }, null, 2) + "\n");
+process.stdout.write(JSON.stringify({ count: rows.length, sqlRows: sqlRows.length, jsonRows: fullJsonRows.length, csv: csvPath, json: jsonPath, sql: sqlPath, combinedSql: combinedSqlPath }, null, 2) + "\n");

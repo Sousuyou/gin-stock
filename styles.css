@@ -621,6 +621,7 @@ button.tag-chip:hover {
   font-variant-numeric: tabular-nums;
   text-align: right;
 }
+.price-sale b { color: var(--green); }
 .price-fact em {
   margin-left: 3px;
   color: var(--muted);
@@ -659,6 +660,8 @@ button.tag-chip:hover {
 .price-save { min-height: 28px; padding: 0 10px; }
 .price-msg:empty { display: none; }
 .price-loading { margin: 0 0 6px; }
+.price-source-section { margin-top: 12px; }
+.price-source-list { margin-bottom: 0; }
 .rating-display {
   display: flex;
   flex-wrap: wrap;
@@ -958,6 +961,16 @@ button.tag-chip:hover {
 }
 
 @media (max-width: 640px) {
+  .modal-backdrop { align-items: stretch; padding: 8px; }
+  .modal { max-height: calc(100vh - 16px); padding: 14px; }
+  .modal-close { top: 7px; right: 7px; min-height: 30px; min-width: 30px; padding: 0 9px; }
+  .modal h2 { margin-right: 34px; font-size: 1rem; line-height: 1.25; }
+  .modal-kana { font-size: 0.68rem; }
+  .modal-badges { gap: 4px; margin-top: 8px; }
+  .modal .detail-block { margin-top: 10px; }
+  .modal .detail-block p { font-size: 0.78rem; line-height: 1.62; }
+  .memo-section { margin-top: 12px; padding-top: 10px; }
+  .memo-title { margin-bottom: 6px; font-size: 0.72rem; }
   .filters { grid-template-columns: repeat(2, 1fr); }
   .gin-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .gin-card { padding: 10px 10px 9px; }
@@ -965,7 +978,25 @@ button.tag-chip:hover {
   .gin-kana { font-size: 0.64rem; }
   .badge { padding: 1px 6px; font-size: 0.57rem; }
   .gin-bot { -webkit-line-clamp: 3; font-size: 0.67rem; }
-  .modal-quick-grid { grid-template-columns: 1fr; }
+  .tag-section, .aroma-section, .rating-section, .price-section { margin-top: 10px; padding-top: 9px; }
+  .modal-quick-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 12px;
+    padding-top: 9px;
+  }
+  .modal-quick-grid .price-section { grid-column: 1 / -1; }
+  .price-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
+  .price-fact { padding: 4px 6px; gap: 4px; }
+  .price-fact span { font-size: 0.6rem; }
+  .price-fact b { font-size: 0.7rem; }
+  .price-field { flex-basis: 74px; }
+  .price-input { min-height: 30px; font-size: 0.78rem; }
+  .source-section, .price-source-section { margin-top: 9px; padding-top: 8px; }
+  .source-list { gap: 4px; }
+  .source-link { max-width: 100%; min-height: 24px; padding: 2px 6px; }
+  .source-link b { max-width: 72px; font-size: 0.64rem; }
+  .source-link span { font-size: 0.62rem; }
   .source-add { grid-template-columns: 1fr; }
   .source-send { justify-self: start; }
   .bot-mini-top { flex-direction: column; }
