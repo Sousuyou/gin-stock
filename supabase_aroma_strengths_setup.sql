@@ -4,7 +4,7 @@
 -- 貼り付けて「Run」する（1回だけ）。最後の NOTIFY でスキーマ再読込まで行う。
 --
 -- 仕様（メモ・風味タグと同じ安全設計）：
---   ・各ジン（gin_name）に、スタッフが香りの強さ（1〜10）を付けられる。
+--   ・各ジン（gin_name）に、スタッフが香りの強さ（0〜10）を付けられる。
 --   ・閲覧(SELECT)は全員可＝カタログの詳細画面で共有表示する。
 --   ・投稿(INSERT)は anon に許可するが、画面側でスタッフPINを通した人だけが保存できる作り。
 --   ・値は履歴型で保存し、画面側では最新の active 行だけを採用する。
@@ -14,12 +14,17 @@
 create table if not exists public.gin_aroma_strengths (
   id          bigint generated always as identity primary key,
   gin_name    text not null check (char_length(gin_name) between 1 and 200),
-  strength    integer not null check (strength between 1 and 10),
+  strength    integer not null check (strength between 0 and 10),
   status      text not null default 'active' check (status in ('active','hidden')),
   created_at  timestamptz not null default now()
 );
 
 alter table public.gin_aroma_strengths enable row level security;
+
+alter table public.gin_aroma_strengths
+  drop constraint if exists gin_aroma_strengths_strength_check;
+alter table public.gin_aroma_strengths
+  add constraint gin_aroma_strengths_strength_check check (strength between 0 and 10);
 
 revoke all on table public.gin_aroma_strengths from anon;
 revoke all on table public.gin_aroma_strengths from authenticated;

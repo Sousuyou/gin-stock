@@ -162,13 +162,13 @@
     return true;
   }
 
-  function inAromaBand(strength, band) {
+  function inAromaBand(strength, isSet, band) {
     var v = Number(strength) || 0;
     if (!band) return true;
-    if (band === "set") return v >= 1 && v <= 10;
-    if (band === "unset") return !v;
-    if (!v) return false;
-    if (band === "1-3") return v >= 1 && v <= 3;
+    if (band === "set") return !!isSet;
+    if (band === "unset") return !isSet;
+    if (!isSet) return false;
+    if (band === "0-3" || band === "1-3") return v >= 0 && v <= 3;
     if (band === "4-6") return v >= 4 && v <= 6;
     if (band === "7-8") return v >= 7 && v <= 8;
     if (band === "9-10") return v >= 9 && v <= 10;
@@ -532,7 +532,7 @@
       if (fb && (g._bot || []).indexOf(fb) === -1) return false;
       if (ft && (g._tags || []).indexOf(ft) === -1) return false;
       if (!inAbvBand(g.abv, fa)) return false;
-      if (!inAromaBand(g._aromaStrength, far)) return false;
+      if (!inAromaBand(g._aromaStrength, g._aromaStrengthSet, far)) return false;
       if (currentInitial && initialOf(g) !== currentInitial) return false;
       if (qTokens.length) {
         var hay = g._hay || buildHay(g);
@@ -552,13 +552,15 @@
       if (sort === "aroma-desc") {
         var ad = Number(a._aromaStrength) || 0;
         var bd = Number(b._aromaStrength) || 0;
-        if (ad !== bd) return (bd || -1) - (ad || -1);
+        if (!!a._aromaStrengthSet !== !!b._aromaStrengthSet) return a._aromaStrengthSet ? -1 : 1;
+        if (ad !== bd) return bd - ad;
         return (a.kana || a.name).localeCompare(b.kana || b.name, "ja");
       }
       if (sort === "aroma-asc") {
         var aa = Number(a._aromaStrength) || 0;
         var ba = Number(b._aromaStrength) || 0;
-        if (aa !== ba) return (aa || 999) - (ba || 999);
+        if (!!a._aromaStrengthSet !== !!b._aromaStrengthSet) return a._aromaStrengthSet ? -1 : 1;
+        if (aa !== ba) return aa - ba;
         return (a.kana || a.name).localeCompare(b.kana || b.name, "ja");
       }
       if (sort === "abv-desc") return (b.abv || -1) - (a.abv || -1);
@@ -575,7 +577,7 @@
   // ---- カード（グリッド用・ボタニカルのさわりを表示）----
   function aromaBadgeHTML(g) {
     var v = Number(g._aromaStrength) || 0;
-    return v ? '<span class="badge badge-aroma">香り ' + v + "</span>" : "";
+    return g._aromaStrengthSet ? '<span class="badge badge-aroma">香り ' + v + "</span>" : "";
   }
 
   function cardHTML(g, idx) {
@@ -780,6 +782,7 @@
           g._bot = botTokens(g.botanicals);
           g._tags = [];
           g._aromaStrength = 0;
+          g._aromaStrengthSet = false;
           g._hay = buildHay(g);
           GINS.push(g);
           added++;
@@ -1038,7 +1041,7 @@
     var box = document.getElementById("aroma-box");
     if (!box || !g) return;
     var current = Number(g._aromaStrength) || 0;
-    var value = current || 5;
+    var value = g._aromaStrengthSet ? current : 0;
     var lockedHTML = '<div class="memo-add">' +
       '<button type="button" class="aroma-unlock">＋ 強さを設定（スタッフ）</button>' +
       '<div class="memo-pin-row" id="aroma-pin-row" hidden>' +
@@ -1051,7 +1054,7 @@
     var loading = aromaStrengthState === "loading";
     var editHTML = '<div class="aroma-editor">' +
       '<div class="aroma-slider-row">' +
-        '<input id="aroma-range" class="aroma-range" type="range" min="1" max="10" step="1" value="' + value + '"' + (unavailable ? " disabled" : "") + ' />' +
+        '<input id="aroma-range" class="aroma-range" type="range" min="0" max="10" step="1" value="' + value + '"' + (unavailable ? " disabled" : "") + ' />' +
         '<output id="aroma-output" class="aroma-output">' + value + '</output>' +
       '</div>' +
       '<button type="button" class="aroma-save"' + (unavailable ? " disabled" : "") + '>保存</button>' +
@@ -1080,9 +1083,18 @@
         var byGin = {};
         (rows || []).forEach(function (row) {
           var k = normName(row.gin_name);
-          if (!byGin[k]) byGin[k] = Number(row.strength) || 0;
+          if (!Object.prototype.hasOwnProperty.call(byGin, k)) byGin[k] = Number(row.strength) || 0;
         });
-        GINS.forEach(function (g) { g._aromaStrength = byGin[normName(g.name)] || 0; });
+        GINS.forEach(function (g) {
+          var key = normName(g.name);
+          if (Object.prototype.hasOwnProperty.call(byGin, key)) {
+            g._aromaStrength = byGin[key];
+            g._aromaStrengthSet = true;
+          } else {
+            g._aromaStrength = 0;
+            g._aromaStrengthSet = false;
+          }
+        });
         aromaStrengthState = "ready";
         render();
         if (modalGin && els.modal && !els.modal.hidden) renderAromaSection(modalGin);
@@ -1099,8 +1111,8 @@
     var msg = document.getElementById("aroma-msg");
     if (!range || !g) return;
     var strength = Number(range.value);
-    if (!(strength >= 1 && strength <= 10)) {
-      if (msg) msg.textContent = "1〜10の範囲で選んでください。";
+    if (!(strength >= 0 && strength <= 10)) {
+      if (msg) msg.textContent = "0〜10の範囲で選んでください。";
       return;
     }
     if (msg) msg.textContent = "保存中…";
@@ -1114,6 +1126,7 @@
     }).then(function (res) {
       if (res.status === 201) {
         g._aromaStrength = strength;
+        g._aromaStrengthSet = true;
         aromaStrengthState = "ready";
         render();
         renderAromaSection(g);
@@ -1138,7 +1151,7 @@
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (data) {
         GINS = (data && data.gins) || [];
-        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._tags = g._tags || []; g._aromaStrength = 0; g._hay = buildHay(g); }); // ボタニカル代表名化＋タグ初期化＋検索用テキスト
+        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._tags = g._tags || []; g._aromaStrength = 0; g._aromaStrengthSet = false; g._hay = buildHay(g); }); // ボタニカル代表名化＋タグ初期化＋検索用テキスト
         if (els.meta) {
           var upd = fmtDate(data.updated);
           els.meta.textContent = "在庫 " + GINS.length + "銘柄" + (upd ? "・データ最終更新 " + upd : "");
