@@ -22,9 +22,11 @@
   var TAGS_TABLE = "gin_flavor_tags";
   var AROMA_TABLE = "gin_aroma_strengths";
   var RATING_TABLE = "gin_staff_ratings";
+  var PRICE_TABLE = "gin_bottle_prices";
   var SOURCE_TABLE = "gin_info_sources";
   var aromaStrengthState = "loading"; // loading / ready / unavailable
   var staffRatingState = "loading"; // loading / ready / unavailable
+  var bottlePriceState = "loading"; // loading / ready / unavailable
   // 風味タグ（スタッフが付与・全員閲覧・絞り込み可。2群×計28タグ。説明は選択時のヒント=title）
   var FLAVOR_GROUPS = [
     { group: "香り・風味", tags: ["ジュニパー", "フローラル", "フルーティー", "シトラス", "ウッディ", "スパイシー", "ペッパー", "ハーバル", "アーシー", "パフューミー", "ベジタル", "マリン", "ナッティ", "スモーキー", "クリーミー", "お茶系", "ビター系"] },
@@ -644,6 +646,20 @@
         if (raA !== raB) return raA - raB;
         return (a.kana || a.name).localeCompare(b.kana || b.name, "ja");
       }
+      if (sort === "price-desc") {
+        var pdA = Number(a._bottlePrice) || 0;
+        var pdB = Number(b._bottlePrice) || 0;
+        if (!!a._bottlePriceSet !== !!b._bottlePriceSet) return a._bottlePriceSet ? -1 : 1;
+        if (pdA !== pdB) return pdB - pdA;
+        return (a.kana || a.name).localeCompare(b.kana || b.name, "ja");
+      }
+      if (sort === "price-asc") {
+        var paA = Number(a._bottlePrice) || 0;
+        var paB = Number(b._bottlePrice) || 0;
+        if (!!a._bottlePriceSet !== !!b._bottlePriceSet) return a._bottlePriceSet ? -1 : 1;
+        if (paA !== paB) return paA - paB;
+        return (a.kana || a.name).localeCompare(b.kana || b.name, "ja");
+      }
       if (sort === "abv-desc") return (b.abv || -1) - (a.abv || -1);
       if (sort === "abv-asc") return (a.abv == null ? 999 : a.abv) - (b.abv == null ? 999 : b.abv);
       if (sort === "country") {
@@ -666,11 +682,21 @@
     return g._staffRatingSet ? '<span class="badge badge-rating">評価 ★' + v + "</span>" : "";
   }
 
+  function yenLabel(v) {
+    var n = Math.round(Number(v) || 0);
+    return "¥" + n.toLocaleString("ja-JP");
+  }
+
+  function bottlePriceBadgeHTML(g) {
+    return g._bottlePriceSet ? '<span class="badge badge-price">瓶 ' + esc(yenLabel(g._bottlePrice)) + "</span>" : "";
+  }
+
   function cardHTML(g, idx) {
     var badges =
       flagBadge(g) +
       '<span class="badge badge-country">' + esc(g.country_main) + "</span>" +
       '<span class="badge badge-abv">' + abvLabel(g) + "</span>" +
+      bottlePriceBadgeHTML(g) +
       staffRatingBadgeHTML(g) +
       aromaBadgeHTML(g);
 
@@ -793,6 +819,7 @@
           flagBadge(g) +
           '<span class="badge badge-country">' + esc(g.country_main) + "</span>" +
           '<span class="badge badge-abv">' + abvLabel(g) + "</span>" +
+          bottlePriceBadgeHTML(g) +
           staffRatingBadgeHTML(g) +
           aromaBadgeHTML(g) +
         "</div>" +
@@ -804,6 +831,7 @@
         warn +
         bot + note + sources +
         '<div class="tag-section"><h3 class="memo-title">風味タグ</h3><div id="tag-box" class="tag-box"></div></div>' +
+        '<div class="price-section"><h3 class="memo-title">ボトル価格目安</h3><div id="price-box" class="price-box"></div></div>' +
         '<div class="aroma-section"><h3 class="memo-title">香りの強さ</h3><div id="aroma-box" class="aroma-box"></div></div>' +
         '<div class="rating-section"><h3 class="memo-title">スタッフ評価</h3><div id="rating-box" class="rating-box"></div></div>' +
         '<div class="memo-section"><h3 class="memo-title">スタッフメモ</h3><div id="memo-box" class="memo-box"><p class="memo-empty">読み込み中…</p></div></div>' +
@@ -813,6 +841,7 @@
     loadInfoSources(g);
     loadMemos(g);
     renderTagSection(g);
+    renderBottlePriceSection(g);
     renderAromaSection(g);
     renderStaffRatingSection(g);
   }
@@ -879,6 +908,8 @@
           g._aromaStrengthSet = false;
           g._staffRating = 0;
           g._staffRatingSet = false;
+          g._bottlePrice = 0;
+          g._bottlePriceSet = false;
           g._infoSources = [];
           g._hay = buildHay(g);
           GINS.push(g);
@@ -1560,6 +1591,107 @@
     }).catch(function () { if (msg) msg.textContent = "保存に失敗しました（通信エラー）。"; });
   }
 
+  function clampBottlePrice(v) {
+    var raw = String(v == null ? "" : v).replace(/[^\d.]/g, "");
+    var n = Math.round(Number(raw));
+    if (!isFinite(n) || n < 0) n = 0;
+    if (n > 1000000) return 1000000;
+    return n;
+  }
+
+  function renderBottlePriceSection(g) {
+    var box = document.getElementById("price-box");
+    if (!box || !g) return;
+    var value = g._bottlePriceSet ? clampBottlePrice(g._bottlePrice) : 0;
+    var unavailable = bottlePriceState === "unavailable";
+    var loading = bottlePriceState === "loading";
+    var lockedHTML = '<div class="memo-add">' +
+      '<button type="button" class="price-unlock">＋ 価格目安を設定（スタッフ）</button>' +
+      '<div class="memo-pin-row" id="price-pin-row" hidden>' +
+        '<input id="price-pin" class="memo-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="スタッフPIN" />' +
+        '<button type="button" class="price-pin-ok">解錠</button>' +
+        '<span class="memo-hint" id="price-pin-err"></span>' +
+      "</div>" +
+      "</div>";
+    var displayHTML = g._bottlePriceSet
+      ? '<div class="price-display"><span class="price-main">' + esc(yenLabel(value)) +
+        '</span><span class="price-sub">1本あたりの目安</span></div>'
+      : '<p class="memo-empty">まだ価格目安はありません。</p>';
+    var editHTML = '<div class="price-editor">' +
+      '<input id="price-input" class="price-input" type="number" inputmode="numeric" min="0" max="1000000" step="100" value="' +
+        (value || "") + '" placeholder="例：4500" ' + (unavailable ? "disabled" : "") + '/>' +
+      '<button type="button" class="price-save"' + (unavailable ? " disabled" : "") + '>保存</button>' +
+      '<p class="memo-hint price-msg" id="price-msg">' +
+        (unavailable ? "保存先未設定です。supabase_bottle_prices_setup.sql を実行すると共有保存できます。" : "税込/税別が混ざるため、ざっくりした小売価格の目安として扱います。") +
+      '</p>' +
+      "</div>";
+    box.innerHTML =
+      (loading ? '<p class="memo-hint price-loading">共有価格を読み込み中…</p>' : "") +
+      displayHTML +
+      (memoUnlocked() ? editHTML : lockedHTML);
+  }
+
+  function loadAllBottlePrices() {
+    if (!SUPABASE_URL || SUPABASE_URL.indexOf("YOUR_PROJECT_REF") !== -1) return;
+    var url = SUPABASE_URL + "/rest/v1/" + PRICE_TABLE +
+      "?select=gin_name,price_yen,created_at&order=created_at.desc";
+    fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY } })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (rows) {
+        var byGin = {};
+        (rows || []).forEach(function (row) {
+          var k = normName(row.gin_name);
+          if (!Object.prototype.hasOwnProperty.call(byGin, k)) byGin[k] = clampBottlePrice(row.price_yen);
+        });
+        GINS.forEach(function (g) {
+          var key = normName(g.name);
+          if (Object.prototype.hasOwnProperty.call(byGin, key) && byGin[key] > 0) {
+            g._bottlePrice = byGin[key];
+            g._bottlePriceSet = true;
+          } else {
+            g._bottlePrice = 0;
+            g._bottlePriceSet = false;
+          }
+        });
+        bottlePriceState = "ready";
+        render();
+        if (modalGin && els.modal && !els.modal.hidden) renderBottlePriceSection(modalGin);
+      })
+      .catch(function () {
+        bottlePriceState = "unavailable";
+        render();
+        if (modalGin && els.modal && !els.modal.hidden) renderBottlePriceSection(modalGin);
+      });
+  }
+
+  function submitBottlePrice(g) {
+    var inp = document.getElementById("price-input");
+    var msg = document.getElementById("price-msg");
+    if (!inp || !g) return;
+    var price = clampBottlePrice(inp.value);
+    if (price <= 0) { if (msg) msg.textContent = "1円以上の価格目安を入力してください。"; return; }
+    if (msg) msg.textContent = "保存中…";
+    fetch(SUPABASE_URL + "/rest/v1/" + PRICE_TABLE, {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY,
+        "Content-Type": "application/json", Prefer: "return=minimal"
+      },
+      body: JSON.stringify({ gin_name: g.name, price_yen: price })
+    }).then(function (res) {
+      if (res.status === 201) {
+        g._bottlePrice = price;
+        g._bottlePriceSet = true;
+        bottlePriceState = "ready";
+        render();
+        renderBottlePriceSection(g);
+      } else {
+        if (res.status === 404) bottlePriceState = "unavailable";
+        if (msg) msg.textContent = "保存に失敗しました（" + res.status + "）。";
+      }
+    }).catch(function () { if (msg) msg.textContent = "保存に失敗しました（通信エラー）。"; });
+  }
+
   function init() {
     els = {
       q: $("q"), country: $("f-country"), bot: $("f-bot"), abv: $("f-abv"), aroma: $("f-aroma"), sort: $("f-sort"),
@@ -1574,7 +1706,7 @@
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (data) {
         GINS = (data && data.gins) || [];
-        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._tags = g._tags || []; g._aromaStrength = 0; g._aromaStrengthSet = false; g._staffRating = 0; g._staffRatingSet = false; g._infoSources = []; g._hay = buildHay(g); }); // ボタニカル代表名化＋共有値初期化＋検索用テキスト
+        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._tags = g._tags || []; g._aromaStrength = 0; g._aromaStrengthSet = false; g._staffRating = 0; g._staffRatingSet = false; g._bottlePrice = 0; g._bottlePriceSet = false; g._infoSources = []; g._hay = buildHay(g); }); // ボタニカル代表名化＋共有値初期化＋検索用テキスト
         if (els.meta) {
           var upd = fmtDate(data.updated);
           els.meta.textContent = "在庫 " + GINS.length + "銘柄" + (upd ? "・データ最終更新 " + upd : "");
@@ -1688,6 +1820,13 @@
           var ratingPick = e.target.closest(".rating-pick[data-rating]");
           if (ratingPick) { updateStaffRatingPreview(ratingPick.getAttribute("data-rating")); return; }
           if (e.target.closest(".rating-save")) { submitStaffRating(modalGin); return; }
+          if (e.target.closest(".price-unlock")) {
+            var priceRow = document.getElementById("price-pin-row");
+            if (priceRow) { priceRow.hidden = false; var pricePin = document.getElementById("price-pin"); if (pricePin) pricePin.focus(); }
+            return;
+          }
+          if (e.target.closest(".price-pin-ok")) { verifyStaffPin("price-pin", "price-pin-err"); return; }
+          if (e.target.closest(".price-save")) { submitBottlePrice(modalGin); return; }
           if (e.target === els.modal || e.target.closest(".modal-close")) closeModal();
         });
         els.modal.addEventListener("input", function (e) {
@@ -1705,6 +1844,8 @@
         loadAllAromaStrengths();
         // スタッフ共有評価を読み込んで各銘柄に付与（保存先未作成でもカタログは動く）
         loadAllStaffRatings();
+        // ボトル価格目安を読み込んで各銘柄に付与（保存先未作成でもカタログは動く）
+        loadAllBottlePrices();
       })
       .catch(function (err) {
         els.count.textContent = "";

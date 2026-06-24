@@ -318,6 +318,12 @@ select {
   border-color: var(--line);
   font-variant-numeric: tabular-nums;
 }
+.badge-price {
+  background: var(--panel-soft);
+  color: var(--text);
+  border-color: var(--line);
+  font-variant-numeric: tabular-nums;
+}
 /* 仮登録（店員申請の未確認）＝目立つ金色。要確認（出典あいまいな既存）＝控えめな枠。 */
 .badge-provisional {
   background: var(--gold); color: var(--on-accent); border-color: var(--gold);
@@ -373,13 +379,13 @@ select {
   font: inherit; font-size: 0.85rem; color: var(--text);
   background: var(--panel); border: 1px solid var(--line); border-radius: 0; resize: vertical;
 }
-.memo-send, .memo-unlock, .memo-pin-ok, .source-send, .source-unlock, .source-pin-ok, .aroma-save, .aroma-unlock, .aroma-pin-ok, .rating-save, .rating-unlock, .rating-pin-ok {
+.memo-send, .memo-unlock, .memo-pin-ok, .source-send, .source-unlock, .source-pin-ok, .aroma-save, .aroma-unlock, .aroma-pin-ok, .rating-save, .rating-unlock, .rating-pin-ok, .price-save, .price-unlock, .price-pin-ok {
   min-height: 36px; padding: 0 14px; border-radius: 0; cursor: pointer;
   font-size: 0.74rem; font-weight: 700; white-space: nowrap;
   color: var(--on-accent); background: var(--accent); border: 1px solid var(--accent);
 }
-.memo-unlock, .source-unlock, .aroma-unlock, .rating-unlock { color: var(--text); background: var(--panel); border-color: var(--gold); }
-.source-send:disabled, .aroma-save:disabled, .rating-save:disabled { opacity: 0.5; cursor: default; }
+.memo-unlock, .source-unlock, .aroma-unlock, .rating-unlock, .price-unlock { color: var(--text); background: var(--panel); border-color: var(--gold); }
+.source-send:disabled, .aroma-save:disabled, .rating-save:disabled, .price-save:disabled { opacity: 0.5; cursor: default; }
 .memo-pin-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 6px; flex: 1 1 100%; }
 .memo-pin {
   min-height: 36px; padding: 0 10px; max-width: 150px;
@@ -395,7 +401,7 @@ select {
   color: var(--text); background: var(--green-soft); border: 1px solid transparent; border-radius: 999px;
 }
 .gin-tag-more { background: transparent; color: var(--muted); border-color: var(--line); }
-.tag-section, .aroma-section, .rating-section { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+.tag-section, .aroma-section, .rating-section, .price-section { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
 .source-section { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 9px; }
 .source-list {
   list-style: none; margin: 0 0 6px; padding: 0;
@@ -556,6 +562,46 @@ button.tag-chip:hover {
 .aroma-save { min-height: 28px; padding: 0 10px; }
 .aroma-msg:empty { display: none; }
 .aroma-loading { margin: 0 0 6px; }
+.price-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+.price-main {
+  color: var(--gold);
+  font-size: 1rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.price-sub {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.price-editor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  align-items: center;
+}
+.price-input {
+  flex: 1 1 150px;
+  min-height: 32px;
+  max-width: 180px;
+  padding: 0 10px;
+  font: inherit;
+  font-size: 0.86rem;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  font-variant-numeric: tabular-nums;
+}
+.price-save { min-height: 28px; padding: 0 10px; }
+.price-msg:empty { display: none; }
+.price-loading { margin: 0 0 6px; }
 .rating-display {
   display: flex;
   flex-wrap: wrap;
