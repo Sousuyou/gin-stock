@@ -61,7 +61,7 @@ NOTIFY pgrst, 'reload schema';
 
 
 -- Bar Soutsu｜ボトル価格目安 自動収集シード
--- 生成日時（JST）: 2026/06/25 4:14:04
+-- 生成日時（JST）: 2026/06/25 4:22:03
 -- SQL投入対象: 84件 / CSV候補: 117件
 -- 先に supabase_bottle_prices_setup.sql をRunしてテーブルを作成してください。
 -- 価格は公開ページから機械抽出した「目安」です。

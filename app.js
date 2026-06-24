@@ -728,7 +728,6 @@
   }
 
   function priceKindLabel(g) {
-    if (g && g._bottlePriceKind === "estimated") return "推定";
     if (g && g._bottlePriceKind === "staff") return "スタッフ";
     return "実売";
   }
@@ -1044,8 +1043,8 @@
       '</ul>';
       return;
     }
-    if (g._bottlePriceKind === "estimated") {
-      box.innerHTML = '<p class="memo-empty">価格ソース未登録。国・容量・度数からの自動推定値です。</p>';
+    if (g._bottlePriceKind === "staff") {
+      box.innerHTML = '<p class="memo-empty">スタッフが共有保存した価格です。</p>';
       return;
     }
     box.innerHTML = '<p class="memo-empty">価格ソースは未登録です。</p>';
@@ -1726,6 +1725,7 @@
     function applyRows(rows, preserveAbsent) {
       var byGin = {};
       (rows || []).forEach(function (row) {
+        if (row.price_kind === "estimated") return;
         var k = normName(row.gin_name);
         if (!Object.prototype.hasOwnProperty.call(byGin, k)) {
           byGin[k] = {

@@ -556,32 +556,74 @@ button.tag-chip:hover {
 .tag-pick.is-on, .tag-pick:disabled {
   color: var(--on-accent); background: var(--gold); border-color: var(--gold); cursor: default; opacity: 1;
 }
-.aroma-editor {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px 8px;
+.aroma-editor,
+.rating-editor {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px 8px;
   align-items: center;
   padding: 0;
   border: 0;
   background: transparent;
 }
-.aroma-slider-row {
+.aroma-slider-row,
+.rating-slider-row {
   display: grid;
-  grid-template-columns: minmax(120px, 1fr) 24px;
+  grid-template-columns: minmax(0, 1fr) 26px;
   gap: 6px;
   align-items: center;
-  flex: 1 1 190px;
+  min-width: 0;
 }
-.aroma-range {
+.aroma-range,
+.rating-range {
+  -webkit-appearance: none;
+  appearance: none;
   width: 100%;
-  min-height: 22px;
+  height: 24px;
   padding: 0;
+  margin: 0;
+  background: transparent;
   accent-color: var(--gold);
 }
-.aroma-output {
+.aroma-range::-webkit-slider-runnable-track,
+.rating-range::-webkit-slider-runnable-track {
+  height: 6px;
+  background: var(--line);
+  border: 0;
+}
+.aroma-range::-webkit-slider-thumb,
+.rating-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -5px;
+  background: var(--gold);
+  border: 2px solid var(--paper);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--line-strong);
+}
+.aroma-range::-moz-range-track,
+.rating-range::-moz-range-track {
+  height: 6px;
+  background: var(--line);
+  border: 0;
+}
+.aroma-range::-moz-range-thumb,
+.rating-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: var(--gold);
+  border: 2px solid var(--paper);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--line-strong);
+}
+.aroma-output,
+.rating-output {
   display: grid;
   place-items: center;
-  min-height: 22px;
+  width: 26px;
+  min-height: 24px;
   border: 0;
   background: transparent;
   color: var(--gold);
@@ -589,7 +631,12 @@ button.tag-chip:hover {
   font-weight: 800;
   font-variant-numeric: tabular-nums;
 }
-.aroma-save { min-height: 28px; padding: 0 10px; }
+.aroma-save,
+.rating-save {
+  min-height: 28px;
+  padding: 0 10px;
+  align-self: center;
+}
 .aroma-msg:empty { display: none; }
 .aroma-loading { margin: 0 0 6px; }
 .price-facts {
@@ -681,37 +728,6 @@ button.tag-chip:hover {
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
-.rating-editor {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 8px;
-  align-items: center;
-}
-.rating-slider-row {
-  display: grid;
-  grid-template-columns: minmax(120px, 1fr) 24px;
-  gap: 6px;
-  align-items: center;
-  flex: 1 1 190px;
-}
-.rating-range {
-  width: 100%;
-  min-height: 22px;
-  padding: 0;
-  accent-color: var(--gold);
-}
-.rating-output {
-  display: grid;
-  place-items: center;
-  min-height: 22px;
-  border: 0;
-  background: transparent;
-  color: var(--gold);
-  font-size: 0.76rem;
-  font-weight: 800;
-  font-variant-numeric: tabular-nums;
-}
-.rating-save { min-height: 28px; padding: 0 10px; }
 .rating-msg:empty { display: none; }
 .rating-loading { margin: 0 0 6px; }
 
@@ -992,6 +1008,8 @@ button.tag-chip:hover {
   .price-fact b { font-size: 0.7rem; }
   .price-field { flex-basis: 74px; }
   .price-input { min-height: 30px; font-size: 0.78rem; }
+  .aroma-editor, .rating-editor { grid-template-columns: 1fr; gap: 4px; }
+  .aroma-save, .rating-save { justify-self: start; min-height: 26px; }
   .source-section, .price-source-section { margin-top: 9px; padding-top: 8px; }
   .source-list { gap: 4px; }
   .source-link { max-width: 100%; min-height: 24px; padding: 2px 6px; }

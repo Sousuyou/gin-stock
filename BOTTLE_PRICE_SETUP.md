@@ -21,14 +21,14 @@
 ## 既に価格テーブルを作成済みの場合
 
 容量mlを保存できるようにするには、短い `supabase_bottle_prices_volume_migration.sql` だけをSQL EditorでRunしてください。
-未実行でも画面は動きますが、その場合は同梱データまたは推定容量で30ml原価を表示します。
+未実行でも画面は動きますが、その場合は同梱データの容量で30ml原価を表示します。
 
 ## 価格の一括入力
 
 `data/bottle_price_estimates_YYYYMMDD.sql` をSQL EditorでRunすると、Webから自動収集した価格目安をまとめて投入できます。
 先にCSVをざっと確認して、違和感のある行があればSQLから削ってください。
 
-アプリ同梱の `data/bottle_price_estimates_YYYYMMDD.json` は、全銘柄に価格と容量が入るように、ソース付き実売データと自動推定データを合わせています。
+アプリ同梱の `data/bottle_price_estimates_YYYYMMDD.json` は、価格ソースを確認できた実売データだけを入れています。ソース未確認の自動推定価格は表示しません。
 
 ## 運用メモ
 
