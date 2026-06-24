@@ -338,8 +338,28 @@ select {
   padding: 7px 10px; background: var(--panel); border: 1px solid var(--line);
   font-size: 0.82rem; line-height: 1.5;
 }
+.memo-item.memo-editing { display: grid; gap: 6px; }
 .memo-text { white-space: pre-wrap; word-break: break-word; }
+.memo-meta { display: inline-flex; flex: none; align-items: center; gap: 5px; }
 .memo-time { flex: none; color: var(--muted); font-size: 0.68rem; font-variant-numeric: tabular-nums; }
+.memo-actions { display: inline-flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+.memo-edit, .memo-delete, .memo-update, .memo-cancel {
+  min-height: 24px;
+  padding: 0 7px;
+  color: var(--muted);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  font-size: 0.64rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.memo-update {
+  color: var(--on-accent);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.memo-delete:hover { color: var(--gold); border-color: var(--gold); }
+.memo-edit-input { min-height: 64px; }
 .memo-empty { margin: 0 0 10px; color: var(--muted); font-size: 0.78rem; }
 .memo-add { display: flex; flex-wrap: wrap; gap: 6px; align-items: flex-start; }
 .memo-input {

@@ -65,6 +65,7 @@
   var favOnly = false;     // 「お気に入りだけ表示」中か
   var provOnly = false;    // 「スタッフ申請（未調査）だけ表示」中か
   var modalGin = null;     // 現在モーダルで開いている銘柄
+  var memoEditId = "";     // 現在インライン編集しているメモID
   var STAR_SVG = '<svg class="star-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l-5.4 3 1.2-6L3.3 9.9l6.1-.7L12 3.6l2.6 5.6 6.1.7-4.5 4.4 1.2 6z"/></svg>';
 
   function $(id) { return document.getElementById(id); }
@@ -749,6 +750,7 @@
   // ---- 詳細モーダル ----
   function openModal(g) {
     modalGin = g;
+    memoEditId = "";
     var sub = g.country && g.country !== g.country_main ? "（" + esc(g.country) + "）" : "";
     var bot = g.botanicals
       ? '<div class="detail-block"><span class="detail-label">ボタニカル</span>' + botanicalLinksHTML(g.botanicals) + "</div>"
@@ -1025,14 +1027,34 @@
   function renderMemoSection(g, memos, errMsg) {
     var box = document.getElementById("memo-box");
     if (!box) return;
+    if (memos) g._memos = memos;
+    memos = memos || g._memos || [];
+    var canEdit = memoUnlocked();
     var listHTML;
     if (errMsg) {
       listHTML = '<p class="memo-empty">' + esc(errMsg) + "</p>";
     } else if (memos && memos.length) {
       var items = memos.map(function (m) {
+        var id = String(m.id || "");
         var t = fmtMemoTime(m.created_at);
-        return '<li class="memo-item"><span class="memo-text">' + esc(m.memo) + "</span>" +
-          (t ? '<span class="memo-time">' + esc(t) + "</span>" : "") + "</li>";
+        if (canEdit && id && memoEditId === id) {
+          return '<li class="memo-item memo-editing" data-memo-id="' + esc(id) + '">' +
+            '<textarea id="memo-edit-input" class="memo-input memo-edit-input" rows="3" maxlength="500">' + esc(m.memo) + '</textarea>' +
+            '<div class="memo-actions">' +
+              '<button type="button" class="memo-update" data-memo-id="' + esc(id) + '">保存</button>' +
+              '<button type="button" class="memo-cancel">キャンセル</button>' +
+            '</div>' +
+            '<p class="memo-hint" id="memo-edit-msg"></p>' +
+          "</li>";
+        }
+        var actions = canEdit && id
+          ? '<span class="memo-actions">' +
+              '<button type="button" class="memo-edit" data-memo-id="' + esc(id) + '">編集</button>' +
+              '<button type="button" class="memo-delete" data-memo-id="' + esc(id) + '">削除</button>' +
+            "</span>"
+          : "";
+        return '<li class="memo-item" data-memo-id="' + esc(id) + '"><span class="memo-text">' + esc(m.memo) + "</span>" +
+          '<span class="memo-meta">' + (t ? '<span class="memo-time">' + esc(t) + "</span>" : "") + actions + "</span></li>";
       }).join("");
       listHTML = '<ul class="memo-list">' + items + "</ul>";
     } else {
@@ -1050,7 +1072,7 @@
     // status列はanonにGRANTしていないため絞り込みに使わない（RLSが既にactive行だけ返す）
     var url = SUPABASE_URL + "/rest/v1/" + MEMO_TABLE +
       "?gin_name=eq." + encodeURIComponent(g.name) +
-      "&select=memo,created_at&order=created_at.desc";
+      "&select=id,memo,created_at&order=created_at.desc";
     fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY } })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (rows) { renderMemoSection(g, rows || []); })
@@ -1090,6 +1112,63 @@
       if (res.status === 201) { inp.value = ""; loadMemos(g); }
       else if (msg) msg.textContent = "送信に失敗しました（" + res.status + "）。オーナーにご連絡ください。";
     }).catch(function () { if (msg) msg.textContent = "送信に失敗しました（通信エラー）。"; });
+  }
+
+  function beginMemoEdit(g, id) {
+    if (!g || !id || !memoUnlocked()) return;
+    memoEditId = String(id);
+    renderMemoSection(g);
+    var inp = document.getElementById("memo-edit-input");
+    if (inp) { inp.focus(); inp.select(); }
+  }
+
+  function cancelMemoEdit(g) {
+    memoEditId = "";
+    renderMemoSection(g);
+  }
+
+  function updateMemo(g, id) {
+    var inp = document.getElementById("memo-edit-input");
+    var msg = document.getElementById("memo-edit-msg");
+    if (!g || !id || !inp || !memoUnlocked()) return;
+    var text = (inp.value || "").trim();
+    if (!text) { if (msg) msg.textContent = "メモを入力してください。"; return; }
+    if (msg) msg.textContent = "保存中…";
+    fetch(SUPABASE_URL + "/rest/v1/" + MEMO_TABLE + "?id=eq." + encodeURIComponent(id), {
+      method: "PATCH",
+      headers: {
+        apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY,
+        "Content-Type": "application/json", Prefer: "return=minimal"
+      },
+      body: JSON.stringify({ memo: text })
+    }).then(function (res) {
+      if (res.status === 204) {
+        memoEditId = "";
+        loadMemos(g);
+      } else if (msg) {
+        msg.textContent = "保存に失敗しました（" + res.status + "）。SQLの編集権限を確認してください。";
+      }
+    }).catch(function () { if (msg) msg.textContent = "保存に失敗しました（通信エラー）。"; });
+  }
+
+  function deleteMemo(g, id) {
+    if (!g || !id || !memoUnlocked()) return;
+    var msg = document.getElementById("memo-msg");
+    if (msg) msg.textContent = "削除中…";
+    fetch(SUPABASE_URL + "/rest/v1/" + MEMO_TABLE + "?id=eq." + encodeURIComponent(id), {
+      method: "DELETE",
+      headers: {
+        apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY,
+        Prefer: "return=minimal"
+      }
+    }).then(function (res) {
+      if (res.status === 204) {
+        if (memoEditId === String(id)) memoEditId = "";
+        loadMemos(g);
+      } else if (msg) {
+        msg.textContent = "削除に失敗しました（" + res.status + "）。SQLの削除権限を確認してください。";
+      }
+    }).catch(function () { if (msg) msg.textContent = "削除に失敗しました（通信エラー）。"; });
   }
 
   // ===== 風味タグ（各ジンごと・全員閲覧／スタッフのみPIN編集。PINはメモと共通）=====
@@ -1414,6 +1493,13 @@
           }
           if (e.target.closest(".memo-pin-ok")) { verifyStaffPin("memo-pin", "memo-pin-err"); return; }
           if (e.target.closest(".memo-send")) { submitMemo(modalGin); return; }
+          var memoEdit = e.target.closest(".memo-edit[data-memo-id]");
+          if (memoEdit) { beginMemoEdit(modalGin, memoEdit.getAttribute("data-memo-id")); return; }
+          var memoUpdate = e.target.closest(".memo-update[data-memo-id]");
+          if (memoUpdate) { updateMemo(modalGin, memoUpdate.getAttribute("data-memo-id")); return; }
+          if (e.target.closest(".memo-cancel")) { cancelMemoEdit(modalGin); return; }
+          var memoDelete = e.target.closest(".memo-delete[data-memo-id]");
+          if (memoDelete) { deleteMemo(modalGin, memoDelete.getAttribute("data-memo-id")); return; }
           if (e.target.closest(".source-unlock")) {
             var srow = document.getElementById("source-pin-row");
             if (srow) { srow.hidden = false; var sp = document.getElementById("source-pin"); if (sp) sp.focus(); }
