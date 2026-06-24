@@ -22,7 +22,7 @@
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/icon.svg" />
-    <link rel="stylesheet" href="styles.css?v=20260625-memo-edit" />
+    <link rel="stylesheet" href="styles.css?v=20260625-staff-rating" />
     <!-- 共通テーマ（色・ダークモード）。ローカルの:rootは保険 -->
     <link rel="stylesheet" href="https://sousuyou.github.io/top/theme.css" />
   </head>
@@ -91,6 +91,8 @@
             <select id="f-sort">
               <option value="kana">名前順（あいうえお）</option>
               <option value="added-desc">追加が新しい順</option>
+              <option value="rating-desc">評価が高い順</option>
+              <option value="rating-asc">評価が低い順</option>
               <option value="aroma-desc">香りが強い順</option>
               <option value="aroma-asc">香りが弱い順</option>
               <option value="abv-desc">度数が高い順</option>
@@ -128,6 +130,6 @@
 
     <script src="boot.js" defer></script>
     <script src="/top/botanical-table/botanical-data.js" defer></script>
-    <script src="app.js?v=20260625-memo-edit" defer></script>
+    <script src="app.js?v=20260625-staff-rating" defer></script>
   </body>
 </html>

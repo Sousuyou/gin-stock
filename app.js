@@ -21,8 +21,10 @@
   var MEMO_UNLOCK_KEY = "soutsu_staff_unlocked";
   var TAGS_TABLE = "gin_flavor_tags";
   var AROMA_TABLE = "gin_aroma_strengths";
+  var RATING_TABLE = "gin_staff_ratings";
   var SOURCE_TABLE = "gin_info_sources";
   var aromaStrengthState = "loading"; // loading / ready / unavailable
+  var staffRatingState = "loading"; // loading / ready / unavailable
   // 風味タグ（スタッフが付与・全員閲覧・絞り込み可。2群×計28タグ。説明は選択時のヒント=title）
   var FLAVOR_GROUPS = [
     { group: "香り・風味", tags: ["ジュニパー", "フローラル", "フルーティー", "シトラス", "ウッディ", "スパイシー", "ペッパー", "ハーバル", "アーシー", "パフューミー", "ベジタル", "マリン", "ナッティ", "スモーキー", "クリーミー", "お茶系", "ビター系"] },
@@ -628,6 +630,20 @@
         if (aa !== ba) return aa - ba;
         return (a.kana || a.name).localeCompare(b.kana || b.name, "ja");
       }
+      if (sort === "rating-desc") {
+        var rdA = Number(a._staffRating) || 0;
+        var rdB = Number(b._staffRating) || 0;
+        if (!!a._staffRatingSet !== !!b._staffRatingSet) return a._staffRatingSet ? -1 : 1;
+        if (rdA !== rdB) return rdB - rdA;
+        return (a.kana || a.name).localeCompare(b.kana || b.name, "ja");
+      }
+      if (sort === "rating-asc") {
+        var raA = Number(a._staffRating) || 0;
+        var raB = Number(b._staffRating) || 0;
+        if (!!a._staffRatingSet !== !!b._staffRatingSet) return a._staffRatingSet ? -1 : 1;
+        if (raA !== raB) return raA - raB;
+        return (a.kana || a.name).localeCompare(b.kana || b.name, "ja");
+      }
       if (sort === "abv-desc") return (b.abv || -1) - (a.abv || -1);
       if (sort === "abv-asc") return (a.abv == null ? 999 : a.abv) - (b.abv == null ? 999 : b.abv);
       if (sort === "country") {
@@ -645,11 +661,17 @@
     return g._aromaStrengthSet ? '<span class="badge badge-aroma">香り ' + v + "</span>" : "";
   }
 
+  function staffRatingBadgeHTML(g) {
+    var v = Number(g._staffRating) || 0;
+    return g._staffRatingSet ? '<span class="badge badge-rating">評価 ★' + v + "</span>" : "";
+  }
+
   function cardHTML(g, idx) {
     var badges =
       flagBadge(g) +
       '<span class="badge badge-country">' + esc(g.country_main) + "</span>" +
       '<span class="badge badge-abv">' + abvLabel(g) + "</span>" +
+      staffRatingBadgeHTML(g) +
       aromaBadgeHTML(g);
 
     var bot = g.botanicals
@@ -771,6 +793,8 @@
           flagBadge(g) +
           '<span class="badge badge-country">' + esc(g.country_main) + "</span>" +
           '<span class="badge badge-abv">' + abvLabel(g) + "</span>" +
+          staffRatingBadgeHTML(g) +
+          aromaBadgeHTML(g) +
         "</div>" +
         '<button type="button" class="modal-fav' + (isFav(g) ? " is-on" : "") + '" data-name="' + esc(g.name) +
           '" aria-pressed="' + (isFav(g) ? "true" : "false") + '">' + STAR_SVG +
@@ -781,6 +805,7 @@
         bot + note + sources +
         '<div class="tag-section"><h3 class="memo-title">風味タグ</h3><div id="tag-box" class="tag-box"></div></div>' +
         '<div class="aroma-section"><h3 class="memo-title">香りの強さ</h3><div id="aroma-box" class="aroma-box"></div></div>' +
+        '<div class="rating-section"><h3 class="memo-title">スタッフ評価</h3><div id="rating-box" class="rating-box"></div></div>' +
         '<div class="memo-section"><h3 class="memo-title">スタッフメモ</h3><div id="memo-box" class="memo-box"><p class="memo-empty">読み込み中…</p></div></div>' +
       "</div>";
     els.modal.hidden = false;
@@ -789,6 +814,7 @@
     loadMemos(g);
     renderTagSection(g);
     renderAromaSection(g);
+    renderStaffRatingSection(g);
   }
   function closeModal() {
     els.modal.hidden = true;
@@ -851,6 +877,8 @@
           g._tags = [];
           g._aromaStrength = 0;
           g._aromaStrengthSet = false;
+          g._staffRating = 0;
+          g._staffRatingSet = false;
           g._infoSources = [];
           g._hay = buildHay(g);
           GINS.push(g);
@@ -1407,6 +1435,131 @@
     }).catch(function () { if (msg) msg.textContent = "保存に失敗しました（通信エラー）。"; });
   }
 
+  function clampStaffRating(v) {
+    var n = Math.round(Number(v));
+    if (!isFinite(n)) n = 0;
+    if (n < 0) return 0;
+    if (n > 10) return 10;
+    return n;
+  }
+
+  function staffRatingStarsHTML(value, isSet) {
+    var html = '<span class="rating-stars" aria-label="スタッフ評価' + (isSet ? value : "未設定") + '">';
+    for (var i = 1; i <= 10; i++) {
+      html += '<span class="' + (isSet && i <= value ? "is-filled" : "") + '">★</span>';
+    }
+    return html + "</span>";
+  }
+
+  function renderStaffRatingSection(g) {
+    var box = document.getElementById("rating-box");
+    if (!box || !g) return;
+    var value = g._staffRatingSet ? clampStaffRating(g._staffRating) : 0;
+    var unavailable = staffRatingState === "unavailable";
+    var loading = staffRatingState === "loading";
+    var lockedHTML = '<div class="memo-add">' +
+      '<button type="button" class="rating-unlock">＋ 評価を設定（スタッフ）</button>' +
+      '<div class="memo-pin-row" id="rating-pin-row" hidden>' +
+        '<input id="rating-pin" class="memo-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="スタッフPIN" />' +
+        '<button type="button" class="rating-pin-ok">解錠</button>' +
+        '<span class="memo-hint" id="rating-pin-err"></span>' +
+      "</div>" +
+      "</div>";
+    var displayHTML = '<div class="rating-display">' +
+      staffRatingStarsHTML(value, g._staffRatingSet) +
+      '<span class="rating-value">' + (g._staffRatingSet ? value + "/10" : "未設定") + "</span>" +
+      "</div>";
+    var pickHTML = '<div class="rating-picks">' +
+      '<button type="button" class="rating-pick rating-zero' + (value === 0 ? " is-on" : "") + '" data-rating="0">0</button>';
+    for (var i = 1; i <= 10; i++) {
+      pickHTML += '<button type="button" class="rating-pick rating-star-pick' + (i <= value ? " is-on" : "") +
+        '" data-rating="' + i + '" aria-label="' + i + '点">★</button>';
+    }
+    pickHTML += "</div>";
+    var editHTML = '<div class="rating-editor">' +
+      '<input id="rating-value" type="hidden" value="' + value + '" />' +
+      pickHTML +
+      '<button type="button" class="rating-save"' + (unavailable ? " disabled" : "") + '>保存</button>' +
+      '<p class="memo-hint rating-msg" id="rating-msg">' +
+        (unavailable ? "保存先未設定です。supabase_staff_ratings_setup.sql を実行すると共有保存できます。" : "") +
+      '</p>' +
+      "</div>";
+    box.innerHTML =
+      (loading ? '<p class="memo-hint rating-loading">共有評価を読み込み中…</p>' : "") +
+      displayHTML +
+      (memoUnlocked() ? editHTML : lockedHTML);
+  }
+
+  function updateStaffRatingPreview(v) {
+    var value = clampStaffRating(v);
+    var inp = document.getElementById("rating-value");
+    if (inp) inp.value = value;
+    [].forEach.call(document.querySelectorAll(".rating-pick[data-rating]"), function (btn) {
+      var n = clampStaffRating(btn.getAttribute("data-rating"));
+      btn.classList.toggle("is-on", n === 0 ? value === 0 : n <= value);
+    });
+  }
+
+  function loadAllStaffRatings() {
+    if (!SUPABASE_URL || SUPABASE_URL.indexOf("YOUR_PROJECT_REF") !== -1) return;
+    var url = SUPABASE_URL + "/rest/v1/" + RATING_TABLE +
+      "?select=gin_name,rating,created_at&order=created_at.desc";
+    fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY } })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (rows) {
+        var byGin = {};
+        (rows || []).forEach(function (row) {
+          var k = normName(row.gin_name);
+          if (!Object.prototype.hasOwnProperty.call(byGin, k)) byGin[k] = clampStaffRating(row.rating);
+        });
+        GINS.forEach(function (g) {
+          var key = normName(g.name);
+          if (Object.prototype.hasOwnProperty.call(byGin, key)) {
+            g._staffRating = byGin[key];
+            g._staffRatingSet = true;
+          } else {
+            g._staffRating = 0;
+            g._staffRatingSet = false;
+          }
+        });
+        staffRatingState = "ready";
+        render();
+        if (modalGin && els.modal && !els.modal.hidden) renderStaffRatingSection(modalGin);
+      })
+      .catch(function () {
+        staffRatingState = "unavailable";
+        render();
+        if (modalGin && els.modal && !els.modal.hidden) renderStaffRatingSection(modalGin);
+      });
+  }
+
+  function submitStaffRating(g) {
+    var inp = document.getElementById("rating-value");
+    var msg = document.getElementById("rating-msg");
+    if (!inp || !g) return;
+    var rating = clampStaffRating(inp.value);
+    if (msg) msg.textContent = "保存中…";
+    fetch(SUPABASE_URL + "/rest/v1/" + RATING_TABLE, {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY,
+        "Content-Type": "application/json", Prefer: "return=minimal"
+      },
+      body: JSON.stringify({ gin_name: g.name, rating: rating })
+    }).then(function (res) {
+      if (res.status === 201) {
+        g._staffRating = rating;
+        g._staffRatingSet = true;
+        staffRatingState = "ready";
+        render();
+        renderStaffRatingSection(g);
+      } else {
+        if (res.status === 404) staffRatingState = "unavailable";
+        if (msg) msg.textContent = "保存に失敗しました（" + res.status + "）。";
+      }
+    }).catch(function () { if (msg) msg.textContent = "保存に失敗しました（通信エラー）。"; });
+  }
+
   function init() {
     els = {
       q: $("q"), country: $("f-country"), bot: $("f-bot"), abv: $("f-abv"), aroma: $("f-aroma"), sort: $("f-sort"),
@@ -1421,7 +1574,7 @@
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (data) {
         GINS = (data && data.gins) || [];
-        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._tags = g._tags || []; g._aromaStrength = 0; g._aromaStrengthSet = false; g._infoSources = []; g._hay = buildHay(g); }); // ボタニカル代表名化＋タグ初期化＋検索用テキスト
+        GINS.forEach(function (g) { g._bot = botTokens(g.botanicals); g._tags = g._tags || []; g._aromaStrength = 0; g._aromaStrengthSet = false; g._staffRating = 0; g._staffRatingSet = false; g._infoSources = []; g._hay = buildHay(g); }); // ボタニカル代表名化＋共有値初期化＋検索用テキスト
         if (els.meta) {
           var upd = fmtDate(data.updated);
           els.meta.textContent = "在庫 " + GINS.length + "銘柄" + (upd ? "・データ最終更新 " + upd : "");
@@ -1526,6 +1679,15 @@
           }
           if (e.target.closest(".aroma-pin-ok")) { verifyStaffPin("aroma-pin", "aroma-pin-err"); return; }
           if (e.target.closest(".aroma-save")) { submitAromaStrength(modalGin); return; }
+          if (e.target.closest(".rating-unlock")) {
+            var rrow = document.getElementById("rating-pin-row");
+            if (rrow) { rrow.hidden = false; var rp = document.getElementById("rating-pin"); if (rp) rp.focus(); }
+            return;
+          }
+          if (e.target.closest(".rating-pin-ok")) { verifyStaffPin("rating-pin", "rating-pin-err"); return; }
+          var ratingPick = e.target.closest(".rating-pick[data-rating]");
+          if (ratingPick) { updateStaffRatingPreview(ratingPick.getAttribute("data-rating")); return; }
+          if (e.target.closest(".rating-save")) { submitStaffRating(modalGin); return; }
           if (e.target === els.modal || e.target.closest(".modal-close")) closeModal();
         });
         els.modal.addEventListener("input", function (e) {
@@ -1541,6 +1703,8 @@
         loadAllTags();
         // 香りの強さを読み込んで各銘柄に付与（保存先未作成でもカタログは動く）
         loadAllAromaStrengths();
+        // スタッフ共有評価を読み込んで各銘柄に付与（保存先未作成でもカタログは動く）
+        loadAllStaffRatings();
       })
       .catch(function (err) {
         els.count.textContent = "";
