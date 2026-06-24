@@ -882,11 +882,9 @@
         (sub ? '<p class="modal-kana">産地：' + esc(g.country) + "</p>" : "") +
         warn +
         bot + note +
-        '<div class="modal-quick-grid">' +
-          '<div class="price-section"><h3 class="memo-title">ボトル価格</h3><div id="price-box" class="price-box"></div></div>' +
-          '<div class="aroma-section"><h3 class="memo-title">香りの強さ</h3><div id="aroma-box" class="aroma-box"></div></div>' +
-          '<div class="rating-section"><h3 class="memo-title">スタッフ評価</h3><div id="rating-box" class="rating-box"></div></div>' +
-        "</div>" +
+        '<div class="price-section"><h3 class="memo-title">ボトル価格</h3><div id="price-box" class="price-box"></div></div>' +
+        '<div class="aroma-section"><h3 class="memo-title">香りの強さ</h3><div id="aroma-box" class="aroma-box"></div></div>' +
+        '<div class="rating-section"><h3 class="memo-title">スタッフ評価</h3><div id="rating-box" class="rating-box"></div></div>' +
         '<div class="tag-section"><h3 class="memo-title">風味タグ</h3><div id="tag-box" class="tag-box"></div></div>' +
         priceSources +
         sources +
@@ -1465,9 +1463,9 @@
     var unavailable = aromaStrengthState === "unavailable";
     var loading = aromaStrengthState === "loading";
     var editHTML = '<div class="aroma-editor">' +
+      '<div class="metric-value-row"><span>0</span><output id="aroma-output" class="aroma-output">' + value + '</output><span>10</span></div>' +
       '<div class="aroma-slider-row">' +
         '<input id="aroma-range" class="aroma-range" type="range" min="0" max="10" step="1" value="' + value + '"' + (unavailable ? " disabled" : "") + ' />' +
-        '<output id="aroma-output" class="aroma-output">' + value + '</output>' +
       '</div>' +
       '<button type="button" class="aroma-save"' + (unavailable ? " disabled" : "") + '>保存</button>' +
       '<p class="memo-hint aroma-msg" id="aroma-msg">' +
@@ -1576,9 +1574,9 @@
       '<span class="rating-score-sub">' + (g._staffRatingSet ? "/10" : "未設定") + "</span>" +
       "</div>";
     var editHTML = '<div class="rating-editor">' +
+      '<div class="metric-value-row"><span>0</span><output id="rating-output" class="rating-output">' + value + '</output><span>10</span></div>' +
       '<div class="rating-slider-row">' +
         '<input id="rating-range" class="rating-range" type="range" min="0" max="10" step="1" value="' + value + '"' + (unavailable ? " disabled" : "") + ' />' +
-        '<output id="rating-output" class="rating-output">' + value + '</output>' +
       '</div>' +
       '<button type="button" class="rating-save"' + (unavailable ? " disabled" : "") + '>保存</button>' +
       '<p class="memo-hint rating-msg" id="rating-msg">' +
