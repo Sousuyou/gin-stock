@@ -862,12 +862,15 @@
   // ===== 情報ソースURL（各ジンごと・全員閲覧／スタッフのみPIN追加・削除）=====
   function sourceAddHTML() {
     if (memoUnlocked()) {
-      return '<div class="source-add">' +
-        '<input id="source-url" class="source-input source-url-input" type="url" inputmode="url" autocomplete="off" placeholder="https://..." />' +
-        '<input id="source-label" class="source-input source-label-input" type="text" maxlength="80" autocomplete="off" placeholder="公式 / 輸入元など" />' +
-        '<button type="button" class="source-send">URLを追加</button>' +
-        '<p class="memo-hint" id="source-msg"></p>' +
-        "</div>";
+      return '<details class="source-add-wrap">' +
+        '<summary>URLを追加</summary>' +
+        '<div class="source-add">' +
+          '<input id="source-url" class="source-input source-url-input" type="url" inputmode="url" autocomplete="off" placeholder="https://..." />' +
+          '<input id="source-label" class="source-input source-label-input" type="text" maxlength="80" autocomplete="off" placeholder="公式 / 輸入元など" />' +
+          '<button type="button" class="source-send">追加</button>' +
+          '<p class="memo-hint" id="source-msg"></p>' +
+        "</div>" +
+      "</details>";
     }
     return '<div class="memo-add">' +
       '<button type="button" class="source-unlock">＋ URLを追加（スタッフ）</button>' +
@@ -887,9 +890,9 @@
         ? '<button type="button" class="source-remove" data-source-id="' + esc(src.id) + '" title="このURLを削除">削除</button>'
         : "";
       return '<li class="source-item">' +
-        '<a class="source-link" href="' + esc(src.url) + '" target="_blank" rel="noopener noreferrer">' +
+        '<a class="source-link" href="' + esc(src.url) + '" target="_blank" rel="noopener noreferrer" title="' + esc(src.url) + '">' +
           '<b>' + esc(src.label) + '</b>' +
-          '<span>' + esc(src.url) + '</span>' +
+          '<span>' + esc(sourceHostLabel(src.url)) + '</span>' +
         '</a>' + remove +
       '</li>';
     }).join("") + "</ul>";
@@ -922,7 +925,7 @@
       })
       .catch(function (e) {
         g._infoSources = [];
-        renderSourceSection(g, e && e.message === "HTTP 404"
+        renderSourceSection(g, memoUnlocked() && e && e.message === "HTTP 404"
           ? "保存先未設定です。supabase_info_sources_setup.sql を実行するとURLを共有保存できます。"
           : "");
       });
