@@ -13,6 +13,10 @@
 
 > SQLの最後に `NOTIFY pgrst, 'reload schema';` を入れてあるので、APIへの反映もこの1回で済みます。
 
+## 既にタグ機能を作成済みの場合
+今回の「タグ取り消し」だけ有効にするなら、短い **`supabase_tags_delete_policy.sql`** だけをSQL EditorでRunしてもOKです。
+成功後、Policiesに **`anon delete active tag`** が追加されていれば準備完了です。
+
 ## 使い方
 カタログでジンをタップ → 詳細の下に **「風味タグ」**。
 **「＋ タグを付ける（スタッフ）」→ PIN**（メモと同じ・既定 `soutsu2026`）→ 候補をタップで追加。

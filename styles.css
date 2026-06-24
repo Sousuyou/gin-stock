@@ -383,8 +383,16 @@ button.tag-chip:hover {
   background: var(--gold);
   border-color: var(--gold);
 }
+.tag-chip.tag-remove {
+  gap: 3px;
+  min-height: 24px;
+  padding: 2px 7px 2px 9px;
+  font-size: 0.68rem;
+  line-height: 1.2;
+}
 .tag-remove-mark {
-  font-size: 0.82rem;
+  font-size: 0.68rem;
+  opacity: 0.85;
   line-height: 1;
 }
 .tag-palette { display: flex; flex-direction: column; gap: 4px; }
