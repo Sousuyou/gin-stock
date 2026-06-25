@@ -23,7 +23,7 @@
   var AROMA_TABLE = "gin_aroma_strengths";
   var RATING_TABLE = "gin_staff_ratings";
   var PRICE_TABLE = "gin_bottle_prices";
-  var BOTTLE_PRICE_SEED_URL = "data/bottle_price_estimates_20260625.json";
+  var BOTTLE_PRICE_SEED_URL = "data/bottle_price_estimates_20260625.json?v=20260625-price-fill-all";
   var SOURCE_TABLE = "gin_info_sources";
   var aromaStrengthState = "loading"; // loading / ready / unavailable
   var staffRatingState = "loading"; // loading / ready / unavailable
@@ -270,7 +270,7 @@
     "エルダーフラワー": ["エルダーフラワー", "エルダー", "ニワトコ"],
     "カモミール": ["カモミール", "カモマイル"],
     "グレープフルーツ": ["グレープフルーツ", "グレープフルーツピール", "グレープフルーツの皮"],
-    "ライム": ["ライム", "ライムピール", "ライムの皮"],
+    "ライム": ["ライム", "ライムピール", "ライムの皮", "フィンガーライム"],
     "ローズマリー": ["ローズマリー", "マンネンロウ"],
     "ローレル": ["ローレル", "ローリエ", "ベイリーフ", "月桂樹"],
     "レモングラス": ["レモングラス"],
@@ -287,7 +287,7 @@
     "ハマナス": ["ハマナス", "浜茄子"],
     "ヘザー": ["ヘザー"],
     "メドウスイート": ["メドウスイート", "メドウスウィート"],
-    "ユーカリ": ["ユーカリ"],
+    "ユーカリ": ["ユーカリ", "レモンセンテッドガム", "ユーカリ・ラディアータ", "ラディアータ"],
     "シーバックソーン": ["シーバックソーン", "シーベリー"],
     "ジャスミン": ["ジャスミン"],
     "レモンマートル": ["レモンマートル"],
@@ -332,6 +332,7 @@
     "フェンネル": "フェンネルシード",
     "キャラウェイ": "キャラウェイシード",
     "カッシア": "カシア",
+    "カッシアチップ": "カシア",
     "カシアバーク": "カシア",
     "カッシアバーク": "カシア",
     "クベブ": "クベブペッパー",
@@ -354,7 +355,10 @@
     "クベバ": "クベブペッパー",
     "コースタルタイム": "タイム",
     "柚子ピール": "柚子",
-    "ゆず": "柚子"
+    "ゆず": "柚子",
+    "フィンガーライム": "ライムピール",
+    "レモンセンテッドガム": "ユーカリ",
+    "ラディアータ": "ユーカリ"
   };
   // プルダウンに出さないゴミ語
   var BOT_JUNK = {
@@ -725,13 +729,22 @@
 
   function priceKindLabel(g) {
     if (g && g._bottlePriceKind === "staff") return "スタッフ";
+    if (g && g._bottlePriceKind === "estimated") return "推定";
     return "実売";
   }
 
   function bottlePriceBadgeHTML(g) {
     if (!g._bottlePriceSet) return "";
-    return '<span class="badge badge-price">瓶 ' + esc(yenLabel(g._bottlePrice)) + " / " + esc(mlLabel(bottleMlValue(g))) + "</span>" +
+    var kind = priceKindLabel(g);
+    var kindClass = g._bottlePriceKind === "estimated" ? " badge-price-estimated" : (g._bottlePriceKind === "staff" ? " badge-price-staff" : "");
+    var kindLabel = kind === "実売" ? "" : '<em>' + esc(kind) + "</em>";
+    return '<span class="badge badge-price' + kindClass + '">瓶 ' + kindLabel + esc(yenLabel(g._bottlePrice)) + " / " + esc(mlLabel(bottleMlValue(g))) + "</span>" +
       '<span class="badge badge-cost">30ml ' + esc(yenLabel(pourCost(g))) + "</span>";
+  }
+
+  function cardBottlePriceBadgeHTML(g) {
+    if (!g._bottlePriceSet) return "";
+    return '<span class="badge badge-price">' + esc(yenLabel(g._bottlePrice)) + "</span>";
   }
 
   function cardHTML(g, idx) {
@@ -740,7 +753,7 @@
       '<span class="badge badge-country">' + esc(g.country_main) + "</span>" +
       '<span class="badge badge-abv">' + abvLabel(g) + "</span>";
     var metricBadges =
-      bottlePriceBadgeHTML(g) +
+      cardBottlePriceBadgeHTML(g) +
       staffRatingBadgeHTML(g) +
       aromaBadgeHTML(g);
 
@@ -876,10 +889,12 @@
         flagBanner(g) +
         (sub ? '<p class="modal-kana">産地：' + esc(g.country) + "</p>" : "") +
         warn +
+        '<div class="modal-metric-grid">' +
+          '<div class="price-section"><h3 class="memo-title">ボトル価格</h3><div id="price-box" class="price-box"></div></div>' +
+          '<div class="aroma-section"><h3 class="memo-title">香りの強さ</h3><div id="aroma-box" class="aroma-box"></div></div>' +
+          '<div class="rating-section"><h3 class="memo-title">スタッフ評価</h3><div id="rating-box" class="rating-box"></div></div>' +
+        "</div>" +
         bot + note +
-        '<div class="price-section"><h3 class="memo-title">ボトル価格</h3><div id="price-box" class="price-box"></div></div>' +
-        '<div class="aroma-section"><h3 class="memo-title">香りの強さ</h3><div id="aroma-box" class="aroma-box"></div></div>' +
-        '<div class="rating-section"><h3 class="memo-title">スタッフ評価</h3><div id="rating-box" class="rating-box"></div></div>' +
         '<div class="staff-edit-section"><h3 class="memo-title">スタッフ編集</h3><div id="staff-edit-box" class="staff-edit-box"></div></div>' +
         '<div class="tag-section"><h3 class="memo-title">風味タグ</h3><div id="tag-box" class="tag-box"></div></div>' +
         sources +
@@ -1803,7 +1818,6 @@
     function applyRows(rows, preserveAbsent) {
       var byGin = {};
       (rows || []).forEach(function (row) {
-        if (row.price_kind === "estimated") return;
         var k = normName(row.gin_name);
         if (!Object.prototype.hasOwnProperty.call(byGin, k)) {
           byGin[k] = {

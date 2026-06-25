@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>キャッシュ更新｜ジン在庫カタログ</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+        background: #edf1ef;
+        color: #171a17;
+      }
+      main {
+        width: min(520px, calc(100% - 32px));
+        padding: 24px;
+        border: 1px solid #d7d8d0;
+        border-radius: 8px;
+        background: #fbfaf6;
+        box-shadow: 0 18px 44px rgba(29, 39, 32, 0.12);
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 1.2rem;
+      }
+      p {
+        margin: 0;
+        color: #686d64;
+        line-height: 1.8;
+      }
+      a {
+        color: #2f6f56;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>キャッシュを更新しています</h1>
+      <p id="msg">古い画面データを削除しています。数秒後にカタログへ戻ります。</p>
+    </main>
+    <script>
+      (function () {
+        "use strict";
+        var msg = document.getElementById("msg");
+        function goHome() {
+          location.replace("./?v=20260625-cache-reset");
+        }
+        Promise.all([
+          "serviceWorker" in navigator
+            ? navigator.serviceWorker.getRegistrations().then(function (items) {
+                return Promise.all(items.map(function (item) { return item.unregister(); }));
+              })
+            : Promise.resolve(),
+          "caches" in window
+            ? caches.keys().then(function (keys) {
+                return Promise.all(keys.map(function (key) { return caches.delete(key); }));
+              })
+            : Promise.resolve()
+        ]).then(function () {
+          try {
+            localStorage.removeItem("soutsu_gin_catalog_boot_version");
+          } catch (_) {}
+          goHome();
+        }).catch(function () {
+          if (msg) {
+            msg.innerHTML = '自動更新に失敗しました。<a href="./?v=20260625-cache-reset">カタログを開き直してください</a>。';
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
