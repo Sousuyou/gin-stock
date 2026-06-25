@@ -1465,9 +1465,57 @@ textarea:focus {
   margin-top: 0;
 }
 
+.metric-display-box,
 .metric-edit-box {
   display: grid;
   gap: 8px;
+}
+
+.metric-display-price {
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-soft);
+}
+
+.metric-display-box .memo-title {
+  margin-bottom: 7px;
+}
+
+.metric-display-note {
+  margin: -2px 0 0;
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 700;
+}
+
+.metric-display-scale {
+  margin-top: 2px;
+}
+
+.metric-scale-track {
+  display: block;
+  height: 7px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+}
+
+.metric-scale-track i {
+  display: block;
+  height: 100%;
+  background: var(--line-strong);
+  opacity: 0.55;
+}
+
+.metric-scale-track.is-empty i {
+  width: 0 !important;
+}
+
+.metric-display-control .aroma-output,
+.metric-display-control .rating-output {
+  color: var(--text);
 }
 
 .metric-edit-actions {
@@ -1488,26 +1536,6 @@ textarea:focus {
   color: var(--text);
   background: var(--panel);
   border-color: var(--line);
-}
-
-.modal-metric-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(140px, 0.7fr) minmax(140px, 0.7fr);
-  gap: 8px;
-}
-
-.modal-metric-grid .price-section,
-.modal-metric-grid .aroma-section,
-.modal-metric-grid .rating-section {
-  margin-top: 0;
-  padding: 10px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--panel);
-}
-
-.modal-metric-grid .memo-title {
-  margin-bottom: 7px;
 }
 
 .price-facts {
@@ -1597,13 +1625,6 @@ textarea:focus {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .modal-metric-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .modal-metric-grid .price-section {
-    grid-column: 1 / -1;
-  }
 }
 
 @media (max-width: 640px) {
@@ -1737,14 +1758,6 @@ textarea:focus {
 
   .modal {
     padding: 14px;
-  }
-
-  .modal-metric-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .modal-metric-grid .price-section {
-    grid-column: auto;
   }
 
   .metric-box {

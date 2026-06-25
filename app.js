@@ -29,7 +29,7 @@
   var staffRatingState = "loading"; // loading / ready / unavailable
   var bottlePriceState = "loading"; // loading / ready / unavailable
   var DEFAULT_BOTTLE_ML = 700;
-  var SALE_RATE = 0.15;
+  var SALE_RATE = 0.18;
   // 風味タグ（スタッフが付与・全員閲覧・絞り込み可。2群×計28タグ。説明は選択時のヒント=title）
   var FLAVOR_GROUPS = [
     { group: "香り・風味", tags: ["ジュニパー", "フローラル", "フルーティー", "シトラス", "ウッディ", "スパイシー", "ペッパー", "ハーバル", "アーシー", "パフューミー", "ベジタル", "マリン", "ナッティ", "スモーキー", "クリーミー", "お茶系", "ビター系"] },
@@ -1660,6 +1660,28 @@
     "</div>";
   }
 
+  function metricLevelDisplayHTML(label, value, isSet, outputClass) {
+    var score = isSet ? clampStaffRating(value) : 0;
+    var scoreText = isSet ? score : "—";
+    var note = isSet ? "10段階中 " + score : "未設定";
+    return '<div class="staff-metric-control metric-display-control">' +
+      '<div class="staff-metric-head"><span>' + esc(label) + '</span><output class="' + outputClass + '">' + esc(scoreText) + '</output></div>' +
+      '<div class="metric-scale-row metric-display-scale"><span>0</span><div class="metric-scale-track' + (isSet ? "" : " is-empty") + '" aria-hidden="true"><i style="width:' + (score * 10) + '%"></i></div><span>10</span></div>' +
+      '<p class="metric-display-note">' + esc(note) + "</p>" +
+    "</div>";
+  }
+
+  function metricDisplayHTML(g, message) {
+    var aroma = Number(g._aromaStrength) || 0;
+    var rating = g._staffRatingSet ? clampStaffRating(g._staffRating) : 0;
+    return '<div class="metric-display-box">' +
+      '<div class="metric-display-price"><h3 class="memo-title">ボトル価格</h3>' + metricPriceHTML(g) + "</div>" +
+      metricLevelDisplayHTML("香りの強さ", aroma, g._aromaStrengthSet, "aroma-output") +
+      metricLevelDisplayHTML("スタッフ評価", rating, g._staffRatingSet, "rating-output") +
+      (message ? '<p class="memo-hint staff-edit-msg">' + esc(message) + "</p>" : "") +
+    "</div>";
+  }
+
   function metricEditHTML(g, message) {
     var price = g._bottlePriceSet ? clampBottlePrice(g._bottlePrice) : 0;
     var ml = bottleMlValue(g);
@@ -1719,12 +1741,7 @@
       (loading ? '<p class="memo-hint price-loading">共有価格を読み込み中…</p>' : "") +
       (metricEditMode && memoUnlocked()
         ? metricEditHTML(g, message)
-        : '<div class="modal-metric-grid">' +
-            '<div class="price-section"><h3 class="memo-title">ボトル価格</h3>' + metricPriceHTML(g) + "</div>" +
-            '<div class="aroma-section"><h3 class="memo-title">香りの強さ</h3>' + metricAromaHTML(g) + "</div>" +
-            '<div class="rating-section"><h3 class="memo-title">スタッフ評価</h3>' + metricRatingHTML(g) + "</div>" +
-          "</div>" +
-          (message ? '<p class="memo-hint staff-edit-msg">' + esc(message) + "</p>" : ""));
+        : metricDisplayHTML(g, message));
   }
 
   function renderBottlePriceSection(g) {
