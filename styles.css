@@ -1430,11 +1430,70 @@ textarea:focus {
   border-radius: 999px;
 }
 
+.metric-section {
+  margin-top: 14px;
+}
+
+.metric-box {
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.metric-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.metric-panel-head .memo-title {
+  margin: 0;
+}
+
+.metric-panel-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.metric-panel-actions .memo-pin-row {
+  margin-top: 0;
+}
+
+.metric-edit-box {
+  display: grid;
+  gap: 8px;
+}
+
+.metric-edit-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.metric-edit-actions .staff-save {
+  width: auto;
+  flex: 1 1 0;
+}
+
+.metric-edit-cancel {
+  flex: 0 0 auto;
+  min-height: 32px;
+  padding: 0 12px;
+  color: var(--text);
+  background: var(--panel);
+  border-color: var(--line);
+}
+
 .modal-metric-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(140px, 0.7fr) minmax(140px, 0.7fr);
   gap: 8px;
-  margin-top: 14px;
 }
 
 .modal-metric-grid .price-section,
@@ -1520,7 +1579,8 @@ textarea:focus {
 .source-pin-ok,
 .staff-save,
 .staff-edit-unlock,
-.staff-edit-pin-ok {
+.staff-edit-pin-ok,
+.metric-edit-cancel {
   border-radius: var(--radius-sm);
 }
 
@@ -1685,6 +1745,26 @@ textarea:focus {
 
   .modal-metric-grid .price-section {
     grid-column: auto;
+  }
+
+  .metric-box {
+    padding: 8px;
+  }
+
+  .metric-panel-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .metric-panel-actions,
+  .metric-panel-actions .memo-pin-row {
+    width: 100%;
+  }
+
+  .metric-panel-actions .staff-edit-unlock,
+  .metric-panel-actions .staff-edit-pin-ok,
+  .metric-panel-actions .memo-pin {
+    flex: 1 1 auto;
   }
 
   .price-facts {
