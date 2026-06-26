@@ -6,7 +6,7 @@
 (function () {
   "use strict";
 
-  var APP_BOOT_VERSION = "20260627-cache-reset-v2";
+  var APP_BOOT_VERSION = "20260627-cache-reset-v3";
   var VERSION_KEY = "soutsu_gin_catalog_boot_version";
   var isLocal = location.hostname === "localhost" || location.hostname === "127.0.0.1";
 

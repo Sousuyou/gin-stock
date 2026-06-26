@@ -1553,6 +1553,17 @@ textarea:focus {
   flex-wrap: wrap;
 }
 
+.metric-panel-actions-bottom {
+  justify-content: flex-start;
+  margin-top: 8px;
+}
+
+.metric-panel-actions .staff-edit-unlock {
+  min-height: 30px;
+  padding: 0 10px;
+  font-size: 0.68rem;
+}
+
 .metric-panel-actions .memo-pin-row {
   margin-top: 0;
 }
@@ -1876,6 +1887,11 @@ textarea:focus {
   .staff-auth-ok,
   .staff-auth-focus {
     flex: 1 1 auto;
+  }
+
+  .metric-panel-actions .staff-edit-unlock {
+    flex: 0 0 auto;
+    width: auto;
   }
 
   .price-facts {

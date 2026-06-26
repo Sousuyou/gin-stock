@@ -75,6 +75,7 @@
   var memoEditId = "";     // 現在インライン編集しているメモID
   var metricEditMode = false; // 価格・香り・評価パネルを編集中か
   var pendingStaffUnlockAction = ""; // 解錠後に続ける操作
+  var modalHistoryActive = false; // 詳細小窓をブラウザ履歴に積んでいるか
   var STAR_SVG = '<svg class="star-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l-5.4 3 1.2-6L3.3 9.9l6.1-.7L12 3.6l2.6 5.6 6.1.7-4.5 4.4 1.2 6z"/></svg>';
 
   function $(id) { return document.getElementById(id); }
@@ -891,6 +892,7 @@
   }
 
   function openModal(g, keepMetricEdit) {
+    var shouldPushHistory = els.modal && els.modal.hidden;
     modalGin = g;
     memoEditId = "";
     metricEditMode = !!keepMetricEdit && memoUnlocked();
@@ -937,13 +939,30 @@
     loadMemos(g);
     renderTagSection(g);
     renderMetricSection(g);
+    if (shouldPushHistory) pushModalHistory(g);
   }
-  function closeModal() {
+
+  function pushModalHistory(g) {
+    if (modalHistoryActive || !window.history || !window.history.pushState) return;
+    try {
+      window.history.pushState({ ginModal: true, ginName: g && g.name ? g.name : "" }, "", window.location.href);
+      modalHistoryActive = true;
+    } catch (e) {
+      modalHistoryActive = false;
+    }
+  }
+
+  function closeModal(fromHistory) {
+    if (!fromHistory && modalHistoryActive && window.history && window.history.back) {
+      window.history.back();
+      return;
+    }
     els.modal.hidden = true;
     els.modal.innerHTML = "";
     document.body.style.overflow = "";
     metricEditMode = false;
     pendingStaffUnlockAction = "";
+    modalHistoryActive = false;
   }
 
   function resetAll() {
@@ -1747,12 +1766,12 @@
     box.innerHTML =
       '<div class="metric-panel-head">' +
         '<h3 class="memo-title">価格・香り・評価</h3>' +
-        '<div class="metric-panel-actions">' + actionHTML + "</div>" +
       "</div>" +
       (loading ? '<p class="memo-hint price-loading">共有価格を読み込み中…</p>' : "") +
       (metricEditMode && memoUnlocked()
         ? metricEditHTML(g, message)
-        : metricDisplayHTML(g, message));
+        : metricDisplayHTML(g, message) +
+          '<div class="metric-panel-actions metric-panel-actions-bottom">' + actionHTML + "</div>");
   }
 
   function renderBottlePriceSection(g) {
@@ -2133,6 +2152,9 @@
         });
         document.addEventListener("keydown", function (e) {
           if (e.key === "Escape" && !els.modal.hidden) closeModal();
+        });
+        window.addEventListener("popstate", function () {
+          if (!els.modal.hidden && modalHistoryActive) closeModal(true);
         });
 
         // 申請箱の「仮登録」を後追いで読み込んで合流（失敗してもカタログは動く）
