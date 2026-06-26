@@ -1,14 +1,16 @@
 // Bar Soutsu ジン在庫カタログ Service Worker
 // 方針: ページ本体(HTML)とデータ(.json/.js)は「ネットワーク優先」で常に最新を取得し、
 //   オフライン時のみキャッシュを使う。画像は「キャッシュ優先」で高速表示。
-var CACHE = "gin-stock-v59";
+var CACHE = "gin-stock-v60";
 var ASSETS = [
   "./",
   "./index.html",
+  "./staff.html",
   "./cache-reset.html",
   "./styles.css",
   "./app.js",
   "./boot.js",
+  "./submit.js",
   "./gins.json",
   "./data/bottle_price_estimates_20260625.json",
   "./top/botanical-table/botanical-data.js",

@@ -393,12 +393,12 @@ select {
   font: inherit; font-size: 0.85rem; color: var(--text);
   background: var(--panel); border: 1px solid var(--line); border-radius: 0; resize: vertical;
 }
-.memo-send, .memo-unlock, .memo-pin-ok, .source-send, .source-unlock, .source-pin-ok, .staff-save, .staff-edit-unlock, .staff-edit-pin-ok {
+.memo-send, .memo-unlock, .memo-pin-ok, .source-send, .source-unlock, .source-pin-ok, .staff-save, .staff-edit-unlock, .staff-edit-pin-ok, .staff-auth-ok, .staff-auth-focus {
   min-height: 36px; padding: 0 14px; border-radius: 0; cursor: pointer;
   font-size: 0.74rem; font-weight: 700; white-space: nowrap;
   color: var(--on-accent); background: var(--accent); border: 1px solid var(--accent);
 }
-.memo-unlock, .source-unlock, .staff-edit-unlock { color: var(--text); background: var(--panel); border-color: var(--gold); }
+.memo-unlock, .source-unlock, .staff-edit-unlock, .staff-auth-focus { color: var(--text); background: var(--panel); border-color: var(--gold); }
 .source-send:disabled, .staff-save:disabled { opacity: 0.5; cursor: default; }
 .memo-pin-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 6px; flex: 1 1 100%; }
 .memo-pin {
@@ -407,6 +407,56 @@ select {
   background: var(--panel); border: 1px solid var(--line); border-radius: 0;
 }
 .memo-hint { margin: 4px 0 0; font-size: 0.72rem; color: var(--muted); flex: 1 1 100%; }
+
+.staff-auth-section {
+  margin-top: 12px;
+}
+
+.staff-auth-box {
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.staff-auth-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.staff-auth-head .memo-title,
+.staff-auth-box.is-unlocked .memo-title {
+  margin: 0;
+}
+
+.staff-auth-row {
+  margin-top: 0;
+}
+
+.staff-auth-input {
+  flex: 1 1 220px;
+  max-width: none;
+}
+
+.locked-edit-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  padding: 8px;
+  color: var(--muted);
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
 
 /* 風味タグ（カード上のチップ＋モーダルの付与パレット） */
 .gin-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
@@ -1608,6 +1658,8 @@ textarea:focus {
 .staff-save,
 .staff-edit-unlock,
 .staff-edit-pin-ok,
+.staff-auth-ok,
+.staff-auth-focus,
 .metric-edit-cancel {
   border-radius: var(--radius-sm);
 }
@@ -1770,13 +1822,17 @@ textarea:focus {
   }
 
   .metric-panel-actions,
-  .metric-panel-actions .memo-pin-row {
+  .metric-panel-actions .memo-pin-row,
+  .staff-auth-row,
+  .staff-auth-input {
     width: 100%;
   }
 
   .metric-panel-actions .staff-edit-unlock,
   .metric-panel-actions .staff-edit-pin-ok,
-  .metric-panel-actions .memo-pin {
+  .metric-panel-actions .memo-pin,
+  .staff-auth-ok,
+  .staff-auth-focus {
     flex: 1 1 auto;
   }
 

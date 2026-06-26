@@ -16,7 +16,7 @@
   var SUB_TABLE = "gin_submissions";
   var MEMO_TABLE = "gin_memos";
   var BOTANICAL_TABLE_URL = "https://sousuyou.github.io/top/botanical-table/";
-  // スタッフメモ投稿用PIN（申請ページと同じ。SHA-256で照合・平文は置かない。既定 soutsu2026）
+  // スタッフ編集用パスワード（申請ページと同じ。SHA-256で照合・平文は置かない。既定 soutsu2026）
   var MEMO_PIN_SHA256 = "694b39a1bfa7ff68a9dee1972d6323fbb797f368fad85b74429e0fa696529263";
   var MEMO_UNLOCK_KEY = "soutsu_staff_unlocked";
   var TAGS_TABLE = "gin_flavor_tags";
@@ -74,6 +74,7 @@
   var modalGin = null;     // 現在モーダルで開いている銘柄
   var memoEditId = "";     // 現在インライン編集しているメモID
   var metricEditMode = false; // 価格・香り・評価パネルを編集中か
+  var pendingStaffUnlockAction = ""; // 解錠後に続ける操作
   var STAR_SVG = '<svg class="star-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l-5.4 3 1.2-6L3.3 9.9l6.1-.7L12 3.6l2.6 5.6 6.1.7-4.5 4.4 1.2 6z"/></svg>';
 
   function $(id) { return document.getElementById(id); }
@@ -857,6 +858,37 @@
   }
 
   // ---- 詳細モーダル ----
+  function staffAuthHTML() {
+    if (memoUnlocked()) {
+      return '<div class="staff-auth-box is-unlocked">' +
+        '<div><h3 class="memo-title">スタッフ編集</h3><p class="memo-hint">解錠済み</p></div>' +
+      "</div>";
+    }
+    return '<div class="staff-auth-box">' +
+      '<div class="staff-auth-head"><h3 class="memo-title">スタッフ編集</h3><p class="memo-hint">解錠すると編集できます。</p></div>' +
+      '<div class="memo-pin-row staff-auth-row">' +
+        '<input id="staff-auth-password" class="memo-pin staff-auth-input" type="password" autocomplete="current-password" placeholder="スタッフパスワード" />' +
+        '<button type="button" class="staff-auth-ok">解錠</button>' +
+        '<span class="memo-hint" id="staff-auth-err"></span>' +
+      "</div>" +
+    "</div>";
+  }
+
+  function focusStaffAuth(action) {
+    pendingStaffUnlockAction = action || "";
+    var inp = document.getElementById("staff-auth-password");
+    var err = document.getElementById("staff-auth-err");
+    if (err && !err.textContent) err.textContent = "スタッフパスワードを入力してください。";
+    if (inp) {
+      inp.focus();
+      if (inp.select) inp.select();
+    }
+  }
+
+  function lockedStaffHintHTML(label) {
+    return '<div class="locked-edit-note"><span>' + esc(label) + '</span><button type="button" class="staff-auth-focus">スタッフ編集を解錠</button></div>';
+  }
+
   function openModal(g, keepMetricEdit) {
     modalGin = g;
     memoEditId = "";
@@ -891,6 +923,7 @@
         flagBanner(g) +
         (sub ? '<p class="modal-kana">産地：' + esc(g.country) + "</p>" : "") +
         warn +
+        '<div id="staff-auth-box" class="staff-auth-section">' + staffAuthHTML() + "</div>" +
         '<div class="metric-section"><div id="metric-box" class="metric-box"></div></div>' +
         bot + note +
         '<div class="tag-section"><h3 class="memo-title">風味タグ</h3><div id="tag-box" class="tag-box"></div></div>' +
@@ -909,6 +942,7 @@
     els.modal.innerHTML = "";
     document.body.style.overflow = "";
     metricEditMode = false;
+    pendingStaffUnlockAction = "";
   }
 
   function resetAll() {
@@ -983,7 +1017,7 @@
       .catch(function () { /* 申請箱が読めなくてもカタログは通常どおり表示 */ });
   }
 
-  // ===== 情報ソースURL（各ジンごと・全員閲覧／スタッフのみPIN追加・削除）=====
+  // ===== 情報ソースURL（各ジンごと・全員閲覧／スタッフパスワード後に追加・削除）=====
   function sourceAddHTML() {
     if (memoUnlocked()) {
       return '<details class="source-add-wrap">' +
@@ -996,14 +1030,7 @@
         "</div>" +
       "</details>";
     }
-    return '<div class="memo-add">' +
-      '<button type="button" class="source-unlock">＋ URLを追加（スタッフ）</button>' +
-      '<div class="memo-pin-row" id="source-pin-row" hidden>' +
-        '<input id="source-pin" class="memo-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="スタッフPIN" />' +
-        '<button type="button" class="source-pin-ok">解錠</button>' +
-        '<span class="memo-hint" id="source-pin-err"></span>' +
-      "</div>" +
-      "</div>";
+    return lockedStaffHintHTML("URL追加はスタッフ編集で行えます。");
   }
 
   function sourceListHTML(g) {
@@ -1107,12 +1134,12 @@
     }).catch(function () { if (msg) msg.textContent = "削除に失敗しました（通信エラー）。"; });
   }
 
-  // ===== スタッフメモ（各ジンごと・全員閲覧／スタッフのみPIN投稿）=====
+  // ===== スタッフメモ（各ジンごと・全員閲覧／スタッフパスワード後に投稿）=====
   function safeSGet(k) { try { return window.sessionStorage.getItem(k); } catch (e) { return null; } }
   function safeSSet(k, v) { try { window.sessionStorage.setItem(k, v); } catch (e) {} }
   function memoUnlocked() { return safeSGet(MEMO_UNLOCK_KEY) === "1"; }
 
-  // SHA-256（PIN照合。https/localhost の安全コンテキストで動作）
+  // SHA-256（パスワード照合。https/localhost の安全コンテキストで動作）
   function sha256hex(str) {
     var data = new TextEncoder().encode(str);
     return crypto.subtle.digest("SHA-256", data).then(function (buf) {
@@ -1127,7 +1154,7 @@
     return m ? (Number(m[2]) + "/" + Number(m[3])) : "";
   }
 
-  // メモ追加UI：解錠済みなら入力欄、未解錠ならPINゲート
+  // メモ追加UI：解錠済みなら入力欄、未解錠なら共通のスタッフ編集欄へ誘導
   function memoAddHTML() {
     if (memoUnlocked()) {
       return '<div class="memo-add">' +
@@ -1136,14 +1163,7 @@
         '<p class="memo-hint" id="memo-msg"></p>' +
         "</div>";
     }
-    return '<div class="memo-add">' +
-      '<button type="button" class="memo-unlock">＋ メモを追加（スタッフ）</button>' +
-      '<div class="memo-pin-row" id="memo-pin-row" hidden>' +
-        '<input id="memo-pin" class="memo-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="スタッフPIN" />' +
-        '<button type="button" class="memo-pin-ok">解錠</button>' +
-        '<span class="memo-hint" id="memo-pin-err"></span>' +
-      "</div>" +
-      "</div>";
+    return lockedStaffHintHTML("メモ追加はスタッフ編集で行えます。");
   }
 
   function renderMemoSection(g, memos, errMsg) {
@@ -1201,23 +1221,24 @@
       .catch(function () { renderMemoSection(g, []); });
   }
 
-  // スタッフPIN照合（メモ・タグ共通）。解錠成功でモーダルを再描画し両方の編集UIを出す。
-  function verifyStaffPin(pinId, errId) {
-    var inp = document.getElementById(pinId);
-    var err = document.getElementById(errId);
+  // スタッフパスワード照合。解錠成功でモーダルを再描画し、各編集UIを出す。
+  function verifyStaffPassword() {
+    var inp = document.getElementById("staff-auth-password");
+    var err = document.getElementById("staff-auth-err");
     if (!inp) return;
     var val = (inp.value || "").trim();
-    if (!val) return;
+    if (!val) { if (err) err.textContent = "スタッフパスワードを入力してください。"; return; }
     if (err) err.textContent = "";
     if (!window.crypto || !crypto.subtle) { if (err) err.textContent = "httpsで開いてください。"; return; }
     sha256hex(val).then(function (h) {
       if (h === MEMO_PIN_SHA256) {
         safeSSet(MEMO_UNLOCK_KEY, "1");
-        metricEditMode = pinId === "staff-edit-pin";
+        metricEditMode = pendingStaffUnlockAction === "metric";
+        pendingStaffUnlockAction = "";
         if (modalGin) openModal(modalGin, metricEditMode);
       }
-      else if (err) { err.textContent = "PINが違います。"; inp.value = ""; }
-    }).catch(function () { if (err) err.textContent = "PIN照合エラー。"; });
+      else if (err) { err.textContent = "パスワードが違います。"; inp.value = ""; }
+    }).catch(function () { if (err) err.textContent = "パスワード照合エラー。"; });
   }
 
   function submitMemo(g) {
@@ -1297,7 +1318,7 @@
     }).catch(function () { if (msg) msg.textContent = "削除に失敗しました（通信エラー）。"; });
   }
 
-  // ===== 風味タグ（各ジンごと・全員閲覧／スタッフのみPIN編集。PINはメモと共通）=====
+  // ===== 風味タグ（各ジンごと・全員閲覧／スタッフパスワード後に編集。パスワードはメモと共通）=====
   function uniqArr(a) {
     var seen = {}, out = [];
     (a || []).forEach(function (x) { if (x && !seen[x]) { seen[x] = 1; out.push(x); } });
@@ -1370,14 +1391,7 @@
     if (memoUnlocked()) {
       addHTML = tagPaletteHTML(g);
     } else {
-      addHTML = '<div class="memo-add">' +
-        '<button type="button" class="tag-unlock">＋ タグを付ける（スタッフ）</button>' +
-        '<div class="memo-pin-row" id="tag-pin-row" hidden>' +
-          '<input id="tag-pin" class="memo-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="スタッフPIN" />' +
-          '<button type="button" class="tag-pin-ok">解錠</button>' +
-          '<span class="memo-hint" id="tag-pin-err"></span>' +
-        "</div>" +
-        "</div>";
+      addHTML = lockedStaffHintHTML("タグ編集はスタッフ編集で行えます。");
     }
     box.innerHTML = appliedHTML + addHTML;
   }
@@ -1726,12 +1740,7 @@
     } else if (memoUnlocked()) {
       actionHTML = '<button type="button" class="staff-edit-unlock">編集</button>';
     } else {
-      actionHTML = '<button type="button" class="staff-edit-unlock">編集（スタッフ）</button>' +
-        '<div class="memo-pin-row metric-pin-row" id="staff-edit-pin-row" hidden>' +
-          '<input id="staff-edit-pin" class="memo-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="スタッフPIN" />' +
-          '<button type="button" class="staff-edit-pin-ok">解錠</button>' +
-          '<span class="memo-hint" id="staff-edit-pin-err"></span>' +
-        "</div>";
+      actionHTML = '<button type="button" class="staff-edit-unlock">編集（スタッフ）</button>';
     }
     box.innerHTML =
       '<div class="metric-panel-head">' +
@@ -2080,12 +2089,8 @@
           var botBtn = e.target.closest(".bot-link[data-botanical]");
           if (botBtn) { showBotanicalInfo(botBtn.getAttribute("data-botanical")); return; }
           if (e.target.closest(".bot-mini-close")) { closeBotanicalInfo(); return; }
-          if (e.target.closest(".memo-unlock")) {
-            var prow = document.getElementById("memo-pin-row");
-            if (prow) { prow.hidden = false; var pin = document.getElementById("memo-pin"); if (pin) pin.focus(); }
-            return;
-          }
-          if (e.target.closest(".memo-pin-ok")) { verifyStaffPin("memo-pin", "memo-pin-err"); return; }
+          if (e.target.closest(".staff-auth-ok")) { verifyStaffPassword(); return; }
+          if (e.target.closest(".staff-auth-focus")) { focusStaffAuth(""); return; }
           if (e.target.closest(".memo-send")) { submitMemo(modalGin); return; }
           var memoEdit = e.target.closest(".memo-edit[data-memo-id]");
           if (memoEdit) { beginMemoEdit(modalGin, memoEdit.getAttribute("data-memo-id")); return; }
@@ -2094,21 +2099,9 @@
           if (e.target.closest(".memo-cancel")) { cancelMemoEdit(modalGin); return; }
           var memoDelete = e.target.closest(".memo-delete[data-memo-id]");
           if (memoDelete) { deleteMemo(modalGin, memoDelete.getAttribute("data-memo-id")); return; }
-          if (e.target.closest(".source-unlock")) {
-            var srow = document.getElementById("source-pin-row");
-            if (srow) { srow.hidden = false; var sp = document.getElementById("source-pin"); if (sp) sp.focus(); }
-            return;
-          }
-          if (e.target.closest(".source-pin-ok")) { verifyStaffPin("source-pin", "source-pin-err"); return; }
           if (e.target.closest(".source-send")) { submitInfoSource(modalGin); return; }
           var sourceRemove = e.target.closest(".source-remove[data-source-id]");
           if (sourceRemove) { removeInfoSource(modalGin, sourceRemove.getAttribute("data-source-id")); return; }
-          if (e.target.closest(".tag-unlock")) {
-            var trow = document.getElementById("tag-pin-row");
-            if (trow) { trow.hidden = false; var tp = document.getElementById("tag-pin"); if (tp) tp.focus(); }
-            return;
-          }
-          if (e.target.closest(".tag-pin-ok")) { verifyStaffPin("tag-pin", "tag-pin-err"); return; }
           var tagRemove = e.target.closest(".tag-remove[data-tag]");
           if (tagRemove) { removeTag(modalGin, tagRemove.getAttribute("data-tag")); return; }
           var pick = e.target.closest(".tag-pick");
@@ -2119,11 +2112,9 @@
               renderMetricSection(modalGin);
               return;
             }
-            var editRow = document.getElementById("staff-edit-pin-row");
-            if (editRow) { editRow.hidden = false; var editPin = document.getElementById("staff-edit-pin"); if (editPin) editPin.focus(); }
+            focusStaffAuth("metric");
             return;
           }
-          if (e.target.closest(".staff-edit-pin-ok")) { verifyStaffPin("staff-edit-pin", "staff-edit-pin-err"); return; }
           if (e.target.closest(".metric-edit-cancel")) { metricEditMode = false; renderMetricSection(modalGin); return; }
           if (e.target.closest(".staff-save")) { submitStaffEdit(modalGin); return; }
           if (e.target === els.modal || e.target.closest(".modal-close")) closeModal();
@@ -2131,6 +2122,12 @@
         els.modal.addEventListener("input", function (e) {
           if (e.target.closest("#staff-aroma-range")) { e.target.setAttribute("data-dirty", "1"); updateAromaOutput(); }
           if (e.target.closest("#staff-rating-range")) { e.target.setAttribute("data-dirty", "1"); updateStaffRatingOutput(); }
+        });
+        els.modal.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" && e.target.closest("#staff-auth-password")) {
+            e.preventDefault();
+            verifyStaffPassword();
+          }
         });
         document.addEventListener("keydown", function (e) {
           if (e.key === "Escape" && !els.modal.hidden) closeModal();

@@ -53,20 +53,20 @@ var SUPABASE_KEY = "sb_publishable_REPLACE_ME";            ← publishable(anon)
 
 > ⚠ secret キーは staff.html / submit.js には**絶対に入れない**こと。入れてよいのは publishable(anon) キーだけ。
 
-## ステップ5：スタッフPINを自店のものに変える（任意だが推奨）
-既定PINは `soutsu2026`。変えるには：
-1. 新しいPINを決める（例：`soutsu0401`）
+## ステップ5：スタッフパスワードを自店のものに変える（任意だが推奨）
+既定パスワードは `soutsu2026`。変えるには：
+1. 新しいスタッフパスワードを決める（例：`soutsu0401`）
 2. ターミナルで次を実行してハッシュ値を出す：
    ```
    python3 -c "import hashlib,sys; print(hashlib.sha256(sys.argv[1].encode()).hexdigest())" soutsu0401
    ```
 3. 出てきた長い文字列を、`submit.js` の `PIN_SHA256 = "..."` に貼り替える。
-4. スタッフには新しいPIN（`soutsu0401`）だけを伝える。
+4. スタッフには新しいパスワード（`soutsu0401`）だけを伝える。
 
 ## ステップ6：公開して動作確認
 1. 変更を push する（`git add -A` → commit → push）。数分でGitHub Pagesに反映。
 2. `https://sousuyou.github.io/gin-stock/staff.html` を開く
-3. PINを入力 →「解錠」→ フォームが出る
+3. スタッフパスワードを入力 →「解錠」→ フォームが出る
 4. テストで1件送信 → 「申請箱に送りました」と出ればOK
 5. Supabaseの Table Editor で `gin_submissions` に1行入っていることを確認
 

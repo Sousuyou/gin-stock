@@ -7,7 +7,7 @@
  *    公開カタログ(gins.json)は一切書き換わらない＝事実確認の関所を必ず通る。
  *  - ここで使う SUPABASE_KEY は「公開してよいキー（publishable / anon）」。
  *    守りはキーの秘密ではなくDB側の権限設定(RLS)。anonはINSERTのみ・statusは設定不可。
- *  - PINは「一般客の目に触れさせない」ための簡易ゲート（暗号的防御ではない）。
+ *  - スタッフパスワードは「一般客の目に触れさせない」ための簡易ゲート（暗号的防御ではない）。
  */
 (function () {
   "use strict";
@@ -17,8 +17,8 @@
   var SUPABASE_KEY = "sb_publishable_eP6BBO6u2M4iTNkK_jjULA_94qadrt1"; // publishable(anon) キー＝公開してよいキー
   var TABLE = "gin_submissions";
 
-  // ===== スタッフPIN（SHA-256ハッシュで照合。平文は置かない）=====
-  // 既定PIN: soutsu2026 。STAFF_SETUP.md の手順で必ず自店のPINに変更すること。
+  // ===== スタッフパスワード（SHA-256ハッシュで照合。平文は置かない）=====
+  // 既定パスワード: soutsu2026 。STAFF_SETUP.md の手順で必ず自店のパスワードに変更すること。
   var PIN_SHA256 = "694b39a1bfa7ff68a9dee1972d6323fbb797f368fad85b74429e0fa696529263";
   var UNLOCK_KEY = "soutsu_staff_unlocked";
 
@@ -52,7 +52,7 @@
            SUPABASE_KEY.indexOf("REPLACE_ME") === -1;
   }
 
-  // ---- SHA-256（PIN照合用。https/localhost の安全コンテキストで動作）----
+  // ---- SHA-256（パスワード照合用。https/localhost の安全コンテキストで動作）----
   function sha256hex(str) {
     var data = new TextEncoder().encode(str);
     return crypto.subtle.digest("SHA-256", data).then(function (buf) {
@@ -65,7 +65,7 @@
     });
   }
 
-  // ===== PINゲート =====
+  // ===== スタッフパスワードゲート =====
   function showForm() {
     els.gate.hidden = true;
     els.formWrap.hidden = false;
@@ -78,7 +78,7 @@
     els.pinError.textContent = "";
     if (!crypto || !crypto.subtle) {
       // 安全でないコンテキスト（file://等）ではハッシュ照合不可
-      els.pinError.textContent = "この環境ではPIN照合ができません（https で開いてください）。";
+      els.pinError.textContent = "この環境ではパスワード照合ができません（https で開いてください）。";
       return;
     }
     sha256hex(val).then(function (h) {
@@ -86,12 +86,12 @@
         safeSet("sessionStorage", UNLOCK_KEY, "1");
         showForm();
       } else {
-        els.pinError.textContent = "PINが違います。";
+        els.pinError.textContent = "パスワードが違います。";
         els.pinInput.value = "";
         els.pinInput.focus();
       }
     }).catch(function () {
-      els.pinError.textContent = "PIN照合でエラーが発生しました（https で開いているか確認してください）。";
+      els.pinError.textContent = "パスワード照合でエラーが発生しました（https で開いているか確認してください）。";
     });
   }
 

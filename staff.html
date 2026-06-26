@@ -17,7 +17,7 @@
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/icon.svg" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260627-single-staff-password" />
     <link rel="stylesheet" href="https://sousuyou.github.io/top/theme.css" />
 
     <style>
@@ -63,11 +63,11 @@
         <p class="lead">リストにないジンを見つけたら入力してください。送信内容は「申請箱」に入り、オーナーが事実確認のうえカタログに反映します。送信だけでは公開カタログは変わりません。</p>
       </header>
 
-      <!-- PINゲート（解錠するまでフォームは出ない） -->
-      <section class="card" id="pin-gate" aria-label="スタッフPIN">
-        <label class="field-label" for="pin-input">スタッフPIN</label>
+      <!-- スタッフパスワードゲート（解錠するまでフォームは出ない） -->
+      <section class="card" id="pin-gate" aria-label="スタッフパスワード">
+        <label class="field-label" for="pin-input">スタッフパスワード</label>
         <div class="pin-row">
-          <input id="pin-input" type="password" inputmode="text" autocomplete="off" placeholder="PINを入力" />
+          <input id="pin-input" type="password" inputmode="text" autocomplete="off" placeholder="パスワードを入力" />
           <button id="pin-submit" type="button">解錠</button>
         </div>
         <p class="pin-error" id="pin-error" aria-live="polite"></p>
@@ -137,7 +137,7 @@
       </footer>
     </main>
 
-    <script src="boot.js" defer></script>
-    <script src="submit.js" defer></script>
+    <script src="boot.js?v=20260627-cache-reset-v1" defer></script>
+    <script src="submit.js?v=20260627-single-staff-password" defer></script>
   </body>
 </html>
