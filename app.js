@@ -880,6 +880,7 @@
     var err = document.getElementById("staff-auth-err");
     if (err && !err.textContent) err.textContent = "スタッフパスワードを入力してください。";
     if (inp) {
+      if (inp.scrollIntoView) inp.scrollIntoView({ block: "center", behavior: "smooth" });
       inp.focus();
       if (inp.select) inp.select();
     }
@@ -923,12 +924,12 @@
         flagBanner(g) +
         (sub ? '<p class="modal-kana">産地：' + esc(g.country) + "</p>" : "") +
         warn +
-        '<div id="staff-auth-box" class="staff-auth-section">' + staffAuthHTML() + "</div>" +
-        '<div class="metric-section"><div id="metric-box" class="metric-box"></div></div>' +
         bot + note +
         '<div class="tag-section"><h3 class="memo-title">風味タグ</h3><div id="tag-box" class="tag-box"></div></div>' +
         sources +
+        '<div class="metric-section"><div id="metric-box" class="metric-box"></div></div>' +
         '<div class="memo-section"><h3 class="memo-title">スタッフメモ</h3><div id="memo-box" class="memo-box"><p class="memo-empty">読み込み中…</p></div></div>' +
+        '<div id="staff-auth-box" class="staff-auth-section">' + staffAuthHTML() + "</div>" +
       "</div>";
     els.modal.hidden = false;
     document.body.style.overflow = "hidden";
@@ -1651,11 +1652,12 @@
     var ml = bottleMlValue(g);
     var cost = pourCost(g);
     if (!g._bottlePriceSet) return '<p class="memo-empty">まだ価格目安はありません。</p>';
-    return '<div class="price-facts">' +
-      '<div class="price-fact"><span>ボトル</span><b>' + esc(yenLabel(value)) + '<em>' + esc(priceKindLabel(g)) + "</em></b></div>" +
-      '<div class="price-fact"><span>容量</span><b>' + esc(mlLabel(ml)) + (g._bottleMlSet ? "" : '<em>目安</em>') + "</b></div>" +
-      '<div class="price-fact"><span>30ml原価</span><b>' + esc(yenLabel(cost)) + "</b></div>" +
-      '<div class="price-fact price-sale"><span>販売目安</span><b>' + esc(salePriceLabel(g)) + "</b></div>" +
+    var label = yenLabel(value) + " " + priceKindLabel(g) + " / " + mlLabel(ml) + " / 30ml原価 " + yenLabel(cost) + " / 販売目安 " + salePriceLabel(g);
+    return '<div class="price-facts price-line" aria-label="' + esc(label) + '">' +
+      '<span class="price-line-main">' + esc(yenLabel(value)) + '<em>' + esc(priceKindLabel(g)) + "</em></span>" +
+      '<span>' + esc(mlLabel(ml)) + (g._bottleMlSet ? "" : '<em>目安</em>') + "</span>" +
+      '<span>原価 ' + esc(yenLabel(cost)) + "</span>" +
+      '<span class="price-sale">目安 ' + esc(salePriceLabel(g)) + "</span>" +
     "</div>";
   }
 

@@ -720,6 +720,45 @@ button.tag-chip:hover {
   font-size: 0.58rem;
   font-style: normal;
 }
+.price-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  align-items: baseline;
+  margin-bottom: 0;
+  padding: 8px 10px;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  font-size: 0.78rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.price-line span {
+  display: inline-flex;
+  align-items: baseline;
+  min-width: 0;
+  white-space: nowrap;
+}
+.price-line span + span::before {
+  content: "/";
+  margin: 0 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+.price-line-main {
+  color: var(--gold);
+}
+.price-line .price-sale {
+  color: var(--green);
+}
+.price-line em {
+  margin-left: 4px;
+  color: var(--muted);
+  font-size: 0.6rem;
+  font-style: normal;
+  font-weight: 700;
+}
 .price-field {
   display: grid;
   gap: 3px;
@@ -1029,6 +1068,9 @@ button.tag-chip:hover {
   .gin-bot { -webkit-line-clamp: 3; font-size: 0.67rem; }
   .tag-section, .aroma-section, .rating-section, .price-section, .staff-edit-section { margin-top: 10px; padding-top: 9px; }
   .price-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
+  .price-line { display: flex; gap: 0; padding: 7px 8px; font-size: 0.7rem; line-height: 1.6; }
+  .price-line span + span::before { margin: 0 6px; }
+  .price-line em { font-size: 0.56rem; }
   .price-fact { padding: 4px 6px; gap: 4px; }
   .price-fact span { font-size: 0.6rem; }
   .price-fact b { font-size: 0.7rem; }
@@ -1838,6 +1880,11 @@ textarea:focus {
 
   .price-facts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .price-line {
+    display: flex;
+    font-size: 0.68rem;
   }
 
   .metric-readout,
