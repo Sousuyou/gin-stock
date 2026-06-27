@@ -23,7 +23,7 @@
   var AROMA_TABLE = "gin_aroma_strengths";
   var RATING_TABLE = "gin_staff_ratings";
   var PRICE_TABLE = "gin_bottle_prices";
-  var BOTTLE_PRICE_SEED_URL = "data/bottle_price_estimates_20260625.json?v=20260627-oobu-rename";
+  var BOTTLE_PRICE_SEED_URL = "data/bottle_price_estimates_20260625.json?v=20260627-botanical-mobile";
   var SOURCE_TABLE = "gin_info_sources";
   var aromaStrengthState = "loading"; // loading / ready / unavailable
   var staffRatingState = "loading"; // loading / ready / unavailable
@@ -276,7 +276,9 @@
     "ライム": ["ライム", "ライムピール", "ライムの皮", "フィンガーライム"],
     "ローズマリー": ["ローズマリー", "マンネンロウ"],
     "ローレル": ["ローレル", "ローリエ", "ベイリーフ", "月桂樹"],
+    "ミント": ["ミント", "イエルバブエナ", "キューバミント", "薄荷", "ハッカ"],
     "レモングラス": ["レモングラス"],
+    "レモンバーベナ": ["レモンバーベナ", "ベルベナ"],
     "ローズヒップ": ["ローズヒップ"],
     "オールスパイス": ["オールスパイス", "ピメント"],
     "紅茶": ["紅茶", "ブラックティー", "アールグレイ"],
@@ -304,6 +306,7 @@
     "ホーリーバジル": ["ホーリーバジル", "トゥルシー"],
     "ルバーブ": ["ルバーブ"],
     "ローズゼラニウム": ["ローズゼラニウム"],
+    "ローズ": ["ローズ", "薔薇", "バラ", "ダマスクローズ", "ローズペタル", "バラの花びら", "さ姫"],
     "大和橘": ["大和橘"],
     "苺": ["苺", "イチゴ", "いちご", "ストロベリー"],
     "杉": ["杉", "スギ"],
@@ -353,10 +356,21 @@
     "イチゴ": "苺",
     "紫蘇": "青紫蘇",
     "バラ": "ローズ",
+    "薔薇": "ローズ",
+    "薔薇（品種：さ姫）": "ローズ",
+    "さ姫": "ローズ",
+    "ダマスクローズ": "ローズ",
+    "ローズペタル": "ローズ",
+    "バラの花びら": "ローズ",
     "ブルガリアンローズ": "ローズ",
     "クベバベリー": "クベブペッパー",
     "クベバ": "クベブペッパー",
     "コースタルタイム": "タイム",
+    "イエルバブエナ": "ミント",
+    "キューバミント": "ミント",
+    "薄荷": "ミント",
+    "ハッカ": "ミント",
+    "ベルベナ": "レモンバーベナ",
     "柚子ピール": "柚子",
     "ゆず": "柚子",
     "フィンガーライム": "ライムピール",
@@ -495,7 +509,7 @@
       var registered = !!findBotanicalInfo(name);
       return '<button type="button" class="bot-link' + (registered ? "" : " is-missing") +
         '" data-botanical="' + esc(name) + '" title="' + (registered ? "その場で詳細を見る" : "未登録候補を見る") + '">' +
-        esc(name) + (registered ? "" : '<span class="bot-missing-mark">未登録</span>') + "</button>";
+        esc(name) + "</button>";
     }).join("");
     return '<div class="bot-link-list">' + listHTML + '</div>' +
       '<div id="botanical-popover" class="botanical-popover" hidden></div>';
@@ -741,8 +755,7 @@
     var kind = priceKindLabel(g);
     var kindClass = g._bottlePriceKind === "estimated" ? " badge-price-estimated" : (g._bottlePriceKind === "staff" ? " badge-price-staff" : "");
     var kindLabel = kind === "実売" ? "" : '<em>' + esc(kind) + "</em>";
-    return '<span class="badge badge-price' + kindClass + '">瓶 ' + kindLabel + esc(yenLabel(g._bottlePrice)) + " / " + esc(mlLabel(bottleMlValue(g))) + "</span>" +
-      '<span class="badge badge-cost">30ml ' + esc(yenLabel(pourCost(g))) + "</span>";
+    return '<span class="badge badge-price' + kindClass + '">' + kindLabel + esc(yenLabel(g._bottlePrice)) + "</span>";
   }
 
   function cardBottlePriceBadgeHTML(g) {
@@ -901,8 +914,8 @@
       ? '<div class="detail-block"><span class="detail-label">ボタニカル</span>' + botanicalLinksHTML(g.botanicals) + "</div>"
       : '<div class="detail-block"><span class="detail-label">ボタニカル</span><p class="muted-text">（未登録）</p></div>';
     var note = g.note
-      ? '<div class="detail-block"><span class="detail-label">メモ</span><p>' + esc(g.note) + "</p></div>"
-      : '<div class="detail-block"><span class="detail-label">メモ</span><p class="muted-text">（説明メモは未登録）</p></div>';
+      ? '<div class="detail-block"><span class="detail-label">概要</span><p>' + esc(g.note) + "</p></div>"
+      : '<div class="detail-block"><span class="detail-label">概要</span><p class="muted-text">（概要は未登録）</p></div>';
     var sources = '<div class="source-section"><h3 class="memo-title">銘柄情報ソース</h3><div id="source-box" class="source-box"><p class="memo-empty">読み込み中…</p></div></div>';
 
     var warn = g.not_gin ? '<div class="not-gin-banner">※当店にありますが、ジンではありません</div>' : "";

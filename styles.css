@@ -722,11 +722,13 @@ button.tag-chip:hover {
 }
 .price-line {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0;
   align-items: baseline;
   margin-bottom: 0;
   padding: 8px 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
   color: var(--text);
   background: var(--panel);
   border: 1px solid var(--line);
@@ -734,9 +736,13 @@ button.tag-chip:hover {
   font-weight: 800;
   font-variant-numeric: tabular-nums;
 }
+.price-line::-webkit-scrollbar {
+  display: none;
+}
 .price-line span {
   display: inline-flex;
   align-items: baseline;
+  flex: 0 0 auto;
   min-width: 0;
   white-space: nowrap;
 }
@@ -868,6 +874,7 @@ button.tag-chip:hover {
 .bot-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 5px;
   min-height: 30px;
   padding: 3px 8px;
@@ -888,9 +895,11 @@ button.tag-chip:hover {
   color: var(--green);
 }
 .bot-link.is-missing {
-  color: var(--gold);
+  border-style: dashed;
+  color: var(--text);
 }
 .bot-missing-mark {
+  display: none;
   padding: 1px 5px;
   background: var(--gold);
   color: var(--on-accent);
@@ -1457,10 +1466,13 @@ textarea:focus {
 }
 
 .bot-link.is-missing {
-  color: var(--muted);
+  color: var(--text);
+  background: var(--panel);
+  border-style: dashed;
 }
 
 .bot-missing-mark {
+  display: none;
   color: var(--muted);
   background: var(--panel);
   border: 1px solid var(--line);
@@ -1862,7 +1874,68 @@ textarea:focus {
   }
 
   .modal {
-    padding: 14px;
+    max-height: calc(100dvh - 12px);
+    padding: 12px;
+  }
+
+  .modal-close {
+    top: 7px;
+    right: 7px;
+    min-width: 30px;
+    min-height: 30px;
+    padding: 0;
+  }
+
+  .modal h2 {
+    margin-right: 34px;
+    font-size: 1rem;
+    line-height: 1.22;
+  }
+
+  .modal-kana {
+    font-size: 0.66rem;
+  }
+
+  .modal-badges {
+    gap: 4px;
+    margin-top: 8px;
+  }
+
+  .modal-fav {
+    min-height: 30px;
+    margin-top: 8px;
+    padding: 0 10px;
+    font-size: 0.7rem;
+  }
+
+  .modal .detail-block {
+    margin-top: 10px;
+  }
+
+  .modal .detail-block p {
+    font-size: 0.78rem;
+    line-height: 1.62;
+  }
+
+  .bot-link-list {
+    gap: 4px;
+  }
+
+  .bot-link,
+  .bot-link.is-missing {
+    min-height: 28px;
+    padding: 2px 7px;
+    font-size: 0.68rem;
+    line-height: 1.25;
+  }
+
+  .tag-section,
+  .source-section,
+  .metric-section,
+  .memo-section,
+  .staff-auth-section,
+  .modal .detail-block {
+    margin-top: 10px;
   }
 
   .metric-box {
@@ -1900,7 +1973,19 @@ textarea:focus {
 
   .price-line {
     display: flex;
-    font-size: 0.68rem;
+    flex-wrap: nowrap;
+    padding: 7px 8px;
+    font-size: 0.62rem;
+    line-height: 1.45;
+  }
+
+  .price-line span + span::before {
+    margin: 0 4px;
+  }
+
+  .price-line em {
+    margin-left: 3px;
+    font-size: 0.52rem;
   }
 
   .metric-readout,
