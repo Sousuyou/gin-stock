@@ -23,7 +23,7 @@
   var AROMA_TABLE = "gin_aroma_strengths";
   var RATING_TABLE = "gin_staff_ratings";
   var PRICE_TABLE = "gin_bottle_prices";
-  var BOTTLE_PRICE_SEED_URL = "data/bottle_price_estimates_20260625.json?v=20260625-price-fill-all";
+  var BOTTLE_PRICE_SEED_URL = "data/bottle_price_estimates_20260625.json?v=20260627-oobu-rename";
   var SOURCE_TABLE = "gin_info_sources";
   var aromaStrengthState = "loading"; // loading / ready / unavailable
   var staffRatingState = "loading"; // loading / ready / unavailable
