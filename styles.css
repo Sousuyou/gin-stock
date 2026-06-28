@@ -1328,8 +1328,8 @@ textarea:focus {
 }
 
 .gin-list {
-  grid-template-columns: repeat(auto-fill, minmax(238px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
+  gap: 8px;
 }
 
 .gin-card-wrap {
@@ -1337,9 +1337,9 @@ textarea:focus {
 }
 
 .gin-card {
-  min-height: 190px;
-  padding: 13px;
-  gap: 8px;
+  min-height: 164px;
+  padding: 9px;
+  gap: 5px;
   border-color: var(--line);
   border-radius: var(--radius);
   background: var(--panel);
@@ -1353,35 +1353,37 @@ textarea:focus {
 }
 
 .gin-card-head {
-  min-height: 48px;
-  gap: 3px;
-  padding-right: 28px;
+  min-height: 40px;
+  gap: 2px;
+  padding-right: 24px;
 }
 
 .gin-name {
   display: -webkit-box;
-  min-height: 2.35em;
+  min-height: 2.24em;
   margin: 0;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow-wrap: anywhere;
-  font-size: 0.94rem;
-  line-height: 1.22;
+  font-size: 0.84rem;
+  line-height: 1.12;
 }
 
 .gin-kana {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-size: 0.6rem;
+  line-height: 1.2;
   letter-spacing: 0;
 }
 
 .fav-btn {
-  top: 8px;
-  right: 8px;
-  width: 28px;
-  height: 28px;
+  top: 6px;
+  right: 6px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: var(--panel-soft);
   border: 1px solid var(--line);
@@ -1395,30 +1397,42 @@ textarea:focus {
 .gin-badges,
 .gin-metrics,
 .gin-tags {
-  gap: 5px;
+  gap: 3px;
 }
 
 .gin-metrics {
   margin-top: 1px;
-  padding: 6px;
+  padding: 4px;
   background: var(--panel-soft);
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
 }
 
 .badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 20px;
+  padding: 1px 6px;
   border-radius: 999px;
+  color: var(--text);
+  background: var(--panel);
+  border-color: var(--line);
+  font-size: 0.55rem;
+  line-height: 1.25;
   letter-spacing: 0;
 }
 
 .badge-country {
-  color: var(--green);
-  background: var(--green-soft);
+  color: var(--text);
+  background: var(--panel);
+  border-color: var(--line);
 }
 
 .badge-abv {
-  background: var(--accent);
-  color: var(--on-accent);
+  color: var(--text);
+  background: var(--panel);
+  border-color: var(--line);
+  font-variant-numeric: tabular-nums;
 }
 
 .badge-price {
@@ -1444,7 +1458,9 @@ textarea:focus {
 }
 
 .badge-price-staff {
-  border-color: var(--green);
+  color: var(--text);
+  background: var(--panel);
+  border-color: var(--line);
 }
 
 .badge-cost {
@@ -1480,15 +1496,21 @@ textarea:focus {
 
 .gin-tag {
   border-radius: 999px;
+  padding: 1px 6px;
+  font-size: 0.56rem;
 }
 
 .gin-bot {
   margin-top: auto;
-  padding-top: 8px;
+  padding-top: 5px;
   border-top: 1px solid var(--line);
+  font-size: 0.61rem;
+  line-height: 1.42;
 }
 
 .gin-bot b {
+  margin-bottom: 0;
+  font-size: 0.56rem;
   letter-spacing: 0;
 }
 
