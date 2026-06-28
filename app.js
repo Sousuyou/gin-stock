@@ -23,7 +23,7 @@
   var AROMA_TABLE = "gin_aroma_strengths";
   var RATING_TABLE = "gin_staff_ratings";
   var PRICE_TABLE = "gin_bottle_prices";
-  var BOTTLE_PRICE_SEED_URL = "data/bottle_price_estimates_20260625.json?v=20260629-botanical-lite1";
+  var BOTTLE_PRICE_SEED_URL = "data/bottle_price_estimates_20260625.json?v=20260629-noise-filter1";
   var SOURCE_TABLE = "gin_info_sources";
   var aromaStrengthState = "loading"; // loading / ready / unavailable
   var staffRatingState = "loading"; // loading / ready / unavailable
@@ -380,7 +380,7 @@
     "バタフライピー": ["バタフライピー"],
     "アボカドシード": ["アボカドシード", "アボカド種子"],
     "大和当帰": ["大和当帰", "当帰"],
-    "ニガヨモギ": ["ニガヨモギ", "ワームウッド", "苦艾"],
+    "ニガヨモギ": ["ニガヨモギ", "ワームウッド", "苦艾", "アブサン"],
     "パンダンリーフ": ["パンダンリーフ", "パンダン"],
     "ホーリーバジル": ["ホーリーバジル", "トゥルシー"],
     "ルバーブ": ["ルバーブ"],
@@ -426,13 +426,13 @@
     "マヌカ": ["マヌカ"],
     "河内晩柑": ["河内晩柑", "河内晩柑ピール"],
     "パロサント": ["パロサント"],
-    "金箔": ["金箔"],
+    "金箔": ["金箔", "24K金粉"],
     "スイバ": ["スイバ"],
     "ツガサルノコシカケ": ["ツガサルノコシカケ"],
     "ウッドソレル": ["ウッドソレル"],
     "せとか": ["せとか", "せとかピール"],
     "ザクロ": ["ザクロ", "ナールチェ"],
-    "ミルクアザミ": ["ミルクアザミ"],
+    "ミルクアザミ": ["ミルクアザミ", "ミルクシスル"],
     "カワカワ": ["カワカワ"],
     "オークモス": ["オークモス"],
     "サンダルウッド": ["サンダルウッド"],
@@ -510,6 +510,7 @@
     "烏龍茶": "煎茶",
     "河越茶": "煎茶",
     "アールグレイ": "紅茶",
+    "アールグレイ茶": "紅茶",
     "ブラックカラント": "カシス",
     "黒すぐり": "カシス",
     "ピーチ": "桃",
@@ -638,6 +639,19 @@
     "パイン": "松の芽",
     "松の葉": "松の芽",
     "ホーソンベリー": "サンザシ",
+    "アンゲリカルート": "アンジェリカルート",
+    "アンジェリカバーク": "アンジェリカルート",
+    "アンジェリカ葉": "アンジェリカ",
+    "グレーンオブパラダイス": "グレインズオブパラダイス",
+    "コリアンダージード": "コリアンダーシード",
+    "コエンドロの実": "コリアンダーシード",
+    "コエンドロの油": "コリアンダーシード",
+    "キナ皮": "キナ",
+    "グリーンコリアンダー": "コリアンダー",
+    "カキドオシ": "ミント",
+    "かきどおし": "ミント",
+    "ロングペッパー": "ブラックペッパー",
+    "ワイン粕": "レーズン",
     "へべす": "すだち",
     "ホワイトペッパー": "ブラックペッパー",
     "ワイルドフォレストペッパー": "ブラックペッパー",
@@ -672,20 +686,38 @@
   };
   var BOT_MIN = 15; // この件数以上のボタニカルだけプルダウンに出す
 
+  function isBotanicalNoiseToken(raw, canon) {
+    var s = String(canon || raw || "").trim();
+    var src = String(raw || "").trim();
+    if (!s) return true;
+    if (BOT_JUNK[s]) return true;
+    if (/^[A-Za-zＡ-Ｚａ-ｚ]\)?）?$/.test(s)) return true;
+    if (/[）)]$/.test(src) && !/[（(]/.test(src)) return true;
+    if (/ボタニカル|使用|内訳|メーカー|非公開|非公表|要確認|具体的|公式|公表|詳細|想定|名称確認|変動|オーガニック|地元産|含む|のみ明記|由来の|ほか|その他|など|等|一部|の花々|産のハーブ|ブレンド$/.test(s)) return true;
+    if (/[0-9０-９]\s*(種|種類)/.test(s) || /(計|全|約)\s*[0-9０-９]/.test(s)) return true;
+    if (/^(その他|他|ほか|など|等)$/.test(s)) return true;
+    return false;
+  }
+
   // ボタニカル文字列 → 代表名の配列（重複なし）
   function botTokens(text) {
     if (!text) return [];
-    var parts = String(text).split(/[、,／/・\n]+/);
+    var cleaned = String(text)
+      .replace(/（[^）]*）/g, "")
+      .replace(/\([^)]*\)/g, "");
+    var parts = cleaned.split(/[、,／/\n]+/);
     var set = {}, out = [];
     for (var i = 0; i < parts.length; i++) {
-      var p = parts[i].replace(/（[^）]*）/g, "").replace(/\([^)]*\)/g, "").trim();
+      var p = parts[i].trim();
+      p = p.replace(/^[0-9０-９]+\s*種類?の/, "").trim();
+      p = p.replace(/[0-9０-９]+\s*種類?$/, "").trim();
       p = p.replace(/(など|等|ほか|他)$/, "").trim();
       if (!p) continue;
       var canon = BOT_REV[p] || p;
       // 「ジュニパーベリーをはじめとした9種…」のように文章中に埋もれた表記も拾う
       // （ジュニパーは語頭一致でも誤判定がないので安全）
       if (p.indexOf("ジュニパー") >= 0) canon = "ジュニパー";
-      if (BOT_JUNK[canon]) continue;
+      if (isBotanicalNoiseToken(p, canon)) continue;
       if (!set[canon]) { set[canon] = 1; out.push(canon); }
     }
     return out;
@@ -693,6 +725,7 @@
 
   function isBotanicalLinkable(name) {
     return name &&
+      !isBotanicalNoiseToken(name, name) &&
       !/非公開|不明|要確認|公式情報なし|情報なし|メーカー非公開|各種|数種|複数/.test(name);
   }
 
