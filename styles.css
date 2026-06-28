@@ -1828,49 +1828,82 @@ textarea:focus {
 
   .gin-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-  }
-
-  .gin-card {
-    min-height: 178px;
-    padding: 9px;
     gap: 6px;
   }
 
+  .gin-card {
+    min-height: 154px;
+    padding: 8px;
+    gap: 5px;
+  }
+
   .gin-card-head {
-    min-height: 48px;
-    padding-right: 24px;
+    min-height: 40px;
+    gap: 1px;
+    padding-right: 20px;
   }
 
   .gin-name {
-    min-height: 2.38em;
-    font-size: 0.78rem;
+    min-height: 2.24em;
+    font-size: 0.74rem;
+    line-height: 1.12;
   }
 
   .gin-kana {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
+    line-height: 1.18;
   }
 
   .gin-metrics {
-    padding: 5px;
+    gap: 3px;
+    margin-top: 0;
+    padding: 4px;
+  }
+
+  .gin-badges,
+  .gin-tags {
+    gap: 3px;
+  }
+
+  .fav-btn {
+    top: 5px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .fav-btn .star-ico {
+    width: 16px;
+    height: 16px;
   }
 
   .badge {
     max-width: 100%;
-    padding: 1px 5px;
+    padding: 1px 4px;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 0.53rem;
+    font-size: 0.5rem;
+    line-height: 1.35;
   }
 
   .badge-price em {
-    padding: 0 3px;
-    font-size: 0.5rem;
+    display: none;
   }
 
   .gin-bot {
     -webkit-line-clamp: 2;
-    font-size: 0.62rem;
+    padding-top: 5px;
+    font-size: 0.56rem;
+    line-height: 1.42;
+  }
+
+  .gin-bot b {
+    margin-bottom: 0;
+    font-size: 0.5rem;
+  }
+
+  .gin-tags {
+    display: none;
   }
 
   .modal {
