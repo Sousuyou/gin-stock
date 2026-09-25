@@ -44,6 +44,12 @@
 - `service-worker.js` の `CACHE` も変更時に上げる。
 - 公開側で古く見える場合は `https://sousuyou.github.io/gin-stock/cache-reset.html` を開いてから再確認する。
 
+## ボタニカルのデータ
+
+- ボタニカルのデータは、TOPのボタニカル表と共通の `https://sousuyou.github.io/top/botanical-table/botanical-data.js` を読む（`index.html` では `/top/botanical-table/botanical-data.js`）。このリポジトリにはコピーを置かない。
+- ボタニカルを足すときは、TOPリポジトリ（`/Users/Sousyou/Desktop/Claudeテスト用/top`）の `botanical-table/botanical-data.js` を直す。分類は14種類にそろえ、表記ゆれは同じファイルの `aliasMap` に足す。
+- ローカルで確認するときは `/Users/Sousyou/Desktop/Claudeテスト用` をルートにして配信し、`http://127.0.0.1:8765/gin-stock-repo/` を開く（ボタニカルのデータが `/top/...` から読めるように）。
+
 ## 検証コマンド
 
 ```bash
@@ -51,7 +57,6 @@ cd /Users/Sousyou/Desktop/Claudeテスト用/gin-stock-repo
 node --check app.js
 node --check submit.js
 node --check boot.js
-node --check top/botanical-table/botanical-data.js
 node --check tools/collect_bottle_prices.mjs
 git diff --check
 ```
